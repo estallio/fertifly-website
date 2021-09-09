@@ -24,7 +24,8 @@
     "@sanity/vision": "^2.17.2",
     "prop-types": "^15.7",
     "react": "^17.0",
-    "react-dom": "^17.0"
+    "react-dom": "^17.0",
+    "sanity-plugin-cloudflare-pages-deploy": "^1.0.3"
   },
   "devDependencies": {},
   "repository": {

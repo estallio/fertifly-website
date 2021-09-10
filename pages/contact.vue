@@ -9,7 +9,6 @@
     </h2>
     <p>{{ posts }}</p>
     <nuxt-link :to="localePath('about')">About</nuxt-link>
-    <Tutorial/>
   </div>
 </template>
 

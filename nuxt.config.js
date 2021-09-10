@@ -1,3 +1,8 @@
+import PurgecssPlugin from 'purgecss-webpack-plugin'
+import glob from 'glob-all'
+import path from 'path'
+import VuetifyLoaderPlugin from 'vuetify-loader/lib/plugin'
+
 import config from './config'
 import de from './lang/de'
 import en from './lang/en'
@@ -8,6 +13,12 @@ export default {
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
+    // '~/plugins/vuetify.js', - not needed when using nuxt-vuetify
+    '~/plugins/coollightbox.client.js',
+    '~/plugins/vuescrollactive.client.js',
+    '~/plugins/vueparticles.client.js',
+    '~/plugins/vuecountto.client.js',
+    '~/plugins/vuevisibilitysensor.client.js',
     // Needed for previewing changed content
     '~/plugins/preview.client.js',
   ],
@@ -16,24 +27,91 @@ export default {
   components: true,
 
   // Global CSS: https://go.nuxtjs.dev/config-css
-  css: [],
+  css: [
+    // TODO: css size could be reduced if imports were conditionally
+    //  but maybe Nuxt does some optimization and it doesn't matter anyway
+   'vuetify/dist/vuetify.min.css',
+   '@mdi/font/css/materialdesignicons.css',
+   '@fortawesome/fontawesome-free/css/all.css',
+   'vue-cool-lightbox/dist/vue-cool-lightbox.min.css',
+   'vue-slick-carousel/dist/vue-slick-carousel.css',
+   'vue-slick-carousel/dist/vue-slick-carousel-theme.css',
+   '~/assets/scss/main.scss'
+  ],
+
+  vuetify: {
+    theme: {
+      themes: {
+        light: {
+          primary: '#f9004d',
+          success: '#3EB75E',
+          accent: '#FF7F5C',
+          teal: '#26B0A1',
+          warning: '#FF8F3C',
+          error: '#FF585A',
+          cyan: '#42D3D5',
+        },
+      },
+    },
+    icons: {
+      iconfont: 'mdi',
+    },
+  },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
-  build: {},
+  build: {
+    // transpile: ['vuetify/lib'],
+    // plugins: [new VuetifyLoaderPlugin()],
+    // TODO: maybe there is a way to reduce CSS size as I use only a part of the things
+    extractCSS: true,
+    // extend(config, { isDev, isClient }) {
+    //   if (!isDev && isClient) {
+    //     config.plugins.push(
+    //       new PurgecssPlugin({
+    //         paths: glob.sync([
+    //           path.join(__dirname, './pages/**/*.vue'),
+    //           path.join(__dirname, './layouts/**/*.vue'),
+    //           path.join(__dirname, './components/**/*.vue'),
+    //           path.join(__dirname, './node_modules/vuetify/src/*.ts')
+    //         ]),
+    //         whitelist: ['html', 'body']
+    //       })
+    //     )
+    //   }
+    // }
+  },
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
     // https://go.nuxtjs.dev/eslint
-    '@nuxtjs/eslint-module',
+    // '@nuxtjs/eslint-module',
     // https://go.nuxtjs.dev/stylelint
-    '@nuxtjs/stylelint-module',
+    // '@nuxtjs/stylelint-module',
     // https://go.nuxtjs.dev/tailwindcss
-    '@nuxtjs/tailwindcss',
+    // '@nuxtjs/tailwindcss',
     // https://sanity.nuxtjs.org
     '@nuxtjs/sanity/module',
     // https://github.com/moritzsternemann/vue-plausible
     'vue-plausible',
+    // https://vuetifyjs.com/en/getting-started/installation/#nuxt-install
+    '@nuxtjs/vuetify',
+    'nuxt-purgecss',
   ],
+
+  purgeCSS: {
+    paths: [
+      'node_modules/@nuxtjs/vuetify/**/*.ts',
+      'node_modules/@nuxt/vue-app/template/**/*.html',
+      'node_modules/@nuxt/vue-app/template/**/*.vue',
+    ],
+    whitelist: ['v-application', 'v-application--wrap'],
+    whitelistPatterns: () => [
+      /^v-((?!application).)*$/,
+      /^\.theme--light*/,
+      /.*-transition/,
+    ],
+    whitelistPatternsChildren: [/^v-((?!application).)*$/, /^theme--*/],
+  },
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: ['@nuxtjs/i18n', '@nuxtjs/pwa', '@nuxtjs/robots', '@nuxtjs/sitemap'],
@@ -59,6 +137,7 @@ export default {
     // when served via simple services like Cloudflare Pages etc.
     subFolders: false,
 
+    // TODO: Nuxt is generating a dynamic 404? what is happening here?
     // Generate a 404 page as Cloudflare pages needs one
     fallback: '404.html',
   },
@@ -87,6 +166,12 @@ export default {
     baseUrl: config.hostname,
     routesNameSeparator: config.routesNameSeparator,
   },
+
+
+
+
+
+
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   /*head () {
@@ -196,34 +281,7 @@ export default {
     },
     routes: async () => {
       return [
-        {
-          url: '/de/blog/erster-eintrag',
-          links: [
-            { lang: 'de', url: `/de/blog/erster-eintrag` },
-            { lang: 'en', url: `/en/blog/first-entry` },
-          ],
-        },
-        {
-          url: '/de/blog/zweiter-eintrag',
-          links: [
-            { lang: 'de', url: `/de/blog/zweiter-eintrag` },
-            { lang: 'en', url: `/en/blog/second-entry` },
-          ],
-        },
-        {
-          url: '/en/blog/first-entry',
-          links: [
-            { lang: 'de', url: `/de/blog/erster-eintrag` },
-            { lang: 'en', url: `/en/blog/first-entry` },
-          ],
-        },
-        {
-          url: '/en/blog/second-entry',
-          links: [
-            { lang: 'de', url: `/de/blog/zweiter-eintrag` },
-            { lang: 'en', url: `/en/blog/second-entry` },
-          ],
-        },
+        // TODO: get jobs dynamic slugs
       ]
     },
   },

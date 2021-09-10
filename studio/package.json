@@ -1,0 +1,35 @@
+{
+  "name": "ecofly-studio",
+  "private": true,
+  "version": "1.0.0",
+  "description": "This project contains PoC implementations, snippets and decision documentations to build a modern, performant and cheap Jamstack website utilizing the following tools and services:",
+  "main": "package.json",
+  "author": "Leonhard Esterbauer <leonhard.esterbauer@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "start": "sanity start",
+    "build": "sanity build"
+  },
+  "keywords": [
+    "sanity"
+  ],
+  "dependencies": {
+    "@sanity/base": "^2.18.0",
+    "@sanity/components": "^2.14.0",
+    "@sanity/core": "^2.18.0",
+    "@sanity/dashboard": "^2.18.0",
+    "@sanity/default-layout": "^2.18.0",
+    "@sanity/default-login": "^2.18.0",
+    "@sanity/desk-tool": "^2.18.0",
+    "@sanity/vision": "^2.17.2",
+    "prop-types": "^15.7",
+    "react": "^17.0",
+    "react-dom": "^17.0",
+    "sanity-plugin-cloudflare-pages-deploy": "^1.0.3"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:estallio/ecofly-website.git"
+  }
+}

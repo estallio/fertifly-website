@@ -18,7 +18,6 @@ export default {
     '~/plugins/vuescrollactive.client.js',
     '~/plugins/vueparticles.client.js',
     '~/plugins/vuecountto.client.js',
-    '~/plugins/vuefeather.js',
     '~/plugins/vuevisibilitysensor.client.js',
     // Needed for previewing changed content
     '~/plugins/preview.client.js',
@@ -95,7 +94,8 @@ export default {
     // https://github.com/moritzsternemann/vue-plausible
     'vue-plausible',
     // https://vuetifyjs.com/en/getting-started/installation/#nuxt-install
-    '@nuxtjs/vuetify'
+    '@nuxtjs/vuetify',
+    '@nuxtclub/feathericons'
   ],
 
   // purgeCSS: {

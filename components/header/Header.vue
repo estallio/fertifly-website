@@ -20,7 +20,7 @@
           icon
           @click="drawer = !drawer"
         >
-          <vue-feather :type="closeIcon"></vue-feather>
+          <x-icon></x-icon>
         </v-btn>
       </v-list-item>
 
@@ -158,7 +158,7 @@
         class="ma-0 pa-0 hidden-md-and-up"
         @click="drawer = !drawer"
       >
-        <vue-feather :type="icon"></vue-feather>
+        <menu-icon></menu-icon>
       </v-btn>
       <!-- End mobile menu icon -->
       <v-toolbar-items class="hidden-xs-only hidden-sm-only height-auto">
@@ -280,7 +280,13 @@
 </template>
 
 <script>
+import { XIcon, MenuIcon } from 'vue-feather-icons'
+
 export default {
+  components: {
+    XIcon,
+    MenuIcon
+  },
   data: () => ({
     drawer: false,
     items: [
@@ -423,8 +429,6 @@ export default {
         title: "Block",
       },
     ],
-    icon: "menu",
-    closeIcon: "x",
   }),
 };
 </script>

@@ -94,8 +94,7 @@ export default {
     // https://github.com/moritzsternemann/vue-plausible
     'vue-plausible',
     // https://vuetifyjs.com/en/getting-started/installation/#nuxt-install
-    '@nuxtjs/vuetify',
-    'nuxt-purgecss',
+    '@nuxtjs/vuetify'
   ],
 
   // purgeCSS: {

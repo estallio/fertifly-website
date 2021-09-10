@@ -19,8 +19,8 @@
           class="close-icon"
           icon
           @click="drawer = !drawer"
-          v-html="iconSvg(closeIcon)"
         >
+          <vue-feather :type="closeIcon"></vue-feather>
         </v-btn>
       </v-list-item>
 
@@ -157,8 +157,8 @@
         icon
         class="ma-0 pa-0 hidden-md-and-up"
         @click="drawer = !drawer"
-        v-html="iconSvg(icon)"
       >
+        <vue-feather :type="icon"></vue-feather>
       </v-btn>
       <!-- End mobile menu icon -->
       <v-toolbar-items class="hidden-xs-only hidden-sm-only height-auto">
@@ -280,7 +280,6 @@
 </template>
 
 <script>
-import feather from "feather-icons";
 export default {
   data: () => ({
     drawer: false,
@@ -427,12 +426,6 @@ export default {
     icon: "menu",
     closeIcon: "x",
   }),
-
-  methods: {
-    iconSvg(icon) {
-      return feather.icons[icon].toSvg();
-    },
-  },
 };
 </script>
 

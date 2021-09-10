@@ -128,23 +128,7 @@
 </template>
 
 <script>
-  import Header from "../components/header/Header";
-  import About from "../components/about/About";
-  import CounterOne from "../components/counter/CounterOne";
-  import TeamThree from "../components/team/TeamThree";
-  import Testimonial from "../components/testimonial/Testimonial";
-  import Brand from "../components/brand/Brand";
-  import Footer from "../components/footer/Footer";
   export default {
-    components: {
-      Header,
-      About,
-      CounterOne,
-      TeamThree,
-      Testimonial,
-      Brand,
-      Footer,
-    },
     data() {
       return {
         breadcrumbs: [

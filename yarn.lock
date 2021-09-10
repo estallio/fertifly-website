@@ -1450,6 +1450,13 @@
     webpack-node-externals "^3.0.0"
     webpackbar "^4.0.0"
 
+"@nuxtclub/feathericons@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@nuxtclub/feathericons/-/feathericons-1.0.0.tgz#e7cffdd414a1071d17b25f83412e823f2b5fc9e5"
+  integrity sha512-9AGOzTEI3xjECqqUkJaN5MJORIobhGCMg3J+/tGUWlJ6jlzMsYfbPeFYQkC+pOEW6McPViivqepcwVxStUf8UA==
+  dependencies:
+    feather-icons "^4.28.0"
+
 "@nuxtjs/axios@^5.13.6":
   version "5.13.6"
   resolved "https://registry.yarnpkg.com/@nuxtjs/axios/-/axios-5.13.6.tgz#6f4bbd98a3a7799a5d2c0726c6ad2a98aa111881"
@@ -12547,6 +12554,11 @@ vue-eslint-parser@^7.1.1, vue-eslint-parser@^7.10.0:
     esquery "^1.4.0"
     lodash "^4.17.21"
     semver "^6.3.0"
+
+vue-feather@^1.1.1:
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/vue-feather/-/vue-feather-1.1.1.tgz#67987a46d9ec5695de01a815b3c1412e6a9832ec"
+  integrity sha512-J5M35aXZrEot0xdOAb7iCJf5HFNy3lAGNA7fGKol3qXvBII4+QKogCSpzg9zoFH3o7oX1LFbIRecgJGXt3XJEg==
 
 vue-hot-reload-api@^2.3.0:
   version "2.3.4"

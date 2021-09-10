@@ -98,20 +98,24 @@ export default {
     'nuxt-purgecss',
   ],
 
-  purgeCSS: {
-    paths: [
-      'node_modules/@nuxtjs/vuetify/**/*.ts',
-      'node_modules/@nuxt/vue-app/template/**/*.html',
-      'node_modules/@nuxt/vue-app/template/**/*.vue',
-    ],
-    whitelist: ['v-application', 'v-application--wrap'],
-    whitelistPatterns: () => [
-      /^v-((?!application).)*$/,
-      /^\.theme--light*/,
-      /.*-transition/,
-    ],
-    whitelistPatternsChildren: [/^v-((?!application).)*$/, /^theme--*/],
-  },
+  // purgeCSS: {
+  //   paths: [
+  //     path.join(__dirname, './pages/**/*.vue'),
+  //     path.join(__dirname, './layouts/**/*.vue'),
+  //     path.join(__dirname, './components/**/*.vue'),
+  //     path.join(__dirname, './nuxt.config.js'),
+  //     path.join(__dirname, './node_modules/@nuxtjs/vuetify/**/*.ts'),
+  //     path.join(__dirname, './node_modules/@nuxt/vue-app/template/**/*.html'),
+  //     path.join(__dirname, './node_modules/@nuxt/vue-app/template/**/*.vue'),
+  //   ],
+  //   whitelist: ['v-application', 'v-application--wrap'],
+  //   whitelistPatterns: () => [
+  //     /^v-((?!application).)*$/,
+  //     /^\.theme--light*/,
+  //     /.*-transition/,
+  //   ],
+  //   whitelistPatternsChildren: [/^v-((?!application).)*$/, /^theme--*/],
+  // },
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: ['@nuxtjs/i18n', '@nuxtjs/pwa', '@nuxtjs/robots', '@nuxtjs/sitemap'],

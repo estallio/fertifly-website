@@ -1,5 +1,5 @@
 /*--------------------------
-    Color Darker Version  
+    Color Darker Version
 ----------------------------*/
 
 .active-dark {
@@ -28,10 +28,6 @@
     > li
     > a {
     color: #ffffff;
-  }
-
-  .header-one-page-nav.v-app-bar--is-scrolled .feather-menu {
-    color: #c6c9d8;
   }
 
   .bg_image--3,
@@ -193,7 +189,7 @@
     ul.mainmenu
     li.has-droupdown
     > a.open::after {
-    border-color: transparent transparent #f9004d transparent;
+    border-color: transparent transparent $gradient-color-light transparent;
   }
   ul.nav.tab-style--1 li a::before {
     background: rgba(198, 201, 216, 0.75);

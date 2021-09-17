@@ -10,7 +10,8 @@
       <v-list-item class="pa-5">
         <div class="logo">
           <img
-            src="../../assets/images/logo/logo-symbol-dark.png"
+            style="max-width: 80%"
+            src="../../assets/images/logo/logo.png"
             alt="Creative Agency Logo"
           />
         </div>
@@ -20,126 +21,27 @@
           icon
           @click="drawer = !drawer"
         >
-          <x-icon></x-icon>
+          <ClosingIcon class="ownIcon" style="width:20px" />
         </v-btn>
       </v-list-item>
 
       <v-list>
-        <v-list-group
-          v-for="item in homeVersionSidebarDropDownItems"
-          :key="item.title"
-          v-model="item.active"
-        >
-          <template v-slot:activator>
-            <v-list-item-content>
-              <v-list-item-title v-text="item.title"></v-list-item-title>
-            </v-list-item-content>
-          </template>
-
-          <v-list-item
-            link
-            :ripple="false"
-            v-for="child in item.items"
-            :to="child.to"
-            :key="child.title"
-          >
-            <v-list-item-content>
-              <v-list-item-title v-text="child.title"></v-list-item-title>
-            </v-list-item-content>
-          </v-list-item>
-        </v-list-group>
-        <!-- End sidebar home dropdown item list -->
-
-        <v-list-group
-          v-for="item in servicesSidebarDropDownItems"
-          :key="item.title"
-          v-model="item.active"
-        >
-          <template v-slot:activator>
-            <v-list-item-content>
-              <v-list-item-title v-text="item.title"></v-list-item-title>
-            </v-list-item-content>
-          </template>
-
-          <v-list-item
-            link
-            :ripple="false"
-            v-for="child in item.items"
-            :to="child.to"
-            :key="child.title"
-          >
-            <v-list-item-content>
-              <v-list-item-title v-text="child.title"></v-list-item-title>
-            </v-list-item-content>
-          </v-list-item>
-        </v-list-group>
-        <!-- End sidebar services dropdown item list -->
-
-        <v-list-group
-          v-for="item in pagesSidebarDropDownItems"
-          :key="item.title"
-          v-model="item.active"
-        >
-          <template v-slot:activator>
-            <v-list-item-content>
-              <v-list-item-title v-text="item.title"></v-list-item-title>
-            </v-list-item-content>
-          </template>
-
-          <v-list-item
-            link
-            :ripple="false"
-            v-for="child in item.items"
-            :to="child.to"
-            :key="child.title"
-          >
-            <v-list-item-content>
-              <v-list-item-title v-text="child.title"></v-list-item-title>
-            </v-list-item-content>
-          </v-list-item>
-        </v-list-group>
-        <!-- End sidebar pages dropdown item list -->
-
-        <v-list-group
-          v-for="item in blocksSidebarDropDownItems"
-          :key="item.title"
-          v-model="item.active"
-        >
-          <template v-slot:activator>
-            <v-list-item-content>
-              <v-list-item-title v-text="item.title"></v-list-item-title>
-            </v-list-item-content>
-          </template>
-
-          <v-list-item
-            link
-            :ripple="false"
-            v-for="child in item.items"
-            :to="child.to"
-            :key="child.title"
-          >
-            <v-list-item-content>
-              <v-list-item-title v-text="child.title"></v-list-item-title>
-            </v-list-item-content>
-          </v-list-item>
-        </v-list-group>
-        <!-- End sidebar block dropdown item list -->
 
         <v-list-item
           :ripple="false"
           v-for="item in items"
           :key="item.title"
-          :to="item.to"
           link
         >
-          <v-list-item-content>
-            <v-list-item-title>{{ item.title }}</v-list-item-title>
-          </v-list-item-content>
+            <v-list-item-content>
+                <v-list-item-title>
+                  <nuxt-link :to="localePath(item.to)" style="color: inherit">{{ item.title }}</nuxt-link>
+                </v-list-item-title>
+            </v-list-item-content>
         </v-list-item>
-        <!-- End mobile menu sidebar item list -->
+
       </v-list>
     </v-navigation-drawer>
-    <!-- End sidebar mobile menu -->
 
     <v-app-bar
       dark
@@ -148,293 +50,52 @@
       absolute
       class="default-header"
     >
-      <router-link to="/" class="logo">
-        <slot name="logo"></slot>
-      </router-link>
-      <!-- End brand logo -->
+      <nuxt-link :to="localePath('/')" class="logo">
+        <img style="max-height: 100%;" src="../../assets/images/logo/logo.png"/>
+      </nuxt-link>
+
       <v-spacer></v-spacer>
       <v-btn
         icon
         class="ma-0 pa-0 hidden-md-and-up"
         @click="drawer = !drawer"
       >
-        <menu-icon></menu-icon>
+        <MenuIcon class="ownIcon" style="width:25px" />
       </v-btn>
-      <!-- End mobile menu icon -->
+
       <v-toolbar-items class="hidden-xs-only hidden-sm-only height-auto">
-        <v-menu
-          open-on-hover
-          bottom
-          min-width="240"
-          offset-y
-          transition="scroll-y-reverse-transition"
-        >
-          <template v-slot:activator="{ on, attrs }">
-            <v-btn :ripple="false" text v-bind="attrs" v-on="on">
-              Home
-            </v-btn>
-          </template>
-
-          <v-list>
-            <v-list-item
-              link
-              v-for="(item, index) in HomeVerisiondropDownItems"
-              :key="index"
-              :to="item.to"
-            >
-              <v-list-item-title>{{ item.title }}</v-list-item-title>
-            </v-list-item>
-          </v-list>
-        </v-menu>
-        <!-- End Home variants dropdown -->
-        <v-menu
-          open-on-hover
-          bottom
-          min-width="240"
-          offset-y
-          transition="scroll-y-reverse-transition"
-        >
-          <template v-slot:activator="{ on, attrs }">
-            <v-btn :ripple="false" text v-bind="attrs" v-on="on">
-              Service
-            </v-btn>
-          </template>
-
-          <v-list>
-            <v-list-item
-              link
-              v-for="(item, index) in ServicesdropDownItems"
-              :key="index"
-              :to="item.to"
-            >
-              <v-list-item-title>{{ item.title }}</v-list-item-title>
-            </v-list-item>
-          </v-list>
-        </v-menu>
-        <!-- End Services dropdown -->
-        <v-btn :ripple="false" text to="/about">About</v-btn>
-
-        <v-menu
-          open-on-hover
-          bottom
-          min-width="240"
-          offset-y
-          transition="scroll-y-reverse-transition"
-        >
-          <template v-slot:activator="{ on, attrs }">
-            <v-btn :ripple="false" text v-bind="attrs" v-on="on">
-              Pages
-            </v-btn>
-          </template>
-
-          <v-list>
-            <v-list-item
-              link
-              v-for="(item, index) in PagesdropDownItems"
-              :key="index"
-              :to="item.to"
-            >
-              <v-list-item-title>{{ item.title }}</v-list-item-title>
-            </v-list-item>
-          </v-list>
-        </v-menu>
-        <!-- End pages dropdown -->
-
-        <v-menu
-          min-width="240"
-          open-on-hover
-          bottom
-          offset-y
-          transition="scroll-y-reverse-transition"
-        >
-          <template v-slot:activator="{ on, attrs }">
-            <v-btn text :ripple="false" v-bind="attrs" v-on="on">
-              Blocks
-            </v-btn>
-          </template>
-
-          <v-list>
-            <v-list-item
-              link
-              v-for="(item, index) in blocksDropDownItems"
-              :key="index"
-              :to="item.to"
-            >
-              <v-list-item-title>{{ item.title }}</v-list-item-title>
-            </v-list-item>
-          </v-list>
-        </v-menu>
-        <!-- End blocks dropdown -->
-        <v-btn :ripple="false" text to="/contact">Contact</v-btn>
-        <a
-          class="rn-btn"
-          href="https://themeforest.net/checkout/from_item/30195230?license=regular"
-        >
-          <span>buy now</span>
-        </a>
+        <nuxt-link v-for="item in items" :key="item.title" :to="localePath(item.to)" style="color: inherit">
+          <v-btn :ripple="false" text link>
+            {{ item.title }}
+          </v-btn>
+        </nuxt-link>
       </v-toolbar-items>
-      <!-- End header menu item -->
     </v-app-bar>
-    <!-- End top header navbar -->
   </div>
 </template>
 
 <script>
-import { XIcon, MenuIcon } from 'vue-feather-icons'
+  import ClosingIcon from '../../assets/images/closing-icon.svg?inline';
+  import MenuIcon from '../../assets/images/menu-icon.svg?inline';
 
-export default {
-  components: {
-    XIcon,
-    MenuIcon
-  },
-  data: () => ({
-    drawer: false,
-    items: [
-      { title: "About", to: "/about" },
-      { title: "Contact", to: "/contact" },
-    ],
-    HomeVerisiondropDownItems: [
-      { title: "Main Demo", to: "/main-demo" },
-      { title: "Main Demo Dark", to: "/main-demo-dark" },
-      { title: "Creative Agency", to: "/creative-agency" },
-      { title: "Creative Agency Landing", to: "/landing-creative-agency" },
-      { title: "Personal Portfolio", to: "/personal-portfolio" },
-      { title: "Personal Portfolio 02", to: "landing-personal-portfolio-02" },
-      {
-        title: "Personal Portfolio Landing",
-        to: "/landing-personal-portfolio",
-      },
-      { title: "Designer Portfolio", to: "/designer-portfolio" },
-      { title: "Creative Portfolio", to: "/creative-portfolio" },
-      { title: "Business", to: "/business" },
-      { title: "Digital Agency", to: "/digital-agency" },
-      { title: "Minimal Portfolio", to: "/minimal-portfolio" },
-      { title: "Studio Agency", to: "/studio-agency" },
-      { title: "Home Particles", to: "/landing-home-particle" },
-      { title: "Startup", to: "/startup" },
-      { title: "Home Paralax", to: "/parallax-home" },
-      { title: "Corporate Business", to: "/corporate-business" },
-      { title: "Interactive Agency", to: "/interactive-agency" },
-    ],
-    ServicesdropDownItems: [
-      { title: "Service", to: "/service" },
-      { title: "Service Details", to: "/service-details" },
-    ],
-    PagesdropDownItems: [
-      { title: "Blog List", to: "/blog" },
-      { title: "Blog Details", to: "/blog-details" },
-      { title: "Service", to: "/service" },
-      { title: "Service Details", to: "/service-details" },
-      { title: "Portfolio", to: "/portfolio" },
-      { title: "Portfolio Details", to: "/portfolio-details" },
-      { title: "404 Page", to: "/404" },
-    ],
-    blocksDropDownItems: [
-      { title: "Portfolio", to: "/portfolio" },
-      { title: "Team", to: "/team" },
-      { title: "Service", to: "/service" },
-      { title: "Video Popup", to: "/video-popup" },
-      { title: "Progressbar", to: "/progressbar" },
-      { title: "Gallery", to: "/gallery" },
-      { title: "Counters", to: "/counter" },
-      { title: "Blog List", to: "/blog" },
-      { title: "Client Logo", to: "/brand" },
-      { title: "Contact Form", to: "/contact-form" },
-      { title: "Columns", to: "/column" },
-      { title: "Button", to: "/button" },
-      { title: "List Style", to: "/list-style" },
-      { title: "Testimonial", to: "/testimonial" },
-      { title: "Accordion", to: "/accordion-with-tab" },
-      { title: "Pricing Plan", to: "/pricing-plan" },
-    ],
-
-    // Bellow mobile menu items
-    homeVersionSidebarDropDownItems: [
-      {
-        items: [
-          { title: "Main Demo", to: "/main-demo" },
-          { title: "Main Demo Dark", to: "/main-demo-dark" },
-          { title: "Creative Agency", to: "/creative-agency" },
-          {
-            title: "Creative Agency Landing",
-            to: "/landing-creative-agency",
-          },
-          { title: "Personal Portfolio", to: "/persoanl-portfolio" },
-          {
-            title: "Personal Portfolio 02",
-            to: "landing-persoanl-portfolio-02",
-          },
-          {
-            title: "Personal Portfolio Landing",
-            to: "/landing-persoanl-portfolio",
-          },
-          { title: "Designer Portfolio", to: "/designer-portfolio" },
-          { title: "Creative Portfolio", to: "/creative-portfolio" },
-          { title: "Business", to: "/business" },
-          { title: "Digital Agency", to: "/digital-agency" },
-          { title: "Minimal Portfolio", to: "/minimal-portfolio" },
-          { title: "Studio Agency", to: "/studio-agency" },
-          { title: "Home Particles", to: "/landing-home-particle" },
-          { title: "Startup", to: "/startup" },
-          { title: "Home Paralax", to: "/parallax-home" },
-          { title: "Corporate Business", to: "/corporate-business" },
-          { title: "Interactive Agency", to: "/interactive-agency" },
-        ],
-        title: "Home",
-      },
-    ],
-    servicesSidebarDropDownItems: [
-      {
-        items: [
-          { title: "Service", to: "/service" },
-          { title: "Service Details", to: "/service-details" },
-        ],
-        title: "Service",
-      },
-    ],
-    pagesSidebarDropDownItems: [
-      {
-        items: [
-          { title: "Blog List", to: "/blog" },
-          { title: "Blog Details", to: "/blog-details" },
-          { title: "Service", to: "/service" },
-          { title: "Service Details", to: "/service-details" },
-          { title: "Portfolio", to: "/portfolio" },
-          { title: "Portfolio Details", to: "/portfolio-details" },
-          { title: "404 Page", to: "/404" },
-        ],
-        title: "Pages",
-      },
-    ],
-    blocksSidebarDropDownItems: [
-      {
-        items: [
-          { title: "Portfolio", to: "/portfolio" },
-          { title: "Team", to: "/team" },
-          { title: "Service", to: "/service" },
-          { title: "Video Popup", to: "/video-popup" },
-          { title: "Progressbar", to: "/progressbar" },
-          { title: "Gallery", to: "/gallery" },
-          { title: "Counters", to: "/counter" },
-          { title: "Blog List", to: "/blog" },
-          { title: "Client Logo", to: "/brand" },
-          { title: "Contact Form", to: "/contact-form" },
-          { title: "Columns", to: "/column" },
-          { title: "Button", to: "/button" },
-          { title: "List Style", to: "/list-style" },
-          { title: "Testimonial", to: "/testimonial" },
-          { title: "Accordion", to: "/accordion-with-tab" },
-          { title: "Pricing Plan", to: "/pricing-plan" },
-        ],
-        title: "Block",
-      },
-    ],
-  }),
-};
+  export default {
+    components: {
+      ClosingIcon,
+      MenuIcon
+    },
+    data () {
+      return {
+        drawer: false,
+        items: this.$t('header.menu')
+      }
+    }
+  }
 </script>
-
-<style lang="scss">
-.feather-menu {
-  color: #c6c9d8;
-}
+<style>
+  .ownIcon {
+    fill: #444;
+  }
+  .v-navigation-drawer--is-mobile .v-list-item .v-list-item__title {
+    color: #444;
+  }
 </style>

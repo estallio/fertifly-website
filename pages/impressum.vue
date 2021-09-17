@@ -27,8 +27,8 @@ export default {
   },
   nuxtI18n: {
     paths: {
-      en: '/partner',
-      de: '/partner'
+      en: '/imprint',
+      de: '/impressum'
     }
   }
 }

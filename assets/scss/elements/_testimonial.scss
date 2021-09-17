@@ -1,12 +1,12 @@
 /* ---------------------------
-Testimonial Styles 
+Testimonial Styles
 ------------------------------*/
 
 
 
 
 /*-----------------------------
-    Testminial Tab Content  
+    Testminial Tab Content
 --------------------------------*/
 .rn-testimonial-content {
     position: relative;
@@ -34,18 +34,18 @@ Testimonial Styles
             @media #{$lg-layout} {
                 font-size: 32px;
                 line-height: 53px;
-            } 
+            }
             @media #{$md-layout} {
                 font-size: 28px;
                 line-height: 48px;
                 padding: 0;
-            } 
+            }
             @media #{$sm-layout} {
                 font-size: 17px !important;
                 line-height: 30px !important;
                 padding: 0;
                 font-weight: 400;
-            } 
+            }
         }
     }
     .author-info {
@@ -90,7 +90,7 @@ Testimonial Styles
             right: 0;
             width: 100%;
             margin-left: -48px;
-        } 
+        }
     }
     &::after{
         position: absolute;
@@ -105,7 +105,7 @@ Testimonial Styles
         z-index: 1;
         @media #{$sm-layout} {
             display: none;
-        } 
+        }
     }
 
 }
@@ -145,7 +145,7 @@ Testimonial Styles
 
 
 /* ------------------------------
-Testimonial Thumbnail 
+Testimonial Thumbnail
 -------------------------------- */
 .rn-testimonial-area {
     ul {
@@ -200,7 +200,7 @@ Testimonial Thumbnail
                     &::after {
                         width: 13px;
                         height: 13px;
-                        background: #f9004d;
+                        background: $gradient-color-light;
                         right: -8.5px;
                         top: -8.5px;
                         position: absolute;
@@ -274,7 +274,7 @@ Testimonial Thumbnail
         transform: none!important;
         @media #{$sm-layout} {
             flex: 0 0 350px;
-        } 
+        }
     }
     .v-slide-group__wrapper {
         justify-content: center;
@@ -285,19 +285,19 @@ Testimonial Thumbnail
         margin: 0 13px 30px 13px !important;
         @media #{$sm-layout} {
             margin: 0 5px 10px 5px !important;
-        } 
+        }
         .thumb {
-           
+
             @media #{$sm-layout} {
                 width: 62px;
-            } 
+            }
         }
 
 
         &::after{
             width: 13px;
             height: 13px;
-            background: #f9004d;
+            background: $gradient-color-light;
             right: -5px;
             top: -5px;
             position: absolute;
@@ -330,7 +330,7 @@ Testimonial Thumbnail
             }
         }
     }
-   
+
 }
 
 .active-dark{

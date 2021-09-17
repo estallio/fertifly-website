@@ -7,19 +7,21 @@ import config from './config'
 import de from './lang/de'
 import en from './lang/en'
 
+const { NODE_ENV = "production" } = process.env;
+
+const isDev = NODE_ENV === "development";
+
 export default {
   // Target: https://go.nuxtjs.dev/config-target
   target: 'static',
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
-    // '~/plugins/vuetify.js', - not needed when using nuxt-vuetify
     '~/plugins/coollightbox.client.js',
-    '~/plugins/vuescrollactive.client.js',
-    '~/plugins/vueparticles.client.js',
     '~/plugins/vuecountto.client.js',
     '~/plugins/vuevisibilitysensor.client.js',
-    // Needed for previewing changed content
+    '~/plugins/vueslickcarousel.js',
+    '~/plugins/fontawesome.js',
     '~/plugins/preview.client.js',
   ],
 
@@ -28,11 +30,7 @@ export default {
 
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
-    // TODO: css size could be reduced if imports were conditionally
-    //  but maybe Nuxt does some optimization and it doesn't matter anyway
    'vuetify/dist/vuetify.min.css',
-   '@mdi/font/css/materialdesignicons.css',
-   '@fortawesome/fontawesome-free/css/all.css',
    'vue-cool-lightbox/dist/vue-cool-lightbox.min.css',
    'vue-slick-carousel/dist/vue-slick-carousel.css',
    'vue-slick-carousel/dist/vue-slick-carousel-theme.css',
@@ -40,82 +38,95 @@ export default {
   ],
 
   vuetify: {
-    theme: {
-      themes: {
-        light: {
-          primary: '#f9004d',
-          success: '#3EB75E',
-          accent: '#FF7F5C',
-          teal: '#26B0A1',
-          warning: '#FF8F3C',
-          error: '#FF585A',
-          cyan: '#42D3D5',
-        },
-      },
+    defaultAssets: {
+      font: false,
+      icons: false,
     },
     icons: {
-      iconfont: 'mdi',
+      // reduces size: https://stackoverflow.com/questions/67796971/nuxtjs-vuetify-purgecss
+      iconfont: 'mdiSvg'
     },
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
-    // transpile: ['vuetify/lib'],
-    // plugins: [new VuetifyLoaderPlugin()],
-    // TODO: maybe there is a way to reduce CSS size as I use only a part of the things
+    analyze: true,
     extractCSS: true,
-    // extend(config, { isDev, isClient }) {
-    //   if (!isDev && isClient) {
-    //     config.plugins.push(
-    //       new PurgecssPlugin({
-    //         paths: glob.sync([
-    //           path.join(__dirname, './pages/**/*.vue'),
-    //           path.join(__dirname, './layouts/**/*.vue'),
-    //           path.join(__dirname, './components/**/*.vue'),
-    //           path.join(__dirname, './node_modules/vuetify/src/*.ts')
-    //         ]),
-    //         whitelist: ['html', 'body']
-    //       })
-    //     )
-    //   }
-    // }
+    postcss:
+      {
+        // disable postcss plugins in development
+        plugins: isDev
+          ? {} : {
+            // maybe configure this if there is time somewhen: https://warrenlee.tech/blog/optimizing-css-with-purgecss
+            // "@fullhuman/postcss-purgecss": {
+            //   content: [
+            //     'components/**/*.{js,ts,vue}',
+            //     'layouts/**/*.{js,ts,vue}',
+            //     'pages/**/*.{js,ts,vue}',
+            //     'plugins/**/*.{js,ts,vue}',
+            //     'node_modules/vuetify/src/**/*.{js,ts,vue}',
+            //     'node_modules/vue-slick-carousel/**/*.{js,ts,vue}'
+            //   ],
+            //   css: [
+            //     'vue-cool-lightbox/dist/vue-cool-lightbox.min.css',
+            //     'vue-slick-carousel/dist/vue-slick-carousel.css',
+            //     'vue-slick-carousel/dist/vue-slick-carousel-theme.css',
+            //     'vuetify/dist/vuetify.min.css',
+            //     '~/assets/scss/main.scss'
+            //   ],
+            //   styleExtensions: ['.css', '.sass', '.scss'],
+            //   whitelist: [
+            //     'container',
+            //     'row',
+            //     'spacer',
+            //     'aos-animate',
+            //     'col',
+            //     '[type=button]',
+            //     'v-application p'
+            //   ],
+            //   whitelistPatterns: [
+            //     /^v-.*/,
+            //     /^col-.*/,
+            //     /^theme-.*/,
+            //     /^rounded-.*/,
+            //     /^data-aos-.*/,
+            //     /^(red|grey)--text$/,
+            //     /^text--darken-[1-4]$/,
+            //     /^text--lighten-[1-4]$/
+            //   ],
+            //   whitelistPatternsChildren: [
+            //     /^post-content/,
+            //     /^v-input/,
+            //     /^swiper-.*/,
+            //     /^pswp.*/,
+            //     /^v-text-field.*/,
+            //     /^v-progress-linear/
+            //   ]
+            // },
+            "css-byebye": {
+              rulesToRemove: [
+                /.*\.v-application--is-rtl.*/,
+                /.*\.theme--dark.*/
+              ]
+            }
+          }
+      },
   },
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
-    // https://go.nuxtjs.dev/eslint
     // '@nuxtjs/eslint-module',
-    // https://go.nuxtjs.dev/stylelint
     // '@nuxtjs/stylelint-module',
-    // https://go.nuxtjs.dev/tailwindcss
-    // '@nuxtjs/tailwindcss',
-    // https://sanity.nuxtjs.org
     '@nuxtjs/sanity/module',
-    // https://github.com/moritzsternemann/vue-plausible
     'vue-plausible',
-    // https://vuetifyjs.com/en/getting-started/installation/#nuxt-install
     '@nuxtjs/vuetify',
-    '@nuxtclub/feathericons'
+    "@nuxtjs/svg"
   ],
 
-  // purgeCSS: {
-  //   paths: [
-  //     path.join(__dirname, './pages/**/*.vue'),
-  //     path.join(__dirname, './layouts/**/*.vue'),
-  //     path.join(__dirname, './components/**/*.vue'),
-  //     path.join(__dirname, './nuxt.config.js'),
-  //     path.join(__dirname, './node_modules/@nuxtjs/vuetify/**/*.ts'),
-  //     path.join(__dirname, './node_modules/@nuxt/vue-app/template/**/*.html'),
-  //     path.join(__dirname, './node_modules/@nuxt/vue-app/template/**/*.vue'),
-  //   ],
-  //   whitelist: ['v-application', 'v-application--wrap'],
-  //   whitelistPatterns: () => [
-  //     /^v-((?!application).)*$/,
-  //     /^\.theme--light*/,
-  //     /.*-transition/,
-  //   ],
-  //   whitelistPatternsChildren: [/^v-((?!application).)*$/, /^theme--*/],
-  // },
+  svg: {
+    vueSvgLoader: {
+    },
+  },
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: ['@nuxtjs/i18n', '@nuxtjs/pwa', '@nuxtjs/robots', '@nuxtjs/sitemap'],
@@ -294,4 +305,8 @@ export default {
   pwa: {
     // TODO: lang manifest different languages?
   },
+
+  server: {
+    host: "0.0.0.0"
+  }
 }

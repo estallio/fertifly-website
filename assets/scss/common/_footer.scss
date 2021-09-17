@@ -1,5 +1,5 @@
 /*--------------------
-Footer Styles 
+Footer Styles
 ----------------------*/
 
 .footer-wrapper,.footer-left {
@@ -8,7 +8,7 @@ Footer Styles
 
 .footer-default {
     .footer-left {
-        background: linear-gradient(145deg, #f81f01 0%, #ee076e 100%);
+        background: linear-gradient(145deg, $gradient-color-light 0%, $gradient-color-dark 100%);
         padding: 120px 120px;
         position: relative;
         z-index: 2;
@@ -20,6 +20,9 @@ Footer Styles
         @media #{$md-layout} {
             padding: 60px 70px;
         }
+        @media only screen and (min-width: 960px) {
+          padding: 120px 80px;
+        }
         @media #{$sm-layout} {
             padding: 60px 30px;
         }
@@ -30,7 +33,7 @@ Footer Styles
             height: 100%;
             left: 0;
             top: 0;
-            background-image: url("../images/pattern-1.png");
+            background-image: url("../images/bg/bg-image-pattern.png");
             background-repeat: repeat;
             z-index: 1;
             opacity: 0.5;
@@ -43,7 +46,7 @@ Footer Styles
 
             &::after {
                 //content: "tryDO";
-                content: url(../images/logo/big-logo.png);
+                content: url(../images/logo/logo-footer.png);
                 position: absolute;
                 right: 0;
                 top: 50%;
@@ -72,18 +75,23 @@ Footer Styles
 
             h2 {
                 color: #ffffff;
-                font-size: 75px;
+                font-size: 60px;
                 font-weight: 900;
                 font-family: 'Montserrat', sans-serif;
-                line-height: 90px;
+                line-height: 75px;
 
                 @media #{$lg-layout} {
                     font-size: 50px;
                     line-height: 61px;
                 }
 
+                @media #{$md-layout} {
+                  font-size: 42px;
+                  line-height: 55px;
+                }
+
                 @media #{$sm-layout} {
-                    font-size: 45px;
+                    font-size: 35px;
                     line-height: 51px;
                 }
             }
@@ -181,7 +189,7 @@ Footer Styles
 }
 
 /*---------------------
-Footer Style Two 
+Footer Style Two
 ------------------------ */
 .footer-style-2 {
     p {
@@ -195,7 +203,7 @@ Footer Style Two
 }
 
 /*-------------------------
-    Copyright Style Css 
+    Copyright Style Css
 --------------------------*/
 .copyright-text {
     position: absolute;

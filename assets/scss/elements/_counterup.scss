@@ -1,5 +1,5 @@
 /*========================
-    Counterup Area 
+    Counterup Area
 ==========================*/
 
 // Counter Style One
@@ -13,7 +13,6 @@
             display: inline-block;
             margin-bottom: 17px;
             position: relative;
-            display: inline-block;
             color: $theme-color;
             margin-left: -13px;
             @media #{$sm-layout} {
@@ -21,13 +20,6 @@
                 line-height: 56px;
                 margin-bottom: 5px;
                 margin-left: -11px;
-            }
-            &::after {
-                right: -26px;
-                position: absolute;
-                top: -17px;
-                font-size: 40px;
-                content: "+";
             }
         }
     }
@@ -109,7 +101,7 @@
         &.counter {
             font-size: 50px;
             line-height: 60px;
-            color: #f9004d;
+            color: $gradient-color-light;
             display: inline-block;
             margin-bottom: 10px;
         }

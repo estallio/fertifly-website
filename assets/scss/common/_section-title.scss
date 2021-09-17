@@ -1,5 +1,5 @@
 /*===================
-    Section Title 
+    Section Title
 ====================*/
 
 .section-title {
@@ -52,7 +52,7 @@
         }
         br {
             @media #{$sm-layout} {
-                display: none;    
+                display: none;
             }
         }
     }
@@ -93,10 +93,10 @@
 
         &.text-white {
             .heading-title {
-                color: #ffffff;
+                color: $slider-light-color-heading;
             }
             p {
-                color: #ffffff;
+                color: $slider-light-color-description;
             }
         }
     }

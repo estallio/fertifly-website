@@ -1,5 +1,5 @@
 /*=========================
-    Section Separation 
+    Section Separation
 ==========================*/
 
 .rn-section-gap {
@@ -50,7 +50,7 @@
 .pra{
     font-size: 18px;
     line-height: 2em;
-    
+
     @media #{$sm-layout} {
         font-size: 14px;
         line-height: 24px;
@@ -386,7 +386,7 @@
         .mt_sm--#{5 * $i} {
             margin-top: 5px *$i !important;
         }
-        
+
         .ml_sm--#{5 * $i} {
             margin-left: 5px *$i !important;
         }
@@ -420,7 +420,7 @@
     .mb_sm--0 {
         margin-bottom: 0;
     }
-    
+
 }
 
 

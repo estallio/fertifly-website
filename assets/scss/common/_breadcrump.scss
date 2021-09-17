@@ -1,5 +1,5 @@
 /*====================
-    Breadcrump Area 
+    Breadcrump Area
 ======================*/
 
 
@@ -9,8 +9,8 @@
     z-index: 2;
     h2 {
         &.heading-title {
-            background: #f81f01;
-            background: linear-gradient(145deg, #f81f01 0%, #ee076e 100%);
+            background: $gradient-color-dark;
+            background: linear-gradient(145deg, $gradient-color-light 0%, $gradient-color-dark 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             @media #{$sm-layout} {
@@ -27,22 +27,22 @@
         @extend %liststyle;
         li {
             display: inline-block;
-            color: #fff;
+            color: #0d8d2d;
             position: relative;
             text-transform: capitalize;
             a {
-                color: #fff;
-                &.router-link-exact-active{
-                    color: #f10;
+                color: #000;
+                &.router-link-exact-active, &.nuxt-link-exact-active{
+                    color: $breadcrumbs-color;
                 }
             }
             &.current-page {
-                color: #f10;
+                color: $breadcrumbs-color;
             }
             & + li {
                 &::before {
                     content: "/";
-                    color: #fff;
+                    color: #000;
                     margin: 0 8px;
                     opacity: 0.6;
                 }
@@ -55,10 +55,10 @@
 }
 
 /*----------------------
-Page Title Area  
+Page Title Area
 --------------------------*/
 .rn-page-title {
-    h2 { 
+    h2 {
         &.heading-title {
             font-size: 72px;
             @media #{$lg-layout} {

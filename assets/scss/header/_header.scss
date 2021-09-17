@@ -33,11 +33,11 @@
         padding: 0 30px;
       }
       @media #{$large-mobile} {
-        padding: 0px 20px;
+        padding: 0 20px;
       }
     }
     .theme--dark.v-btn {
-      color: #c6c9d8;
+      color: #000000;
     }
   }
 }
@@ -50,7 +50,6 @@
   }
   .v-btn.v-btn.v-size--default:not(.btn-move) {
     font-size: 16px;
-    padding: 0;
     min-width: 0;
     margin: 0 15px;
     padding: 35px 0;
@@ -79,6 +78,7 @@
   }
   .v-toolbar__items {
     align-items: center;
+    margin-top: 50px;
   }
   .v-btn:not(.v-btn--icon) {
     &::before {
@@ -107,9 +107,6 @@
     @media #{$sm-layout} {
       padding: 0 35px;
     }
-  }
-  .feather-menu {
-    color: $body-color;
   }
   .theme--light.v-btn {
     color: $body-color;
@@ -203,9 +200,6 @@
       display: none;
     }
   }
-  .feather-menu {
-    color: #1f1f25;
-  }
 }
 // header on page nav css
 .header-one-page-nav {
@@ -229,7 +223,7 @@
       left: 0;
       width: 0;
       height: 3px;
-      background: #f9004d;
+      background: $gradient-color-light;
       -webkit-transition: 0.3s;
       -o-transition: 0.3s;
       transition: 0.3s;
@@ -262,9 +256,6 @@
     .logo-dark {
       display: block;
     }
-    .feather-menu {
-      color: $heading-color;
-    }
     .rn-btn {
       color: $heading-color;
       border-color: $heading-color;
@@ -290,7 +281,7 @@
   }
 
   &.v-toolbar:not(.tab-toolbar) .v-btn.v-btn.v-size--default:not(.btn-move) {
-    @media only screen and (min-width: 960px) and (max-width: 1200px) {
+    @media only screen and (min-width: 960px) {
       font-size: 14px;
       margin: 0 10px;
     }
@@ -320,7 +311,7 @@
       left: 0;
       width: 0;
       min-height: 2px;
-      background: #f9004d;
+      background: $gradient-color-light;
       -webkit-transition: 0.3s;
       -o-transition: 0.3s;
       transition: 0.3s;

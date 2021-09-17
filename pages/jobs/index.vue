@@ -46,6 +46,12 @@ export default {
         }
       ]
     }
+  },
+  nuxtI18n: {
+    paths: {
+      en: '/jobs',
+      de: '/jobs'
+    }
   }
 }
 </script>

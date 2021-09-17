@@ -1,5 +1,5 @@
 /*====================
-    About Area 
+    About Area
 ======================*/
 
 .rn-finding-us-area {
@@ -95,6 +95,7 @@
             img {
                 border-radius: 10px;
                 @media #{$lg-layout} {
+                    width: 100%;
                     border-radius: 0;
                 }
                 @media #{$md-layout} {
@@ -230,7 +231,7 @@
             display: inline-block;
             border-radius: 4px;
             span {
-                color: #f9004d;
+                color: $gradient-color-light;
             }
         }
     }

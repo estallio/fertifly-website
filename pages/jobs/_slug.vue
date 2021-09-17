@@ -33,6 +33,12 @@ export default {
     }
 
     return payload
+  },
+  nuxtI18n: {
+    paths: {
+      en: '/jobs/:slug',
+      de: '/jobs/:slug'
+    }
   }
 }
 </script>

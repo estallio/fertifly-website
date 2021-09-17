@@ -1,9 +1,19 @@
 //===== Colors =====//
-$theme-color: #0a27e2;
-$body-color: #5bc72e;
-$heading-color: #ec163c;
-$border-color: #ffe309;
+$theme-color: #444;
+$body-color: #000000;
+$heading-color: #006C33;
+$border-color: #241F20;
 $white:#fff;
+
+$gradient-color-light: #006C33;
+$gradient-color-dark: #006C33;
+
+$breadcrumbs-color: $gradient-color-dark;
+
+$slick-hover-color: $gradient-color-dark;
+
+$slider-light-color-heading:$gradient-color-dark;
+$slider-light-color-description:$gradient-color-dark;
 
 /*===============================
     Font Family
@@ -30,8 +40,8 @@ $colorList: $color-1, $color-2 ,$color-3 ,$color-4;
 $body-line-height: 1.714286;
 //==== Font size =====//
 $body-font-size: 14px;
-$h1: 64px;
-$h2: 54px;
+$h1: 50px;
+$h2: 40px;
 $h3: 24px;
 $h4: 20px;
 $h5: 18px;
@@ -63,3 +73,35 @@ $large-mobile: 'only screen and (max-width: 599px)';
 /* container 450px*/
 $small-mobile: 'only screen and (max-width: 479px)';
 /* container 300px*/
+
+
+.flex-lg{
+  @media only screen and (min-width: 960px) {
+    display: flex;
+    flex: 1;
+  }
+}
+.flex-lg-column{
+  @media only screen and (min-width: 960px) {
+    flex-direction: column;
+  }
+}
+.justify-lg-center{
+  @media only screen and (min-width: 960px) {
+    justify-content: center;
+  }
+}
+
+h3 {
+  &.heading-title {
+    font-size: 26px;
+
+    @media #{$lg-layout} {
+      font-size: 23px;
+    }
+
+    @media #{$sm-layout} {
+      font-size: 20px;
+    }
+  }
+}

@@ -24,6 +24,12 @@ export default {
         return state.posts
       },
     }),
+  },
+  nuxtI18n: {
+    paths: {
+      en: '/team',
+      de: '/team'
+    }
   }
 }
 </script>

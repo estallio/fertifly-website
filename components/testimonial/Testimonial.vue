@@ -43,9 +43,9 @@
         </client-only>
         <!-- End .v-tabs-items -->
         <v-tabs v-model="tab" centered hide-slider center-active>
-          <v-tab v-for="item in tabItems" :key="item.id">
+          <v-tab v-for="item in testimonialContent" :key="item.id">
             <div class="thumb">
-              <img :src="item.src" alt="testimonial image" />
+              <img :src="require(`../../assets/images/client/${item.imageName}`)" alt="testimonial image" />
             </div>
           </v-tab>
         </v-tabs>
@@ -61,131 +61,7 @@
     data() {
       return {
         tab: null,
-        testimonialContent: [
-          {
-            id: 1,
-            content: [
-              {
-                name: "AKLIMA",
-                description:
-                  "Aklima The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections Bonorum et Malorum original.",
-                designation: " COO, AMERIMAR ENTERPRISES, INC.",
-              },
-            ],
-          },
-          {
-            id: 2,
-            content: [
-              {
-                name: "FATIMA ASRAFY",
-                description:
-                  "Fatima Asrafy standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections Bonorum et Malorum original.",
-                designation: " COO, AMERIMAR ENTERPRISES, INC.",
-              },
-            ],
-          },
-          {
-            id: 3,
-            content: [
-              {
-                name: "JANNAT TUMPA",
-                description:
-                  "Jannat Tumpa The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections Bonorum et Malorum original.",
-                designation: " COO, AMERIMAR ENTERPRISES, INC.",
-              },
-            ],
-          },
-          {
-            id: 4,
-            content: [
-              {
-                name: "JOHNS DUE ",
-                description:
-                  "Standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections Bonorum et Malorum original since the 1500s.",
-                designation: " COO, AMERIMAR ENTERPRISES, INC.",
-              },
-            ],
-          },
-          {
-            id: 5,
-            content: [
-              {
-                name: "JOHN SMITH",
-                description:
-                  "John Smith The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections Bonorum et Malorum original.",
-                designation: " COO, AMERIMAR ENTERPRISES, INC.",
-              },
-            ],
-          },
-          {
-            id: 6,
-            content: [
-              {
-                name: "AMAR ORTHI",
-                description:
-                  "Chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections Bonorum et Malorum original original since the 1500s.",
-                designation: " COO, AMERIMAR ENTERPRISES, INC.",
-              },
-            ],
-          },
-          {
-            id: 7,
-            content: [
-              {
-                name: "FATIMA MA",
-                description:
-                  "The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections Bonorum et Malorum original.",
-                designation: " COO, AMERIMAR ENTERPRISES, INC.",
-              },
-            ],
-          },
-          {
-            id: 8,
-            content: [
-              {
-                name: "JON CUMMINS",
-                description:
-                  "Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections Bonorum et Malorum reproduced below original since the 1500s.",
-                designation: " COO, AMERIMAR ENTERPRISES, INC.",
-              },
-            ],
-          },
-        ],
-
-        tabItems: [
-          {
-            id: 1,
-            src: require("../../assets/images/client/testimonial-1.jpg"),
-          },
-          {
-            id: 2,
-            src: require("../../assets/images/client/testimonial-2.jpg"),
-          },
-          {
-            id: 3,
-            src: require("../../assets/images/client/testimonial-3.jpg"),
-          },
-          {
-            id: 4,
-            src: require("../../assets/images/client/testimonial-4.jpg"),
-          },
-          {
-            id: 5,
-            src: require("../../assets/images/client/testimonial-5.jpg"),
-          },
-          {
-            id: 6,
-            src: require("../../assets/images/client/testimonial-6.jpg"),
-          },
-          {
-            id: 7,
-            src: require("../../assets/images/client/testimonial-7.jpg"),
-          },
-          {
-            id: 8,
-            src: require("../../assets/images/client/testimonial-8.jpg"),
-          },
-        ],
+        testimonialContent: this.$t('index.testimonialSection.content')
       };
     },
   };

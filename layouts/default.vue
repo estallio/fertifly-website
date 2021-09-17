@@ -16,7 +16,7 @@
         right
         @click="toTop"
       >
-        <i class="fa fa-angle-up"></i>
+        <font-awesome-icon icon="angle-up" />
       </v-btn>
     </v-fab-transition>
   </v-app>
@@ -58,7 +58,7 @@
     line-height: 48px;
     font-size: 22px;
     font-weight: 600;
-    color: #f9004d;
+    color: $gradient-color-light;
   }
   .v-btn--absolute.v-btn--bottom,
   .v-btn--fixed.v-btn--bottom {

@@ -2,14 +2,13 @@
   <div>
     <!-- Start Header Area -->
     <Header>
-      <img slot="logo" src="../assets/images/logo/logo.png" />
+      <img slot="logo" style="max-height: 100%;" src="../assets/images/logo/logo.png" />
     </Header>
     <!-- End Header Area -->
 
     <!-- Start Breadcrump Area  -->
     <div
-      class="breadcrumb-area rn-bg-color ptb--120 bg_image bg_image--1"
-      data-black-overlay="6"
+      class="breadcrumb-area rn-bg-color ptb--120 bg_image bg_image--pattern"
     >
       <v-container>
         <v-row>
@@ -51,7 +50,7 @@
         <v-row>
           <v-col cols="12">
             <div class="section-title text-center">
-              <h3 class="fontWeight500">Our Fun Facts</h3>
+              <h3 class="fontWeight500">Zahlen und Fakten</h3>
             </div>
           </v-col>
         </v-row>
@@ -128,6 +127,7 @@
 </template>
 
 <script>
+  import { mapState } from 'vuex'
   export default {
     data() {
       return {
@@ -145,5 +145,21 @@
         ],
       };
     },
+    computed: {
+      availableLocales () {
+        return this.$i18n.locales.filter(i => i.code !== this.$i18n.locale)
+      },
+      ...mapState({
+        posts: (state) => {
+          return state.posts
+        },
+      }),
+    },
+    nuxtI18n: {
+      paths: {
+        en: '/about-us',
+        de: '/ueber-uns'
+      }
+    }
   };
 </script>

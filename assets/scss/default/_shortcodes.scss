@@ -3,7 +3,7 @@
 =================================*/
 
 /*====================================
-    Google Font  
+    Google Font
 ===================================*/
 
 @import url("https://fonts.googleapis.com/css?family=Montserrat:400,400i,500,600,700,800,900|Poppins:300,400,500,600,700,700i&display=swap");
@@ -80,23 +80,7 @@ font-family: 'Poppins', sans-serif;
 }
 
 .theme-gradient {
-  background: rgb(248, 31, 1);
-  background: -moz-linear-gradient(
-    145deg,
-    rgba(248, 31, 1, 1) 0%,
-    rgba(238, 7, 110, 1) 100%
-  );
-  background: -webkit-linear-gradient(
-    145deg,
-    rgba(248, 31, 1, 1) 0%,
-    rgba(238, 7, 110, 1) 100%
-  );
-  background: linear-gradient(
-    145deg,
-    rgba(248, 31, 1, 1) 0%,
-    rgba(238, 7, 110, 1) 100%
-  );
-  filter: "progid: DXImageTransform.Microsoft.gradient( startColorstr='#f81f01', endColorstr='#ee076e', GradientType=1)";
+  background: #ffffff;
 }
 
 .rn-text-white {
@@ -114,7 +98,7 @@ font-family: 'Poppins', sans-serif;
 }
 
 /*===============================
-    Background Color 
+    Background Color
 =================================*/
 
 @include config-bg-colors(
@@ -129,7 +113,7 @@ font-family: 'Poppins', sans-serif;
 );
 
 /*===========================
-    Background Image 
+    Background Image
 =============================*/
 
 .bg_overlay:before {
@@ -157,6 +141,10 @@ font-family: 'Poppins', sans-serif;
   }
 }
 
+.bg_image--pattern {
+  background: url(../images/bg/bg-image-pattern.png) repeat;
+}
+
 @for $i from 1 through 80 {
   .font--#{$i} {
     font-size: #{$i}px !important;
@@ -181,7 +169,7 @@ p:last-child {
 }
 
 /*=========================
-    Text specialized 
+    Text specialized
 ==========================*/
 
 .text-italic {
@@ -358,7 +346,7 @@ textarea:-ms-input-placeholder {
 }
 
 /*=============================
-	Overlay styles 
+	Overlay styles
 ==============================*/
 
 [data-overlay],
@@ -411,7 +399,7 @@ textarea:-ms-input-placeholder {
 }
 
 /*------------------------------
-    Scroll Up 
+    Scroll Up
 --------------------------------*/
 
 #scrollUp {

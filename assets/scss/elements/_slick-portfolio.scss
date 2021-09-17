@@ -1,0 +1,267 @@
+.portfolio-sacousel-inner {
+  .slick-list {
+    margin-left: -200px;
+    margin-right: -200px;
+
+    @media #{$md-layout} {
+      margin-left: 15px;
+      margin-right: 15px;
+    }
+
+    @media #{$lg-layout} {
+      margin-left: 15px;
+      margin-right: 15px;
+    }
+
+    @media #{$sm-layout} {
+      margin-left: 15px;
+      margin-right: 15px;
+    }
+  }
+}
+
+.portfolio-sacousel-inner {
+
+  .slick-slide {
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-bottom: -10px;
+  }
+}
+.portfolio-sacousel-inner {
+  .slick-list {
+    overflow: visible;
+  }
+}
+.portfolio-sacousel-inner,
+.rn-slick-dot {
+  .slick-dots {
+    bottom: -30px;
+    @media #{$large-mobile} {
+      bottom: -30px;
+    }
+    li {
+      width: 30px;
+      margin: 0;
+      opacity: .35;
+      position: relative;
+
+      button {
+        &::before {
+          display: none;
+        }
+
+        &::after {
+          background: #333;
+          width: 100%;
+          display: block;
+          content: '';
+          position: absolute;
+          left: 0;
+          width: 6px;
+          height: 6px;
+          @extend %transition;
+          border-radius: 50%;
+          background-color: transparent;
+          box-shadow: inset 0 0 0 5px #000;
+        }
+      }
+
+      &.slick-active {
+        opacity: 1;
+
+        button {
+          &::after {
+            -webkit-transform: scale(2);
+            transform: scale(2);
+            box-shadow: inset 0 0 0 1px $theme-color;
+            background-color: transparent;
+          }
+        }
+      }
+    }
+  }
+
+  // Dot Light
+  &.dot-light {
+    .slick-dots {
+      li {
+        button {
+          &::after {
+            background: #ffffff;
+            box-shadow: inset 0 0 0 5px #ffffff;
+          }
+        }
+
+        &.slick-active {
+          opacity: 1;
+
+          button {
+            &::after {
+              -webkit-transform: scale(2);
+              transform: scale(2);
+              box-shadow: inset 0 0 0 1px $theme-color;
+              background-color: transparent;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+/* Slick Arrow Button  */
+
+.portfolio-slick-activation {
+  position: relative;
+  @media #{$sm-layout} {
+    margin-left: -5px;
+    margin-right: -5px;
+  }
+  button {
+    &.slick-arrow {
+      position: absolute;
+      z-index: 3;
+      background: transparent;
+      font-size: 20px;
+      width: 253px;
+      height: 101%;
+
+      @media #{$lg-layout} {
+        width: 136px;
+      }
+
+      @media #{$md-layout} {
+        width: 100px;
+      }
+
+      @media #{$sm-layout} {
+        width: 100px;
+        display: none !important;
+      }
+
+      &::before {
+        line-height: 1;
+        opacity: 0.75;
+        font-size: 30px;
+        position: relative;
+        top: -14px;
+        transition: 0.5s;
+      }
+
+      &.slick-prev {
+        left: 0;
+        background: -moz-linear-gradient(left, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 100%);
+        background: -webkit-linear-gradient(left, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 100%);
+        background: linear-gradient(to right, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#000000', endColorstr='#00000000', GradientType=1);
+
+        &::before {
+          content: url(../images/icons/slick-arrow-left.png);
+        }
+
+        @media #{$md-layout} {
+          display: none !important;
+        }
+
+        @media #{$lg-layout} {
+          display: none !important;
+        }
+
+        @media #{$laptop-device} {
+          display: none !important;
+        }
+
+      }
+
+      &.slick-next {
+        right: 0;
+        background: -moz-linear-gradient(right, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 100%);
+        background: -webkit-linear-gradient(right, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 100%);
+        background: linear-gradient(to left, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#000000', endColorstr='#00000000', GradientType=1);
+
+        &::before {
+          content: url(../images/icons/slick-arrow-right.png);
+        }
+
+        @media #{$md-layout} {
+          display: none !important;
+        }
+
+        @media #{$lg-layout} {
+          display: none !important;
+        }
+
+        @media #{$laptop-device} {
+          display: none !important;
+        }
+      }
+
+
+      &:hover {
+        &.slick-prev {
+          padding-right: 50px;
+
+          @media #{$md-layout} {
+            padding-right: 10px;
+          }
+
+          @media #{$sm-layout} {
+            padding-right: 10px;
+          }
+        }
+
+        &.slick-next {
+          padding-left: 50px;
+
+          @media #{$md-layout} {
+            padding-right: 10px;
+          }
+
+          @media #{$sm-layout} {
+            padding-right: 10px;
+          }
+        }
+
+        &::before {
+          opacity: 1;
+        }
+      }
+
+
+    }
+  }
+}
+
+.rn-slick-activation {
+  &.item-fluid {
+    .slick-dots {
+      bottom: -60px;
+    }
+  }
+  button.slick-arrow{
+    transition: 0.5s;
+  }
+}
+
+/* Slick Gutter Space  */
+.slick-space-gutter--15 {
+  margin-left: -15px;
+  margin-right: -15px;
+
+  .slick-slide {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  .portfolio {
+    margin: 40px 0;
+  }
+}
+
+.slickdot--20 {
+  .slick-dots {
+    bottom: -20px;
+  }
+}

@@ -42,7 +42,7 @@
           <Contact>
             <img
               slot="contact-img"
-              src="../assets/images/about/about-6.jpg"
+              src="../assets/images/about/hermetia.jpg"
               alt="trydo"
             />
           </Contact>

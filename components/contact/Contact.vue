@@ -84,7 +84,7 @@
     </v-col>
     <v-col lg="6" md="6" sm="12" cols="12" order="1" order-md="2">
       <div class="thumbnail mb_md--40 mb_sm--40">
-        <img src="../../assets/images/about/about-6.jpg" alt="trydo" />
+        <img src="../../assets/images/about/hermetia.jpg" alt="trydo" />
       </div>
     </v-col>
   </v-row>

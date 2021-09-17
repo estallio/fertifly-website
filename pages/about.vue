@@ -36,7 +36,7 @@
           <img
             slot="thum-img"
             class="w-100"
-            src="../assets/images/about/about-3.jpg"
+            src="../assets/images/about/hermetia.jpg"
             alt="About Images"
           />
         </About>
@@ -78,7 +78,7 @@
         <div class="thumbnail">
           <div class="image">
             <img
-              src="../assets/images/about/finding-us-01.png"
+              src="../assets/images/about/hermetia.jpg"
               alt="Finding Images"
             />
           </div>

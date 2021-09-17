@@ -135,12 +135,6 @@ font-family: 'Poppins', sans-serif;
   @extend %bgImagePosition;
 }
 
-@for $i from 1 through 34 {
-  .bg_image--#{$i} {
-    background-image: url(../images/bg/bg-image-#{$i}.jpg);
-  }
-}
-
 .bg_image--pattern {
   background: url(../images/bg/bg-image-pattern.png) repeat;
 }

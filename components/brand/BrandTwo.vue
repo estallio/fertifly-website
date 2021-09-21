@@ -3,9 +3,10 @@
   <v-row class="mt--30">
     <v-col cols="12">
       <ul class="brand-style">
-        <li v-for="(brand, i) in brandImages" :key="i">
+        <li v-for="(brand, i) in brandImages" :key="i" :class="brand.size ? 'two' : ''">
           <a :href="brand.url">
             <img :src="brand.src" alt="Logo Images" />
+            <span>ABC</span>
           </a>
         </li>
       </ul>
@@ -40,8 +41,9 @@
             url: "#",
           },
           {
-            src: require("../../assets/images/brand/brand-06.png"),
+            src: "https://ecofly.at/img/Logos-BMNT-LE1420-EU.jpg",
             url: "#",
+            size: true
           },
         ],
       };

@@ -4,7 +4,7 @@
     <v-col lg="4" md="4" sm="6" cols="12" class="mt--40">
       <div class="rn-address">
         <div class="icon">
-          <i class="fas fa-phone"></i>
+          <font-awesome-icon icon="phone" />
         </div>
         <div class="inner">
           <h4 class="title">Contact With Phone Number</h4>
@@ -23,7 +23,7 @@
     <v-col lg="4" md="4" sm="6" cols="12" class="mt--40">
       <div class="rn-address">
         <div class="icon">
-          <i class="fas fa-envelope"></i>
+          <font-awesome-icon icon="envelope" />
         </div>
         <div class="inner">
           <h4 class="title">Email Address</h4>
@@ -42,7 +42,7 @@
     <v-col lg="4" md="4" sm="6" cols="12" class="mt--40">
       <div class="rn-address">
         <div class="icon">
-          <i class="fas fa-map-marker-alt"></i>
+          <font-awesome-icon icon="map-marker-alt" />
         </div>
         <div class="inner">
           <h4 class="title">Location</h4>

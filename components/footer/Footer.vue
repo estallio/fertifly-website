@@ -48,7 +48,7 @@
                     >
                       <li v-for="(social, i) in socialList" :key="i">
                         <a :href="social.url" target="_blank">
-                          <i class="fab" :class="social.icon"></i>
+                          <font-awesome-icon :icon="['fab', social.icon]" />
                         </a>
                       </li>
                     </ul>
@@ -80,19 +80,19 @@
       return {
         socialList: [
           {
-            icon: "fa-facebook-f",
+            icon: "facebook-f",
             url: "https://www.facebook.com/",
           },
           {
-            icon: "fa-linkedin-in",
+            icon: "linkedin-in",
             url: "https://www.linkedin.com/",
           },
           {
-            icon: "fa-twitter",
+            icon: "twitter",
             url: "https://twitter.com/",
           },
           {
-            icon: "fa-instagram",
+            icon: "instagram",
             url: "https://www.instagram.com/",
           },
         ],

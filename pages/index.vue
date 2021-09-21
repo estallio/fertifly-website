@@ -91,7 +91,7 @@
         <!-- Start Counterup Area  -->
         <div class="rn-counterup-area mt_sm--35 mt_md--45 mt--70">
           <v-container>
-            <h3 class="heading-title text-center mb-0">{{ $t('index.numbersAndFactsHeading') }}</h3>
+            <h3 class="heading-title text-center mb-0">{{ $t('index.factsAndFiguresHeading') }}</h3>
             <CounterOben/>
           </v-container>
         </div>
@@ -132,7 +132,7 @@
         <!-- Start Counterup Area  -->
         <div class="rn-counterup-area mt_sm--35 mt_md--45 mt--70">
           <v-container>
-            <h3 class="heading-title text-center mb-0">{{ $t('index.numbersAndFactsHeading') }}</h3>
+            <h3 class="heading-title text-center mb-0">{{ $t('index.factsAndFiguresHeading') }}</h3>
             <CounterUnten/>
           </v-container>
         </div>

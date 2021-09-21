@@ -4,14 +4,14 @@ export default {
     // domain as pure domain like 'domain.com'
     domain: 'ecofly.at',
     // URL with full path where plausible scripts like '/api/script.js' can be fetched
-    apiHost: 'https://www.ecofly.at/plausible'
+    apiHost: 'https://www.ecofly.at/plausible',
   },
   sanity: {
     // project ID of sanity project
-    projectId: 'dooyj23g'
+    projectId: 'dooyj23g',
   },
   // baseURL of site like 'https://www.domain.com'
   hostname: 'https://www.ecofly.at',
   // just a global property as it is used on two different places in the config
-  routesNameSeparator: '___'
+  routesNameSeparator: '___',
 }

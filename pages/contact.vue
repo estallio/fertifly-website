@@ -1,25 +1,21 @@
 <template>
   <div>
     <!-- Start Header Area -->
-    <Header>
-      <img slot="logo" src="../assets/images/logo/logo.png" />
-    </Header>
+    <Header />
     <!-- End Header Area -->
 
     <!-- Start Breadcrump Area  -->
-    <div
-      class="rn-page-title-area pt--120 pb--190 bg_image bg_image--17"
-      data-black-overlay="5"
-    >
+    <div class="breadcrumb-area rn-bg-color ptb--120 bg_image bg_image--pattern">
       <v-container>
         <v-row>
-          <v-col cols="12">
-            <div class="rn-page-title text-center pt--100">
-              <h2 class="heading-title theme-gradient">Cntact With Us</h2>
-              <p>
-                Contrary to popular belief, Lorem Ipsum is not simply random
-                text.
-              </p>
+          <v-col lg="12">
+            <div class="breadcrumb-inner pt--100 pt_sm--40 pt_md--50">
+              <h1 class="heading-title">{{ $t('contact.title') }}</h1>
+              <ul class="page-list">
+                <li v-for="(item, i) in breadcrumbs" :key="i">
+                  <nuxt-link :to="localePath(item.to)">{{ item.text }}</nuxt-link>
+                </li>
+              </ul>
             </div>
           </v-col>
         </v-row>
@@ -51,29 +47,32 @@
     </div>
     <!-- End Contact Area  -->
 
-    <!-- Start Brand Area -->
-    <div class="rn-brand-area brand-separation rn-section-gap bg_color--5">
-      <v-container>
-        <Brand />
-      </v-container>
-    </div>
-    <!-- End Brand Area -->
     <Footer />
   </div>
 </template>
 
 <script>
-import { mapState } from 'vuex';
 export default {
+  data() {
+    return {
+      breadcrumbs: [
+        {
+          text: this.$t('index.title'),
+          to: '/',
+          disabled: false,
+        },
+        {
+          text: this.$t('contact.title'),
+          to: '',
+          disabled: true,
+        },
+      ],
+    };
+  },
   computed: {
     availableLocales () {
       return this.$i18n.locales.filter(i => i.code !== this.$i18n.locale)
     },
-    ...mapState({
-      posts: (state) => {
-        return state.posts
-      },
-    }),
   },
   nuxtI18n: {
     paths: {

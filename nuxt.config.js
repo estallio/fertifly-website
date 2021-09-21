@@ -2,14 +2,15 @@ import PurgecssPlugin from 'purgecss-webpack-plugin'
 import glob from 'glob-all'
 import path from 'path'
 import VuetifyLoaderPlugin from 'vuetify-loader/lib/plugin'
+import minifyTheme from 'minify-css-string'
 
 import config from './config'
 import de from './lang/de'
 import en from './lang/en'
 
-const { NODE_ENV = "production" } = process.env;
+const { NODE_ENV = 'production' } = process.env
 
-const isDev = NODE_ENV === "development";
+const isDev = NODE_ENV === 'development'
 
 export default {
   // Target: https://go.nuxtjs.dev/config-target
@@ -22,6 +23,7 @@ export default {
     '~/plugins/vuevisibilitysensor.client.js',
     '~/plugins/vueslickcarousel.js',
     '~/plugins/fontawesome.js',
+    '~/plugins/veevalidate.client.js',
     '~/plugins/preview.client.js',
   ],
 
@@ -30,33 +32,35 @@ export default {
 
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
-   'vuetify/dist/vuetify.min.css',
-   'vue-cool-lightbox/dist/vue-cool-lightbox.min.css',
-   'vue-slick-carousel/dist/vue-slick-carousel.css',
-   'vue-slick-carousel/dist/vue-slick-carousel-theme.css',
-   '~/assets/scss/main.scss'
+    'vuetify/dist/vuetify.min.css',
+    'vue-cool-lightbox/dist/vue-cool-lightbox.min.css',
+    'vue-slick-carousel/dist/vue-slick-carousel.css',
+    'vue-slick-carousel/dist/vue-slick-carousel-theme.css',
+    '~/assets/scss/main.scss',
   ],
 
   vuetify: {
+    theme: { disable: true, options: { minifyTheme } },
     defaultAssets: {
       font: false,
       icons: false,
     },
     icons: {
       // reduces size: https://stackoverflow.com/questions/67796971/nuxtjs-vuetify-purgecss
-      iconfont: 'mdiSvg'
+      iconfont: 'mdiSvg',
     },
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
+    transpile: ['vee-validate'],
     // analyze: true,
     extractCSS: true,
-    postcss:
-      {
-        // disable postcss plugins in development
-        plugins: isDev
-          ? {} : {
+    postcss: {
+      // disable postcss plugins in development
+      plugins: isDev
+        ? {}
+        : {
             // maybe configure this if there is time somewhen: https://warrenlee.tech/blog/optimizing-css-with-purgecss
             // "@fullhuman/postcss-purgecss": {
             //   content: [
@@ -103,14 +107,14 @@ export default {
             //     /^v-progress-linear/
             //   ]
             // },
-            "css-byebye": {
+            'css-byebye': {
               rulesToRemove: [
                 /.*\.v-application--is-rtl.*/,
-                /.*\.theme--dark.*/
-              ]
-            }
-          }
-      },
+                /.*\.theme--dark.*/,
+              ],
+            },
+          },
+    },
   },
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
@@ -120,12 +124,11 @@ export default {
     '@nuxtjs/sanity/module',
     'vue-plausible',
     '@nuxtjs/vuetify',
-    "@nuxtjs/svg"
+    '@nuxtjs/svg',
   ],
 
   svg: {
-    vueSvgLoader: {
-    },
+    vueSvgLoader: {},
   },
 
   // Modules: https://go.nuxtjs.dev/config-modules
@@ -181,12 +184,6 @@ export default {
     baseUrl: config.hostname,
     routesNameSeparator: config.routesNameSeparator,
   },
-
-
-
-
-
-
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   /*head () {
@@ -307,6 +304,6 @@ export default {
   },
 
   server: {
-    host: "0.0.0.0"
-  }
+    host: '0.0.0.0',
+  },
 }

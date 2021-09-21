@@ -1,9 +1,7 @@
 <template>
   <div>
     <!-- Start Header Area -->
-    <Header>
-      <img slot="logo" style="max-height: 100%;" src="../assets/images/logo/logo.png" />
-    </Header>
+    <Header />
     <!-- End Header Area -->
 
     <!-- Start Breadcrump Area  -->

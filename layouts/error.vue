@@ -30,15 +30,6 @@
 <script>
   export default {
     props: ['error'],
-    layout: 'error'
+    layout: 'errorLayout'
   }
 </script>
-
-<style lang="scss">
-  main {
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center center;
-    background: url(../assets/images/bg/bg-image-pattern.png) repeat;
-  }
-</style>

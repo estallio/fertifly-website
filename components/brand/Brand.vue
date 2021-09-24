@@ -14,35 +14,31 @@
       return {
         brandImages: [
           {
-            src: require("../../assets/images/brand/brand-01.png"),
+            src: "https://ecofly.at/img/ipiff.png",
             url: "#",
           },
           {
-            src: require("../../assets/images/brand/brand-02.png"),
+            src: "https://ecofly.at/img/pbi.png",
             url: "#",
           },
           {
-            src: require("../../assets/images/brand/brand-03.png"),
+            src: "https://ecofly.at/img/ffg.png",
             url: "#",
           },
           {
-            src: require("../../assets/images/brand/brand-04.png"),
+            src: "https://ecofly.at/img/tech2b.png",
             url: "#",
           },
           {
-            src: require("../../assets/images/brand/brand-05.png"),
+            src: "https://ecofly.at/img/baw.png",
             url: "#",
           },
           {
-            src: require("../../assets/images/brand/brand-06.png"),
+            src: "https://ecofly.at/img/global2000.png",
             url: "#",
           },
           {
-            src: require("../../assets/images/brand/brand-02.png"),
-            url: "#",
-          },
-          {
-            src: require("../../assets/images/brand/brand-03.png"),
+            src: "https://ecofly.at/img/boku.png",
             url: "#",
           },
           {

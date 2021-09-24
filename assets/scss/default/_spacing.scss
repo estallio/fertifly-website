@@ -162,7 +162,10 @@
         padding: 60px 0 !important;
     }
     @media #{$md-layout} {
-        padding: 80px 0 !important;
+      padding: 80px 0 !important;
+    }
+    @media only screen and (min-width: 960px) and (max-width: 991px) {
+      padding: 120px 0 !important;
     }
 }
 

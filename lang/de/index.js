@@ -6,6 +6,7 @@ import header from './components/header';
 import index from './pages/index';
 import products from './pages/products';
 import contact from './pages/contact';
+import partner from './pages/partner';
 
 export default {
   footer,
@@ -13,6 +14,7 @@ export default {
   index,
   products,
   contact,
+  partner,
   validation: de.messages,
   errors: {
     404: {

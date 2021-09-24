@@ -20,7 +20,7 @@
         font-size: 15px;
         letter-spacing: 0.1px;
         &:focus {
-            border-color: $theme-color;
+            border-color: $gradient-color-light;
         }
     }
     textarea {
@@ -91,15 +91,15 @@
                 color: rgba(29, 29, 36, 0.75);
                 @extend %transition;
                 &:hover {
-                    color: $theme-color;
+                    color: $gradient-color-light;
                 }
             }
         }
     }
     &:hover {
         .icon {
-            background: $theme-color;
-            border-color: $theme-color;
+            background: $gradient-color-light;
+            border-color: $gradient-color-light;
             color: #fff;
         }
     }
@@ -112,7 +112,7 @@ textarea {
 
 .blog-comment-form .inner .rnform-group input:focus,
 .blog-comment-form .inner .rnform-group textarea:focus {
-    border-color: $theme-color;
+    border-color: $gradient-color-light;
 }
 
 .google-map-area {

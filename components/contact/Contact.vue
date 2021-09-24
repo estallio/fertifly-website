@@ -2,70 +2,71 @@
   <v-row align="start" class="row--35">
     <v-col lg="6" md="6" sm="12" cols="12" order="2" order-md="1">
       <div class="section-title text-left mb--50 mb_sm--30 mb_md--30">
-        <h2 class="heading-title">Contact Us.</h2>
-        <p class="description">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto
-          cupiditate aperiam neque
-        </p>
+        <h2 class="heading-title">{{ $t('contact.form.heading') }}</h2>
+        <p class="description">{{ $t('contact.form.description') }}</p>
       </div>
       <div class="form-wrapper">
         <ValidationObserver v-slot="{ handleSubmit }">
           <form @submit.prevent="handleSubmit(onSubmit)">
             <ValidationProvider
-              name="name"
+              :name="$t('contact.form.name')"
               rules="required"
               v-slot="{ errors }"
             >
               <label>
                 <input
                   type="text"
+                  name="name"
                   v-model="formData.name"
-                  placeholder="Your Name *"
+                  :placeholder="$t('contact.form.namePlacehoder') + ' *'"
                 />
                 <span class="inpur-error">{{ errors[0] }}</span>
               </label>
             </ValidationProvider>
 
             <ValidationProvider
-              name="email"
+              :name="$t('contact.form.email')"
               rules="required|email"
               v-slot="{ errors }"
             >
               <label>
                 <input
                   type="text"
+                  name="email"
                   rules="required|email"
                   v-model="formData.email"
-                  placeholder="Your email *"
+                  :placeholder="$t('contact.form.emailPlaceholder') + ' *'"
                 />
                 <span class="inpur-error">{{ errors[0] }}</span>
               </label>
             </ValidationProvider>
 
             <ValidationProvider
-              name="subject"
+              :name="$t('contact.form.subject')"
               rules="required"
               v-slot="{ errors }"
             >
               <label>
                 <input
                   type="text"
+                  name="subject"
                   v-model="formData.subject"
-                  placeholder="Write a Subject"
+                  :placeholder="$t('contact.form.subjectPlaceholder') + ' *'"
                 />
                 <span class="inpur-error">{{ errors[0] }}</span>
               </label>
             </ValidationProvider>
 
             <ValidationProvider
-              name="message"
+              :name="$t('contact.form.message')"
               rules="required"
               v-slot="{ errors }"
             >
               <label>
                 <textarea
+                  name="message"
                   v-model="formData.message"
-                  placeholder="Your Message"
+                  :placeholder="$t('contact.form.messagePlaceholder') + ' *'"
                 ></textarea>
                 <span class="inpur-error">{{ errors[0] }}</span>
               </label>
@@ -76,7 +77,7 @@
               type="submit"
               value="submit"
             >
-              Submit
+              {{ $t('contact.form.submitLabel') }}
             </button>
           </form>
         </ValidationObserver>
@@ -91,13 +92,7 @@
 </template>
 
 <script>
-  import { ValidationObserver, ValidationProvider } from 'vee-validate'
-
   export default {
-    components: {
-      ValidationObserver,
-      ValidationProvider
-    },
     data() {
       return {
         formData: {

@@ -3,7 +3,7 @@ Call To Action Wrapper
 -----------------------------*/
 
 .call-to-action {
-    background: linear-gradient(145deg, #f81f01 0%, #ee076e 100%);
+    background: linear-gradient(145deg, $gradient-color-dark 0%, $gradient-color-light 100%);
     position: relative;
     z-index: 2;
     &::before {
@@ -40,12 +40,16 @@ Call To Action Wrapper
         }
         a {
             &.rn-button-style--2 {
+                background: #ffffff;
+                border-color: $gradient-color-light;
+                color: $gradient-color-light;
+                
                 margin-top: 30px;
                 background: transparent;
+
                 &:hover {
-                    background: #ffffff;
-                    border-color: #ffffff;
-                    color: $theme-color;
+                    color: #ffffff;
+                    background: $gradient-color-light;
                 }
             }
         }

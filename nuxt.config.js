@@ -23,7 +23,8 @@ export default {
     '~/plugins/vuevisibilitysensor.client.js',
     '~/plugins/vueslickcarousel.js',
     '~/plugins/fontawesome.js',
-    '~/plugins/veevalidate.client.js',
+    '~/plugins/veevalidate.js',
+    '~/plugins/i18nextensions.js',
     '~/plugins/preview.client.js',
   ],
 

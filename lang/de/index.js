@@ -1,3 +1,5 @@
+import de from 'vee-validate/dist/locale/de';
+
 import footer from './components/footer';
 import header from './components/header';
 
@@ -11,4 +13,5 @@ export default {
   index,
   products,
   contact,
+  validation: de.messages,
 };

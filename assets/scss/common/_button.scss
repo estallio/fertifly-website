@@ -93,8 +93,8 @@ button {
             }
 
             &.btn_solid {
-                border: 2px solid $theme-color;
-                background: $theme-color;
+                border: 2px solid $gradient-color-light;
+                background-color: $gradient-color-light;
                 color: #ffffff;
             }
 
@@ -147,16 +147,22 @@ button {
 
 
             &.btn-solid {
-                background: $theme-color;
-                color: #ffffff;
-                border-color: $theme-color;
+                background-color: #ffffff;
+                border-color:  $gradient-color-light;
+                color: $gradient-color-light;
             }
 
             &:hover {
-                background: transparent;
+                background-color: #ffffff;
                 color: $gradient-color-light;
-                box-shadow: 0 10px 15px 0 rgba(249, 0, 77,0.1);
-                transform: translateY(-5px);
+
+                transform: scale(1.04);
+                transition: 0.2s;
+            }
+
+            &:active {
+                transform: scale(0.96);
+                transition: 0.05s;
             }
         }
     }

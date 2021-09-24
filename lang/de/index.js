@@ -7,6 +7,7 @@ import index from './pages/index';
 import products from './pages/products';
 import contact from './pages/contact';
 import partner from './pages/partner';
+import imprint from './pages/imprint';
 
 export default {
   footer,
@@ -15,6 +16,7 @@ export default {
   products,
   contact,
   partner,
+  imprint,
   validation: de.messages,
   errors: {
     404: {

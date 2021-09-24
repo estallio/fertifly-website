@@ -20,6 +20,17 @@
     </div>
     <!-- End Breadcrump Area  -->
 
+    <v-container>
+      <v-row class="mt_sm--70 mt_md--90 mt--120">
+        <v-col lg="12">
+          <div class="section-title section-title--3 text-center">
+            <h2 class="heading-title">{{ $t('partner.heading') }}</h2>
+            <p>{{ $t('partner.subHeading') }}</p>
+          </div>
+        </v-col>
+      </v-row>
+    </v-container>
+
     <!-- Start Brand Area -->
     <div class="rn-brand-area brand-separation">
       <v-container>

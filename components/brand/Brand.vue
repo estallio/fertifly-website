@@ -14,6 +14,15 @@
       return {
         brandImages: [
           {
+            src: "https://www.vivatis.at/de/download/102",
+            url: "#",
+            size: true
+          },
+          {
+            src: "https://www.purea.com/typo3conf/ext/mw_theme/Resources/Public/Images/logo.svg",
+            url: "#",
+          },
+          {
             src: "https://ecofly.at/img/ipiff.png",
             url: "#",
           },

@@ -1,5 +1,5 @@
 export default {
   title: 'Partner',
-  heading: 'Eine Wertschöpfungskette',
-  subHeading: 'Dank unseres einfach Prozess können wir flexibel mehrere verschiedene und qualitative Produkte herstellen.',
+  heading: 'Zusammenarbeit',
+  subHeading: 'Dank kooperativer Zusammenarbeit mit bekannten Unternehmen können wir hervorragende Leistungen erzielen.',
 };

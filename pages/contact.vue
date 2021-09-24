@@ -1,8 +1,5 @@
 <template>
   <div>
-    <!-- Start Header Area -->
-    <Header />
-    <!-- End Header Area -->
 
     <!-- Start Breadcrump Area  -->
     <div class="breadcrumb-area rn-bg-color ptb--120 bg_image bg_image--pattern">
@@ -46,8 +43,7 @@
       </div>
     </div>
     <!-- End Contact Area  -->
-
-    <Footer />
+    
   </div>
 </template>
 

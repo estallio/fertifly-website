@@ -1,5 +1,5 @@
 <template>
-  <v-app id="inspire" :class="$route.name">
+  <v-app id="inspire">
     <Header/>
     
     <v-main>

@@ -75,7 +75,7 @@
     right: 20px;
   }
   
-  main {
+  #inspire {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;

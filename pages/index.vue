@@ -1,9 +1,5 @@
 <template>
   <div>
-    <!-- Start Header Area -->
-    <Header/>
-    <!-- End Header Area -->
-
     <!-- Start Slider Area -->
     <SliderTwo/>
     <!-- End Slider Area -->
@@ -211,8 +207,6 @@
       </v-container>
     </div>
     <!-- Start Testimonial Area  -->
-
-    <Footer/>
 
   </div>
 </template>

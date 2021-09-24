@@ -3,10 +3,17 @@
 ------------------------*/
 
 .error-page-inner {
-    height: calc(100vh - 120px);
-    display: flex;
-    align-items: center;
-    min-height: 700px;
+    // height: calc(100vh - 120px);
+    // display: flex;
+    padding-top: 200px;
+    padding-bottom: 200px;
+    // align-items: center;
+    // min-height: 500px;
+
+    @media #{$sm-layout} {
+        padding-top: 150px;
+        padding-bottom: 150px;
+    }
 
     .inner {
         text-align: center;
@@ -27,7 +34,7 @@
             margin-bottom: 0;
             font-weight: 400;
             font-size: 48px;
-            color: #ffffff;
+            color: $theme-color;
 
             @media #{$sm-layout} {
                 font-size: 40px;
@@ -37,7 +44,7 @@
         span {
             font-size: 16px;
             margin-top: 10px;
-            color: #c6c9d8;
+            color: $theme-color;
             opacity: .75;
             font-weight: 300;
             display: block;

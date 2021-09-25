@@ -8,6 +8,7 @@ import products from './pages/products';
 import contact from './pages/contact';
 import partner from './pages/partner';
 import team from './pages/team';
+import about from './pages/about';
 import imprint from './pages/imprint';
 
 export default {
@@ -17,6 +18,7 @@ export default {
   products,
   contact,
   partner,
+  about,
   team,
   imprint,
   validation: de.messages,

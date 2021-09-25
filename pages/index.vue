@@ -22,10 +22,10 @@
         <!-- Start First Content  -->
         <v-row class="mt_sm--10 mt_md--20 mt--40">
           <v-col cols="12">
-            <v-row class="sercice-details-content align-items-center">
+            <v-row class="sercice-details-content align-items-center justify-center">
 
               <!-- Start Column -->
-              <v-col lg="5" md="5" cols="12" class="flex-lg">
+              <v-col lg="5" md="5" cols="9" sm="7" class="flex-lg">
                 <div class="pb_sm--20 pt_sm--15 pb_md--25 pt_md--25 thumbnail flex-lg flex-lg-column justify-lg-center">
                   <img
                     class="w-100"
@@ -59,10 +59,10 @@
         </v-row>
 
         <!-- Start Single Content  -->
-        <v-row class="mt_sm--10 mt_md--20 mt--40">
+        <v-row class="mt_sm--10 mt_md--20 mt--40 justify-center">
 
           <!-- Start Column -->
-          <v-col lg="5" md="5" cols="12" class="flex-lg" order-md="2">
+          <v-col lg="5" md="5" cols="9" sm="7" class="flex-lg" order-md="2">
             <div class="pb_sm--20 pt_sm--15 pb_md--25 pt_md--25 thumbnail flex-lg flex-lg-column justify-lg-center">
               <img
                 class="w-100"
@@ -103,7 +103,8 @@
         </v-row>
 
         <!-- Start Single Content  -->
-        <v-row class="mt_sm--10 mt_md--20 mt--40">
+        <v-row class="mt_sm--10 mt_md--20 mt--40 justify-center">
+
           <v-col lg="7" md="7" cols="12" order="1" order-md="2">
             <div class="flex-column justify-center d-flex fill-height">
               <p>{{ $t('index.solutionSection.content') }}</p>
@@ -113,7 +114,8 @@
               </ul>
             </div>
           </v-col>
-          <v-col lg="5" md="5" cols="12" class="flex-lg" order="2" order-md="1">
+
+          <v-col lg="5" md="5" cols="7" class="flex-lg" order="2" order-md="1">
             <div class="pb_sm--20 pt_sm--15 pb_md--25 pt_md--25 thumbnail flex-lg flex-lg-column justify-lg-center">
               <img
                 class="w-100"
@@ -122,6 +124,7 @@
               />
             </div>
           </v-col>
+
         </v-row>
         <!-- End Single Content  -->
 
@@ -144,8 +147,9 @@
         </v-row>
 
         <!-- Start Single Content  -->
-        <v-row class="mt_sm--10 mt_md--20 mt--40">
-          <v-col cols="12" lg="5" order-md="1" class="flex-lg">
+        <v-row class="mt_sm--10 mt_md--20 mt--40 justify-center">
+
+          <v-col cols="10" md="9" lg="6" order-md="1" class="flex-lg">
             <div class="pt--25 pb--25 thumbnail flex-lg flex-lg-column justify-lg-center" @click="index=0">
               <img
                 class="w-100"
@@ -155,11 +159,13 @@
               />
             </div>
           </v-col>
-          <v-col cols="12" lg="7" order-md="2">
+
+          <v-col cols="12" lg="6" order-md="2">
             <div class="flex-column justify-center d-flex fill-height">
               <p>{{ $t('index.processSection.content') }}</p>
             </div>
           </v-col>
+
         </v-row>
         <!-- End Single Content  -->
 
@@ -188,6 +194,7 @@
             </div>
           </div>
         </div>
+
         <div class="thumbnail">
           <div class="image">
             <img
@@ -196,6 +203,7 @@
             />
           </div>
         </div>
+
       </div>
     </div>
     <!-- End Finding us Area  -->

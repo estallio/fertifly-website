@@ -32,18 +32,12 @@
     <div class="rn-contact-area rn-section-gap bg_color--1">
       <div class="contact-form--1">
         <v-container>
-          <Contact>
-            <img
-              slot="contact-img"
-              src="../assets/images/about/hermetia.jpg"
-              alt="trydo"
-            />
-          </Contact>
+          <Contact />
         </v-container>
       </div>
     </div>
     <!-- End Contact Area  -->
-    
+
   </div>
 </template>
 

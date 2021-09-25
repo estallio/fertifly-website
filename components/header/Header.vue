@@ -101,6 +101,7 @@
             <li v-for="locale in availableLocales"
                 :key="locale.code">
               <nuxt-link
+                @click.native="languageSwitchOpen = false"
               :to="switchLocalePath(locale.code)"
               :style="locale.code === $i18n.locale ? 'color: #006C33' : 'color: inherit'">
                 {{ locale.name }}
@@ -187,7 +188,7 @@
     color: #444;
     font-size: 16px;
     min-width: 0;
-    margin: 0 15px;
+    margin: 0 0 0 15px;
     padding: 0 5px;
     border: 1px solid rgba(68,68,68,0.4);
     border-radius: 4px;

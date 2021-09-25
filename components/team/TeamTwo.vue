@@ -60,3 +60,9 @@
     },
   };
 </script>
+
+<style scoped>
+.thumbnail img {
+  box-shadow: none;
+}
+</style>

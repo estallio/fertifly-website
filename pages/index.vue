@@ -13,7 +13,7 @@
           <v-col lg="12">
             <div class="section-title section-title--3 text-center">
               <h2 class="heading-title">{{ $t('index.introductionSection.heading') }}</h2>
-              <p>{{ $t('index.introductionSection.subHeading') }}</p>
+              <p>{{ $t('index.introductionSection.subheading') }}</p>
             </div>
           </v-col>
         </v-row>
@@ -53,7 +53,7 @@
           <v-col lg="12">
             <div class="section-title section-title--3 text-center">
               <h2 class="heading-title">{{ $t('index.globalWarmingSection.heading') }}</h2>
-              <p>{{ $t('index.globalWarmingSection.subHeading') }}</p>
+              <p>{{ $t('index.globalWarmingSection.subheading') }}</p>
             </div>
           </v-col>
         </v-row>
@@ -97,7 +97,7 @@
           <v-col lg="12">
             <div class="section-title section-title--3 text-center">
               <h2 class="heading-title">{{ $t('index.solutionSection.heading') }}</h2>
-              <p>{{ $t('index.solutionSection.subHeading') }}</p>
+              <p>{{ $t('index.solutionSection.subheading') }}</p>
             </div>
           </v-col>
         </v-row>
@@ -138,7 +138,7 @@
           <v-col lg="12">
             <div class="section-title section-title--3 text-center">
               <h2 class="heading-title">{{ $t('index.processSection.heading') }}</h2>
-              <p>{{ $t('index.processSection.subHeading') }}</p>
+              <p>{{ $t('index.processSection.subheading') }}</p>
             </div>
           </v-col>
         </v-row>
@@ -181,7 +181,7 @@
           <div class="content">
             <div :class="{'container': $vuetify.breakpoint.smAndUp}">
               <h4 class="theme-gradient">{{ $t('index.productSection.heading') }}</h4>
-              <p>{{ $t('index.productSection.subHeading') }}</p>
+              <p>{{ $t('index.productSection.subheading') }}</p>
               <router-link class="rn-btn btn-white" to="/contact">{{ $t('index.productSection.linkText') }}
               </router-link
               >

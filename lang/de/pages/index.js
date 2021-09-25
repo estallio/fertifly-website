@@ -2,12 +2,12 @@ export default {
   title: 'Start',
   introductionSection: {
     heading: 'Insekten als Futtermittel',
-    subHeading: 'Eine umweltschonende und nachhaltige Alternative.',
+    subheading: 'Eine umweltschonende und nachhaltige Alternative.',
     content: 'Die Nutzung von Insekten ermöglicht völlig neue Perspektiven für eine effiziente und nachhaltige Lebensmittelproduktion. Vor allem die Erzeugung innovativer Futtermittel für eine artgerechte und umweltverträgliche Nutztierhaltung mit Hilfe von Insekten birgt immenses Potential. Fische Hühner und Schweine ernähren sich in freier Wildbahn zu einem beträchtlichen Anteil von Fliegen, Käfern und Würmern. Warum sollten wir unseren Nutz-und Haustieren also Ihre natürliche Nahrungsquelle vorenthalten?',
   },
   globalWarmingSection: {
     heading: 'Insekten gegen globale Erwärmung',
-    subHeading: 'Ein Umweltgedanke.',
+    subheading: 'Ein Umweltgedanke.',
     content: 'Die konventionelle Futtermittelproduktion beschränkt sich derzeit meist auf Kostenabschätzungen und arbeitet rein gewinnbringend. Diese Art der Produktion ist weder nachhaltig, noch nutzt es die Resourcen voll aus. Die daruas enstehenden Kosten und Verunreinigungen unseres Planeten können mit Hilfe innovativer und moderner Futtermittelprodukiton vermieden werden. Ein weiterer Grund für die Umstellung auf moderne Futtermittel ist die hohe Belastung für die Umwelt. Im Kampf gegen den Klimawandel müssen wir gemeinsam Wege finden in einem der wichtigsten Bereiche, wie der Lebensmittelproduktion, Einsparungen und Optimierungen zu fördern.',
   },
   factsAndFiguresHeading: 'Zahlen und Fakten',
@@ -30,7 +30,7 @@ export default {
   ],
   solutionSection: {
     heading: 'Unsere Lösung',
-    subHeading: 'Hermetia Illucens',
+    subheading: 'Hermetia Illucens',
     content: 'Unsere Lösung dem ganzen entgegenzuwirken baut auf einer kleinen Fliege namens Hermetia Illucens (Soldatenfliege) auf. Diese bietet einen schnellen Wachstum und effiziente Biomasseumwandlung von Abfällen. So beseitigen wir gleich zwei Probleme auf einmal und können die Probleme der Futtermittelproduktion mit einem Mal revolutionieren.',
     advantages: 'Vorteile',
     bulletPoints: ['Klein', 'Effizient', 'Kostengünstig'],
@@ -54,12 +54,12 @@ export default {
   ],
   processSection: {
     heading: 'Unser Prozess',
-    subHeading: 'Die Produktion von Insektenprotein ist ein mehrstufiger Prozess und bedarf großer Sorgfalt in jedem einzelnen Schritt.',
+    subheading: 'Die Produktion von Insektenprotein ist ein mehrstufiger Prozess und bedarf großer Sorgfalt in jedem einzelnen Schritt.',
     content: 'Für das gezielte ?Upcycling? von Proteinen zu einem hochwertigen Futtermittel nutzen wir die Larve der schwarzen Soldatenfliege (lat. Hermetia Illucens, engl. Black Soldier Fly, kurz BSF). Unsere Fliegenlarven werden ausschließlich mit Nebenprodukten aus der Lebensmittelindustrie, die als Futtermittel zugelassen sind, gefüttert. Damit können wir einen stabilen Prozess garantieren und den Eintrag von Schadstoffen ausschließen. Zudem benötigen wir keine zusätzliche Wärmequelle für die Produktion unserer Fliegenlarven. Die Flächennutzung bei der Zucht der schwarzen Soldatenfliege ist ausgesprochen effizient. Auf einem m² kann bis zu einer Tonne Insektenprotein pro Jahr erzeugt werden.',
   },
   productSection: {
     heading: 'Unsere Produkte',
-    subHeading: 'Wie wir aus diesem Prozess welche Produkte erstellen können erfahren Sie auf unserer Produktseite.',
+    subheading: 'Wie wir aus diesem Prozess welche Produkte erstellen können erfahren Sie auf unserer Produktseite.',
     linkText: 'Zu den Produkten',
   },
   testimonialSection: {

@@ -1,7 +1,7 @@
 export default {
   title: 'Products',
   heading: 'A value chain',
-  subHeading: 'Thanks to our simple process, we can flexibly produce several different and qualitative products.',
+  subheading: 'Thanks to our simple process, we can flexibly produce several different and qualitative products.',
   bsfOilSection: {
     heading: 'BSF-Oil',
     content: 'BSF oil is produced during the degreasing of our dried BSF larvae. It resembles the composition of palm oil and can therefore be used as a sustainable palm oil substitute in cosmetic products and soaps. The oil is also suitable as an energy supplier in feed for livestock and pets.',

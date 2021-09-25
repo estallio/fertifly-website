@@ -1,7 +1,7 @@
 export default {
   title: 'Produkte',
   heading: 'Eine Wertschöpfungskette',
-  subHeading: 'Dank unseres einfach Prozess können wir flexibel mehrere verschiedene und qualitative Produkte herstellen.',
+  subheading: 'Dank unseres einfach Prozess können wir flexibel mehrere verschiedene und qualitative Produkte herstellen.',
   bsfOilSection: {
     heading: 'BSF-Öl',
     content: 'BSF-Öl entsteht bei der Entfettung unserer getrockneten BSF-Larven. Es gleicht der Zusammensetzung von Palmöl und kann daher als nachhaltiger Palmöl-Ersatz in Kosmetik-Produkten und Seifen verwendet werden. Das Öl eignet sich zudem als Energielieferant in Futtermittel für Nutz- und Haustiere.',

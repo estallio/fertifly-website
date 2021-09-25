@@ -25,7 +25,7 @@
         <v-col lg="12">
           <div class="section-title section-title--3 text-center">
             <h2 class="heading-title">{{ $t('partner.heading') }}</h2>
-            <p>{{ $t('partner.subHeading') }}</p>
+            <p>{{ $t('partner.subheading') }}</p>
           </div>
         </v-col>
       </v-row>

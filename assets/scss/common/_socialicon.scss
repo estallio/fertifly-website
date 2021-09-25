@@ -18,6 +18,10 @@ ul {
                 text-align: center;
                 font-size: 14px;
                 @extend %transition;
+
+              &:hover {
+                  color: #ffffff !important;
+              }
             }
             &:hover {
                 a {
@@ -43,7 +47,7 @@ ul {
 
             }
         }
-        
+
         &.rn-lg-size {
             margin-top: 0 !important;
             li {
@@ -72,7 +76,7 @@ ul {
                     a {
                         background: transparent;
                         box-shadow: none;
-
+                      color: #ffffff;
                     }
                 }
             }

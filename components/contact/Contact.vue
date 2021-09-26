@@ -1,7 +1,7 @@
 <template>
   <v-row align="start" class="row--35 justify-center">
 
-    <v-col lg="8" md="6" sm="12" cols="12" order="2" order-md="1">
+    <v-col cols="12" md="6" order="2" order-md="1">
       <div class="section-title text-left mb--50 mb_sm--30 mb_md--30">
         <h2 class="heading-title">{{ $t('contact.form.heading') }}</h2>
         <p class="description">{{ $t('contact.form.description') }}</p>
@@ -85,7 +85,7 @@
       </div>
     </v-col>
 
-    <v-col lg="4" md="6" cols="7" sm="5" order="1" order-md="2" align-self="center">
+    <v-col cols="12" md="6" order="1" order-md="2" align-self="center">
       <div class="pt--10 pb--10 pb_sm--50 pb_md--50 thumbnail flex-lg flex-lg-column justify-lg-center">
         <img
           class="w-100"

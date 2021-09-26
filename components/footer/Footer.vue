@@ -25,8 +25,8 @@
                 <div class="footer-widget">
                   <h4>{{ $t('footer.quickNav') }}</h4>
                   <ul class="ft-link">
-                    <li v-for="(nav, i) in navList" :key="i">
-                      <nuxt-link :to="localePath(nav.to)">{{ nav.navItem }}</nuxt-link>
+                    <li v-for="(navItem, i) in navList" :key="i">
+                      <nuxt-link :to="localePath(navItem)">{{ $t(`footer.navigation.${navItem}`) }}</nuxt-link>
                     </li>
                   </ul>
                 </div>
@@ -96,7 +96,12 @@
             url: "https://www.instagram.com/",
           },
         ],
-        navList: this.$t('footer.navList'),
+        navList: [
+          "products",
+          "jobs",
+          "contact",
+          "imprint",
+        ],
         mailList: [
           {
             mailItem: "office@ecofly.at",

@@ -29,17 +29,17 @@
 
         <v-list-item
           :ripple="false"
-          v-for="item in items"
-          :key="item.title"
+          v-for="(navItem, i) in navList"
+          :key="i"
           link
         >
           <v-list-item-content>
             <v-list-item-title>
-              <nuxt-link :to="localePath(item.to)" style="color: inherit">{{ item.title }}</nuxt-link>
+              <nuxt-link :to="localePath(navItem)" style="color: inherit">{{ $t(`header.navigation.${navItem}`) }}</nuxt-link>
             </v-list-item-title>
           </v-list-item-content>
         </v-list-item>
-
+        
       </v-list>
 
       <div style="text-align: center">
@@ -78,9 +78,9 @@
       </v-btn>
 
       <v-toolbar-items class="hidden-xs-only hidden-sm-only height-auto">
-        <nuxt-link v-for="item in items" :key="item.title" :to="localePath(item.to)" style="color: inherit">
+        <nuxt-link v-for="(navItem, i) in navList" :key="i" :to="localePath(navItem)" style="color: inherit">
           <v-btn :ripple="false" text link>
-            {{ item.title }}
+            {{ $t(`header.navigation.${navItem}`) }}
           </v-btn>
         </nuxt-link>
 
@@ -132,7 +132,15 @@
       return {
         languageSwitchOpen: false,
         drawer: false,
-        items: this.$t('header.menu')
+        navList: [
+          "index",
+          "products",
+          "about",
+          "jobs",
+          "team",
+          "partner",
+          "contact"
+        ]
       }
     },
     methods: {
@@ -142,6 +150,7 @@
     }
   }
 </script>
+
 <style>
   a:hover, a:hover button {
     color: #006C33 !important;

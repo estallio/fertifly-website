@@ -108,8 +108,7 @@
         <!-- End Blog Details Area  -->
 
       </v-container>
-      </div>
-    <Footer />
+    </div>
   </div>
 </template>
 

@@ -27,7 +27,7 @@
         <v-row class="mt_sm--50 mt_md--70 mt--75">
           <v-col lg="12">
             <div class="section-title section-title--3 text-center">
-              <h2 class="heading-title">{{ $t('products.heading') }}</h2>
+              <h2 class="heading-title" v-html="$t('products.heading')"></h2>
               <p>{{ $t('products.subheading') }}</p>
             </div>
           </v-col>

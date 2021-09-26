@@ -20,132 +20,92 @@
     </div>
     <!-- End Breadcrump Area  -->
 
-    <div>
+    <div class='mb--75'>
       <v-container>
 
-    <v-row class="mt_sm--70 mt_md--90 mt--120">
-      <v-col lg="12">
-        <div class="section-title section-title--3 text-center">
-          <h2 class="heading-title">{{ $t('about.vision.heading') }}</h2>
-          <p>{{ $t('about.vision.subheading') }}</p>
-        </div>
-      </v-col>
-    </v-row>
+        <v-row class="mt_sm--70 mt_md--90 mt--120">
+          <v-col lg="12">
+            <div class="section-title section-title--3 text-center">
+              <h2 class="heading-title">{{ $t('about.vision.heading') }}</h2>
+              <p>{{ $t('about.vision.subheading') }}</p>
+            </div>
+          </v-col>
+        </v-row>
 
-    <!-- Start Blog Details Area  -->
+        <!-- Start Blog Details Area  -->
         <v-row>
           <v-col cols='12'>
             <div class='inner-wrapper'>
               <div class='inner'>
-                <p>
-                  There are many variations of passages of Lorem Ipsum
-                  available, but the majority have suffered alteration in some
-                  form, by injected humour, or randomised words which don't look
-                  even slightly believable. If you are going to use a passage of
-                  Lorem Ipsum. You need to be sure there isn't anything
-                  embarrassing hidden in the middle of text. All the Lorem Ipsum
-                  generators on the Internet tend toitrrepeat predefined chunks.
-                </p>
+                <p>{{ $t('about.vision.text') }}</p>
                 <div class='thumbnail'>
                   <img
-                    src='../assets/images/about/hermetia.jpg'
+                    style="margin: 50px auto"
+                    src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTRn-i0wNAuDvsC3PGgn0QAdSq8IBul3th9vN-NmjKGO3KBNM6G24whKMY5V6c0JOVhAU8&usqp=CAU'
                     alt='Blog Images'
                   />
                 </div>
-                <p class='mt--40'>
-                  There are many variations of passages of Lorem Ipsum
-                  available, but the majority have suffered alteration in some
-                  form, by injected humour, or randomised words which don't look
-                  even slightly believable. If you are going to use a passage of
-                  Lorem Ipsum. You need to be sure there isn't anything
-                  embarrassing hidden in the middle of text. All the Lorem Ipsum
-                  generators on the Internet tend toitrrepeat predefined chunks.
-                </p>
-                <p>
-                  Necessary, making this the first true generator on the
-                  Internet. It re are many variations of passages of Lo rem
-                  Ipsum available, but the majority have suffered alteration in
-                  some form, by injectedeed eedhumour, or randomised words which
-                  don't look even slightly believable.
-                </p>
-                <blockquote class='rn-blog-quote'>
-                  Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-                  Aenean commodo ligula eget dolor. Aenean massa. Cum sociis
-                  natoque penatibus et magnis dis parturient montes.
-                </blockquote>
-                <p>
-                  There are many variations of passages of Lorem Ipsum
-                  available, but the majority have suffered alteration in some
-                  form, by injected humour, or randomised words which don't look
-                  even slightly believable. If you are going to use a passage of
-                  Lorem Ipsum. You need to be sure there isn't anything
-                  embarrassing hidden in the middle of text. All the Lorem Ipsum
-                  generators on the Internet tend toitrrepeat predefined chunks.
-                  Necessary, making this the first true generator on the
-                  Internet. It re are many variations of passages of Lorem Ipsum
-                  available, but the majority have suffered alteration in some
-                  form, by injectedeed eedhumour, or randomised words which
-                  don't look even slightly believable.
-                </p>
-                <div class='blog-single-list-wrapper d-flex flex-wrap'>
-                  <div class='thumbnail'>
-                    <img
-                      class='w-100'
-                      src='../assets/images/about/hermetia.jpg'
-                      alt='BLog Images'
-                    /><span>Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                      sed do
-                  </span>
-                  </div>
-                  <div class='content'>
-                    <p>
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                      sed do eiusmod tempor incididunt ut labore et dolore magna
-                      aliqua. Quis ipsum suspendisse ultrices gravida. Risus
-                      commodo .
-                    </p>
-                    <h4 class='title'>Ordered &amp; Unordered Lists.</h4>
-                    <ul class='list-style'>
-                      <li>Yet this above sewed flirted opened ouch</li>
-                      <li>Goldfinch realistic sporadic ingenuous</li>
-                      <li>
-                        Abominable this abidin far successfully then like piquan
-                      </li>
-                      <li>Risus commodo viverra</li>
-                      <li>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing
-                      </li>
-                    </ul>
-                    <h4 class='title'>Ordered &amp; Unordered Lists.</h4>
-                    <ul class='list-style'>
-                      <li>Yet this above sewed flirted opened ouch</li>
-                      <li>Goldfinch realistic sporadic ingenuous</li>
-                      <li>
-                        Abominable this abidin far successfully then like piquan
-                      </li>
-                      <li>Risus commodo viverra</li>
-                    </ul>
-                  </div>
-                </div>
-                <p class='mt--25 mt_sm--5'>
-                  There are many variations of passages of Lorem Ipsum
-                  available, but the majority have suffered alteration in some
-                  form, by injected humour, or randomised words which don't look
-                  even slightly believable. If you are going to use a passage of
-                  Lorem Ipsum. You need to be sure there isn't anything
-                  embarrassing hidden in the middle of text. All the Lorem Ipsum
-                  generators on the Internet tend toitrrepeat predefined chunks.
-                  Necessary, making this the first true generator on the
-                  Internet. It re are many variations of passages of Lorem Ipsum
-                  available, but the majority have suffered alteration in some
-                  form, by injectedeed eedhumour, or randomised words which
-                  don't look even slightly believable.
-                </p>
               </div>
             </div>
           </v-col>
         </v-row>
-    <!-- End Blog Details Area  -->
+        <!-- End Blog Details Area  -->
+
+        <v-row class="mt_sm--70 mt_md--90 mt--120">
+          <v-col lg="12">
+            <div class="section-title section-title--3 text-center">
+              <h2 class="heading-title">{{ $t('about.beginning.heading') }}</h2>
+              <p>{{ $t('about.beginning.subheading') }}</p>
+            </div>
+          </v-col>
+        </v-row>
+
+        <!-- Start Blog Details Area  -->
+        <v-row>
+          <v-col cols='12'>
+            <div class='inner-wrapper'>
+              <div class='inner'>
+                <p>{{ $t('about.beginning.text') }}</p>
+                <div class='thumbnail'>
+                  <img
+                    style="margin: 50px auto"
+                    src='https://oekastatic.orf.at/mims/2021/36/03/crops/w=1280,q=90/1064377_bigpicture_376803_stra3.jpg?s=ee3024aa6f15ba950a460c48f351d0c24cb942de'
+                    alt='Blog Images'
+                  />
+                </div>
+              </div>
+            </div>
+          </v-col>
+        </v-row>
+        <!-- End Blog Details Area  -->
+
+        <v-row class="mt_sm--70 mt_md--90 mt--120">
+          <v-col lg="12">
+            <div class="section-title section-title--3 text-center">
+              <h2 class="heading-title">{{ $t('about.workNowadays.heading') }}</h2>
+              <p>{{ $t('about.workNowadays.subheading') }}</p>
+            </div>
+          </v-col>
+        </v-row>
+
+        <!-- Start Blog Details Area  -->
+        <v-row>
+          <v-col cols='12'>
+            <div class='inner-wrapper'>
+              <div class='inner'>
+                <p>{{ $t('about.workNowadays.text') }}</p>
+                <div class='thumbnail'>
+                  <img
+                    style="margin: 50px auto"
+                    src='https://www.deutschland.de/sites/default/files/styles/crop_page/public/media/image/work-and-travel-germany-jobs.jpg?h=55f18e7c&itok=i5d7MByo'
+                    alt='Blog Images'
+                  />
+                </div>
+              </div>
+            </div>
+          </v-col>
+        </v-row>
+        <!-- End Blog Details Area  -->
 
       </v-container>
       </div>

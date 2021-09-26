@@ -90,7 +90,7 @@
         <img
           class="w-100"
           style="box-shadow: none"
-          src="../../assets/images/about/hermetia.jpg"
+          src="https://www.personio.de/wp-content/uploads/2020/07/5G8A7624-1.jpg"
           alt="Service Images"
         />
       </div>

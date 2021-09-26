@@ -188,9 +188,7 @@
             <div :class="{'container': $vuetify.breakpoint.smAndUp}">
               <h4 class="theme-gradient">{{ $t('index.productSection.heading') }}</h4>
               <p>{{ $t('index.productSection.subheading') }}</p>
-              <router-link class="rn-btn btn-white" to="/contact">{{ $t('index.productSection.linkText') }}
-              </router-link
-              >
+              <nuxt-link :to="localePath('products')" class="rn-btn btn-white">{{ $t('index.productSection.linkText') }}</nuxt-link>
             </div>
           </div>
         </div>

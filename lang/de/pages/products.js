@@ -1,6 +1,6 @@
 export default {
   title: 'Produkte',
-  heading: 'Eine Wertschöpfungskette',
+  heading: 'Eine Wertschöpfungs&shy;kette',
   subheading: 'Dank unseres einfach Prozess können wir flexibel mehrere verschiedene und qualitative Produkte herstellen.',
   bsfOilSection: {
     heading: 'BSF-Öl',

@@ -29,7 +29,7 @@
                 <div class="pb_sm--20 pt_sm--15 pb_md--25 pt_md--25 thumbnail flex-lg flex-lg-column justify-lg-center">
                   <img
                     class="w-100"
-                    src="../assets/images/about/futtermittel-insekten.jpeg"
+                    src="../assets/images/about/futtermittel-insekten-1.jpg"
                     alt="Service Images"
                   />
                 </div>
@@ -49,7 +49,7 @@
         </v-row>
         <!-- End First Content  -->
 
-        <v-row class="mt_sm--70 mt_md--90 mt--120">
+        <v-row class="mt_sm--70 mt_md--90 mt--140">
           <v-col lg="12">
             <div class="section-title section-title--3 text-center">
               <h2 class="heading-title">{{ $t('index.globalWarmingSection.heading') }}</h2>
@@ -93,7 +93,7 @@
         </div>
         <!-- End Counterup Area  -->
 
-        <v-row class="mt_sm--90 mt_md--110 mt--140">
+        <v-row class="mt_sm--90 mt_md--110 mt--150">
           <v-col lg="12">
             <div class="section-title section-title--3 text-center">
               <h2 class="heading-title">{{ $t('index.solutionSection.heading') }}</h2>
@@ -119,7 +119,7 @@
             <div class="pb_sm--20 pt_sm--15 pb_md--25 pt_md--25 thumbnail flex-lg flex-lg-column justify-lg-center">
               <img
                 class="w-100"
-                src="../assets/images/about/hermetia.jpg"
+                src="../assets/images/about/hermetia-1.jpg"
                 alt="About Images"
               />
             </div>
@@ -137,7 +137,7 @@
         </div>
         <!-- End Counterup Area  -->
 
-        <v-row class="mt_sm--90 mt_md--120 mt--140">
+        <v-row class="mt_sm--90 mt_md--120 mt--130">
           <v-col lg="12">
             <div class="section-title section-title--3 text-center">
               <h2 class="heading-title">{{ $t('index.processSection.heading') }}</h2>

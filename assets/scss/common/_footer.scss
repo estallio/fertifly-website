@@ -26,6 +26,9 @@ Footer Styles
         @media #{$sm-layout} {
             padding: 60px 30px;
         }
+        @media only screen and (min-width: 960px) and (max-width: 1024px) {
+          padding: 100px 80px;
+        }
         &::before {
             content: "";
             position: absolute;

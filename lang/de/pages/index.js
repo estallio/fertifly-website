@@ -31,7 +31,7 @@ export default {
   solutionSection: {
     heading: 'Unsere Lösung',
     subheading: 'Hermetia Illucens',
-    content: 'Unsere Lösung dem ganzen entgegenzuwirken baut auf einer kleinen Fliege namens Hermetia Illucens (Soldatenfliege) auf. Diese bietet einen schnellen Wachstum und effiziente Biomasseumwandlung von Abfällen. So beseitigen wir gleich zwei Probleme auf einmal und können die Probleme der Futtermittelproduktion mit einem Mal revolutionieren.',
+    content: 'Unsere Lösung dem ganzen entgegenzuwirken baut auf einer kleinen Fliege namens Hermetia Illucens (Soldatenfliege) auf. Diese bietet einen schnellen Wachstum und effiziente Biomasseumwandlung von Abfällen. So beseitigen wir gleich zwei Probleme auf einmal und können die Probleme der Futtermittelproduktion mit einem Mal revolutionieren. Unsere Lösung dem ganzen entgegenzuwirken baut auf einer kleinen Fliege namens Hermetia Illucens (Soldatenfliege) auf. Diese bietet einen schnellen Wachstum und effiziente Biomasseumwandlung von Abfällen. So beseitigen wir gleich zwei Probleme auf einmal und können die Probleme der Futtermittelproduktion mit einem Mal revolutionieren.',
     advantages: 'Vorteile',
     bulletPoints: ['Klein', 'Effizient', 'Kostengünstig'],
   },

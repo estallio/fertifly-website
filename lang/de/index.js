@@ -9,6 +9,7 @@ import contact from './pages/contact';
 import partner from './pages/partner';
 import team from './pages/team';
 import about from './pages/about';
+import jobs from './pages/jobs';
 import imprint from './pages/imprint';
 
 export default {
@@ -18,8 +19,9 @@ export default {
   products,
   contact,
   partner,
-  about,
   team,
+  about,
+  jobs,
   imprint,
   validation: de.messages,
   errors: {

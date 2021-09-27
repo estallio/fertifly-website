@@ -343,9 +343,9 @@ Slider Default
   position: relative;
   .slick-dots {
     bottom: 60px;
-    @media #{$sm-layout} {
-      bottom: 88px;
-    }
+    //@media #{$sm-layout} {
+    //  bottom: 88px;
+    //}
     li {
       opacity: 0.6;
     }

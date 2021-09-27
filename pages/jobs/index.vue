@@ -5,10 +5,43 @@
       v-model="onlyGermanAlert"
       type="info"
       dismissible
-      style="position: absolute; z-index: 101; width: 80%; left: 50%; margin-left: -40%; top: 20px;"
+      elevation="2"
+      color="#444"
+      style="position: absolute; z-index: 103; width: 80%; left: 50%; margin-left: -40%; top: 20px;"
     >
       This page is only available in German.
     </v-alert>
+
+    <v-dialog v-model="dialog" width="500" elevation="3" style="z-index: 104;">
+      <v-card>
+        <v-card-title class="text-h5 grey lighten-2">
+          Bewerbungsprozess
+        </v-card-title>
+
+        <v-card-text style="padding-top: 24px;">
+          Sende uns ein Bewerbungsschreiben und deinen Lebenslauf per Email an office@ecofly.at und wir melden uns bei dir.
+        </v-card-text>
+
+        <v-divider></v-divider>
+
+        <v-card-actions style="padding-bottom: 20px;">
+          <v-spacer></v-spacer>
+
+          <a href="mailto:office@ecofly.at" class="rn-button-style--2 btn_solid btn-size-sm">
+            Email schreiben
+          </a>
+
+          <button
+            style="margin-left: 10px;"
+            class="rn-button-style--2 btn_solid btn-size-sm"
+            @click="dialog = false"
+          >
+            Schließen
+          </button>
+
+        </v-card-actions>
+      </v-card>
+    </v-dialog>
 
     <!-- Start Breadcrump Area  -->
     <div class='breadcrumb-area rn-bg-color ptb--120 bg_image bg_image--pattern'>
@@ -58,12 +91,12 @@
               </ul>
 
               <p>
-                <b>Aufgabe:&nbsp;&nbsp;</b>{{ singleList.task }}
+                <b>Aufgaben:&nbsp;&nbsp;</b>{{ singleList.task }}
               </p>
 
               <nuxt-link to='slug' style="color: inherit; text-decoration: underline">Mehr erfahren...</nuxt-link>
 
-              <button style="margin-left: 20px" class="rn-button-style--2 btn_solid btn-size-sm">
+              <button style="margin-left: 20px" class="rn-button-style--2 btn_solid btn-size-sm" @click="dialog = true">
                 Jetzt bewerben!
               </button>
             </div>
@@ -83,6 +116,7 @@ import config from '../../config'
 export default {
   data() {
     return {
+      dialog: false,
       onlyGermanAlert: this.$i18n.locale !== 'de',
       breadcrumbs: [
         {

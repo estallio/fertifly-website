@@ -15,6 +15,6 @@ export default {
     emailPlaceholder: 'Email',
     subjectPlaceholder: 'Subject',
     messagePlaceholder: 'Message',
-    submitLabel: 'Send',
+    submitLabel: 'Submit',
   },
 }

@@ -1,16 +1,16 @@
-import de from 'vee-validate/dist/locale/de';
+import de from 'vee-validate/dist/locale/de'
 
-import footer from './components/footer';
-import header from './components/header';
+import footer from './components/footer'
+import header from './components/header'
 
-import index from './pages/index';
-import products from './pages/products';
-import contact from './pages/contact';
-import partner from './pages/partner';
-import team from './pages/team';
-import about from './pages/about';
-import jobs from './pages/jobs';
-import imprint from './pages/imprint';
+import index from './pages/index'
+import products from './pages/products'
+import contact from './pages/contact'
+import partner from './pages/partner'
+import team from './pages/team'
+import about from './pages/about'
+import jobs from './pages/jobs'
+import imprint from './pages/imprint'
 
 export default {
   footer,
@@ -28,13 +28,15 @@ export default {
     404: {
       heading: '404',
       subheading: 'Seite nicht gefunden',
-      description: 'Die gesuchte Seite konnte nicht gefunden werden. Sollte das ein Fehler unsererseits sein, schreiben Sie uns bitte eine Nachricht.',
+      description:
+        'Die gesuchte Seite konnte nicht gefunden werden. Sollte das ein Fehler unsererseits sein, schreiben Sie uns bitte eine Nachricht.',
     },
     other: {
       heading: 'Fehler',
       subheading: 'Ein Fehler ist aufgetreten',
-      description: 'Bei der Bearbeitung der Anfrage ist ein Fehler aufgetreten. Bitte schreiben Sie uns, wie der Fehler zustandegekommen ist.',
+      description:
+        'Bei der Bearbeitung der Anfrage ist ein Fehler aufgetreten. Bitte schreiben Sie uns, wie der Fehler zustandegekommen ist.',
     },
-    backToHomepage: 'Weiter zur Startseite'
-  }
-};
+    backToHomepage: 'Weiter zur Startseite',
+  },
+}

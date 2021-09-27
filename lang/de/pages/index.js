@@ -1,14 +1,16 @@
 export default {
   title: 'Start',
   introductionSection: {
-    heading: 'Insekten in Futtermittel',
+    heading: 'Insekten aus Futtermittel',
     subheading: 'Eine umweltschonende und nachhaltige Alternative.',
-    content: 'Die Nutzung von Insekten ermöglicht völlig neue Perspektiven für eine effiziente und nachhaltige Lebensmittelproduktion. Vor allem die Erzeugung innovativer Futtermittel für eine artgerechte und umweltverträgliche Nutztierhaltung mit Hilfe von Insekten birgt immenses Potential. Fische Hühner und Schweine ernähren sich in freier Wildbahn zu einem beträchtlichen Anteil von Fliegen, Käfern und Würmern. Warum sollten wir unseren Nutz-und Haustieren also Ihre natürliche Nahrungsquelle vorenthalten?',
+    content:
+      'Die Nutzung von Insekten ermöglicht völlig neue Perspektiven für eine effiziente und nachhaltige Lebensmittelproduktion. Vor allem die Erzeugung innovativer Futtermittel für eine artgerechte und umweltverträgliche Nutztierhaltung mit Hilfe von Insekten birgt immenses Potential. Fische Hühner und Schweine ernähren sich in freier Wildbahn zu einem beträchtlichen Anteil von Fliegen, Käfern und Würmern. Warum sollten wir unseren Nutz-und Haustieren also Ihre natürliche Nahrungsquelle vorenthalten?',
   },
   globalWarmingSection: {
     heading: 'Insekten gegen globale Erwärmung',
     subheading: 'Ein Umweltgedanke.',
-    content: 'Die konventionelle Futtermittelproduktion beschränkt sich derzeit meist auf Kostenabschätzungen und arbeitet rein gewinnbringend. Diese Art der Produktion ist weder nachhaltig, noch nutzt es die Resourcen voll aus. Die daruas enstehenden Kosten und Verunreinigungen unseres Planeten können mit Hilfe innovativer und moderner Futtermittelprodukiton vermieden werden. Ein weiterer Grund für die Umstellung auf moderne Futtermittel ist die hohe Belastung für die Umwelt.',
+    content:
+      'Die konventionelle Futtermittelproduktion beschränkt sich derzeit meist auf Kostenabschätzungen und arbeitet rein gewinnbringend. Diese Art der Produktion ist weder nachhaltig, noch nutzt es die Resourcen voll aus. Die daruas enstehenden Kosten und Verunreinigungen unseres Planeten können mit Hilfe innovativer und moderner Futtermittelprodukiton vermieden werden. Ein weiterer Grund für die Umstellung auf moderne Futtermittel ist die hohe Belastung für die Umwelt.',
   },
   factsAndFiguresHeading: 'Zahlen und Fakten',
   environmentCounterUpNumbers: [
@@ -31,7 +33,8 @@ export default {
   solutionSection: {
     heading: 'Unsere Lösung',
     subheading: 'Hermetia Illucens',
-    content: 'Unsere Lösung dem ganzen entgegenzuwirken baut auf einer kleinen Fliege namens Hermetia Illucens (Soldatenfliege) auf. Diese bietet einen schnellen Wachstum und effiziente Biomasseumwandlung von Abfällen. So beseitigen wir gleich zwei Probleme auf einmal und können die Probleme der Futtermittelproduktion mit einem Mal revolutionieren. Unsere Lösung dem ganzen entgegenzuwirken baut auf einer kleinen Fliege namens Hermetia Illucens (Soldatenfliege) auf. Diese bietet einen schnellen Wachstum und effiziente Biomasseumwandlung von Abfällen. So beseitigen wir gleich zwei Probleme auf einmal und können die Probleme der Futtermittelproduktion mit einem Mal revolutionieren.',
+    content:
+      'Unsere Lösung dem ganzen entgegenzuwirken baut auf einer kleinen Fliege namens Hermetia Illucens (Soldatenfliege) auf. Diese bietet einen schnellen Wachstum und effiziente Biomasseumwandlung von Abfällen. So beseitigen wir gleich zwei Probleme auf einmal und können die Probleme der Futtermittelproduktion mit einem Mal revolutionieren. Unsere Lösung dem ganzen entgegenzuwirken baut auf einer kleinen Fliege namens Hermetia Illucens (Soldatenfliege) auf. Diese bietet einen schnellen Wachstum und effiziente Biomasseumwandlung von Abfällen. So beseitigen wir gleich zwei Probleme auf einmal und können die Probleme der Futtermittelproduktion mit einem Mal revolutionieren.',
     advantages: 'Vorteile',
     bulletPoints: ['Klein', 'Effizient', 'Kostengünstig'],
   },
@@ -54,12 +57,15 @@ export default {
   ],
   processSection: {
     heading: 'Unser Prozess',
-    subheading: 'Die Produktion von Insektenprotein ist ein mehrstufiger Prozess und bedarf großer Sorgfalt in jedem einzelnen Schritt.',
-    content: 'Für das gezielte ?Upcycling? von Proteinen zu einem hochwertigen Futtermittel nutzen wir die Larve der schwarzen Soldatenfliege (lat. Hermetia Illucens, engl. Black Soldier Fly, kurz BSF). Unsere Fliegenlarven werden ausschließlich mit Nebenprodukten aus der Lebensmittelindustrie, die als Futtermittel zugelassen sind, gefüttert. Damit können wir einen stabilen Prozess garantieren und den Eintrag von Schadstoffen ausschließen. Zudem benötigen wir keine zusätzliche Wärmequelle für die Produktion unserer Fliegenlarven. Die Flächennutzung bei der Zucht der schwarzen Soldatenfliege ist ausgesprochen effizient. Auf einem m² kann bis zu einer Tonne Insektenprotein pro Jahr erzeugt werden.',
+    subheading:
+      'Die Produktion von Insektenprotein ist ein mehrstufiger Prozess und bedarf großer Sorgfalt in jedem einzelnen Schritt.',
+    content:
+      'Für das gezielte ?Upcycling? von Proteinen zu einem hochwertigen Futtermittel nutzen wir die Larve der schwarzen Soldatenfliege (lat. Hermetia Illucens, engl. Black Soldier Fly, kurz BSF). Unsere Fliegenlarven werden ausschließlich mit Nebenprodukten aus der Lebensmittelindustrie, die als Futtermittel zugelassen sind, gefüttert. Damit können wir einen stabilen Prozess garantieren und den Eintrag von Schadstoffen ausschließen. Zudem benötigen wir keine zusätzliche Wärmequelle für die Produktion unserer Fliegenlarven. Die Flächennutzung bei der Zucht der schwarzen Soldatenfliege ist ausgesprochen effizient. Auf einem m² kann bis zu einer Tonne Insektenprotein pro Jahr erzeugt werden.',
   },
   productSection: {
     heading: 'Unsere Produkte',
-    subheading: 'Wie wir aus diesem Prozess welche Produkte erstellen können erfahren Sie auf unserer Produktseite.',
+    subheading:
+      'Wie wir aus diesem Prozess welche Produkte erstellen können erfahren Sie auf unserer Produktseite.',
     linkText: 'Zu den Produkten',
   },
   testimonialSection: {
@@ -71,7 +77,8 @@ export default {
         content: [
           {
             name: 'Tips',
-            description: 'Durch mögliche Dürren wird das Thema der Lebensmittelproduktion immer wichtiger und Ecofly ist auf dem besten Weg das Problem zu lösen.',
+            description:
+              'Durch mögliche Dürren wird das Thema der Lebensmittelproduktion immer wichtiger und Ecofly ist auf dem besten Weg das Problem zu lösen.',
             designation: 'CEO, Firma Bla Bla, INC.',
           },
         ],
@@ -82,7 +89,8 @@ export default {
         content: [
           {
             name: 'FATIMA ASRAFY',
-            description: 'Wir haben schon lange mit Ecofly zusammengearbeitet und glauben, dass ihre Produkte schon bald überall erhältlich sein werden.',
+            description:
+              'Wir haben schon lange mit Ecofly zusammengearbeitet und glauben, dass ihre Produkte schon bald überall erhältlich sein werden.',
             designation: ' COO, AMERIMAR ENTERPRISES, INC.',
           },
         ],
@@ -93,7 +101,8 @@ export default {
         content: [
           {
             name: 'JANNAT TUMPA',
-            description: 'Ecofly hat das Potential, das nächste große Startup zu werden und wir freuen uns mit ihenen zusammenarbeiten zu dürfen.',
+            description:
+              'Ecofly hat das Potential, das nächste große Startup zu werden und wir freuen uns mit ihenen zusammenarbeiten zu dürfen.',
             designation: ' COO, AMERIMAR ENTERPRISES, INC.',
           },
         ],
@@ -119,4 +128,4 @@ export default {
       desc: 'völlig neue Perspektiven für die Erzeugung innovativer Futtermittel',
     },
   ],
-};
+}

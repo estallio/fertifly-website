@@ -9,6 +9,6 @@ export default {
     products: 'Products',
     jobs: 'Jobs',
     contact: 'Contact',
-    imprint: 'Imprint'
-  }
+    imprint: 'Imprint',
+  },
 }

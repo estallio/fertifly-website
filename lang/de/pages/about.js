@@ -7,7 +7,8 @@ export default {
   },
   beginning: {
     heading: 'Wie alles anfing',
-    subheading: 'Unsere ersten Schritte und Projekte in eine vielversprechende Richtung.',
+    subheading:
+      'Unsere ersten Schritte und Projekte in eine vielversprechende Richtung.',
     text: 'Es fing alles aus einem kleinen Projekt in der Garage an...',
   },
   workNowadays: {
@@ -15,4 +16,4 @@ export default {
     subheading: 'Ehrgeiz und Fleiß brachten uns große Fortschritte',
     text: 'Vielfach gefördert und prämiert können wir heutzutage zufrieden auf einen erfolgreichen Start zurückblicken...',
   },
-};
+}

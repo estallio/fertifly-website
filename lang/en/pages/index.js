@@ -9,7 +9,8 @@ export default {
   globalWarmingSection: {
     heading: 'Insects against global warming',
     subheading: 'An environmental thought.',
-    content: 'Conventional feed production is currently mostly limited to cost estimates and operates purely for profit. This type of production is neither sustainable, nor does it make full use of resources. The resulting costs and pollution of our planet can be avoided with the help of innovative and modern feed production. Another reason for switching to modern feeds is the high impact on the environment. In the fight against climate change, we must work together to find ways to promote savings and optimization in one of the most important areas, food production.',
+    content:
+      'Conventional feed production is currently mostly limited to cost estimates and operates purely for profit. This type of production is neither sustainable, nor does it make full use of resources. The resulting costs and pollution of our planet can be avoided with the help of innovative and modern feed production. Another reason for switching to modern feeds is the high impact on the environment. In the fight against climate change, we must work together to find ways to promote savings and optimization in one of the most important areas, food production.',
   },
   factsAndFiguresHeading: 'Facts and figures',
   environmentCounterUpNumbers: [
@@ -32,7 +33,8 @@ export default {
   solutionSection: {
     heading: 'Our solution',
     subheading: 'Hermetia Illucens',
-    content: 'Our solution to counteract this is based on a small fly called Hermetia Illucens (soldier fly). This fly offers fast growth and efficient biomass conversion of waste. This way we eliminate two problems at once and can revolutionize the problems of feed production at once.',
+    content:
+      'Our solution to counteract this is based on a small fly called Hermetia Illucens (soldier fly). This fly offers fast growth and efficient biomass conversion of waste. This way we eliminate two problems at once and can revolutionize the problems of feed production at once.',
     advantages: 'Benefits',
     bulletPoints: ['Small', 'Efficient', 'Cost effective'],
   },
@@ -55,12 +57,15 @@ export default {
   ],
   processSection: {
     heading: 'Our process',
-    subheading: 'Insect protein production is a multi-step process and requires great care in each step.',
-    content: 'We use the larva of the black soldier fly (lat. Hermetia Illucens, BSF) for the targeted "upcycling" of proteins into a high-quality feed. Our fly larvae are fed exclusively with by-products from the food industry that are approved as animal feed. This allows us to guarantee a stable process and exclude the introduction of harmful substances. Furthermore, we do not need an additional heat source for the production of our fly larvae. The use of land for breeding the black soldier fly is extremely efficient. Up to one ton of insect protein can be produced per year on one m².',
+    subheading:
+      'Insect protein production is a multi-step process and requires great care in each step.',
+    content:
+      'We use the larva of the black soldier fly (lat. Hermetia Illucens, BSF) for the targeted "upcycling" of proteins into a high-quality feed. Our fly larvae are fed exclusively with by-products from the food industry that are approved as animal feed. This allows us to guarantee a stable process and exclude the introduction of harmful substances. Furthermore, we do not need an additional heat source for the production of our fly larvae. The use of land for breeding the black soldier fly is extremely efficient. Up to one ton of insect protein can be produced per year on one m².',
   },
   productSection: {
     heading: 'Our products',
-    subheading: 'You can find out how we can create which products from this process on our product page.',
+    subheading:
+      'You can find out how we can create which products from this process on our product page.',
     linkText: 'To products',
   },
   testimonialSection: {
@@ -72,7 +77,8 @@ export default {
         content: [
           {
             name: 'Tips',
-            description: 'With potential droughts, the issue of food production is becoming increasingly important and Ecofly is well on its way to solving the problem.',
+            description:
+              'With potential droughts, the issue of food production is becoming increasingly important and Ecofly is well on its way to solving the problem.',
             designation: 'CEO, Firma Bla Bla, INC.',
           },
         ],
@@ -83,7 +89,8 @@ export default {
         content: [
           {
             name: 'FATIMA ASRAFY',
-            description: 'We have worked with Ecofly for a long time and believe that their products will soon be available everywhere.',
+            description:
+              'We have worked with Ecofly for a long time and believe that their products will soon be available everywhere.',
             designation: ' COO, AMERIMAR ENTERPRISES, INC.',
           },
         ],
@@ -94,7 +101,8 @@ export default {
         content: [
           {
             name: 'JANNAT TUMPA',
-            description: 'Ecofly has the potential to be the next big startup and we are excited to work with them.',
+            description:
+              'Ecofly has the potential to be the next big startup and we are excited to work with them.',
             designation: ' COO, AMERIMAR ENTERPRISES, INC.',
           },
         ],
@@ -120,4 +128,4 @@ export default {
       desc: 'completely new perspectives for the production of innovative feeds',
     },
   ],
-};
+}

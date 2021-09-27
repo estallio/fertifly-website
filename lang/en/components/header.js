@@ -6,6 +6,6 @@ export default {
     jobs: 'Jobs',
     team: 'Team',
     partner: 'Partner',
-    contact: 'Contact'
-  }
+    contact: 'Contact',
+  },
 }

@@ -5,7 +5,8 @@ export default {
   addressDescription: 'Address',
   form: {
     heading: 'Simply write us.',
-    description: 'You want to contact us and would like us to get in touch with you? Simply enter your data and request here, we will contact you shortly.',
+    description:
+      'You want to contact us and would like us to get in touch with you? Simply enter your data and request here, we will contact you shortly.',
     name: 'Name',
     email: 'Email',
     subject: 'Subject',
@@ -15,5 +16,5 @@ export default {
     subjectPlaceholder: 'Subject',
     messagePlaceholder: 'Message',
     submitLabel: 'Send',
-  }
-};
+  },
+}

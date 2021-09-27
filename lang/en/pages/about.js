@@ -15,4 +15,4 @@ export default {
     subheading: 'Ambition and diligence brought us great progress',
     text: 'Promoted and awarded many times, we can nowadays look back with satisfaction on a successful start...',
   },
-};
+}

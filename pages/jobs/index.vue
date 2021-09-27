@@ -1,6 +1,15 @@
 <template>
   <div>
 
+    <v-alert
+      v-model="onlyGermanAlert"
+      type="info"
+      dismissible
+      style="position: absolute; z-index: 101; width: 80%; left: 50%; margin-left: -40%; top: 20px;"
+    >
+      This page is only available in German.
+    </v-alert>
+
     <!-- Start Breadcrump Area  -->
     <div class='breadcrumb-area rn-bg-color ptb--120 bg_image bg_image--pattern'>
       <v-container>
@@ -74,6 +83,7 @@ import config from '../../config'
 export default {
   data() {
     return {
+      onlyGermanAlert: this.$i18n.locale !== 'de',
       breadcrumbs: [
         {
           text: this.$t('index.title'),

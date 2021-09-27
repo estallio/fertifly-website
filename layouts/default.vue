@@ -1,13 +1,14 @@
 <template>
   <v-app id="inspire">
+
     <Header/>
-    
+
     <v-main>
       <Nuxt />
     </v-main>
-    
+
     <Footer/>
-    
+
     <v-fab-transition>
       <v-btn
         v-scroll="onScroll"

@@ -25,7 +25,7 @@
             <v-row class="sercice-details-content align-items-center justify-center">
 
               <!-- Start Column -->
-              <v-col lg="5" md="5" cols="9" sm="7" class="flex-lg">
+              <v-col lg="4" md="4" sm="7" cols="9" class="flex-lg">
                 <div class="pb_sm--20 pt_sm--15 pb_md--25 pt_md--25 thumbnail flex-lg flex-lg-column justify-lg-center">
                   <img
                     class="w-100"
@@ -62,7 +62,7 @@
         <v-row class="mt_sm--10 mt_md--20 mt--40 justify-center">
 
           <!-- Start Column -->
-          <v-col lg="5" md="5" cols="9" sm="7" class="flex-lg" order-md="2">
+          <v-col lg="4" md="4" sm="7" cols="9" class="flex-lg" order-md="2">
             <div class="pb_sm--20 pt_sm--15 pb_md--25 pt_md--25 thumbnail flex-lg flex-lg-column justify-lg-center">
               <img
                 class="w-100"
@@ -115,7 +115,7 @@
             </div>
           </v-col>
 
-          <v-col lg="5" md="5" cols="7" class="flex-lg" order="2" order-md="1">
+          <v-col lg="4" md="4" cols="7" class="flex-lg" order="2" order-md="1">
             <div class="pb_sm--20 pt_sm--15 pb_md--25 pt_md--25 thumbnail flex-lg flex-lg-column justify-lg-center">
               <img
                 class="w-100"
@@ -181,14 +181,14 @@
     </div>
 
     <!-- Start Finding us Area  -->
-    <div class="rn-finding-us-area rn-finding-us mt_sm--60 mt_md--75 mt--120">
+    <div class="rn-finding-us-area rn-finding-us">
       <div class="inner">
         <div class="content-wrapper" style="flex-direction: column">
-          <div class="content">
+          <div class="content products-box">
             <div :class="{'container': $vuetify.breakpoint.smAndUp}">
-              <h4 class="theme-gradient">{{ $t('index.productSection.heading') }}</h4>
-              <p>{{ $t('index.productSection.subheading') }}</p>
-              <nuxt-link :to="localePath('products')" class="rn-btn btn-white">{{ $t('index.productSection.linkText') }}</nuxt-link>
+              <h4 style="color: #444">{{ $t('index.productSection.heading') }}</h4>
+              <p style="color: #444">{{ $t('index.productSection.subheading') }}</p>
+              <nuxt-link :to="localePath('products')" class="rn-button-style--2 btn_solid btn-size-sm">{{ $t('index.productSection.linkText') }}</nuxt-link>
             </div>
           </div>
         </div>
@@ -196,7 +196,8 @@
         <div class="thumbnail">
           <div class="image">
             <img
-              src="../assets/images/about/mehl.jpeg"
+              style="box-shadow: none; max-width: 1600px"
+              src="../assets/images/about/produkte.jpeg"
               alt="Finding Images"
             />
           </div>
@@ -207,7 +208,7 @@
     <!-- End Finding us Area  -->
 
     <!-- Start Testimonial Area  -->
-    <div class="rn-testimonial-area rn-section-gap mt_sm--50 mt_md--70 mt--70">
+    <div class="rn-testimonial-area rn-section-gap">
       <v-container>
         <Testimonial/>
       </v-container>
@@ -228,3 +229,30 @@
     }
   }
 </script>
+
+<style>
+.products-box {
+  background-color: #fff !important;
+  box-shadow: 0 0 15px 1px rgba(170, 170, 170, 0.5);
+}
+.rn-finding-us-area {
+  margin-top: 90px;
+}
+.rn-testimonial-area {
+  margin-top: 100px;
+}
+@media only screen and (max-width: 1264px) {
+  .products-box {
+    box-shadow: none;
+  }
+  .rn-finding-us-area {
+    margin-top: 70px;
+  }
+  .rn-testimonial-area {
+    margin-top: 0;
+  }
+  .rn-finding-us-area img {
+    max-width: 100% !important;
+  }
+}
+</style>

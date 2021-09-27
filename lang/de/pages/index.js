@@ -8,7 +8,7 @@ export default {
   globalWarmingSection: {
     heading: 'Insekten gegen globale Erwärmung',
     subheading: 'Ein Umweltgedanke.',
-    content: 'Die konventionelle Futtermittelproduktion beschränkt sich derzeit meist auf Kostenabschätzungen und arbeitet rein gewinnbringend. Diese Art der Produktion ist weder nachhaltig, noch nutzt es die Resourcen voll aus. Die daruas enstehenden Kosten und Verunreinigungen unseres Planeten können mit Hilfe innovativer und moderner Futtermittelprodukiton vermieden werden. Ein weiterer Grund für die Umstellung auf moderne Futtermittel ist die hohe Belastung für die Umwelt. Im Kampf gegen den Klimawandel müssen wir gemeinsam Wege finden in einem der wichtigsten Bereiche, wie der Lebensmittelproduktion, Einsparungen und Optimierungen zu fördern.',
+    content: 'Die konventionelle Futtermittelproduktion beschränkt sich derzeit meist auf Kostenabschätzungen und arbeitet rein gewinnbringend. Diese Art der Produktion ist weder nachhaltig, noch nutzt es die Resourcen voll aus. Die daruas enstehenden Kosten und Verunreinigungen unseres Planeten können mit Hilfe innovativer und moderner Futtermittelprodukiton vermieden werden. Ein weiterer Grund für die Umstellung auf moderne Futtermittel ist die hohe Belastung für die Umwelt.',
   },
   factsAndFiguresHeading: 'Zahlen und Fakten',
   environmentCounterUpNumbers: [

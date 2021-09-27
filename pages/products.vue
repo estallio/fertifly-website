@@ -35,12 +35,12 @@
         <!-- End First Section Heading -->
 
         <!-- Start First Content  -->
-        <v-row class="mt_sm--10 mt_md--20 mt--40">
+        <v-row class="mt_sm--40 mt_md--20 mt--40">
           <v-col cols="12">
             <v-row class="sercice-details-content align-items-center justify-center">
 
               <!-- Start Column -->
-              <v-col lg="5" md="5" cols="7" class="flex-lg">
+              <v-col lg="3" md="4" cols="4" class="flex-lg">
                 <div class="pb_sm--20 pt_sm--15 pb_md--25 pt_md--25 thumbnail flex-lg flex-lg-column justify-lg-center">
                   <img
                     class="w-100"
@@ -67,12 +67,12 @@
         <!-- End First Content  -->
 
         <!-- Start First Content  -->
-        <v-row class="mt_sm--10 mt_md--20 mt--40">
+        <v-row class="mt_sm--20 mt_md--20 mt--40">
           <v-col cols="12">
             <v-row class="sercice-details-content align-items-center justify-center">
 
               <!-- Start Column -->
-              <v-col lg="5" md="5" cols="7" class="flex-lg">
+              <v-col lg="3" md="4" cols="4" class="flex-lg">
                 <div class="pb_sm--20 pt_sm--15 pb_md--25 pt_md--25 thumbnail flex-lg flex-lg-column justify-lg-center">
                   <img
                     class="w-100"
@@ -99,12 +99,12 @@
         <!-- End First Content  -->
 
         <!-- Start First Content  -->
-        <v-row class="mt_sm--10 mt_md--20 mt--40 pb_md--100 pb--80">
+        <v-row class="mt_sm--20 mt_md--20 mt--40 pb_md--100 pb--80">
           <v-col cols="12">
             <v-row class="sercice-details-content align-items-center justify-center">
 
               <!-- Start Column -->
-              <v-col lg="5" md="5" cols="7" class="flex-lg">
+              <v-col lg="3" md="4" cols="4" class="flex-lg">
                 <div class="pb_sm--20 pt_sm--15 pb_md--25 pt_md--25 thumbnail flex-lg flex-lg-column justify-lg-center">
                   <img
                     class="w-100"
@@ -162,3 +162,11 @@
     }
   };
 </script>
+
+<style>
+@media only screen and (max-width: 960px) {
+  .heading-title {
+    text-align: center;
+  }
+}
+</style>

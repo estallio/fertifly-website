@@ -1,7 +1,7 @@
 export default {
   title: 'Start',
   introductionSection: {
-    heading: 'Insekten als Futtermittel',
+    heading: 'Insekten in Futtermittel',
     subheading: 'Eine umweltschonende und nachhaltige Alternative.',
     content: 'Die Nutzung von Insekten ermöglicht völlig neue Perspektiven für eine effiziente und nachhaltige Lebensmittelproduktion. Vor allem die Erzeugung innovativer Futtermittel für eine artgerechte und umweltverträgliche Nutztierhaltung mit Hilfe von Insekten birgt immenses Potential. Fische Hühner und Schweine ernähren sich in freier Wildbahn zu einem beträchtlichen Anteil von Fliegen, Käfern und Würmern. Warum sollten wir unseren Nutz-und Haustieren also Ihre natürliche Nahrungsquelle vorenthalten?',
   },

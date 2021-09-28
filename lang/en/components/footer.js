@@ -10,5 +10,6 @@ export default {
     jobs: 'Jobs',
     contact: 'Contact',
     imprint: 'Imprint',
+    privacy: 'Privacy',
   },
 }

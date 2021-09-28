@@ -10,5 +10,6 @@ export default {
     jobs: 'Jobs',
     contact: 'Kontakt',
     imprint: 'Impressum',
+    privacy: 'Datenschutz',
   },
 }

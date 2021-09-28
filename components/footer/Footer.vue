@@ -97,9 +97,9 @@
           },
         ],
         navList: [
-          "products",
           "jobs",
           "contact",
+          "privacy",
           "imprint",
         ],
         mailList: [

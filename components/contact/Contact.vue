@@ -73,6 +73,18 @@
               </label>
             </ValidationProvider>
 
+            <ValidationProvider
+              :name="$t('contact.form.consent')"
+              rules="required"
+              v-slot="{ errors }"
+            >
+              <label>
+                <input type="checkbox" name="consent" id="consent" style="display: unset; width: auto; height: auto;" />
+                <label style="display: unset; width: auto; height: auto;" for="consent">{{ $t('contact.form.consent') }}</label>
+                <span class="inpur-error">{{ errors[0] }}</span>
+              </label>
+            </ValidationProvider>
+
             <button
               class="rn-button-style--2 btn_solid"
               type="submit"

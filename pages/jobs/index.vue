@@ -7,9 +7,10 @@
       dismissible
       elevation="2"
       color="#444"
+      @input="this.setDialogDismissedCookie"
       style="position: absolute; z-index: 103; width: 80%; left: 50%; margin-left: -40%; top: 20px;"
     >
-      This page is only available in German.
+      The Jobs pages are only available in German.
     </v-alert>
 
     <v-dialog v-model="dialog" width="500" elevation="3" style="z-index: 104;">
@@ -111,13 +112,14 @@
 </template>
 
 <script>
+import Cookies from 'js-cookie'
 import config from '../../config'
 
 export default {
   data() {
     return {
       dialog: false,
-      onlyGermanAlert: this.$i18n.locale !== 'de',
+      onlyGermanAlert: this.$i18n.locale !== 'de' && Cookies.get('languageDialogDismissed') !== 'true',
       breadcrumbs: [
         {
           text: this.$t('index.title'),
@@ -156,8 +158,6 @@ export default {
     }
   },
   async asyncData ({ app, params, store, payload }) {
-    console.log('asyncData', params, payload);
-
     if (payload?.routeParams) {
       await store.dispatch('i18n/setRouteParams', payload.routeParams);
     }
@@ -180,6 +180,11 @@ export default {
       en: '/jobs',
       de: '/jobs'
     }
+  },
+  methods: {
+    setDialogDismissedCookie () {
+      Cookies.set('languageDialogDismissed', 'true', { expires: 2 })
+    },
   }
 }
 </script>

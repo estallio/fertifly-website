@@ -1,0 +1,56 @@
+<template>
+  <div>
+
+    <!-- Start Breadcrump Area  -->
+    <div class='breadcrumb-area rn-bg-color ptb--120 bg_image bg_image--pattern'>
+      <v-container>
+        <v-row>
+          <v-col lg='12'>
+            <div class='breadcrumb-inner pt--100 pt_sm--40 pt_md--50'>
+              <h1 class='heading-title'>{{ $t('privacy.title') }}</h1>
+              <ul class='page-list'>
+                <li v-for='(item, i) in breadcrumbs' :key='i'>
+                  <nuxt-link :to='localePath(item.to)'>{{ item.text }}</nuxt-link>
+                </li>
+              </ul>
+            </div>
+          </v-col>
+        </v-row>
+      </v-container>
+    </div>
+    <!-- End Breadcrump Area  -->
+
+  </div>
+</template>
+
+<script>
+export default {
+  data() {
+    return {
+      breadcrumbs: [
+        {
+          text: this.$t('index.title'),
+          to: '/',
+          disabled: false
+        },
+        {
+          text: this.$t('privacy.title'),
+          to: '',
+          disabled: true
+        }
+      ]
+    }
+  },
+  computed: {
+    availableLocales() {
+      return this.$i18n.locales.filter(i => i.code !== this.$i18n.locale)
+    }
+  },
+  nuxtI18n: {
+    paths: {
+      en: '/privacy',
+      de: '/datenschutz'
+    }
+  }
+}
+</script>

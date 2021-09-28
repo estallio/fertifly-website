@@ -110,8 +110,8 @@ export default {
             // },
             'css-byebye': {
               rulesToRemove: [
-                /.*\.v-application--is-rtl.*/,
-                /.*\.theme--dark.*/,
+                /.*\.*-rtl.*/,
+                /.*\.theme--light.*/,
               ],
             },
           },

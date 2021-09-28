@@ -16,6 +16,8 @@ export default {
     subjectPlaceholder: 'Betreff',
     messagePlaceholder: 'Nachricht',
     submitLabel: 'Senden',
-    consent: 'Ich habe die Datenschutzerklärung der Website gelesen und bin damit einverstanden.'
+    consentFirstPart: 'Ich habe die',
+    consentProtection: 'Datenschutzerklärung',
+    consentSecondPart: 'der Website gelesen und bin damit einverstanden.'
   },
 }

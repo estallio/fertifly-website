@@ -74,13 +74,17 @@
             </ValidationProvider>
 
             <ValidationProvider
-              :name="$t('contact.form.consent')"
+              :name="$t('contact.form.consentProtection')"
               rules="required"
               v-slot="{ errors }"
             >
               <label>
                 <input type="checkbox" name="consent" id="consent" style="display: unset; width: auto; height: auto;" />
-                <label style="display: unset; width: auto; height: auto;" for="consent">{{ $t('contact.form.consent') }}</label>
+                <label style="display: unset; width: auto; height: auto;" for="consent">
+                  {{ $t('contact.form.consentFirstPart') }}
+                  <nuxt-link :to='localePath("privacy")' style="text-decoration: underline;">{{ $t('contact.form.consentProtection') }}</nuxt-link>
+                  {{ $t('contact.form.consentSecondPart') }}
+                </label>
                 <span class="inpur-error">{{ errors[0] }}</span>
               </label>
             </ValidationProvider>

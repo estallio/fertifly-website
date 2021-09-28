@@ -186,6 +186,94 @@ export default {
     routesNameSeparator: config.routesNameSeparator,
   },
 
+  head: {
+    meta: [
+      { charset: 'utf-8' },
+
+      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+
+      // For IE10 Metro
+      { name: 'msapplication-TileColor', content: "#FFFFFF" },
+      { name: 'msapplication-TileImage', content: "/favicon-114.png" },
+      { name: 'theme-color', content: "#ffffff" },
+    ],
+    link: [
+      // For old IEs
+      { rel: 'shortcut icon', href: '/favicon.ico' },
+
+      // For new browsers multisize ico
+      { rel: 'icon', type: 'image/x-icon', sizes: '16x16 32x32', href: '/favicon.ico' },
+
+      // For iPad with high-resolution Retina display running iOS ≥ 7:
+      { rel: 'apple-touch-icon', sizes: '152x152', href: '/favicon-152-precomposed.png' },
+
+      // For iPad with high-resolution Retina display running iOS ≤ 6:
+      { rel: 'apple-touch-icon', sizes: '144x144', href: '/favicon-144-precomposed.png' },
+
+      // For iPhone with high-resolution Retina display running iOS ≥ 7:
+      { rel: 'apple-touch-icon', sizes: '120x120', href: '/favicon-120-precomposed.png' },
+
+      // For iPhone with high-resolution Retina display running iOS ≤ 6:
+      { rel: 'apple-touch-icon', sizes: '114x114', href: '/favicon-114-precomposed.png' },
+
+      // For iPhone 6+
+      { rel: 'apple-touch-icon', sizes: '180x180', href: '/favicon-180-precomposed.png' },
+
+      // For first- and second-generation iPad:
+      { rel: 'apple-touch-icon', sizes: '72x72', href: '/favicon-72-precomposed.png' },
+
+      // For non-Retina iPhone, iPod Touch, and Android 2.1+ devices:
+      { rel: 'apple-touch-icon', sizes: '57x57', href: '/favicon-57.png' },
+
+      // Chrome for Android
+      { rel: 'icon', sizes: '192x192', href: '/favicon-192.png' },
+    ],
+  },
+
+  // PWA module configuration: https://go.nuxtjs.dev/pwa
+  pwa: {
+    icons: [
+      {
+        "src": "/favicon-36.png",
+        "sizes": "36x36",
+        "type": "image/png",
+        "density": 0.75
+      },
+      {
+        "src": "/favicon-48.png",
+        "sizes": "48x48",
+        "type": "image/png",
+        "density": 1
+      },
+      {
+        "src": "/favicon-72.png",
+        "sizes": "72x72",
+        "type": "image/png",
+        "density": 1.5
+      },
+      {
+        "src": "/favicon-96.png",
+        "sizes": "96x96",
+        "type": "image/png",
+        "density": 2
+      },
+      {
+        "src": "/favicon-144.png",
+        "sizes": "144x144",
+        "type": "image/png",
+        "density": 3
+      },
+      {
+        "src": "/favicon-192.png",
+        "sizes": "192x192",
+        "type": "image/png",
+        "density": 4
+      }
+    ]
+
+    // TODO: lang manifest different languages?
+  },
+
   // Global page headers: https://go.nuxtjs.dev/config-head
   /*head () {
     if (!this.$nuxtI18nHead) {
@@ -297,11 +385,6 @@ export default {
         // TODO: get jobs dynamic slugs
       ]
     },
-  },
-
-  // PWA module configuration: https://go.nuxtjs.dev/pwa
-  pwa: {
-    // TODO: lang manifest different languages?
   },
 
   server: {

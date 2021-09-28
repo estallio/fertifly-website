@@ -10,6 +10,7 @@ import partner from './pages/partner'
 import team from './pages/team'
 import about from './pages/about'
 import jobs from './pages/jobs'
+import privacy from './pages/privacy';
 import imprint from './pages/imprint'
 
 export default {
@@ -21,6 +22,7 @@ export default {
   partner,
   team,
   about,
+  privacy,
   jobs,
   imprint,
   validation: de.messages,

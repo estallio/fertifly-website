@@ -82,20 +82,6 @@
 .theme--light.v-tabs > .v-tabs-bar {
   background-color: transparent;
 }
-// dialog box for popup video
-.rn-paralax-testimonial {
-  .rn-testimonial-content {
-    &::after,
-    &::before {
-      opacity: 0.1;
-    }
-  }
-}
-.parallax {
-  .counterup_style--1 p.description {
-    color: #fff;
-  }
-}
 
 // studio agency z-index issue
 .compensate-for-scrollbar {

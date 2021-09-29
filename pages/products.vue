@@ -56,7 +56,7 @@
               <v-col lg="7" md="7" cols="12">
                 <div class="flex-column justify-center d-flex fill-height">
                   <h2 class="heading-title">{{ $t('products.bsfOilSection.heading') }}</h2>
-                  <p>{{ $t('products.bsfOilSection.content') }}</p>
+                  <p class="text-justified">{{ $t('products.bsfOilSection.content') }}</p>
                 </div>
               </v-col>
               <!-- End Column -->
@@ -88,7 +88,7 @@
               <v-col lg="7" md="7" cols="12">
                 <div class="flex-column justify-center d-flex fill-height">
                   <h2 class="heading-title">{{ $t('products.bsfProteinSection.heading') }}</h2>
-                  <p>{{ $t('products.bsfProteinSection.content') }}</p>
+                  <p class="text-justified">{{ $t('products.bsfProteinSection.content') }}</p>
                 </div>
               </v-col>
               <!-- End Column -->
@@ -120,7 +120,7 @@
               <v-col lg="7" md="7" cols="12">
                 <div class="flex-column justify-center d-flex fill-height">
                   <h2 class="heading-title">{{ $t('products.bsfFertilizerSection.heading') }}</h2>
-                  <p>{{ $t('products.bsfFertilizerSection.content') }}</p>
+                  <p class="text-justified">{{ $t('products.bsfFertilizerSection.content') }}</p>
                 </div>
               </v-col>
               <!-- End Column -->

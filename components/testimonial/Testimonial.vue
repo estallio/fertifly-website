@@ -42,7 +42,7 @@
           </v-card>
         </client-only>
         <!-- End .v-tabs-items -->
-        <v-tabs v-model="tab" centered hide-slider center-active>
+        <v-tabs class="z-index-2" v-model="tab" centered hide-slider center-active>
           <v-tab v-for="item in testimonialContent" :key="item.id">
             <div class="thumb">
               <img :src="require(`../../assets/images/client/${item.imageName}`)" alt="testimonial image" />
@@ -66,3 +66,10 @@
     },
   };
 </script>
+
+<style>
+  .z-index-2 {
+    position: relative;
+    z-index: 2;
+  }
+</style>

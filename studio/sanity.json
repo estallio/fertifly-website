@@ -14,17 +14,24 @@
     "@sanity/default-login",
     "@sanity/desk-tool",
     "@sanity/dashboard",
+    "intl-input",
     "cloudflare-pages-deploy"
   ],
   "env": {
     "development": {
-      "plugins": ["@sanity/vision"]
+      "plugins": [
+        "@sanity/vision"
+      ]
     }
   },
   "parts": [
     {
       "name": "part:@sanity/base/schema",
       "path": "./schemas/schema"
+    },
+    {
+      "name": "part:@sanity/desk-tool/structure",
+      "path": "./deskStructure.js"
     }
   ]
 }

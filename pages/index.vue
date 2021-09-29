@@ -39,7 +39,7 @@
               <!-- Start Column -->
               <v-col lg="7" md="7" cols="12">
                 <div class="flex-column justify-center d-flex fill-height">
-                  <p>{{ $t('index.introductionSection.content') }}</p>
+                  <p class="text-justified">{{ $t('index.introductionSection.content') }}</p>
                 </div>
               </v-col>
               <!-- End Column -->
@@ -76,7 +76,7 @@
           <!-- Start Column -->
           <v-col lg="7" md="7" cols="12" order-md="1">
             <div class="flex-column justify-center d-flex fill-height">
-              <p>{{ $t('index.globalWarmingSection.content') }}</p>
+              <p class="text-justified">{{ $t('index.globalWarmingSection.content') }}</p>
             </div>
           </v-col>
           <!-- End Column -->
@@ -107,7 +107,7 @@
 
           <v-col lg="7" md="7" cols="12" order="1" order-md="2">
             <div class="flex-column justify-center d-flex fill-height">
-              <p>{{ $t('index.solutionSection.content') }}</p>
+              <p class="text-justified">{{ $t('index.solutionSection.content') }}</p>
               <h4 class="title">{{ $t('index.solutionSection.advantages') }}</h4>
               <ul class="liststyle bullet">
                 <li v-for="(item, i) in this.$t('index.solutionSection.bulletPoints')" :key="i">{{ item }}</li>
@@ -162,7 +162,7 @@
 
           <v-col cols="12" lg="6" order-md="2">
             <div class="flex-column justify-center d-flex fill-height">
-              <p>{{ $t('index.processSection.content') }}</p>
+              <p class="text-justified">{{ $t('index.processSection.content') }}</p>
             </div>
           </v-col>
 

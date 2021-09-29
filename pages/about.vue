@@ -37,7 +37,7 @@
           <v-col cols='12'>
             <div class='inner-wrapper'>
               <div class='inner'>
-                <p>{{ $t('about.vision.text') }}</p>
+                <p class="text-justified">{{ $t('about.vision.text') }}</p>
                 <div class='thumbnail'>
                   <img
                     style="margin: 50px auto"
@@ -65,7 +65,7 @@
           <v-col cols='12'>
             <div class='inner-wrapper'>
               <div class='inner'>
-                <p>{{ $t('about.beginning.text') }}</p>
+                <p class="text-justified">{{ $t('about.beginning.text') }}</p>
                 <div class='thumbnail'>
                   <img
                     style="margin: 50px auto"
@@ -93,7 +93,7 @@
           <v-col cols='12'>
             <div class='inner-wrapper'>
               <div class='inner'>
-                <p>{{ $t('about.workNowadays.text') }}</p>
+                <p class="text-justified">{{ $t('about.workNowadays.text') }}</p>
                 <div class='thumbnail'>
                   <img
                     style="margin: 50px auto"

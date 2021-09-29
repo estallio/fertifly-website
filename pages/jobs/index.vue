@@ -91,7 +91,7 @@
                 </li>
               </ul>
 
-              <p>
+              <p class="text-justified">
                 <b>Aufgaben:&nbsp;&nbsp;</b>{{ singleList.task }}
               </p>
 

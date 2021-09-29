@@ -15,7 +15,8 @@
     "@sanity/desk-tool",
     "@sanity/dashboard",
     "intl-input",
-    "cloudflare-pages-deploy"
+    "cloudflare-pages-deploy",
+    "media"
   ],
   "env": {
     "development": {

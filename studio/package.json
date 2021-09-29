@@ -25,8 +25,10 @@
     "prop-types": "^15.7",
     "react": "^17.0",
     "react-dom": "^17.0",
+    "react-icons": "^4.2.0",
     "sanity-plugin-cloudflare-pages-deploy": "^1.0.4",
-    "sanity-plugin-intl-input": "^5.2.1"
+    "sanity-plugin-intl-input": "^5.2.1",
+    "sanity-plugin-media": "^1.4.0"
   },
   "devDependencies": {},
   "repository": {

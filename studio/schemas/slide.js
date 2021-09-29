@@ -36,6 +36,7 @@ export default {
   preview: {
     select: {
       title: 'text.de.heading',
+      subtitle: 'text.de.subheading',
       media: 'backgroundImage',
     },
   },

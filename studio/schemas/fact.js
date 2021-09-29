@@ -1,7 +1,10 @@
+import { AiOutlineFieldNumber } from 'react-icons/ai'
+
 export default {
   title: 'Fact',
   name: 'fact',
   type: 'object',
+  icon: AiOutlineFieldNumber,
   __experimental_actions: ['update', 'publish', 'create'],
   fields: [
     {

@@ -6,9 +6,8 @@ import home from './home'
 import fact from './fact'
 import section from './section'
 import simpleEditor from './simpleEditor'
-import simpleText from './simpleText'
 import textImageContent from './textImageContent'
-import textInputUtils from './textInputUtils';
+import testimonial from './testimonial'
 
 export default createSchema({
   name: 'default',
@@ -17,9 +16,8 @@ export default createSchema({
     home,
     section,
     simpleEditor,
-    simpleText,
     slide,
     textImageContent,
-    textInputUtils,
+    testimonial
   ])
 });

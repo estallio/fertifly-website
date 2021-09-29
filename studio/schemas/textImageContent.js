@@ -25,11 +25,6 @@ export default {
       type: 'image',
     },
     {
-      title: 'Image left sided (default right sided)',
-      name: 'imageLeftSided',
-      type: 'checkbox',
-    },
-    {
       title: 'Locate image left from text (default right)',
       name: 'imageLocatedLeft',
       type: 'boolean',
@@ -49,7 +44,7 @@ export default {
       name: 'factsAndFigures',
       type: 'array',
       of: [ { type: 'fact' } ],
-      hidden: ({document}) => !document?.hasFactsAndFigures
+      hidden: ({ parent }) => !parent?.hasFactsAndFigures
     }
   ],
   preview: {

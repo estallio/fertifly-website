@@ -2,7 +2,7 @@ export default {
   title: 'Home',
   name: 'home',
   type: 'document',
-  __experimental_actions: ['update', 'publish', 'create'],
+  __experimental_actions: ['update', 'publish', 'create', 'delete'],
   fields: [
     {
       title: 'Banner',
@@ -11,19 +11,19 @@ export default {
       of: [ { type: 'slide' } ],
     },
     {
-      title: 'Sections',
-      name: 'sections',
+      title: 'Content Sections',
+      name: 'contentSections',
       type: 'array',
-      of: [ { type: 'section' } ],
+      of: [ { type: 'imageTextContentSection' } ],
     },
     {
-      title: 'To Products Section',
-      name: 'productsSection',
+      title: '"To Products" Section',
+      name: 'toProductsSection',
       type: 'object',
       fields: [
         {
-          title: 'To Products Text',
-          name: 'productsText',
+          title: '"To Products" Text',
+          name: 'toProductsText',
           type: 'object',
           fields: [
             {
@@ -34,7 +34,7 @@ export default {
             {
               title: 'Text',
               name: 'text',
-              type: 'string',
+              type: 'text',
             },
           ],
           options: {

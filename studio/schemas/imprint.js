@@ -2,7 +2,7 @@ export default {
   title: 'Imprint',
   name: 'imprint',
   type: 'document',
-  __experimental_actions: ['update', 'publish', 'create'],
+  __experimental_actions: ['update', 'publish', 'create', 'delete'],
   fields: [
     {
       title: 'Sections',

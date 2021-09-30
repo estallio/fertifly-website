@@ -10,7 +10,7 @@ import linkButton from './linkButton'
 import product from './product'
 import products from './products'
 import richEditor from './richEditor'
-import section from './section'
+import imageTextContentSection from './imageTextContentSection'
 import simpleEditor from './simpleEditor'
 import slide from './slide'
 import testimonial from './testimonial'
@@ -37,7 +37,7 @@ export default createSchema({
     product,
     products,
     richEditor,
-    section,
+    imageTextContentSection,
     simpleEditor,
     slide,
     testimonial,

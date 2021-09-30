@@ -5,11 +5,11 @@ export default {
   name: 'textImageContent',
   type: 'object',
   icon: GrTextWrap,
-  __experimental_actions: ['update', 'publish', 'create'],
+  __experimental_actions: ['update', 'publish', 'create', 'delete'],
   fields: [
     {
-      title: 'Text Section',
-      name: 'textSection',
+      title: 'Text Block',
+      name: 'textBlock',
       type: 'object',
       fields: [
         {

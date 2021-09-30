@@ -5,7 +5,7 @@ export default {
   name: 'testimonial',
   type: 'object',
   icon: BsPersonFill,
-  __experimental_actions: ['update', 'publish', 'create'],
+  __experimental_actions: ['update', 'publish', 'create', 'delete'],
   fields: [
     {
       title: 'Cite',
@@ -15,7 +15,7 @@ export default {
         {
           title: 'Cite',
           name: 'cite',
-          type: 'string',
+          type: 'text',
         },
       ],
       options: {

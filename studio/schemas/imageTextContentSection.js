@@ -1,11 +1,11 @@
 import { BsCardHeading } from 'react-icons/bs'
 
 export default {
-  title: 'Section',
-  name: 'section',
+  title: 'Image and Text Content Section',
+  name: 'imageTextContentSection',
   type: 'object',
   icon: BsCardHeading,
-  __experimental_actions: ['update', 'publish', 'create'],
+  __experimental_actions: ['update', 'publish', 'create', 'delete'],
   fields: [
     {
       title: 'Heading Fields',
@@ -20,7 +20,7 @@ export default {
         {
           title: 'Subheading',
           name: 'subheading',
-          type: 'string',
+          type: 'text',
         },
       ],
       options: {

@@ -2,7 +2,7 @@ export default {
   title: 'Content Section',
   name: 'contentSection',
   type: 'object',
-  __experimental_actions: ['update', 'publish', 'create'],
+  __experimental_actions: ['update', 'publish', 'create', 'delete'],
   fields: [
     {
       title: 'Heading',

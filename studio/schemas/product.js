@@ -5,7 +5,7 @@ export default {
   name: 'product',
   type: 'object',
   icon: FaProductHunt,
-  __experimental_actions: ['update', 'publish', 'create'],
+  __experimental_actions: ['update', 'publish', 'create', 'delete'],
   fields: [
     {
       title: 'Text',

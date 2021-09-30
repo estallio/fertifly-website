@@ -5,7 +5,7 @@ export default {
   name: 'slide',
   type: 'object',
   icon: BiSlideshow,
-  __experimental_actions: ['update', 'publish', 'create'],
+  __experimental_actions: ['update', 'publish', 'create', 'delete'],
   fields: [
     {
       title: 'Slide Text',
@@ -20,7 +20,7 @@ export default {
         {
           title: 'Subheading',
           name: 'subheading',
-          type: 'string',
+          type: 'text',
         }
       ],
       options: {

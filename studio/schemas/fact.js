@@ -5,7 +5,7 @@ export default {
   name: 'fact',
   type: 'object',
   icon: AiOutlineFieldNumber,
-  __experimental_actions: ['update', 'publish', 'create'],
+  __experimental_actions: ['update', 'publish', 'create', 'delete'],
   fields: [
     {
       title: 'Number',
@@ -25,7 +25,7 @@ export default {
         {
           title: 'Text',
           name: 'text',
-          type: 'string',
+          type: 'text',
         },
       ],
       options: {

@@ -10,12 +10,14 @@ export default {
       type: 'string',
     },
     {
-      title: 'URL',
+      title: 'Link',
+      description: 'URL to e.g. Homepage like https://www.example.com',
       name: 'link',
       type: 'string',
     },
     {
       title: 'Full Width',
+      description: 'Partner is "special" and displayed in a single row on big screens.',
       name: 'fullWidth',
       type: 'boolean',
     },

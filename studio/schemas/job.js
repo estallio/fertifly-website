@@ -30,7 +30,7 @@ export default {
     {
       title: 'Simple Task Description',
       name: 'simpleTaskDescription',
-      type: 'simpleEditor',
+      type: 'text',
     },
     {
       title: 'Job offer',

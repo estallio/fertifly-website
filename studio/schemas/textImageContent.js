@@ -28,12 +28,14 @@ export default {
       type: 'image',
     },
     {
-      title: 'Locate image left from text (default right)',
+      title: 'Image Left',
+      description: 'Locate image left from text (default right)',
       name: 'imageLocatedLeft',
       type: 'boolean',
     },
     {
-      title: 'Locate image above the text on small devices (default below)',
+      title: 'Image Above',
+      description: 'Locate image above the text on small devices (default below)',
       name: 'smImageAboveText',
       type: 'boolean',
     },
@@ -45,6 +47,7 @@ export default {
     {
       title: 'Facts and Figures',
       name: 'factsAndFigures',
+      description: 'Append a facts and figures section to this Content Section.',
       type: 'array',
       of: [ { type: 'fact' } ],
       hidden: ({ parent }) => !parent?.hasFactsAndFigures

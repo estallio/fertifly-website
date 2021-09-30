@@ -6,43 +6,48 @@ export default {
   fields: [
     {
       title: 'Phone',
+      description: 'Like +43 123 456 789',
       name: 'phone',
       type: 'string',
     },
     {
       title: 'Email',
+      description: 'Like info@email.com',
       name: 'email',
       type: 'string',
     },
     {
       title: 'Address',
+      description: 'Multiline address field',
       name: 'address',
-      type: 'simpleEditor',
+      type: 'text',
+    },
+    {
+      title: 'Contact Text',
+      name: 'contactText',
+      description: 'A short text above the contact form with general infos about contact or motivation.',
+      type: 'object',
+      fields: [
+        {
+          title: 'Heading',
+          name: 'heading',
+          type: 'string',
+        },
+        {
+          title: 'Text',
+          name: 'text',
+          type: 'string',
+        },
+      ],
+      options: {
+        i18n: true,
+      },
     },
     {
       title: 'Contact Image',
+      description: 'This image is displayed on the contact page.',
       name: 'Image',
       type: 'image',
-    },
-    {
-        title: 'Contact Text',
-        name: 'contactText',
-        type: 'object',
-        fields: [
-          {
-            title: 'Heading',
-            name: 'heading',
-            type: 'string',
-          },
-          {
-            title: 'Text',
-            name: 'text',
-            type: 'string',
-          },
-        ],
-        options: {
-          i18n: true,
-        },
     },
     // {
     //   title: 'Facebook',

@@ -10,6 +10,7 @@ export default {
     {
       title: 'Heading Fields',
       name: 'headingFields',
+      description: 'A big Heading Section introducing the next section. Like "Global Warming..."',
       type: 'object',
       fields: [
         {
@@ -30,6 +31,7 @@ export default {
     {
       title: 'Content',
       name: 'content',
+      description: 'List of Content Sections, each consisting of an image and a text block.',
       type: 'array',
       of: [ { type: 'textImageContent' } ],
     }

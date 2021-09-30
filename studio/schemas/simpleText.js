@@ -10,6 +10,7 @@ export default () => ({
   styles: [
     { title: 'Normal', value: 'normal' },
   ],
+  lists: [],
   marks: {
     decorators: [
       { title: 'Strong', value: 'strong' },
@@ -29,7 +30,7 @@ export default () => ({
         },
         fields: [
           {
-            name: 'href',
+            name: 'link',
             type: 'url',
             title: 'URL'
           },

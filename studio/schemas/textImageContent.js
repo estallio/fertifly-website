@@ -1,12 +1,15 @@
+import { GrTextWrap } from 'react-icons/gr'
+
 export default {
   title: 'Text & Image Content',
   name: 'textImageContent',
   type: 'object',
+  icon: GrTextWrap,
   __experimental_actions: ['update', 'publish', 'create'],
   fields: [
     {
-      title: 'Text',
-      name: 'text',
+      title: 'Text Section',
+      name: 'textSection',
       type: 'object',
       fields: [
         {
@@ -49,7 +52,7 @@ export default {
   ],
   preview: {
     select: {
-      title: 'text.de.text',
+      title: 'textSection.de.text',
       media: 'image',
     },
   },

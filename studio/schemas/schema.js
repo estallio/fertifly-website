@@ -15,6 +15,14 @@ import simpleEditor from './simpleEditor'
 import slide from './slide'
 import testimonial from './testimonial'
 import textImageContent from './textImageContent'
+import imprint from './imprint'
+import team from './team'
+import privacy from './privacy'
+import contact from './contact'
+import partner from './partner'
+import partners from './partners'
+import job from './job'
+import jobs from './jobs'
 
 export default createSchema({
   name: 'default',
@@ -33,6 +41,14 @@ export default createSchema({
     simpleEditor,
     slide,
     testimonial,
-    textImageContent
+    textImageContent,
+    imprint,
+    team,
+    privacy,
+    contact,
+    partner,
+    partners,
+    jobs,
+    job
   ])
 });

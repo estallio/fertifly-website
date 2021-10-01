@@ -82,7 +82,7 @@
                 <input type="checkbox" name="consent" id="consent" style="display: unset; width: auto; height: auto;" />
                 <label style="display: unset; width: auto; height: auto;" for="consent">
                   {{ $t('contact.form.consentFirstPart') }}
-                  <nuxt-link :to='localePath("privacy")' style="text-decoration: underline;">{{ $t('contact.form.consentProtection') }}</nuxt-link>
+                  <nuxt-link :to='localePath("privacy")' style="text-decoration: underline; color: #006C33">{{ $t('contact.form.consentProtection') }}</nuxt-link>
                   {{ $t('contact.form.consentSecondPart') }}
                 </label>
                 <span class="inpur-error">{{ errors[0] }}</span>

@@ -1,9 +1,10 @@
 import S from '@sanity/desk-tool/structure-builder';
 import { BsNewspaper, BsSearch } from 'react-icons/bs';
-import { AiOutlineTeam, AiOutlineHome, AiOutlineContacts } from 'react-icons/ai';
+import { AiOutlineTeam, AiOutlineHome, AiOutlineContacts, AiOutlineFileProtect } from 'react-icons/ai';
 import { BiPackage, BiInfoCircle, BiMoney, BiHome } from 'react-icons/bi';
 import { RiFilePaper2Line, RiLayoutBottom2Line } from 'react-icons/ri';
 import { FaRegHandshake } from 'react-icons/fa';
+import { CgLoadbarDoc } from 'react-icons/cg';
 import * as Structure from 'sanity-plugin-intl-input/lib/structure';
 
 const homeListItem = S.listItem()
@@ -83,6 +84,28 @@ const contactListItem = S.listItem()
   .documentId('contact')
 );
 
+const privacyListItem = S.listItem()
+.title('Privacy')
+.icon(AiOutlineFileProtect)
+.child(
+  S.editor()
+  .title('Privacy')
+  .id('privacy')
+  .schemaType('privacy')
+  .documentId('privacy')
+);
+
+const imprintListItem = S.listItem()
+.title('Imprint')
+.icon(CgLoadbarDoc)
+.child(
+  S.editor()
+  .title('Imprint')
+  .id('imprint')
+  .schemaType('imprint')
+  .documentId('imprint')
+);
+
 export default () =>
   S.list()
   .title('Content')
@@ -93,5 +116,7 @@ export default () =>
     jobsListItem,
     teamListItem,
     partnerListItem,
-    contactListItem
+    contactListItem,
+    privacyListItem,
+    imprintListItem
   ]);

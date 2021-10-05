@@ -128,8 +128,10 @@
 }
 .flat-app-bar .logo img {
   max-width: 159px;
+  height: auto;
   @media #{$sm-layout} {
     max-width: 120px;
+    height: auto;
   }
 }
 .flat-fluid-app-bar {

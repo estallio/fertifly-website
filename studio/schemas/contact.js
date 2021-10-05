@@ -1,3 +1,5 @@
+import { languages } from '../config/intl-input.json'
+
 export default {
   title: 'Contact',
   name: 'contact',
@@ -8,13 +10,13 @@ export default {
       title: 'Phone',
       description: 'Like +43 123 456 789',
       name: 'phone',
-      type: 'string',
+      type: 'string'
     },
     {
       title: 'Email',
       description: 'Like info@email.com',
       name: 'email',
-      type: 'string',
+      type: 'string'
     },
     {
       title: 'Address',
@@ -39,6 +41,10 @@ export default {
           type: 'string',
         },
       ],
+      initialValue: {
+        de: { heading: '', text: '' },
+        en: { heading: '', text: '' }
+      },
       options: {
         i18n: true,
       },
@@ -48,6 +54,35 @@ export default {
       description: 'This image is displayed on the contact page.',
       name: 'Image',
       type: 'image',
+      fields: [
+        {
+          title: 'Alt Text',
+          name: 'altText',
+          type: 'object',
+          fields: [
+            {
+              title: 'Text',
+              name: 'text',
+              description: 'Description of the image for screenreaders like Google to know what\'s on the picture',
+              type: 'string',
+            }
+          ],
+          initialValue: {
+            de: { text: '' },
+            en: { text: '' }
+          },
+          validation: Rule => Rule.custom(blocks => {
+            if (languages.every(lang => blocks?.[lang]?.text)) {
+              return true;
+            }
+
+            return Rule.warning('Add descriptive texts in the Image Details Section for every language');
+          }),
+          options: {
+            i18n: true,
+          },
+        },
+      ],
     },
     // {
     //   title: 'Facebook',

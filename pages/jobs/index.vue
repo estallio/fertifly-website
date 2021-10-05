@@ -95,7 +95,7 @@
                 <b>Aufgaben:&nbsp;&nbsp;</b>{{ singleList.task }}
               </p>
 
-              <nuxt-link to='slug' style="color: inherit; text-decoration: underline">Mehr erfahren...</nuxt-link>
+              <nuxt-link :to="localePath('/jobs/techniker')" style="color: inherit; text-decoration: underline">Mehr erfahren...</nuxt-link>
 
               <button style="margin-left: 20px" class="rn-button-style--2 btn_solid btn-size-sm" @click="dialog = true">
                 Jetzt bewerben!
@@ -167,6 +167,9 @@ export default {
   head() {
     // TODO: tooltip bei englisch, dass diese seite nur in deutsch verfügbar ist
     return {
+      htmlAttrs: {
+        lang: 'de'
+      },
       link: [
         {
           rel: 'canonical',

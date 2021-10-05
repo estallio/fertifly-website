@@ -156,10 +156,13 @@
     head() {
       // TODO: tooltip bei englisch, dass diese seite nur in deutsch verfügbar ist
       return {
+        htmlAttrs: {
+          lang: 'de'
+        },
         link: [
           {
             rel: 'canonical',
-            href: config.hostname + '/de/jobs'
+            href: config.hostname + '/de/jobs' // TODO: jobs-slug
           }
         ]
       }

@@ -1,4 +1,5 @@
 import { BsPersonFill } from 'react-icons/bs'
+import { languages } from '../config/intl-input.json'
 
 export default {
   title: 'Testimonial',
@@ -14,41 +15,91 @@ export default {
       fields: [
         {
           title: 'Cite',
-          name: 'cite',
+          description: 'What did the person or company say?',
+          name: 'text',
           type: 'text',
         },
       ],
+      initialValue: {
+        de: { text: ''},
+        en: { text: ''}
+      },
       options: {
         i18n: true,
       },
     },
     {
+      title: 'Cite from',
+      description: 'Person or Company like "Max Mustermann" if person or "Purea Austria" if company',
+      name: 'citeFrom',
+      type: 'string',
+    },
+    {
       title: 'Affiliation',
       name: 'affiliation',
-      type: 'string',
+      type: 'object',
+      fields: [
+        {
+          title: 'Affiliation',
+          description: 'Relation like "CEO Purea Austria" if person or "Handelspartner" if company',
+          name: 'text',
+          type: 'string',
+        },
+      ],
+      initialValue: {
+        de: { text: ''},
+        en: { text: ''}
+      },
+      options: {
+        i18n: true,
+      },
     },
     {
-      title: 'Person',
-      name: 'person',
-      type: 'string',
-    },
-    {
-      title: 'Image from Person or Logo',
+      title: 'Image from Person or Company Logo',
       name: 'image',
       type: 'image',
+      fields: [
+        {
+          title: 'Alt Text',
+          name: 'altText',
+          type: 'object',
+          fields: [
+            {
+              title: 'Text',
+              name: 'text',
+              description: 'Description of the image for screenreaders like Google to know what\'s on the picture',
+              type: 'string',
+            }
+          ],
+          initialValue: {
+            de: { text: '' },
+            en: { text: '' }
+          },
+          validation: Rule => Rule.custom(blocks => {
+            if (languages.every(lang => blocks?.[lang]?.text)) {
+              return true;
+            }
+
+            return Rule.warning('Add descriptive texts in the Image Details Section for every language');
+          }),
+          options: {
+            i18n: true,
+          },
+        },
+      ],
     },
   ],
   preview: {
     select: {
-      cite: 'cite.de.cite',
-      affiliation: 'affiliation',
-      person: 'person',
+      cite: 'cite.de.text',
+      affiliation: 'affiliation.de.text',
+      citeFrom: 'citeFrom',
       image: 'image'
     },
     prepare(selection) {
-      const { image, person, affiliation, cite } = selection;
+      const { image, citeFrom, affiliation, cite } = selection;
       return {
-        title: affiliation + ' - ' + person,
+        title: affiliation + ' - ' + citeFrom,
         subtitle: cite,
         media: image
       }

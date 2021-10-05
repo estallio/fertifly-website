@@ -20,6 +20,10 @@ export default {
       type: 'richEditor',
     },
   ],
+  initialValue: {
+    de: { heading: '', subheading: '', content: [] },
+    en: { heading: '', subheading: '', content: [] }
+  },
   options: {
     i18n: true,
   },

@@ -6,17 +6,18 @@
         <client-only>
         <v-tabs-items v-model="tab">
           <v-tab-item v-for="item in testimonialContent" :key="item.id">
-            <v-card flat v-for="(item, i) in item.content" :key="i">
+            <v-card flat>
               <v-card-text>
                 <div class="inner">
                   <p>
-                    {{ item.description }}
+                    {{ get(item, `cite[${$i18n.locale}].text`, '') }}
                   </p>
                 </div>
                 <div class="author-info">
                   <h6>
-                    <span>{{ item.name }}</span> -
-                    {{ item.designation }}
+                    <span>{{ item.citeFrom }}</span>
+                    <span v-if="item.citeFrom && get(item, `affiliation[${$i18n.locale}].text`, null)"> - </span>
+                    {{ get(item, `affiliation[${$i18n.locale}].text`, '') }}
                   </h6>
                 </div>
               </v-card-text>
@@ -25,17 +26,18 @@
         </v-tabs-items>
         </client-only>
         <client-only #placeholder>
-          <v-card flat>
+          <v-card flat v-if="testimonialContent.length">
             <v-card-text>
               <div class="inner">
                 <p>
-                  {{ testimonialContent[0].content[0].description }}
+                  {{ get(testimonialContent, `[0].cite[${$i18n.locale}].text`, '') }}
                 </p>
               </div>
               <div class="author-info">
                 <h6>
-                  <span>{{ testimonialContent[0].content[0].name }}</span> -
-                  {{ testimonialContent[0].content[0].designation }}
+                  <span>{{ get(testimonialContent, `[0].citeFrom`, '') }}</span>
+                  <span v-if="get(testimonialContent, `[0].citeFrom`, null) && get(testimonialContent, `[0].affiliation[${$i18n.locale}].text`, null)"> - </span>
+                  {{ get(testimonialContent, `[0].affiliation[${$i18n.locale}].text`, '') }}
                 </h6>
               </div>
             </v-card-text>
@@ -45,7 +47,11 @@
         <v-tabs class="z-index-2" v-model="tab" centered hide-slider center-active>
           <v-tab v-for="item in testimonialContent" :key="item.id">
             <div class="thumb">
-              <img :src="require(`../../assets/images/client/${item.imageName}`)" alt="testimonial image" />
+              <img :src="getThumbnailImage(item.image)"
+                   :alt="getAltText(item.image)"
+                   :width="100"
+                   :height="100 / getThumbnailHeight(item.imageDoc)"
+              />
             </div>
           </v-tab>
         </v-tabs>
@@ -57,13 +63,31 @@
 </template>
 
 <script>
+  import get from 'lodash/get';
+
   export default {
+    props: ['testimonialContent'],
+
     data() {
       return {
         tab: null,
-        testimonialContent: this.$t('index.testimonialSection.content')
       };
     },
+
+    methods: {
+      getAltText: function(image) {
+        return image && get(image, `altTex[${this.$i18n.locale}].text`, '');
+      },
+      get: (...args) => {
+        return get(...args);
+      },
+      getThumbnailImage: function(sanityImageUrl) {
+        return sanityImageUrl && this.$urlFor(sanityImageUrl).size(100);
+      },
+      getThumbnailHeight: function(imageDoc) {
+        return imageDoc && imageDoc.metadata.dimensions.aspectRatio
+      }
+    }
   };
 </script>
 

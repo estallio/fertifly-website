@@ -25,8 +25,16 @@ export default {
     '~/plugins/fontawesome.js',
     '~/plugins/veevalidate.js',
     '~/plugins/i18nextensions.js',
-    '~/plugins/preview.client.js',
+    '~/plugins/sanity-image-builder.js',
+    // '~/plugins/preview.client.js',
   ],
+
+  extendPlugins(plugins) {
+    // add preview plugin as first plugin, even before the node_modules plugins
+    plugins.unshift('~/plugins/preview.client.js')
+
+    return plugins
+  },
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
@@ -156,9 +164,24 @@ export default {
     // when served via simple services like Cloudflare Pages etc.
     subFolders: false,
 
-    // TODO: Nuxt is generating a dynamic 404? what is happening here?
+    // TODO: Nuxt is generating a dynamic 404? What is happening here?
+    //  - Not important because Google won't index the error page and hopefully Clients have JS enabled to show the error page.
     // Generate a 404 page as Cloudflare pages needs one
     fallback: '404.html',
+
+    routes () {
+      return [
+        {
+          route: '/jobs/techniker',
+          payload: {
+            routeParams: {
+              de: { slug: 'techniker' },
+              en: { slug: 'techniker' },
+            }
+          }
+        },
+      ];
+    }
   },
 
   i18n: {
@@ -186,48 +209,91 @@ export default {
     routesNameSeparator: config.routesNameSeparator,
   },
 
-  head: {
-    meta: [
-      { charset: 'utf-8' },
+  head() {
+    let i18nHead = {};
 
-      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+    if (this.$nuxtI18nHead) {
+      i18nHead = this.$nuxtI18nHead({ addSeoAttributes: true });
+    }
 
-      // For IE10 Metro
-      { name: 'msapplication-TileColor', content: "#FFFFFF" },
-      { name: 'msapplication-TileImage', content: "/favicon-114.png" },
-      { name: 'theme-color', content: "#ffffff" },
-    ],
-    link: [
-      // For old IEs
-      { rel: 'shortcut icon', href: '/favicon.ico' },
+    return {
+      htmlAttrs: {
+        ...(i18nHead.htmlAttrs || {})
+      },
+      meta: [
+        { charset: 'utf-8' },
 
-      // For new browsers multisize ico
-      { rel: 'icon', type: 'image/x-icon', sizes: '16x16 32x32', href: '/favicon.ico' },
+        { name: 'viewport', content: 'width=device-width, initial-scale=1' },
 
-      // For iPad with high-resolution Retina display running iOS ≥ 7:
-      { rel: 'apple-touch-icon', sizes: '152x152', href: '/favicon-152-precomposed.png' },
+        // For IE10 Metro
+        { name: 'msapplication-TileColor', content: "#FFFFFF" },
+        { name: 'msapplication-TileImage', content: "/favicon-114.png" },
+        { name: 'theme-color', content: "#ffffff" },
+        ...(i18nHead.meta || [])
+      ],
+      link: [
+        // For old IEs
+        { rel: 'shortcut icon', href: '/favicon.ico' },
 
-      // For iPad with high-resolution Retina display running iOS ≤ 6:
-      { rel: 'apple-touch-icon', sizes: '144x144', href: '/favicon-144-precomposed.png' },
+        // For new browsers multisize ico
+        {
+          rel: 'icon',
+          type: 'image/x-icon',
+          sizes: '16x16 32x32',
+          href: '/favicon.ico'
+        },
 
-      // For iPhone with high-resolution Retina display running iOS ≥ 7:
-      { rel: 'apple-touch-icon', sizes: '120x120', href: '/favicon-120-precomposed.png' },
+        // For iPad with high-resolution Retina display running iOS ≥ 7:
+        {
+          rel: 'apple-touch-icon',
+          sizes: '152x152',
+          href: '/favicon-152-precomposed.png'
+        },
 
-      // For iPhone with high-resolution Retina display running iOS ≤ 6:
-      { rel: 'apple-touch-icon', sizes: '114x114', href: '/favicon-114-precomposed.png' },
+        // For iPad with high-resolution Retina display running iOS ≤ 6:
+        {
+          rel: 'apple-touch-icon',
+          sizes: '144x144',
+          href: '/favicon-144-precomposed.png'
+        },
 
-      // For iPhone 6+
-      { rel: 'apple-touch-icon', sizes: '180x180', href: '/favicon-180-precomposed.png' },
+        // For iPhone with high-resolution Retina display running iOS ≥ 7:
+        {
+          rel: 'apple-touch-icon',
+          sizes: '120x120',
+          href: '/favicon-120-precomposed.png'
+        },
 
-      // For first- and second-generation iPad:
-      { rel: 'apple-touch-icon', sizes: '72x72', href: '/favicon-72-precomposed.png' },
+        // For iPhone with high-resolution Retina display running iOS ≤ 6:
+        {
+          rel: 'apple-touch-icon',
+          sizes: '114x114',
+          href: '/favicon-114-precomposed.png'
+        },
 
-      // For non-Retina iPhone, iPod Touch, and Android 2.1+ devices:
-      { rel: 'apple-touch-icon', sizes: '57x57', href: '/favicon-57.png' },
+        // For iPhone 6+
+        {
+          rel: 'apple-touch-icon',
+          sizes: '180x180',
+          href: '/favicon-180-precomposed.png'
+        },
 
-      // Chrome for Android
-      { rel: 'icon', sizes: '192x192', href: '/favicon-192.png' },
-    ],
+        // For first- and second-generation iPad:
+        {
+          rel: 'apple-touch-icon',
+          sizes: '72x72',
+          href: '/favicon-72-precomposed.png'
+        },
+
+        // For non-Retina iPhone, iPod Touch, and Android 2.1+ devices:
+        { rel: 'apple-touch-icon', sizes: '57x57', href: '/favicon-57.png' },
+
+        // Chrome for Android
+        { rel: 'icon', sizes: '192x192', href: '/favicon-192.png' },
+
+        ...(i18nHead.link || []).filter(element => element.hid !== 'i18n-xd' && element.hid !== 'i18n-can')
+      ],
+    }
   },
 
   // PWA module configuration: https://go.nuxtjs.dev/pwa
@@ -326,13 +392,6 @@ export default {
         ...i18nHead.meta
       ],
         link: [
-          { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-        {
-          hid: 'apple-touch-icon',
-          rel: 'apple-touch-icon',
-          sizes: '180x180',
-          href: '/apple-touch-icon.png'
-        },
         ...i18nHead.link
       ],
     title: 'nuxt-i18n-test',
@@ -342,8 +401,8 @@ export default {
   sitemap: {
     hostname: config.hostname,
     i18n: true,
-    filter1({ routes }) {
-      // Problem: Nuxt generates default default localized pages like index.html or about.html even if
+    filter({ routes }) {
+      // Problem: Nuxt generates default localized pages like index.html or about.html even if
       // generation strategy is 'prefix'. For this reason, files like about.html or index.html are present
       // in the output directory and in the sitemap file. We don't want to include these files in the sitemap
       // so unlocalized files are filtered out at the bottom of this function. Requests to the generated files
@@ -352,7 +411,7 @@ export default {
       // we additionally want to index the location or language based redirect and tell Google about it via
       // the 'x-default' entry in the sitemap. All the other paths are too difficult to x-default them because
       // of localized slug generation. If localized slug generation should be turned off, this should be quite easy.
-      // But image an 'about-us' and 'ueber-uns' page. The default language in the browser is german - if the user
+      // Imagine an 'about-us' and 'ueber-uns' page. The default language in the browser is german - if the user
       // types in /about-us it will be redirected to /de/about-us and gets a 404 - we don't want Google to index this
       // behaviour even if it suits for one language
 
@@ -366,7 +425,7 @@ export default {
       // this works because all arrays and objects in the routes array are references
       localizedIndexPage.links.push({
         lang: 'x-default',
-        url: indexPage.url,
+        url: indexPage.url, // tailing slash after domain (after root url) is the same as without trailing slash, other domains are treated differently
       })
 
       // connect the localized and unlocalized index pages
@@ -383,6 +442,20 @@ export default {
     routes: async () => {
       return [
         // TODO: get jobs dynamic slugs
+        {
+          url: '/de/jobs/techniker',
+          links: [
+            { lang: 'de', url: '/de/jobs/techniker' },
+            { lang: 'en', url: '/en/jobs/techniker' },
+          ],
+        },
+        {
+          url: '/en/jobs/techniker',
+          links: [
+            { lang: 'de', url: '/de/jobs/techniker' },
+            { lang: 'en', url: '/en/jobs/techniker' },
+          ],
+        }
       ]
     },
   },

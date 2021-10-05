@@ -28,6 +28,10 @@ export default {
           type: 'text',
         },
       ],
+      initialValue: {
+        de: { text: '' },
+        en: { text: '' }
+      },
       options: {
         i18n: true,
       },

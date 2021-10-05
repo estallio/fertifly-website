@@ -9,6 +9,8 @@ export default {
   sanity: {
     // project ID of sanity project
     projectId: 'dooyj23g',
+    dataset: 'production',
+    withCredentials: 'true'
   },
   // baseURL of site like 'https://www.domain.com'
   hostname: 'https://www.ecofly.at',

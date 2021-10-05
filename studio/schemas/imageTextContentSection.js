@@ -24,6 +24,10 @@ export default {
           type: 'text',
         },
       ],
+      initialValue: {
+        de: { heading: '', subheading: '' },
+        en: { heading: '', subheading: '' },
+      },
       options: {
         i18n: true,
       },

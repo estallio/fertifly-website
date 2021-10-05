@@ -1,182 +1,76 @@
 <template>
   <div>
     <!-- Start Slider Area -->
-    <SliderTwo/>
+    <SliderTwo :sliderContent="this.sanityContent.banner" />
     <!-- End Slider Area -->
 
     <!-- Start Area -->
     <div>
       <v-container>
+        <div v-for="(contentItem, i) in this.sanityContent.contentSections" :key="contentItem._key">
 
-        <!-- Start First Section Heading -->
-        <v-row class="mt_sm--50 mt_md--70 mt--75">
-          <v-col lg="12">
-            <div class="section-title section-title--3 text-center">
-              <h2 class="heading-title">{{ $t('index.introductionSection.heading') }}</h2>
-              <p>{{ $t('index.introductionSection.subheading') }}</p>
-            </div>
-          </v-col>
-        </v-row>
-        <!-- End First Section Heading -->
+          <!-- Start First Section Heading -->
+          <v-row :class="{'mt_sm--60 mt_md--80 mt--110': i === 0, 'mt_sm--70 mt_md--90 mt--150': i !== 0}">
+            <v-col lg="12">
+              <div class="section-title section-title--3 text-center">
+                <h2 class="heading-title">{{ get(contentItem, `headingFields[${$i18n.locale}].heading`, '') }}</h2>
+                <p>{{ get(contentItem, `headingFields[${$i18n.locale}].subheading`, '') }}</p>
+              </div>
+            </v-col>
+          </v-row>
+          <!-- End First Section Heading -->
 
-        <!-- Start First Content  -->
-        <v-row class="mt_sm--10 mt_md--20 mt--40">
-          <v-col cols="12">
-            <v-row class="sercice-details-content align-items-center justify-center">
+          <div v-for="subContentItem in contentItem.content" :key="subContentItem._key">
+            <!-- Start First Content  -->
+            <v-row class="mt_sm--10 mt_md--20 mt--40 justify-center">
 
               <!-- Start Column -->
-              <v-col lg="4" md="4" sm="7" cols="9" class="flex-lg">
+              <v-col
+                :cols="subContentItem.showImageHalf ? 10 : 12"
+                :lg="subContentItem.showImageHalf ? 6 : 7"
+                :md="subContentItem.showImageHalf ? 6 : 7"
+                :order="subContentItem.smImageAboveText ? 2 : 1" :order-md="subContentItem.imageLocatedLeft ? 2 : 1">
+                <div class="flex-column justify-center d-flex fill-height">
+                  <SanityContent class="text-justified" :blocks="get(subContentItem, `textBlock[${$i18n.locale}].text`, [])" />
+                </div>
+              </v-col>
+              <!-- End Column -->
+
+              <!-- Start Column -->
+              <v-col
+                :cols="subContentItem.showImageHalf ? 10 : 9"
+                :lg="subContentItem.showImageHalf ? 6 : 4"
+                :md="subContentItem.showImageHalf ? 9 : 4"
+                :sm="subContentItem.showImageHalf ? 9 : 7"
+                class="flex-lg" :order="subContentItem.smImageAboveText ? 1 : 2" :order-md="subContentItem.imageLocatedLeft ? 1 : 2">
                 <div class="pb_sm--20 pt_sm--15 pb_md--25 pt_md--25 thumbnail flex-lg flex-lg-column justify-lg-center">
-                  <img
-                    class="w-100"
-                    src="../assets/images/about/futtermittel-insekten-1.jpg"
-                    alt="Service Images"
+                  <img class="w-100"
+                       style="box-shadow: none"
+                       :src="getContentImage(subContentItem.image)"
+                       :alt="getAltText(subContentItem.image)"
+                       :width="100"
+                       :height="100 / getImageHeight(subContentItem.imageDoc)"
                   />
                 </div>
               </v-col>
               <!-- End Column -->
 
-              <!-- Start Column -->
-              <v-col lg="7" md="7" cols="12">
-                <div class="flex-column justify-center d-flex fill-height">
-                  <p class="text-justified">{{ $t('index.introductionSection.content') }}</p>
-                </div>
-              </v-col>
-              <!-- End Column -->
-
             </v-row>
-          </v-col>
-        </v-row>
-        <!-- End First Content  -->
+            <!-- End First Content  -->
 
-        <v-row class="mt_sm--70 mt_md--90 mt--140">
-          <v-col lg="12">
-            <div class="section-title section-title--3 text-center">
-              <h2 class="heading-title">{{ $t('index.globalWarmingSection.heading') }}</h2>
-              <p>{{ $t('index.globalWarmingSection.subheading') }}</p>
+            <!-- Start Counterup Area  -->
+            <div v-if="subContentItem.hasFactsAndFigures" class="rn-counterup-area mt_sm--35 mt_md--45 mt--70 mb_sm--20 mb_md--20 mb--10">
+              <v-container>
+                <h3 class="heading-title text-center mb-0">{{ $t('index.factsAndFiguresHeading') }}</h3>
+                <Counter :factsAndFigures="subContentItem.factsAndFigures" />
+              </v-container>
             </div>
-          </v-col>
-        </v-row>
+            <!-- End Counterup Area  -->
 
-        <!-- Start Single Content  -->
-        <v-row class="mt_sm--10 mt_md--20 mt--40 justify-center">
+          </div>
 
-          <!-- Start Column -->
-          <v-col lg="4" md="4" sm="7" cols="9" class="flex-lg" order-md="2">
-            <div class="pb_sm--20 pt_sm--15 pb_md--25 pt_md--25 thumbnail flex-lg flex-lg-column justify-lg-center">
-              <img
-                class="w-100"
-                src="../assets/images/about/umwelt.jpg"
-                alt="About Images"
-              />
-            </div>
-          </v-col>
-          <!-- End Column -->
-
-          <!-- Start Column -->
-          <v-col lg="7" md="7" cols="12" order-md="1">
-            <div class="flex-column justify-center d-flex fill-height">
-              <p class="text-justified">{{ $t('index.globalWarmingSection.content') }}</p>
-            </div>
-          </v-col>
-          <!-- End Column -->
-
-        </v-row>
-        <!-- End Single Content  -->
-
-        <!-- Start Counterup Area  -->
-        <div class="rn-counterup-area mt_sm--35 mt_md--45 mt--70">
-          <v-container>
-            <h3 class="heading-title text-center mb-0">{{ $t('index.factsAndFiguresHeading') }}</h3>
-            <CounterOben/>
-          </v-container>
         </div>
-        <!-- End Counterup Area  -->
 
-        <v-row class="mt_sm--90 mt_md--110 mt--150">
-          <v-col lg="12">
-            <div class="section-title section-title--3 text-center">
-              <h2 class="heading-title">{{ $t('index.solutionSection.heading') }}</h2>
-              <p>{{ $t('index.solutionSection.subheading') }}</p>
-            </div>
-          </v-col>
-        </v-row>
-
-        <!-- Start Single Content  -->
-        <v-row class="mt_sm--10 mt_md--20 mt--40 justify-center">
-
-          <v-col lg="7" md="7" cols="12" order="1" order-md="2">
-            <div class="flex-column justify-center d-flex fill-height">
-              <p class="text-justified">{{ $t('index.solutionSection.content') }}</p>
-              <h4 class="title">{{ $t('index.solutionSection.advantages') }}</h4>
-              <ul class="liststyle bullet">
-                <li v-for="(item, i) in this.$t('index.solutionSection.bulletPoints')" :key="i">{{ item }}</li>
-              </ul>
-            </div>
-          </v-col>
-
-          <v-col lg="4" md="4" cols="7" class="flex-lg" order="2" order-md="1">
-            <div class="pb_sm--20 pt_sm--15 pb_md--25 pt_md--25 thumbnail flex-lg flex-lg-column justify-lg-center">
-              <img
-                class="w-100"
-                src="../assets/images/about/hermetia-1.jpg"
-                alt="About Images"
-              />
-            </div>
-          </v-col>
-
-        </v-row>
-        <!-- End Single Content  -->
-
-        <!-- Start Counterup Area  -->
-        <div class="rn-counterup-area mt_sm--35 mt_md--45 mt--70">
-          <v-container>
-            <h3 class="heading-title text-center mb-0">{{ $t('index.factsAndFiguresHeading') }}</h3>
-            <CounterUnten/>
-          </v-container>
-        </div>
-        <!-- End Counterup Area  -->
-
-        <v-row class="mt_sm--90 mt_md--120 mt--130">
-          <v-col lg="12">
-            <div class="section-title section-title--3 text-center">
-              <h2 class="heading-title">{{ $t('index.processSection.heading') }}</h2>
-              <p>{{ $t('index.processSection.subheading') }}</p>
-            </div>
-          </v-col>
-        </v-row>
-
-        <!-- Start Single Content  -->
-        <v-row class="mt_sm--10 mt_md--20 mt--40 justify-center">
-
-          <v-col cols="10" md="9" lg="6" order-md="1" class="flex-lg">
-            <div class="pt--25 pb--25 thumbnail flex-lg flex-lg-column justify-lg-center" @click="index=0">
-              <img
-                class="w-100"
-                style="box-shadow: none"
-                src="../assets/images/about/prozess.jpeg"
-                alt="Service Images"
-              />
-            </div>
-          </v-col>
-
-          <v-col cols="12" lg="6" order-md="2">
-            <div class="flex-column justify-center d-flex fill-height">
-              <p class="text-justified">{{ $t('index.processSection.content') }}</p>
-            </div>
-          </v-col>
-
-        </v-row>
-        <!-- End Single Content  -->
-
-        <client-only>
-          <CoolLightBox
-            :items="processItems"
-            :index="index"
-            @close="index=null"
-          >
-          </CoolLightBox>
-        </client-only>
       </v-container>
     </div>
 
@@ -186,9 +80,9 @@
         <div class="content-wrapper" style="flex-direction: column">
           <div class="content products-box">
             <div :class="{'container': $vuetify.breakpoint.smAndUp}">
-              <h4 style="color: #444">{{ $t('index.productSection.heading') }}</h4>
-              <p style="color: #444">{{ $t('index.productSection.subheading') }}</p>
-              <nuxt-link :to="localePath('products')" class="rn-button-style--2 btn_solid btn-size-sm">{{ $t('index.productSection.linkText') }}</nuxt-link>
+              <h4 style="color: #444">{{ get(sanityContent, `toProductsSection.toProductsHeading[${$i18n.locale}].heading`, '') }}</h4>
+              <p style="color: #444">{{ get(sanityContent, `toProductsSection.toProductsHeading[${$i18n.locale}].text`, '') }}</p>
+              <nuxt-link :to="localePath('products')" class="rn-button-style--2 btn_solid btn-size-sm">{{ get(sanityContent, `toProductsSection.toProductsHeading[${$i18n.locale}].buttonText`, '') }}</nuxt-link>
             </div>
           </div>
         </div>
@@ -197,8 +91,10 @@
           <div class="image">
             <img
               style="box-shadow: none; max-width: 1600px"
-              src="../assets/images/about/produkte.jpeg"
-              alt="Finding Images"
+              :src="getProductsImage(this.sanityContent.toProductsSection.backgroundImage)"
+              :alt="this.$t('index.productsBackgroundImageAlt')"
+              :width="1000"
+              :height="1000 / getImageHeight(this.sanityContent.toProductsSection.backgroundImageDoc)"
             />
           </div>
         </div>
@@ -208,9 +104,9 @@
     <!-- End Finding us Area  -->
 
     <!-- Start Testimonial Area  -->
-    <div class="rn-testimonial-area rn-section-gap">
+    <div class="rn-testimonial-area ptb--80">
       <v-container>
-        <Testimonial/>
+        <Testimonial :testimonialContent="this.sanityContent.testimonials" />
       </v-container>
     </div>
     <!-- Start Testimonial Area  -->
@@ -218,13 +114,66 @@
   </div>
 </template>
 <script>
+  import { generateGROQ } from '../queries/home'
+  import get from 'lodash/get'
+  import config from '../config'
+
   export default {
-    data () {
+    async asyncData({ $sanity, $preview }) {
+      let includeDrafts = false;
+
+      if ($preview) {
+        includeDrafts = true;
+      }
+
+      return { sanityContent: await $sanity.fetch(generateGROQ(includeDrafts)) }
+    },
+
+    head() {
       return {
-        index: null,
-        processItems: [
-          require('../assets/images/about/prozess.jpeg')
+        link: [
+          {
+            rel: 'x-default',
+            href: config.hostname
+          }
+        ],
+        title: get(this.sanityContent, `seo[${this.$i18n.locale}].title`, ''),
+        meta: [
+          // hid is used as unique identifier. Do not use `vmid` for it as it will not work
+          {
+            hid: 'description',
+            name: 'description',
+            content: get(this.sanityContent, `seo[${this.$i18n.locale}].description`, ''),
+          }
         ]
+      }
+    },
+
+    mounted() {
+      if (this.$preview) {
+        this.$sanity.client
+        .listen(generateGROQ(true))
+        .subscribe((update) => {
+          this.sanityContent = update.result;
+        })
+      }
+    },
+
+    methods: {
+      getAltText: function(image) {
+        return image && get(image, `altTex[${this.$i18n.locale}].text`, '');
+      },
+      get: (...args) => {
+        return get(...args);
+      },
+      getContentImage: function(sanityImageUrl) {
+        return sanityImageUrl && this.$urlFor(sanityImageUrl).size(500).fit('max');
+      },
+      getProductsImage: function(sanityImageUrl) {
+        return sanityImageUrl && this.$urlFor(sanityImageUrl).size(1000).fit('max');
+      },
+      getImageHeight: function(imageDoc) {
+        return imageDoc && imageDoc.metadata.dimensions.aspectRatio
       }
     }
   }
@@ -235,11 +184,20 @@
   background-color: #fff !important;
   box-shadow: 0 0 15px 1px rgba(170, 170, 170, 0.5);
 }
+@media only screen and (max-width: 1050px) {
+  .products-box {
+    background-color: transparent !important;
+  }
+}
 .rn-finding-us-area {
   margin-top: 90px;
 }
 .rn-testimonial-area {
   margin-top: 100px;
+}
+.rn-finding-us .inner {
+  max-width: 2000px;
+  margin: 0 auto;
 }
 @media only screen and (max-width: 1264px) {
   .products-box {
@@ -252,7 +210,20 @@
     margin-top: 0;
   }
   .rn-finding-us-area img {
-    max-width: 100% !important;
+    width: 100% !important;
+    height: auto !important;
+
+    padding-top: 0;
   }
+}
+.rn-finding-us-area img {
+  padding-top: 110px;
+}
+.rn-testimonial-content::after {
+  right: 20%;
+  bottom: 25%;
+}
+.rn-testimonial-area {
+  margin-top: 0;
 }
 </style>

@@ -82,7 +82,7 @@
             <div :class="{'container': $vuetify.breakpoint.smAndUp}">
               <h4 style="color: #444">{{ get(sanityContent, `toProductsSection.toProductsHeading[${$i18n.locale}].heading`, '') }}</h4>
               <p style="color: #444">{{ get(sanityContent, `toProductsSection.toProductsHeading[${$i18n.locale}].text`, '') }}</p>
-              <nuxt-link :to="localePath('products')" class="rn-button-style--2 btn_solid btn-size-sm">{{ get(sanityContent, `toProductsSection.toProductsHeading[${$i18n.locale}].buttonText`, '') }}</nuxt-link>
+              <nuxt-link :alt="get(this.sanityContent, `toProductsSection.toProductsHeading[${$i18n.locale}].buttonText`, '')" :to="localePath('products')" class="rn-button-style--2 btn_solid btn-size-sm">{{ get(sanityContent, `toProductsSection.toProductsHeading[${$i18n.locale}].buttonText`, '') }}</nuxt-link>
             </div>
           </div>
         </div>

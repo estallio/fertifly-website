@@ -209,91 +209,7 @@ export default {
     routesNameSeparator: config.routesNameSeparator,
   },
 
-  head() {
-    let i18nHead = {};
-
-    if (this.$nuxtI18nHead) {
-      i18nHead = this.$nuxtI18nHead({ addSeoAttributes: true });
-    }
-
-    return {
-      htmlAttrs: {
-        ...(i18nHead.htmlAttrs || {})
-      },
-      meta: [
-        { charset: 'utf-8' },
-
-        { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-
-        // For IE10 Metro
-        { name: 'msapplication-TileColor', content: "#FFFFFF" },
-        { name: 'msapplication-TileImage', content: "/favicon-114.png" },
-        { name: 'theme-color', content: "#ffffff" },
-        ...(i18nHead.meta || [])
-      ],
-      link: [
-        // For old IEs
-        { rel: 'shortcut icon', href: '/favicon.ico' },
-
-        // For new browsers multisize ico
-        {
-          rel: 'icon',
-          type: 'image/x-icon',
-          sizes: '16x16 32x32',
-          href: '/favicon.ico'
-        },
-
-        // For iPad with high-resolution Retina display running iOS ≥ 7:
-        {
-          rel: 'apple-touch-icon',
-          sizes: '152x152',
-          href: '/favicon-152-precomposed.png'
-        },
-
-        // For iPad with high-resolution Retina display running iOS ≤ 6:
-        {
-          rel: 'apple-touch-icon',
-          sizes: '144x144',
-          href: '/favicon-144-precomposed.png'
-        },
-
-        // For iPhone with high-resolution Retina display running iOS ≥ 7:
-        {
-          rel: 'apple-touch-icon',
-          sizes: '120x120',
-          href: '/favicon-120-precomposed.png'
-        },
-
-        // For iPhone with high-resolution Retina display running iOS ≤ 6:
-        {
-          rel: 'apple-touch-icon',
-          sizes: '114x114',
-          href: '/favicon-114-precomposed.png'
-        },
-
-        // For iPhone 6+
-        {
-          rel: 'apple-touch-icon',
-          sizes: '180x180',
-          href: '/favicon-180-precomposed.png'
-        },
-
-        // For first- and second-generation iPad:
-        {
-          rel: 'apple-touch-icon',
-          sizes: '72x72',
-          href: '/favicon-72-precomposed.png'
-        },
-
-        // For non-Retina iPhone, iPod Touch, and Android 2.1+ devices:
-        { rel: 'apple-touch-icon', sizes: '57x57', href: '/favicon-57.png' },
-
-        // Chrome for Android
-        { rel: 'icon', sizes: '192x192', href: '/favicon-192.png' },
-
-        ...(i18nHead.link || []).filter(element => element.hid !== 'i18n-xd' && element.hid !== 'i18n-can')
-      ],
-    }
+  head: {
   },
 
   // PWA module configuration: https://go.nuxtjs.dev/pwa
@@ -335,7 +251,15 @@ export default {
         "type": "image/png",
         "density": 4
       }
-    ]
+    ],
+
+    manifest: {
+      name: 'Ecofly Website',
+      short_name: 'Ecofly Website',
+      description: 'Wir machen aus Larven nachhaltige Nahrungsmittel für Haus- und Nutztiere.',
+      theme_color: '#006C33',
+      lang: 'de',
+    }
 
     // TODO: lang manifest different languages?
   },

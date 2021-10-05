@@ -8,4 +8,6 @@ export default {
     partner: 'Partner',
     contact: 'Contact',
   },
+  toHomepage: 'Link to Homepage',
+  langSwitchButton: 'Language Selector Button'
 }

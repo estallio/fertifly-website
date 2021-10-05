@@ -10,9 +10,11 @@
       <v-list-item class="pa-5">
         <div class="logo">
           <img
-            style="max-width: 80%"
+            style="max-width: 80%; height: auto"
             src="../../assets/images/logo/logo.png"
-            alt="Creative Agency Logo"
+            alt="Ecofly Logo"
+            width="319"
+            height="126"
           />
         </div>
         <v-spacer></v-spacer>
@@ -39,7 +41,7 @@
             </v-list-item-title>
           </v-list-item-content>
         </v-list-item>
-        
+
       </v-list>
 
       <div style="text-align: center">
@@ -64,8 +66,14 @@
       absolute
       class="default-header"
     >
-      <nuxt-link :to="localePath('/')" class="logo">
-        <img style="max-height: 100%;" src="../../assets/images/logo/logo.png"/>
+      <nuxt-link :alt="this.$t('header.toHomepage')" :to="localePath('/')" class="logo">
+        <img
+          style="max-height: 100%; width: auto"
+          src="../../assets/images/logo/logo.png"
+          alt="Ecofly Logo"
+          width="319"
+          height="126"
+        />
       </nuxt-link>
 
       <v-spacer></v-spacer>
@@ -86,7 +94,9 @@
 
         <div class="language-selector" :class="languageSwitchOpen ? 'open' : ''">
           <button
+            :aria-label="this.$t('header.langSwitchButton')"
             type="button"
+            :name="this.$t('header.langSwitchButton')"
             v-closable="{
               exclude: ['language-chooser-button', 'language-chooser-menu'],
               handler: 'onClose'

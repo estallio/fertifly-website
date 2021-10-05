@@ -79,6 +79,7 @@
     data() {
       return {
         socialList: [
+          /*
           {
             icon: "facebook-f",
             url: "https://www.facebook.com/",
@@ -95,6 +96,7 @@
             icon: "instagram",
             url: "https://www.instagram.com/",
           },
+          */
         ],
         navList: [
           "jobs",

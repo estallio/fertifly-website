@@ -20,6 +20,8 @@
         height="50"
         bottom
         right
+        name="'To Top' Button"
+        aria-label="'To Top' Button"
         @click="toTop"
       >
         <font-awesome-icon icon="angle-up" />

@@ -225,5 +225,6 @@
 }
 .rn-testimonial-area {
   margin-top: 0;
+
 }
 </style>

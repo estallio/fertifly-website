@@ -291,6 +291,7 @@
   .logo img {
     @media #{$lg-layout} {
       max-width: 80%;
+      height: auto;
     }
   }
   .logo-dark {
@@ -302,6 +303,7 @@
 .logo img {
   @media #{$large-mobile} {
     max-width: 120px;
+    height: auto;
   }
 }
 .header-one-page-nav-drawer {

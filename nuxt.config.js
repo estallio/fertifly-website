@@ -48,16 +48,19 @@ export default {
     '~/assets/scss/main.scss',
   ],
 
+  webfontloader: {
+    google: {
+      families: ['Montserrat:400,400i,500,600,700,800,900|Poppins:300,400,500,600,700,700i&display=swap']
+    }
+  },
+
   vuetify: {
     theme: { disable: true, options: { minifyTheme } },
-    defaultAssets: {
-      font: false,
-      icons: false,
-    },
-    icons: {
-      // reduces size: https://stackoverflow.com/questions/67796971/nuxtjs-vuetify-purgecss
-      iconfont: 'mdiSvg',
-    },
+    defaultAssets: false,
+    // icons: {
+    //   // reduces size: https://stackoverflow.com/questions/67796971/nuxtjs-vuetify-purgecss
+    //   iconfont: 'mdiSvg',
+    // },
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
@@ -141,7 +144,7 @@ export default {
   },
 
   // Modules: https://go.nuxtjs.dev/config-modules
-  modules: ['@nuxtjs/i18n', '@nuxtjs/pwa', '@nuxtjs/robots', '@nuxtjs/sitemap'],
+  modules: ['@nuxtjs/i18n', '@nuxtjs/pwa', '@nuxtjs/robots', '@nuxtjs/sitemap', 'nuxt-webfontloader'],
 
   plausible: config.plausible,
 

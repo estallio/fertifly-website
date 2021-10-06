@@ -81,6 +81,8 @@
         icon
         class="ma-0 pa-0 hidden-md-and-up"
         @click="drawer = !drawer"
+        name="Menu Button"
+        aria-label="Menu Button"
       >
         <MenuIcon class="ownIcon" style="width:25px"/>
       </v-btn>

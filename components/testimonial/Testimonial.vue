@@ -96,4 +96,8 @@
     position: relative;
     z-index: 2;
   }
+
+  .rn-testimonial-content img {
+    height: auto;
+  }
 </style>

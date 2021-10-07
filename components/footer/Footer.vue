@@ -38,7 +38,7 @@
                   <h4>Email</h4>
                   <ul class="ft-link">
                     <li v-for="(mail, i) in mailList" :key="i">
-                      <a :href="mail.to">{{ mail.mailItem }}</a>
+                      <a :href="`mailto:${mail}`">{{ mail }}</a>
                     </li>
                   </ul>
 
@@ -76,6 +76,12 @@
 
 <script>
   export default {
+    computed: {
+      mailList: function() {
+        console.log(this.$store.state);
+        return [this.$store.state.contactInfo.email];
+      }
+    },
     data() {
       return {
         socialList: [
@@ -104,12 +110,7 @@
           "privacy",
           "imprint",
         ],
-        mailList: [
-          {
-            mailItem: "office@ecofly.at",
-            to: "mailto:office@ecofly.at",
-          },
-        ],
+        // mailList: ["office@ecofly.at"],
       };
     },
   };

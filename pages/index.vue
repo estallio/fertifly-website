@@ -119,14 +119,18 @@
   import config from '../config'
 
   export default {
-    async asyncData({ $sanity, $preview }) {
+    async asyncData({ $sanity, $preview, store }) {
       let includeDrafts = false;
 
       if ($preview) {
         includeDrafts = true;
       }
 
-      return { sanityContent: await $sanity.fetch(generateGROQ(includeDrafts)) }
+      const sanityContent = await $sanity.fetch(generateGROQ(includeDrafts))
+
+      store.commit('STORE_CONTACT_INFO', sanityContent.contactInfo)
+
+      return { sanityContent: sanityContent.content }
     },
 
     head() {

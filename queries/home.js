@@ -2,10 +2,10 @@ import { groq } from '@nuxtjs/sanity'
 
 export const generateGROQ = (includeDrafts = false) => {
   if (includeDrafts) {
-    return groq`*[_type == 'home'] | order(_updatedAt desc)[0]${projections}`;
+    return addContactInfo(groq`*[_type == 'home'] | order(_updatedAt desc)[0]${projections}`, includeDrafts);
   }
 
-  return groq`*[_type == 'home' && !(_id in path("drafts.**"))] | order(_updatedAt desc)[0]${projections}`;
+  return addContactInfo(groq`*[_type == 'home' && !(_id in path("drafts.**"))] | order(_updatedAt desc)[0]${projections}`, includeDrafts);
 }
 
 const projections = `
@@ -31,3 +31,17 @@ const projections = `
     'backgroundImageDoc': backgroundImage.asset->
   }
 }`;
+
+const addContactInfo = (content, includeDrafts = false) => {
+  if (includeDrafts) {
+    return groq`{
+      'content' : ${content},
+      'contactInfo': *[_type == 'contact'][0]
+    }`;
+  }
+
+  return groq`{
+    'content': ${content},
+    'contactInfo': *[_type == 'contact' && !(_id in path("drafts.**"))][0]
+  }`;
+};

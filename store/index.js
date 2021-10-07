@@ -1,16 +1,11 @@
 export const state = () => ({
-  posts: [],
+  contactInfo: {},
 })
+
 export const mutations = {
-  STORE_POSTS(state, posts) {
-    state.posts = posts
+  STORE_CONTACT_INFO(state, contactInfo) {
+    state.contactInfo = contactInfo
   },
 }
-export const actions = {
-  nuxtServerInit({ commit }) {
-    const posts = new Date()
-      .toTimeString()
-      .replace(/.*(\d{2}:\d{2}:\d{2}).*/, '$1')
-    commit('STORE_POSTS', posts)
-  },
-}
+
+export const actions = {}

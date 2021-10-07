@@ -51,7 +51,7 @@ export default {
   webfontloader: {
     google: {
       families: [
-        'Montserrat:400,400i,500,600,700,800,900&display=swap',
+        'Montserrat:400,400i,500,600,700,800,900',
         'Poppins:300,400,500,600,700,700i&display=swap'
       ]
     }

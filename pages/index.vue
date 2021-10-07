@@ -153,15 +153,23 @@
       }
     },
 
-    mounted() {
-      if (this.$preview) {
-        this.$sanity.client
-        .listen(generateGROQ(true))
-        .subscribe((update) => {
-          this.sanityContent = update.result;
-        })
-      }
-    },
+    // mounted() { // doesn't work because real time joins are not supported by sanity
+    //   if (this.$preview) {
+    //     this.$sanity.client
+    //     .listen(generateGROQ(true))
+    //     .subscribe((update) => {
+    //       if (update.documentId === 'drafts.contact' || update.documentId === 'contact') {
+    //         this.$store.commit('STORE_CONTACT_INFO', update.result)
+    //       }
+    //
+    //       if (update.documentId === 'drafts.home' || update.documentId === 'home') {
+    //         this.sanityContent = update.result;
+    //       }
+    //
+    //       console.log(update.result);
+    //     })
+    //   }
+    // },
 
     methods: {
       getAltText: function(image) {

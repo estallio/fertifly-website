@@ -78,7 +78,6 @@
   export default {
     computed: {
       mailList: function() {
-        console.log(this.$store.state);
         return [this.$store.state.contactInfo.email];
       }
     },

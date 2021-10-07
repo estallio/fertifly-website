@@ -36,12 +36,12 @@ const addContactInfo = (content, includeDrafts = false) => {
   if (includeDrafts) {
     return groq`{
       'content' : ${content},
-      'contactInfo': *[_type == 'contact'][0]
+      'contactInfo': *[_type == 'contact'] | order(_updatedAt desc)[0]
     }`;
   }
 
   return groq`{
     'content': ${content},
-    'contactInfo': *[_type == 'contact' && !(_id in path("drafts.**"))][0]
+    'contactInfo': *[_type == 'contact' && !(_id in path("drafts.**"))] | order(_updatedAt desc)[0]
   }`;
 };

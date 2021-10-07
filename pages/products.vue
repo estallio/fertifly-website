@@ -20,33 +20,34 @@
     </div>
     <!-- End Breadcrump Area  -->
 
-    <div>
+    <div class="pb_md--100 pb--80">
       <v-container>
 
         <!-- Start First Section Heading -->
         <v-row class="mt_sm--50 mt_md--70 mt--75">
           <v-col lg="12">
             <div class="section-title section-title--3 text-center">
-              <h2 class="heading-title" v-html="$t('products.heading')"></h2>
-              <p>{{ $t('products.subheading') }}</p>
+              <h2 class="heading-title">{{ get(sanityContent, `headingSection[${$i18n.locale}].heading`, '') }}</h2>
+              <p>{{ get(sanityContent, `headingSection[${$i18n.locale}].subheading`, '') }}</p>
             </div>
           </v-col>
         </v-row>
         <!-- End First Section Heading -->
 
         <!-- Start First Content  -->
-        <v-row class="mt_sm--40 mt_md--20 mt--40">
+        <v-row class="mt_sm--40 mt_md--20 mt--40" v-for="(product, i) in this.sanityContent.products" :key="product._key">
           <v-col cols="12">
             <v-row class="sercice-details-content align-items-center justify-center">
 
               <!-- Start Column -->
               <v-col lg="3" md="4" cols="4" class="flex-lg">
                 <div class="pb_sm--20 pt_sm--15 pb_md--25 pt_md--25 thumbnail flex-lg flex-lg-column justify-lg-center">
-                  <img
-                    class="w-100"
-                    style="box-shadow: none"
-                    src="../assets/images/products/bsfoil.png"
-                    alt="Service Images"
+                  <img class="w-100"
+                       style="box-shadow: none"
+                       :src="getProductImage(product.image)"
+                       :alt="getAltText(product.image)"
+                       :width="100"
+                       :height="100 / getImageHeight(product.imageDoc)"
                   />
                 </div>
               </v-col>
@@ -55,72 +56,8 @@
               <!-- Start Column -->
               <v-col lg="7" md="7" cols="12">
                 <div class="flex-column justify-center d-flex fill-height">
-                  <h2 class="heading-title">{{ $t('products.bsfOilSection.heading') }}</h2>
-                  <p class="text-justified">{{ $t('products.bsfOilSection.content') }}</p>
-                </div>
-              </v-col>
-              <!-- End Column -->
-
-            </v-row>
-          </v-col>
-        </v-row>
-        <!-- End First Content  -->
-
-        <!-- Start First Content  -->
-        <v-row class="mt_sm--20 mt_md--20 mt--40">
-          <v-col cols="12">
-            <v-row class="sercice-details-content align-items-center justify-center">
-
-              <!-- Start Column -->
-              <v-col lg="3" md="4" cols="4" class="flex-lg">
-                <div class="pb_sm--20 pt_sm--15 pb_md--25 pt_md--25 thumbnail flex-lg flex-lg-column justify-lg-center">
-                  <img
-                    class="w-100"
-                    style="box-shadow: none"
-                    src="../assets/images/products/bsfprotein.png"
-                    alt="Service Images"
-                  />
-                </div>
-              </v-col>
-              <!-- End Column -->
-
-              <!-- Start Column -->
-              <v-col lg="7" md="7" cols="12">
-                <div class="flex-column justify-center d-flex fill-height">
-                  <h2 class="heading-title">{{ $t('products.bsfProteinSection.heading') }}</h2>
-                  <p class="text-justified">{{ $t('products.bsfProteinSection.content') }}</p>
-                </div>
-              </v-col>
-              <!-- End Column -->
-
-            </v-row>
-          </v-col>
-        </v-row>
-        <!-- End First Content  -->
-
-        <!-- Start First Content  -->
-        <v-row class="mt_sm--20 mt_md--20 mt--40 pb_md--100 pb--80">
-          <v-col cols="12">
-            <v-row class="sercice-details-content align-items-center justify-center">
-
-              <!-- Start Column -->
-              <v-col lg="3" md="4" cols="4" class="flex-lg">
-                <div class="pb_sm--20 pt_sm--15 pb_md--25 pt_md--25 thumbnail flex-lg flex-lg-column justify-lg-center">
-                  <img
-                    class="w-100"
-                    style="box-shadow: none"
-                    src="../assets/images/products/bsffertilizer.png"
-                    alt="Service Images"
-                  />
-                </div>
-              </v-col>
-              <!-- End Column -->
-
-              <!-- Start Column -->
-              <v-col lg="7" md="7" cols="12">
-                <div class="flex-column justify-center d-flex fill-height">
-                  <h2 class="heading-title">{{ $t('products.bsfFertilizerSection.heading') }}</h2>
-                  <p class="text-justified">{{ $t('products.bsfFertilizerSection.content') }}</p>
+                  <h2 class="heading-title">{{ get(product, `text[${$i18n.locale}].heading`, '') }}</h2>
+                    <SanityContent class="text-justified" :blocks="get(product, `text[${$i18n.locale}].text`, [])" />
                 </div>
               </v-col>
               <!-- End Column -->
@@ -137,7 +74,37 @@
 </template>
 
 <script>
+  import { generateGROQ } from '../queries/products'
+  import get from 'lodash/get'
+
   export default {
+    async asyncData({ $sanity, $preview, store }) {
+      let includeDrafts = false;
+
+      if ($preview) {
+        includeDrafts = true;
+      }
+
+      const sanityContent = await $sanity.fetch(generateGROQ(includeDrafts))
+
+      store.commit('STORE_CONTACT_INFO', sanityContent.contactInfo)
+
+      return { sanityContent: sanityContent.content }
+    },
+    methods: {
+      getAltText: function(image) {
+        return image && get(image, `altTex[${this.$i18n.locale}].text`, '');
+      },
+      get: (...args) => {
+        return get(...args);
+      },
+      getProductImage: function(sanityImageUrl) {
+        return sanityImageUrl && this.$urlFor(sanityImageUrl).size(500).fit('max');
+      },
+      getImageHeight: function(imageDoc) {
+        return imageDoc && imageDoc.metadata.dimensions.aspectRatio
+      }
+    },
     data() {
       return {
         breadcrumbs: [

@@ -34,7 +34,7 @@ export default {
               return true;
             }
 
-            return Rule.warning('Add descriptive texts in the Image Details Section for every language');
+            return 'Add descriptive texts in the Image Details Section for every language';
           }),
           options: {
             i18n: true,

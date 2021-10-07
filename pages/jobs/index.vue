@@ -53,7 +53,7 @@
               <h1 class='heading-title'>{{ $t('jobs.title') }}</h1>
               <ul class='page-list'>
                 <li v-for='(item, i) in breadcrumbs' :key='i'>
-                  <nuxt-link :to='localePath(item.to)'>{{ item.text }}</nuxt-link>
+                  <nuxt-link :aria-label="item.text" :alt="item.text" :to="localePath(item.to)">{{ item.text }}</nuxt-link>
                 </li>
               </ul>
             </div>

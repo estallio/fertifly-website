@@ -34,7 +34,7 @@ export default () => ({
         },
         fields: [
           {
-            name: 'href',
+            name: 'url',
             type: 'url',
             title: 'URL'
           },

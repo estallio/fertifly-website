@@ -18,7 +18,7 @@ export default {
       type: 'string',
     },
     {
-      name: 'href',
+      name: 'url',
       type: 'url',
       title: 'URL'
     },

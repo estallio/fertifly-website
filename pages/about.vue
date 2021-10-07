@@ -10,7 +10,7 @@
               <h1 class='heading-title'>{{ $t('about.title') }}</h1>
               <ul class='page-list'>
                 <li v-for='(item, i) in breadcrumbs' :key='i'>
-                  <nuxt-link :to='localePath(item.to)'>{{ item.text }}</nuxt-link>
+                  <nuxt-link :aria-label="item.text" :alt="item.text" :to="localePath(item.to)">{{ item.text }}</nuxt-link>
                 </li>
               </ul>
             </div>
@@ -23,89 +23,30 @@
     <div class='mb--75'>
       <v-container>
 
-        <v-row class="mt_sm--70 mt_md--90 mt--120">
-          <v-col lg="12">
-            <div class="section-title section-title--3 text-center">
-              <h2 class="heading-title">{{ $t('about.vision.heading') }}</h2>
-              <p>{{ $t('about.vision.subheading') }}</p>
-            </div>
-          </v-col>
-        </v-row>
+        <template v-for="(contentSection, i) in this.sanityContent.contentSections">
 
-        <!-- Start Blog Details Area  -->
-        <v-row>
-          <v-col cols='12'>
-            <div class='inner-wrapper'>
-              <div class='inner'>
-                <p class="text-justified">{{ $t('about.vision.text') }}</p>
-                <div class='thumbnail'>
-                  <img
-                    style="margin: 50px auto"
-                    src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTRn-i0wNAuDvsC3PGgn0QAdSq8IBul3th9vN-NmjKGO3KBNM6G24whKMY5V6c0JOVhAU8&usqp=CAU'
-                    alt='Blog Images'
-                  />
+          <v-row class="mt_sm--70 mt_md--90 mt--120">
+            <v-col lg="12">
+              <div class="section-title section-title--3 text-center">
+                <h2 class="heading-title">{{ get(contentSection, `[${$i18n.locale}].heading`, '') }}</h2>
+                <p>{{ get(contentSection, `[${$i18n.locale}].subheading`, '') }}</p>
+              </div>
+            </v-col>
+          </v-row>
+
+          <!-- Start Blog Details Area  -->
+          <v-row>
+            <v-col cols='12'>
+              <div class='inner-wrapper'>
+                <div class='inner'>
+                  <SanityContent class="text-justified" :blocks="get(contentSection, `[${$i18n.locale}].content`, [])" :serializers="serializers" />
                 </div>
               </div>
-            </div>
-          </v-col>
-        </v-row>
-        <!-- End Blog Details Area  -->
+            </v-col>
+          </v-row>
+          <!-- End Blog Details Area  -->
 
-        <v-row class="mt_sm--70 mt_md--90 mt--120">
-          <v-col lg="12">
-            <div class="section-title section-title--3 text-center">
-              <h2 class="heading-title">{{ $t('about.beginning.heading') }}</h2>
-              <p>{{ $t('about.beginning.subheading') }}</p>
-            </div>
-          </v-col>
-        </v-row>
-
-        <!-- Start Blog Details Area  -->
-        <v-row>
-          <v-col cols='12'>
-            <div class='inner-wrapper'>
-              <div class='inner'>
-                <p class="text-justified">{{ $t('about.beginning.text') }}</p>
-                <div class='thumbnail'>
-                  <img
-                    style="margin: 50px auto"
-                    src='https://oekastatic.orf.at/mims/2021/36/03/crops/w=1280,q=90/1064377_bigpicture_376803_stra3.jpg?s=ee3024aa6f15ba950a460c48f351d0c24cb942de'
-                    alt='Blog Images'
-                  />
-                </div>
-              </div>
-            </div>
-          </v-col>
-        </v-row>
-        <!-- End Blog Details Area  -->
-
-        <v-row class="mt_sm--70 mt_md--90 mt--120">
-          <v-col lg="12">
-            <div class="section-title section-title--3 text-center">
-              <h2 class="heading-title">{{ $t('about.workNowadays.heading') }}</h2>
-              <p>{{ $t('about.workNowadays.subheading') }}</p>
-            </div>
-          </v-col>
-        </v-row>
-
-        <!-- Start Blog Details Area  -->
-        <v-row>
-          <v-col cols='12'>
-            <div class='inner-wrapper'>
-              <div class='inner'>
-                <p class="text-justified">{{ $t('about.workNowadays.text') }}</p>
-                <div class='thumbnail'>
-                  <img
-                    style="margin: 50px auto"
-                    src='https://www.deutschland.de/sites/default/files/styles/crop_page/public/media/image/work-and-travel-germany-jobs.jpg?h=55f18e7c&itok=i5d7MByo'
-                    alt='Blog Images'
-                  />
-                </div>
-              </div>
-            </div>
-          </v-col>
-        </v-row>
-        <!-- End Blog Details Area  -->
+        </template>
 
       </v-container>
     </div>
@@ -113,6 +54,11 @@
 </template>
 
 <script>
+import { generateGROQ } from '../queries/about'
+import get from 'lodash/get'
+
+import ImageComponent from '../components/ImageComponent'
+
 export default {
   data() {
     return {
@@ -127,12 +73,46 @@ export default {
           to: '',
           disabled: true
         }
-      ]
+      ],
+    }
+  },
+  async asyncData({ $sanity, $preview, store }) {
+    let includeDrafts = false;
+
+    if ($preview) {
+      includeDrafts = true;
+    }
+
+    const sanityContent = await $sanity.fetch(generateGROQ(includeDrafts))
+
+    store.commit('STORE_CONTACT_INFO', sanityContent.contactInfo)
+
+    return { sanityContent: sanityContent.content }
+  },
+  methods: {
+    getAltText: function(image) {
+      return image && get(image, `altTex[${this.$i18n.locale}].text`, '');
+    },
+    get: (...args) => {
+      return get(...args);
+    },
+    getImage: function(sanityImageUrl) {
+      return sanityImageUrl && this.$urlFor(sanityImageUrl).size(500).fit('max');
+    },
+    getImageHeight: function(imageDoc) {
+      return imageDoc && imageDoc.metadata.dimensions.aspectRatio
     }
   },
   computed: {
     availableLocales() {
       return this.$i18n.locales.filter(i => i.code !== this.$i18n.locale)
+    },
+    serializers() {
+      return {
+        types: {
+          image: ImageComponent
+        },
+      }
     }
   },
   nuxtI18n: {

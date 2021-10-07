@@ -125,7 +125,6 @@ export default {
             'css-byebye': {
               rulesToRemove: [
                 /.*\.*-rtl.*/,
-                /.*\.theme--light.*/,
               ],
             },
           },

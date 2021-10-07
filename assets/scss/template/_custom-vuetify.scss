@@ -107,5 +107,5 @@
 // tabs slider
 .v-slide-group.v-item-group > .v-slide-group__next,
 .v-slide-group.v-item-group > .v-slide-group__prev {
-  display: none;
+  display: none !important;
 }

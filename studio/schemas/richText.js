@@ -19,7 +19,7 @@ export default () => ({
     decorators: [
       { title: 'Strong', value: 'strong' },
       { title: 'Underline', value: 'underline' },
-      { title: 'Strike', value: 'strike-through' },
+      { title: 'Strike Through', value: 'strike-through' },
       { title: 'Emphasis', value: 'em' },
       { title: 'Code', value: 'code' },
     ],

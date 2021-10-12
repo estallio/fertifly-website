@@ -61,7 +61,7 @@
   };
 </script>
 
-<style>
+<style scoped>
   .images-wrapper {
     display: flex;
     flex-wrap: wrap;

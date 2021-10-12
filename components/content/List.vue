@@ -13,7 +13,7 @@
   }
 </script>
 
-<style>
+<style scoped>
   li {
     color: #000000;
     font-size: 18px;

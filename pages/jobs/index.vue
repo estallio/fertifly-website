@@ -192,9 +192,15 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 .job-entry {
   /*margin-top: 60px;*/
+}
+
+.job-entry ul, ol {
+  padding-left: 0;
+  margin-bottom: 10px;
+  margin-top: 5px;
 }
 
 .job-entry:first-child {

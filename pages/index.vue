@@ -173,16 +173,16 @@
 
     methods: {
       getAltText: function(image) {
-        return image && get(image, `altTex[${this.$i18n.locale}].text`, '');
+        return image && get(image, `altText[${this.$i18n.locale}].text`, '');
       },
       get: (...args) => {
         return get(...args);
       },
       getContentImage: function(sanityImageUrl) {
-        return sanityImageUrl && this.$urlFor(sanityImageUrl).size(500).fit('max');
+        return sanityImageUrl && this.$urlFor(sanityImageUrl).size(500).fit('max').url();
       },
       getProductsImage: function(sanityImageUrl) {
-        return sanityImageUrl && this.$urlFor(sanityImageUrl).size(1000).fit('max');
+        return sanityImageUrl && this.$urlFor(sanityImageUrl).size(1000).fit('max').url();
       },
       getImageHeight: function(imageDoc) {
         return imageDoc && imageDoc.metadata.dimensions.aspectRatio

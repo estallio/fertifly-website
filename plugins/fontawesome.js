@@ -13,6 +13,8 @@ import {
   faChevronUp,
   faCalendar,
   faClock,
+  faFileDownload,
+  faLink,
 } from '@fortawesome/free-solid-svg-icons'
 import {
   faFacebookF,
@@ -34,5 +36,7 @@ library.add(faTwitter)
 library.add(faInstagram)
 library.add(faCalendar)
 library.add(faClock)
+library.add(faFileDownload)
+library.add(faLink)
 
 Vue.component('font-awesome-icon', FontAwesomeIcon)

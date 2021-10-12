@@ -55,9 +55,25 @@
 
 <script>
 import { generateGROQ } from '../queries/about'
+
 import get from 'lodash/get'
 
-import ImageComponent from '../components/ImageComponent'
+import Link from '../components/content/Link'
+import File from '../components/content/File'
+
+import Image from '../components/content/Image'
+import Gallery from '../components/content/Gallery'
+import DownloadButton from '../components/content/DownloadButton'
+import LinkButton from '../components/content/LinkButton'
+
+import Strong from '../components/content/Strong'
+import Underline from '../components/content/Underline'
+import StrikeThrough from '../components/content/StrikeThrough'
+import Emphasis from '../components/content/Emphasis'
+import Code from '../components/content/Code'
+
+import ListItem from '../components/content/ListItem'
+import List from '../components/content/List'
 
 export default {
   data() {
@@ -91,13 +107,13 @@ export default {
   },
   methods: {
     getAltText: function(image) {
-      return image && get(image, `altTex[${this.$i18n.locale}].text`, '');
+      return image && get(image, `altText[${this.$i18n.locale}].text`, '');
     },
     get: (...args) => {
       return get(...args);
     },
     getImage: function(sanityImageUrl) {
-      return sanityImageUrl && this.$urlFor(sanityImageUrl).size(500).fit('max');
+      return sanityImageUrl && this.$urlFor(sanityImageUrl).size(500).fit('max').url();
     },
     getImageHeight: function(imageDoc) {
       return imageDoc && imageDoc.metadata.dimensions.aspectRatio
@@ -109,8 +125,22 @@ export default {
     },
     serializers() {
       return {
+        listItem: ListItem,
+        list: List,
+        marks: {
+          strong: Strong,
+          underline: Underline,
+          'strike-through': StrikeThrough,
+          em: Emphasis,
+          code: Code,
+          link: Link,
+          file: File,
+        },
         types: {
-          image: ImageComponent
+          image: Image,
+          gallery: Gallery,
+          downloadButton: DownloadButton,
+          linkButton: LinkButton,
         },
       }
     }

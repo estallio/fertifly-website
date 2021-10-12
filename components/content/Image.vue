@@ -2,7 +2,7 @@
   <div class='thumbnail'>
     <img
       class="w-100"
-      style="margin: 50px auto; box-shadow: none"
+      style="margin: 20px auto; box-shadow: none"
       :src="getImage({ asset })"
       :alt="altText"
       :width="100"
@@ -21,7 +21,7 @@
          return get(...args);
        },
        getImage: function(sanityImageUrl) {
-         return sanityImageUrl && this.$urlFor(sanityImageUrl).size(500).fit('max');
+         return sanityImageUrl && this.$urlFor(sanityImageUrl).size(1000).fit('max').url();
        },
        getImageHeight: function(imageDoc) {
          return imageDoc && imageDoc.metadata.dimensions.aspectRatio

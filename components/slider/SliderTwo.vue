@@ -60,7 +60,7 @@
         return get(...args);
       },
       getSanityBackgroundImageUrl: function(sanityUrl) {
-        return sanityUrl && this.$urlFor(sanityUrl).size(1000);
+        return sanityUrl && this.$urlFor(sanityUrl).size(1000).url();
       }
     }
   };

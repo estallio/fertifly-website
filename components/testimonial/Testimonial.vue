@@ -76,13 +76,13 @@
 
     methods: {
       getAltText: function(image) {
-        return image && get(image, `altTex[${this.$i18n.locale}].text`, '');
+        return image && get(image, `altText[${this.$i18n.locale}].text`, '');
       },
       get: (...args) => {
         return get(...args);
       },
       getThumbnailImage: function(sanityImageUrl) {
-        return sanityImageUrl && this.$urlFor(sanityImageUrl).size(100);
+        return sanityImageUrl && this.$urlFor(sanityImageUrl).size(100).url();
       },
       getThumbnailHeight: function(imageDoc) {
         return imageDoc && imageDoc.metadata.dimensions.aspectRatio

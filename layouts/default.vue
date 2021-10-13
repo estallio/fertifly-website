@@ -152,7 +152,7 @@
     line-height: 48px;
     font-size: 22px;
     font-weight: 600;
-    color: $gradient-color-light;
+    color: #444;
   }
   .v-btn--absolute.v-btn--bottom,
   .v-btn--fixed.v-btn--bottom {

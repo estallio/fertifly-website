@@ -114,6 +114,7 @@
 <script>
 import Cookies from 'js-cookie'
 import config from '../../config'
+import { generateGROQ } from '../../queries/jobs'
 
 export default {
   data() {
@@ -132,6 +133,7 @@ export default {
           disabled: true
         }
       ],
+      /*
       listItemContent: [
         {
           title: "Lagerarbeiter/in",
@@ -155,17 +157,34 @@ export default {
           type: '38,5h',
         },
       ],
+      */
     }
   },
-  async asyncData ({ app, params, store, payload }) {
-    if (payload?.routeParams) {
-      await store.dispatch('i18n/setRouteParams', payload.routeParams);
+  computed: {
+    listItemContent: function() {
+      return this.sanityContent.jobs.map(job => ({
+        type: job.employmentLevel,
+        location: job.location,
+        date: job.neededFrom,
+        task: job.simpleTaskDescription,
+        title: job.title,
+      }));
+    }
+  },
+  async asyncData({ $sanity, $preview, store }) {
+    let includeDrafts = false;
+
+    if ($preview) {
+      includeDrafts = true;
     }
 
-    return payload
+    const sanityContent = await $sanity.fetch(generateGROQ(includeDrafts))
+
+    store.commit('STORE_CONTACT_INFO', sanityContent.contactInfo)
+
+    return { sanityContent: sanityContent.content }
   },
   head() {
-    // TODO: tooltip bei englisch, dass diese seite nur in deutsch verfügbar ist
     return {
       htmlAttrs: {
         lang: 'de'
@@ -174,6 +193,12 @@ export default {
         {
           rel: 'canonical',
           href: config.hostname + '/de/jobs'
+        },
+        {
+          hid: 'i18n-alt-en',
+          rel: 'alternate',
+          href: config.hostname + '/en/jobs',
+          hreflang: 'de'
         }
       ]
     }
@@ -229,5 +254,9 @@ export default {
 
 .job-details-bar li svg {
   margin-right: 5px;
+}
+
+.svg-inline--fa {
+  width: 0.75em;
 }
 </style>

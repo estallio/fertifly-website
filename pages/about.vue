@@ -158,4 +158,10 @@ export default {
   .page-list {
     font-size: 18px;
   }
+
+  @media only screen and (max-width: 767px) {
+    .page-list {
+      font-size: 16px;
+    }
+  }
 </style>

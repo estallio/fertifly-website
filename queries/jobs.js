@@ -5,17 +5,15 @@ export const generateGROQ = (includeDrafts = false) => {
     return addContactInfo(groq`*[_type == 'jobs'] | order(_updatedAt desc)[0]${projections}`, includeDrafts);
   }
 
-  return addContactInfo(groq`*[_type == 'about' && !(_id in path("drafts.**"))] | order(_updatedAt desc)[0]${projections}`, includeDrafts);
+  return addContactInfo(groq`*[_type == 'jobs' && !(_id in path("drafts.**"))] | order(_updatedAt desc)[0]${projections}`, includeDrafts);
 }
 
 const projections = `
 {
   ...,
-  contentSections[]{
+  jobs[]{
     ...,
-    de{
-      ...,
-      content[]{
+    jobOffer[]{
         ...,
         _type == 'downloadButton' => {
           'fileUrl': file.asset->url
@@ -46,41 +44,6 @@ const projections = `
           }
         }
       }
-    },
-    en{
-      ...,
-      content[]{
-        ...,
-        _type == 'downloadButton' => {
-          'fileUrl': file.asset->url
-        },
-        _type == 'linkButton' => {
-          'linkUrl': url
-        },
-        _type == 'gallery' => {
-          images[]{
-            ...,
-            'imageDoc': asset->
-          }
-        },
-        _type == 'image' => {
-          ...,
-          'imageDoc': asset->
-        },
-        _type == 'block' => {
-          ...,
-          markDefs[] {
-            ...,
-            _type == 'link' => {
-              'linkUrl': url
-            },
-            _type == 'file' => {
-              'fileUrl': asset->url
-            },
-          }
-        }
-      }
-    }
   }
 }`;
 

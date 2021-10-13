@@ -52,6 +52,9 @@ export default {
   vuetify: {
     theme: { disable: true, options: { minifyTheme } },
     defaultAssets: false,
+    icons: {
+      iconfont: 'faSvg',
+    },
     // icons: {
     //   // reduces size: https://stackoverflow.com/questions/67796971/nuxtjs-vuetify-purgecss
     //   iconfont: 'mdiSvg',

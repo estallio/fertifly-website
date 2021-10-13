@@ -15,6 +15,8 @@ import {
   faClock,
   faFileDownload,
   faLink,
+  faInfoCircle,
+  faTimesCircle,
 } from '@fortawesome/free-solid-svg-icons'
 import {
   faFacebookF,
@@ -38,5 +40,7 @@ library.add(faCalendar)
 library.add(faClock)
 library.add(faFileDownload)
 library.add(faLink)
+library.add(faInfoCircle)
+library.add(faTimesCircle)
 
 Vue.component('font-awesome-icon', FontAwesomeIcon)

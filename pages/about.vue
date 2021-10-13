@@ -25,7 +25,7 @@
 
         <template v-for="(contentSection, i) in this.sanityContent.contentSections">
 
-          <v-row class="mt_sm--70 mt_md--90 mt--120">
+          <v-row :class="{'mt_sm--50 mt_md--70 mt--75': i === 0, 'mt_sm--70 mt_md--90 mt--120': i !== 0}">
             <v-col lg="12">
               <div class="section-title section-title--3 text-center">
                 <h2 class="heading-title">{{ get(contentSection, `[${$i18n.locale}].heading`, '') }}</h2>
@@ -153,3 +153,9 @@ export default {
   }
 }
 </script>
+
+<style>
+  .page-list {
+    font-size: 18px;
+  }
+</style>

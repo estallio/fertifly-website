@@ -163,7 +163,11 @@
   }
 </script>
 
-<style>
+<style scoped>
+  ul, ol {
+    padding-left: 0;
+  }
+
   a:hover, a:hover button {
     color: #006C33 !important;
   }
@@ -183,6 +187,10 @@
   .lang-switcher {
     display: inline-block;
     padding-bottom: 80px;
+  }
+
+  .lang-switcher:last-child {
+    padding-right: 11px;
   }
 
   .lang-switcher a:hover {

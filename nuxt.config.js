@@ -12,6 +12,11 @@ const { NODE_ENV = 'production' } = process.env
 
 const isDev = NODE_ENV === 'development'
 
+import sanityClient from '@sanity/client'
+import { generateGROQ } from './queries/jobs'
+
+const client = sanityClient({ apiVersion: '2021-06-07', projectId: config.sanity.projectId, dataset: config.sanity.dataset, withCredentials: config.sanity.withCredentials });
+
 export default {
   // Target: https://go.nuxtjs.dev/config-target
   target: 'static',
@@ -169,19 +174,21 @@ export default {
     // Generate a 404 page as Cloudflare pages needs one
     fallback: '404.html',
 
+    /*
     routes () {
       return [
         {
-          route: '/jobs/techniker',
+          route: '/jobs/lagerarbeiter-in',
           payload: {
             routeParams: {
-              de: { slug: 'techniker' },
-              en: { slug: 'techniker' },
+              de: { slug: 'lagerarbeiter-in' },
+              en: { slug: 'lagerarbeiter-in' },
             }
           }
         },
       ];
     }
+    */
   },
 
   i18n: {
@@ -364,6 +371,20 @@ export default {
       )
     },
     routes: async () => {
+      const { content } = await client.fetch(generateGROQ(false))
+
+      return content.jobs
+        .map(job => (
+        {
+          // english URLs are left out as the content jobs is only available in german
+          url: '/de/jobs/' + job.slug.current,
+          links: [
+            { lang: 'de', url: '/de/jobs/' + job.slug.current },
+          ]
+        }
+        ));
+
+      /*
       return [
         // TODO: get jobs dynamic slugs
         {
@@ -381,6 +402,7 @@ export default {
           ],
         }
       ]
+      */
     },
   },
 

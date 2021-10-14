@@ -20,7 +20,7 @@
         </v-card-title>
 
         <v-card-text style="padding-top: 24px;">
-          Sende uns ein Bewerbungsschreiben und deinen Lebenslauf per Email an office@ecofly.at und wir melden uns bei dir.
+          Sende uns ein Bewerbungsschreiben und deinen Lebenslauf per Email an <b>office@ecofly.at</b> und wir melden uns bei dir.
         </v-card-text>
 
         <v-divider></v-divider>
@@ -50,7 +50,7 @@
         <v-row>
           <v-col lg='12'>
             <div class='breadcrumb-inner pt--100 pt_sm--40 pt_md--50'>
-              <h1 class='heading-title'>TODO: Text</h1>
+              <h2 class='heading-title'>{{ sanityContent.title }}</h2>
               <ul class='page-list'>
                 <li v-for='(item, i) in breadcrumbs' :key='i'>
                   <nuxt-link :aria-label="item.text" :alt="item.text" :to="localePath(item.to)">{{ item.text }}</nuxt-link>
@@ -71,31 +71,36 @@
           <v-col
             cols="12"
             lg="7"
-            v-for="(singleList, i) in listItemContent"
-            :key="i"
-            :class="singleList.class"
             class="job-entry mt--60 mt_sm--50 mt_lg--50"
           >
             <div class="list-style-inner">
-              <h3 class="fontWeight500">{{ singleList.title }}</h3>
+              <h3 class="fontWeight500">{{ sanityContent.title }}</h3>
 
               <ul class="job-details-bar">
                 <li>
-                  <span><font-awesome-icon icon="map-marker-alt" />{{ singleList.location }}</span>
+                  <span><font-awesome-icon icon="map-marker-alt" />{{ sanityContent.location }}</span>
                 </li>
                 <li>
-                  <span><font-awesome-icon icon="clock" />{{ singleList.type }}</span>
+                  <span><font-awesome-icon icon="clock" />{{ sanityContent.employmentLevel }}</span>
                 </li>
                 <li>
-                  <span><font-awesome-icon icon="calendar" />{{ singleList.date }}</span>
+                  <span><font-awesome-icon icon="calendar" />{{ sanityContent.neededFrom }}</span>
                 </li>
               </ul>
 
-              <p class="text-justified">
-                <b>Aufgaben:&nbsp;&nbsp;</b>{{ singleList.task }}
-              </p>
+              <!-- Start Blog Details Area  -->
+              <v-row>
+                <v-col cols='12'>
+                  <div class='inner-wrapper'>
+                    <div class='inner'>
+                      <SanityContent class="text-justified" :blocks="sanityContent.jobOffer" :serializers="serializers" />
+                    </div>
+                  </div>
+                </v-col>
+              </v-row>
+              <!-- End Blog Details Area  -->
 
-              <button class="rn-button-style--2 btn_solid btn-size-sm" @click="dialog = true">
+              <button class="rn-button-style--2 btn_solid btn-size-sm mt--10" @click="dialog = true">
                 Jetzt bewerben!
               </button>
             </div>
@@ -112,13 +117,44 @@
 <script>
   import Cookies from 'js-cookie'
   import config from '../../config'
+  import { generateGROQ } from '../../queries/job'
+  import ListItem from '../../components/content/ListItem'
+  import List from '../../components/content/List'
+  import Strong from '../../components/content/Strong'
+  import Underline from '../../components/content/Underline'
+  import StrikeThrough from '../../components/content/StrikeThrough'
+  import Emphasis from '../../components/content/Emphasis'
+  import Code from '../../components/content/Code'
+  import Link from '../../components/content/Link'
+  import File from '../../components/content/File'
+  import Image from '../../components/content/Image'
+  import Gallery from '../../components/content/Gallery'
+  import DownloadButton from '../../components/content/DownloadButton'
+  import LinkButton from '../../components/content/LinkButton'
 
   export default {
     data() {
       return {
         dialog: false,
         onlyGermanAlert: this.$i18n.locale !== 'de' && Cookies.get('languageDialogDismissed') !== 'true',
-        breadcrumbs: [
+      }
+    },
+    async asyncData({ $sanity, $preview, store, params }) {
+      let includeDrafts = false;
+
+      if ($preview) {
+        includeDrafts = true;
+      }
+
+      const sanityContent = await $sanity.fetch(generateGROQ(includeDrafts), { slug: params.slug })
+
+      store.commit('STORE_CONTACT_INFO', sanityContent.contactInfo)
+
+      return { sanityContent: sanityContent.content.job }
+    },
+    computed: {
+      breadcrumbs: function() {
+        return [
           {
             text: this.$t('index.title'),
             to: '/',
@@ -130,31 +166,35 @@
             disabled: true
           },
           {
-            text: "TODO: Text",
+            text: 'Ausschreibung',
             to: '',
             disabled: true
           }
-        ],
-        listItemContent: [
-          {
-            title: "Lagerarbeiter/in",
-            task: 'Begleitung von Projekten in Bezug auf Hardware- und Systemanbindungen im Bereich der MES-Systemlandschaft inkl. Support der ERP-Systeme',
-            location: 'Antiesenhofen',
-            date: 'ab sofort',
-            type: 'Vollzeit',
+        ];
+      },
+      serializers() {
+        return {
+          listItem: ListItem,
+          list: List,
+          marks: {
+            strong: Strong,
+            underline: Underline,
+            'strike-through': StrikeThrough,
+            em: Emphasis,
+            code: Code,
+            link: Link,
+            file: File,
           },
-        ],
+          types: {
+            image: Image,
+            gallery: Gallery,
+            downloadButton: DownloadButton,
+            linkButton: LinkButton,
+          },
+        }
       }
-    },
-    async asyncData ({ app, params, store, payload }) {
-      if (payload?.routeParams) {
-        await store.dispatch('i18n/setRouteParams', payload.routeParams);
-      }
-
-      return payload
     },
     head() {
-      // TODO: tooltip bei englisch, dass diese seite nur in deutsch verfügbar ist
       return {
         htmlAttrs: {
           lang: 'de'
@@ -162,7 +202,13 @@
         link: [
           {
             rel: 'canonical',
-            href: config.hostname + '/de/jobs' // TODO: jobs-slug
+            href: config.hostname + '/de/jobs/' + this.sanityContent.slug.current,
+          },
+          {
+            hid: 'i18n-alt-en',
+            rel: 'alternate',
+            href: config.hostname + '/en/jobs' + this.sanityContent.slug.current,
+            hreflang: 'de'
           }
         ]
       }
@@ -180,3 +226,57 @@
     }
   }
 </script>
+
+<style scoped>
+  .job-entry {
+    /*margin-top: 60px;*/
+  }
+
+  .job-entry ul, ol {
+    padding-left: 0;
+    margin-bottom: 10px;
+    margin-top: 5px;
+  }
+
+  .job-entry:first-child {
+    margin-top: 10px !important;
+  }
+
+  .job-entry:last-child {
+    margin-bottom: 70px;
+  }
+
+  .job-details-bar li {
+    list-style: none;
+  }
+
+  @media only screen and (min-width: 500px) {
+    .job-details-bar li {
+      margin-left: 20px;
+
+      display: inline;
+    }
+  }
+
+  .job-details-bar li:first-child {
+    margin-left: 0;
+  }
+
+  .job-details-bar li svg {
+    margin-right: 5px;
+  }
+</style>
+
+<style>
+  .svg-inline--fa {
+    width: 0.75em;
+  }
+
+  .v-alert__icon {
+    align-self: center;
+  }
+
+  .v-alert__dismissible {
+    margin: 0 !important;
+  }
+</style>

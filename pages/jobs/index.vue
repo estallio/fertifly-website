@@ -20,7 +20,7 @@
         </v-card-title>
 
         <v-card-text style="padding-top: 24px;">
-          Sende uns ein Bewerbungsschreiben und deinen Lebenslauf per Email an office@ecofly.at und wir melden uns bei dir.
+          Sende uns ein Bewerbungsschreiben und deinen Lebenslauf per Email an <b>office@ecofly.at</b> und wir melden uns bei dir.
         </v-card-text>
 
         <v-divider></v-divider>
@@ -95,7 +95,7 @@
                 <b>Aufgaben:&nbsp;&nbsp;</b>{{ singleList.task }}
               </p>
 
-              <nuxt-link :to="localePath('/jobs/techniker')" style="color: inherit; text-decoration: underline">Mehr erfahren...</nuxt-link>
+              <nuxt-link :to="localePath(`/jobs/${singleList.slug}`)" style="color: inherit; text-decoration: underline">Mehr erfahren...</nuxt-link>
 
               <button style="margin-left: 20px" class="rn-button-style--2 btn_solid btn-size-sm" @click="dialog = true">
                 Jetzt bewerben!
@@ -168,6 +168,7 @@ export default {
         date: job.neededFrom,
         task: job.simpleTaskDescription,
         title: job.title,
+        slug: job.slug.current
       }));
     }
   },
@@ -255,8 +256,18 @@ export default {
 .job-details-bar li svg {
   margin-right: 5px;
 }
+</style>
 
-.svg-inline--fa {
-  width: 0.75em;
-}
+<style>
+  .svg-inline--fa {
+    width: 0.75em;
+  }
+
+  .v-alert__icon {
+    align-self: center;
+  }
+
+  .v-alert__dismissible {
+    margin: 0 !important;
+  }
 </style>

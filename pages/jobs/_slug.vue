@@ -131,6 +131,7 @@
   import Gallery from '../../components/content/Gallery'
   import DownloadButton from '../../components/content/DownloadButton'
   import LinkButton from '../../components/content/LinkButton'
+  import get from 'lodash/get'
 
   export default {
     data() {
@@ -212,6 +213,15 @@
             rel: 'alternate',
             href: config.hostname + '/en/jobs' + this.sanityContent.slug.current,
             hreflang: 'de'
+          }
+        ],
+        title: 'Jobausschreibung für ' + this.sanityContent.title,
+        meta: [
+          // hid is used as unique identifier. Do not use `vmid` for it as it will not work
+          {
+            hid: 'description',
+            name: 'description',
+            content: 'Tätigkeiten sind z.B.: ' + this.sanityContent.simpleTaskDescription,
           }
         ]
       }

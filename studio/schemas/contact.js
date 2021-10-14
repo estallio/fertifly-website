@@ -38,7 +38,7 @@ export default {
         {
           title: 'Text',
           name: 'text',
-          type: 'string',
+          type: 'simpleEditor',
         },
       ],
       initialValue: {

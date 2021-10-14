@@ -105,6 +105,19 @@
 
       return { sanityContent: sanityContent.content }
     },
+    head() {
+      return {
+        title: get(this.sanityContent, `seo[${this.$i18n.locale}].title`, ''),
+        meta: [
+          // hid is used as unique identifier. Do not use `vmid` for it as it will not work
+          {
+            hid: 'description',
+            name: 'description',
+            content: get(this.sanityContent, `seo[${this.$i18n.locale}].description`, ''),
+          }
+        ]
+      }
+    },
     methods: {
       getAltText: function(image) {
         return image && get(image, `altText[${this.$i18n.locale}].text`, '');

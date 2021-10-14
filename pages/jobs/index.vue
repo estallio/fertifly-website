@@ -115,6 +115,7 @@
 import Cookies from 'js-cookie'
 import config from '../../config'
 import { generateGROQ } from '../../queries/jobs'
+import get from 'lodash/get'
 
 export default {
   data() {
@@ -203,6 +204,15 @@ export default {
           rel: 'alternate',
           href: config.hostname + '/en/jobs',
           hreflang: 'de'
+        }
+      ],
+      title: get(this.sanityContent, `seo.title`, ''),
+      meta: [
+        // hid is used as unique identifier. Do not use `vmid` for it as it will not work
+        {
+          hid: 'description',
+          name: 'description',
+          content: get(this.sanityContent, `seo.description`, ''),
         }
       ]
     }

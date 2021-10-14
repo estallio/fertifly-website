@@ -4,7 +4,9 @@
     <v-col cols="12" md="6" order="2" order-md="1">
       <div class="section-title text-left mb--50 mb_sm--30 mb_md--30">
         <h2 class="heading-title">{{ get(contactInfo, `contactText[${$i18n.locale}].heading`, '') }}</h2>
-        <p class="description">{{ get(contactInfo, `contactText[${$i18n.locale}].text`, '') }}</p>
+        <p class="description">
+          <SanityContent class="text-justified" :blocks="get(contactInfo, `contactText[${$i18n.locale}].text`, [])" :serializers="serializers" />
+        </p>
       </div>
       <div class="form-wrapper">
         <ValidationObserver v-slot="{ handleSubmit }">
@@ -118,6 +120,19 @@
 
 <script>
   import get from 'lodash/get'
+  import ListItem from '../content/ListItem'
+  import List from '../content/List'
+  import Strong from '../content/Strong'
+  import Underline from '../content/Underline'
+  import StrikeThrough from '../content/StrikeThrough'
+  import Emphasis from '../content/Emphasis'
+  import Code from '../content/Code'
+  import Link from '../content/Link'
+  import File from '../content/File'
+  import Image from '../content/Image'
+  import Gallery from '../content/Gallery'
+  import DownloadButton from '../content/DownloadButton'
+  import LinkButton from '../content/LinkButton'
 
   export default {
     data() {
@@ -133,6 +148,27 @@
     computed: {
       contactInfo: function() {
         return this.$store.state.contactInfo;
+      },
+      serializers() {
+        return {
+          listItem: ListItem,
+          list: List,
+          marks: {
+            strong: Strong,
+            underline: Underline,
+            'strike-through': StrikeThrough,
+            em: Emphasis,
+            code: Code,
+            link: Link,
+            file: File,
+          },
+          types: {
+            image: Image,
+            gallery: Gallery,
+            downloadButton: DownloadButton,
+            linkButton: LinkButton,
+          },
+        }
       }
     },
     methods: {

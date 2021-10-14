@@ -92,6 +92,19 @@ export default {
       ],
     }
   },
+  head() {
+    return {
+      title: get(this.sanityContent, `seo[${this.$i18n.locale}].title`, ''),
+      meta: [
+        // hid is used as unique identifier. Do not use `vmid` for it as it will not work
+        {
+          hid: 'description',
+          name: 'description',
+          content: get(this.sanityContent, `seo[${this.$i18n.locale}].description`, ''),
+        }
+      ]
+    }
+  },
   async asyncData({ $sanity, $preview, store }) {
     let includeDrafts = false;
 

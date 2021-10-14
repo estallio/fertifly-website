@@ -43,6 +43,7 @@
 
 <script>
   import { generateGROQ } from '../queries/products'
+  import get from 'lodash/get'
 
   export default {
     async asyncData({ $sanity, $preview, store }) {
@@ -57,6 +58,19 @@
       store.commit('STORE_CONTACT_INFO', sanityContent.contactInfo)
 
       return { sanityContent: sanityContent.content }
+    },
+    head() {
+      return {
+        title: get(this.sanityContent, `seo[${this.$i18n.locale}].title`, ''),
+        meta: [
+          // hid is used as unique identifier. Do not use `vmid` for it as it will not work
+          {
+            hid: 'description',
+            name: 'description',
+            content: get(this.sanityContent, `seo[${this.$i18n.locale}].description`, ''),
+          }
+        ]
+      }
     },
     data() {
       return {

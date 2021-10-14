@@ -5,8 +5,8 @@ export default {
   __experimental_actions: ['update', 'publish', 'create', 'delete'],
   fields: [
     {
-      title: 'Sections',
-      name: 'sections',
+      title: 'Content Sections',
+      name: 'contentSections',
       type: 'array',
       of: [ { type: 'contentSection' } ],
     }

@@ -209,7 +209,7 @@
   }
 
   .menuMaxHeight {
-    height: 100vh !important;
+    height: 101vh !important;
     overflow: scroll !important;
   }
 

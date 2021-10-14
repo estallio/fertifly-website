@@ -20,7 +20,7 @@
         </v-card-title>
 
         <v-card-text style="padding-top: 24px;">
-          Sende uns ein Bewerbungsschreiben und deinen Lebenslauf per Email an <b>office@ecofly.at</b> und wir melden uns bei dir.
+          Sende uns ein Bewerbungsschreiben und deinen Lebenslauf per Email an <b>{{ email }}</b> und wir melden uns bei dir.
         </v-card-text>
 
         <v-divider></v-divider>
@@ -28,7 +28,7 @@
         <v-card-actions style="padding-bottom: 20px;">
           <v-spacer></v-spacer>
 
-          <a href="mailto:office@ecofly.at" class="rn-button-style--2 btn_solid btn-size-sm">
+          <a :href="'mailto:' + email" class="rn-button-style--2 btn_solid btn-size-sm">
             Email schreiben
           </a>
 
@@ -192,6 +192,9 @@
             linkButton: LinkButton,
           },
         }
+      },
+      email: function() {
+        return this.$store.state.contactInfo.email;
       }
     },
     head() {

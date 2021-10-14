@@ -9,7 +9,7 @@
         <div class="inner">
           <h4 class="title">{{ $t('contact.phoneDescription') }}</h4>
           <p>
-            <a href="tel:+057254365456">+057 254 365 456</a>
+            <a :href="'tel:' + contactInfo.phone">{{ contactInfo.phone }}</a>
           </p>
         </div>
       </div>
@@ -25,7 +25,7 @@
         <div class="inner">
           <h4 class="title">{{ $t('contact.emailDescription') }}</h4>
           <p>
-            <a href="mailto:office@ecofly.at">office@ecofly.at</a>
+            <a :href="'mailto:' + contactInfo.email">{{ contactInfo.email }}</a>
           </p>
         </div>
       </div>
@@ -40,18 +40,74 @@
         </div>
         <div class="inner">
           <h4 class="title">{{ $t('contact.addressDescription') }}</h4>
-          <p>
-            Riederstraße 15
-          </p>
-          <p>
-            4980 Antiesenhofen
-          </p>
+          <SanityContent class="text-justified" :blocks="contactInfo.address" :serializers="serializers" />
         </div>
       </div>
     </v-col>
     <!-- End Single Address  -->
   </v-row>
 </template>
+
+<script>
+  import get from 'lodash/get'
+  import ListItem from '../content/ListItem'
+  import List from '../content/List'
+  import Strong from '../content/Strong'
+  import Underline from '../content/Underline'
+  import StrikeThrough from '../content/StrikeThrough'
+  import Emphasis from '../content/Emphasis'
+  import Code from '../content/Code'
+  import Link from '../content/Link'
+  import File from '../content/File'
+  import Image from '../content/Image'
+  import Gallery from '../content/Gallery'
+  import DownloadButton from '../content/DownloadButton'
+  import LinkButton from '../content/LinkButton'
+
+  export default {
+    computed: {
+      contactInfo: function() {
+        return this.$store.state.contactInfo;
+      },
+      serializers() {
+        return {
+          listItem: ListItem,
+          list: List,
+          marks: {
+            strong: Strong,
+            underline: Underline,
+            'strike-through': StrikeThrough,
+            em: Emphasis,
+            code: Code,
+            link: Link,
+            file: File,
+          },
+          types: {
+            image: Image,
+            gallery: Gallery,
+            downloadButton: DownloadButton,
+            linkButton: LinkButton,
+          },
+        }
+      }
+    },
+    methods: {
+      getAltText: function(image) {
+        return image && get(image, `altText[${this.$i18n.locale}].text`, '');
+      },
+      get: (...args) => {
+        return get(...args);
+      },
+      getImage: function(sanityImageUrl) {
+        return sanityImageUrl && this.$urlFor(sanityImageUrl).size(500).fit('max').url();
+      },
+      getImageHeight: function(imageDoc) {
+        return imageDoc && imageDoc.metadata.dimensions.aspectRatio
+      }
+    },
+  };
+</script>
+
 
 <style>
   .rn-address {

@@ -22,7 +22,7 @@ export default {
       title: 'Address',
       description: 'Multiline address field',
       name: 'address',
-      type: 'text',
+      type: 'simpleEditor',
     },
     {
       title: 'Contact Text',
@@ -52,7 +52,7 @@ export default {
     {
       title: 'Contact Image',
       description: 'This image is displayed on the contact page.',
-      name: 'Image',
+      name: 'image',
       type: 'image',
       fields: [
         {

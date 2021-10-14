@@ -42,33 +42,48 @@
 </template>
 
 <script>
-export default {
-  data() {
-    return {
-      breadcrumbs: [
-        {
-          text: this.$t('index.title'),
-          to: '/',
-          disabled: false,
-        },
-        {
-          text: this.$t('contact.title'),
-          to: '',
-          disabled: true,
-        },
-      ],
-    };
-  },
-  computed: {
-    availableLocales () {
-      return this.$i18n.locales.filter(i => i.code !== this.$i18n.locale)
+  import { generateGROQ } from '../queries/products'
+
+  export default {
+    async asyncData({ $sanity, $preview, store }) {
+      let includeDrafts = false;
+
+      if ($preview) {
+        includeDrafts = true;
+      }
+
+      const sanityContent = await $sanity.fetch(generateGROQ(includeDrafts))
+
+      store.commit('STORE_CONTACT_INFO', sanityContent.contactInfo)
+
+      return { sanityContent: sanityContent.content }
     },
-  },
-  nuxtI18n: {
-    paths: {
-      en: '/contact',
-      de: '/kontakt'
+    data() {
+      return {
+        breadcrumbs: [
+          {
+            text: this.$t('index.title'),
+            to: '/',
+            disabled: false,
+          },
+          {
+            text: this.$t('contact.title'),
+            to: '',
+            disabled: true,
+          },
+        ],
+      };
+    },
+    computed: {
+      availableLocales () {
+        return this.$i18n.locales.filter(i => i.code !== this.$i18n.locale)
+      },
+    },
+    nuxtI18n: {
+      paths: {
+        en: '/contact',
+        de: '/kontakt'
+      }
     }
   }
-}
 </script>

@@ -3,8 +3,8 @@
 
     <v-col cols="12" md="6" order="2" order-md="1">
       <div class="section-title text-left mb--50 mb_sm--30 mb_md--30">
-        <h2 class="heading-title">{{ $t('contact.form.heading') }}</h2>
-        <p class="description">{{ $t('contact.form.description') }}</p>
+        <h2 class="heading-title">{{ get(contactInfo, `contactText[${$i18n.locale}].heading`, '') }}</h2>
+        <p class="description">{{ get(contactInfo, `contactText[${$i18n.locale}].text`, '') }}</p>
       </div>
       <div class="form-wrapper">
         <ValidationObserver v-slot="{ handleSubmit }">
@@ -103,11 +103,12 @@
 
     <v-col cols="12" md="6" order="1" order-md="2" align-self="center">
       <div class="pt--10 pb--10 pb_sm--50 pb_md--50 thumbnail flex-lg flex-lg-column justify-lg-center">
-        <img
-          class="w-100"
-          style="box-shadow: none"
-          src="https://www.personio.de/wp-content/uploads/2020/07/5G8A7624-1.jpg"
-          alt="Service Images"
+        <img class="w-100"
+             style="box-shadow: none"
+             :src="getImage(contactInfo.image)"
+             :alt="getAltText(contactInfo.image)"
+             :width="100"
+             :height="100 / getImageHeight(contactInfo.imageDoc)"
         />
       </div>
     </v-col>
@@ -116,6 +117,8 @@
 </template>
 
 <script>
+  import get from 'lodash/get'
+
   export default {
     data() {
       return {
@@ -127,10 +130,27 @@
         },
       };
     },
+    computed: {
+      contactInfo: function() {
+        return this.$store.state.contactInfo;
+      }
+    },
     methods: {
       onSubmit() {
         console.log(this.formData);
       },
+      getAltText: function(image) {
+        return image && get(image, `altText[${this.$i18n.locale}].text`, '');
+      },
+      get: (...args) => {
+        return get(...args);
+      },
+      getImage: function(sanityImageUrl) {
+        return sanityImageUrl && this.$urlFor(sanityImageUrl).size(500).fit('max').url();
+      },
+      getImageHeight: function(imageDoc) {
+        return imageDoc && imageDoc.metadata.dimensions.aspectRatio
+      }
     },
   };
 </script>

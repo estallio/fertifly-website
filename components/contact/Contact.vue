@@ -4,9 +4,7 @@
     <v-col cols="12" md="6" order="2" order-md="1">
       <div class="section-title text-left mb--50 mb_sm--30 mb_md--30">
         <h2 class="heading-title">{{ get(contactInfo, `contactText[${$i18n.locale}].heading`, '') }}</h2>
-        <p class="description">
-          <SanityContent class="text-justified" :blocks="get(contactInfo, `contactText[${$i18n.locale}].text`, [])" :serializers="serializers" />
-        </p>
+        <SanityContent class="text-justified description" :blocks="get(contactInfo, `contactText[${$i18n.locale}].text`, [])" :serializers="serializers" />
       </div>
       <div class="form-wrapper">
         <ValidationObserver v-slot="{ handleSubmit }">

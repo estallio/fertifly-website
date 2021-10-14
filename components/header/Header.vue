@@ -150,7 +150,7 @@
           "about",
           "jobs",
           "team",
-          "partner",
+          "partners",
           "contact"
         ]
       }

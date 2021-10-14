@@ -26,43 +26,14 @@ export default {
     },
     {
       title: 'Logo',
-      name: 'logo',
-      type: 'image',
-      fields: [
-        {
-          title: 'Alt Text',
-          name: 'altText',
-          type: 'object',
-          fields: [
-            {
-              title: 'Text',
-              name: 'text',
-              description: 'Description of the image for screenreaders like Google to know what\'s on the picture',
-              type: 'string',
-            }
-          ],
-          initialValue: {
-            de: { text: '' },
-            en: { text: '' }
-          },
-          validation: Rule => Rule.custom(blocks => {
-            if (languages.every(lang => blocks?.[lang]?.text)) {
-              return true;
-            }
-
-            return 'Add descriptive texts in the Image Details Section for every language';
-          }),
-          options: {
-            i18n: true,
-          },
-        },
-      ],
+      name: 'image',
+      type: 'image'
     }
   ],
   preview: {
     select: {
       title: 'name',
-      media: 'logo',
+      media: 'image',
     }
   }
 }

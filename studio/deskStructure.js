@@ -62,7 +62,7 @@ const teamListItem = S.listItem()
   .documentId('team')
 );
 
-const partnerListItem = S.listItem()
+const partnersListItem = S.listItem()
 .title('Partners')
 .icon(FaRegHandshake)
 .child(
@@ -115,7 +115,7 @@ export default () =>
     aboutListItem,
     jobsListItem,
     teamListItem,
-    partnerListItem,
+    partnersListItem,
     contactListItem,
     privacyListItem,
     imprintListItem

@@ -5,7 +5,7 @@ export default {
     about: 'About us',
     jobs: 'Jobs',
     team: 'Team',
-    partner: 'Partner',
+    partners: 'Partners',
     contact: 'Contact',
   },
   toHomepage: 'Link to Homepage',

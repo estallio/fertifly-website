@@ -6,7 +6,7 @@ import header from './components/header'
 import index from './pages/index'
 import products from './pages/products'
 import contact from './pages/contact'
-import partner from './pages/partner'
+import partners from './pages/partners'
 import team from './pages/team'
 import about from './pages/about'
 import privacy from './pages/privacy';
@@ -19,7 +19,7 @@ export default {
   index,
   products,
   contact,
-  partner,
+  partners,
   team,
   about,
   privacy,

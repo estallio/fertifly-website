@@ -8,6 +8,7 @@
     "start": "nuxt start",
     "generate": "nuxt generate && rm -f ./dist/.nojekyll",
     "deploy": "yarn generate && (cd ./studio && yarn deploy)",
+    "upgrade-deploy": "yarn generate && (cd ./studio && yarn upgrade-deploy)",
     "format": "prettier --write '**/*.{js,css,json,md}'",
     "lint:js": "eslint --ext \".js,.vue\" --ignore-path .gitignore .",
     "lint:style": "stylelint \"**/*.{vue,css}\" --ignore-path .gitignore",

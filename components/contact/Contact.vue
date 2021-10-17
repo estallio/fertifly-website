@@ -270,8 +270,6 @@
       async onSubmit() {
         this.loading = true;
 
-        console.log('sent');
-
         try {
           const { solution } = await this.botpoison.challenge();
 

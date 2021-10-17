@@ -109,8 +109,17 @@
 </script>
 
 
-<style>
+<style scoped>
   .rn-address {
     padding: 38px;
+  }
+
+  .svg-inline--fa {
+    display: inline-block;
+    font-size: inherit;
+    width: 1em;
+    height: 1em;
+    overflow: visible;
+    vertical-align: -0.125em;
   }
 </style>

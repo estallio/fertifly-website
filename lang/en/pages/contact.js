@@ -18,6 +18,14 @@ export default {
     submitLabel: 'Submit',
     consentFirstPart: 'I have read and agree to the website',
     consentProtection: 'privacy policy',
-    consentSecondPart: '.'
+    consentSecondPart: '.',
+    noscript: 'Attention: If this text is visible, Javascript is disabled and the following form does not save requests for security reasons.',
+    request: {
+      success: 'Request received',
+      thanks: 'Thank you for the inquiry, we will get back to you shortly.',
+      close: 'Close',
+      error: 'Error',
+      errorText: 'An error occurred while sending the request. Please contact us using other channels. Thank you!'
+    }
   },
 }

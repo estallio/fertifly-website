@@ -1,12 +1,74 @@
 <template>
   <v-row align="start" class="row--35 justify-center">
 
+    <v-dialog v-model="successDialog" width="500" elevation="3" style="z-index: 104;">
+      <v-card>
+        <v-card-title class="text-h5 grey lighten-2">
+          {{ $t('contact.form.request.success') }}
+        </v-card-title>
+
+        <v-card-text style="padding-top: 24px;">
+          {{ $t('contact.form.request.thanks') }}
+        </v-card-text>
+
+        <v-divider></v-divider>
+
+        <v-card-actions style="padding-bottom: 20px;">
+          <v-spacer></v-spacer>
+
+          <button
+            style="margin-left: 10px;"
+            class="rn-button-style--2 btn_solid btn-size-sm"
+            @click="successDialog = false"
+          >
+            {{ $t('contact.form.request.close') }}
+          </button>
+
+        </v-card-actions>
+      </v-card>
+    </v-dialog>
+
+    <v-dialog v-model="errorDialog" width="500" elevation="3" style="z-index: 104;">
+      <v-card>
+        <v-card-title class="text-h5 grey lighten-2">
+          {{ $t('contact.form.request.error') }}
+        </v-card-title>
+
+        <v-card-text style="padding-top: 24px;">
+          {{ $t('contact.form.request.errorText') }}
+        </v-card-text>
+
+        <v-divider></v-divider>
+
+        <v-card-actions style="padding-bottom: 20px;">
+          <v-spacer></v-spacer>
+
+          <button
+            style="margin-left: 10px;"
+            class="rn-button-style--2 btn_solid btn-size-sm"
+            @click="errorDialog = false"
+          >
+            {{ $t('contact.form.request.close') }}
+          </button>
+
+        </v-card-actions>
+      </v-card>
+    </v-dialog>
+
     <v-col cols="12" md="6" order="2" order-md="1">
       <div class="section-title text-left mb--50 mb_sm--30 mb_md--30">
         <h2 class="heading-title">{{ get(contactInfo, `contactText[${$i18n.locale}].heading`, '') }}</h2>
         <SanityContent class="text-justified description" :blocks="get(contactInfo, `contactText[${$i18n.locale}].text`, [])" :serializers="serializers" />
       </div>
       <div class="form-wrapper">
+        <client-only>
+          <noscript>
+            <p style="color: red; padding-bottom: 20px">
+              {{ $t('contact.form.noscript') }}
+            </p>
+          </noscript>
+        </client-only>
+
         <ValidationObserver v-slot="{ handleSubmit }">
           <form @submit.prevent="handleSubmit(onSubmit)">
             <ValidationProvider
@@ -34,7 +96,6 @@
                 <input
                   type="text"
                   name="email"
-                  rules="required|email"
                   v-model="formData.email"
                   :placeholder="$t('contact.form.emailPlaceholder') + ' *'"
                 />
@@ -44,7 +105,6 @@
 
             <ValidationProvider
               :name="$t('contact.form.subject')"
-              rules="required"
               v-slot="{ errors }"
             >
               <label>
@@ -52,7 +112,7 @@
                   type="text"
                   name="subject"
                   v-model="formData.subject"
-                  :placeholder="$t('contact.form.subjectPlaceholder') + ' *'"
+                  :placeholder="$t('contact.form.subjectPlaceholder')"
                 />
                 <span class="inpur-error">{{ errors[0] }}</span>
               </label>
@@ -75,11 +135,17 @@
 
             <ValidationProvider
               :name="$t('contact.form.consentProtection')"
-              rules="required"
+              :rules="{ required: { allowFalse: false } }"
               v-slot="{ errors }"
             >
               <label>
-                <input type="checkbox" name="consent" id="consent" style="display: unset; width: auto; height: auto;" />
+                <input
+                  type="checkbox"
+                  name="consent"
+                  id="consent"
+                  v-model="formData.consent"
+                  style="display: unset; width: auto; height: auto;"
+                />
                 <label style="display: unset; width: auto; height: auto;" for="consent">
                   {{ $t('contact.form.consentFirstPart') }}
                   <nuxt-link :to='localePath("privacy")' style="text-decoration: underline; color: #006C33">{{ $t('contact.form.consentProtection') }}</nuxt-link>
@@ -89,12 +155,27 @@
               </label>
             </ValidationProvider>
 
+            <input
+              v-model="formData.hConsent"
+              type="checkbox"
+              name="h-consent"
+              id="h-consent"
+              style="display:none"
+              tabindex="-1"
+              autocomplete="off"
+            />
+
             <button
-              class="rn-button-style--2 btn_solid"
+              class="rn-button-style--2 btn_solid submit-button"
               type="submit"
-              value="submit"
+              :disabled="loading"
             >
-              {{ $t('contact.form.submitLabel') }}
+              <span v-if="!loading">{{ $t('contact.form.submitLabel') }}</span>
+              <v-progress-circular
+                v-else
+                indeterminate
+                color="primary"
+              ></v-progress-circular>
             </button>
           </form>
         </ValidationObserver>
@@ -118,6 +199,7 @@
 
 <script>
   import get from 'lodash/get'
+
   import ListItem from '../content/ListItem'
   import List from '../content/List'
   import Strong from '../content/Strong'
@@ -132,6 +214,10 @@
   import DownloadButton from '../content/DownloadButton'
   import LinkButton from '../content/LinkButton'
 
+  import Botpoison from "@botpoison/browser"
+
+  const FORMSPARK_ACTION_URL = "https://submit-form.com/EdFRMhJb";
+
   export default {
     data() {
       return {
@@ -140,8 +226,19 @@
           email: "",
           subject: "",
           message: "",
+          consent: null,
+          hConsent: null,
         },
+        botpoison: null,
+        loading: false,
+        errorDialog: false,
+        successDialog: false,
       };
+    },
+    created() {
+      this.botpoison = new Botpoison({
+        publicKey: "pk_d46d6ff6-08df-414d-9b2d-a982f82cfb5a",
+      });
     },
     computed: {
       contactInfo: function() {
@@ -170,8 +267,39 @@
       }
     },
     methods: {
-      onSubmit() {
-        console.log(this.formData);
+      async onSubmit() {
+        this.loading = true;
+
+        console.log('sent');
+
+        try {
+          const { solution } = await this.botpoison.challenge();
+
+          await fetch(FORMSPARK_ACTION_URL, {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+              Accept: "application/json",
+            },
+            body: JSON.stringify({
+              name: this.formData.name,
+              email: this.formData.email,
+              subject: this.formData.subject,
+              message: this.formData.message,
+              consent: this.formData.consent,
+              'h-consent': this.formData.hConsent,
+              _botpoison: "ok", // TODO und im Backend bei Formspark
+            }),
+          });
+
+          this.successDialog = true;
+
+          this.message = null;
+        } catch (error) {
+          this.errorDialog = true;
+        } finally {
+          this.loading = false;
+        }
       },
       getAltText: function(image) {
         return image && get(image, `altText[${this.$i18n.locale}].text`, '');
@@ -188,3 +316,22 @@
     },
   };
 </script>
+
+<style scoped>
+  .rn-button-style--2.submit-button {
+    width: 140px !important;
+    height: 55px !important;
+    padding: 10px 10px !important;
+  }
+  .rn-button-style--2.submit-button:disabled {
+    color: rgba(0,0,0,0.1) !important;
+    background-color: #ffffff !important;
+    border: 2px solid rgba(0,0,0,0.1) !important;
+    animation: none !important;
+    transition: none !important;
+  }
+  .rn-button-style--2.submit-button:disabled:hover {
+    transition: none !important;
+    animation: none !important;
+  }
+</style>

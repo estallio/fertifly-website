@@ -34,7 +34,9 @@
     "slugify": "^1.6.1",
     "styled-components": "^5.2.0"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "@sanity/cli": "^2.21.4"
+  },
   "repository": {
     "type": "git",
     "url": "git@github.com:estallio/ecofly-website.git"

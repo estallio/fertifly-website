@@ -256,4 +256,12 @@
   .language-selector.open ul {
     display: block;
   }
+
+  .svg-inline--fa.fa-w-20 {
+    width: 1.25em;
+  }
+
+  .svg-inline--fa.fa-w-14 {
+    width: 0.875em;
+  }
 </style>

@@ -286,7 +286,7 @@
               message: this.formData.message,
               consent: this.formData.consent,
               'h-consent': this.formData.hConsent,
-              _botpoison: "ok", // TODO und im Backend bei Formspark
+              _botpoison: solution,
             }),
           });
 
@@ -331,5 +331,10 @@
   .rn-button-style--2.submit-button:disabled:hover {
     transition: none !important;
     animation: none !important;
+  }
+  textarea {
+    line-height: 27px;
+    padding-top: 12px;
+    padding-bottom: 12px;
   }
 </style>

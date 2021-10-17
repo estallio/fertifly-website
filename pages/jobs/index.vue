@@ -81,13 +81,13 @@
 
               <ul class="job-details-bar">
                 <li>
-                  <span><font-awesome-icon icon="map-marker-alt" />{{ singleList.location }}</span>
+                  <span><font-awesome-icon icon="map-marker-alt" /><span>{{ singleList.location }}</span></span>
                 </li>
                 <li>
-                  <span><font-awesome-icon icon="clock" />{{ singleList.type }}</span>
+                  <span><font-awesome-icon icon="clock" /><span>{{ singleList.type }}</span></span>
                 </li>
                 <li>
-                  <span><font-awesome-icon icon="calendar" />{{ singleList.date }}</span>
+                  <span><font-awesome-icon icon="calendar" /><span>{{ singleList.date }}</span></span>
                 </li>
               </ul>
 
@@ -197,7 +197,8 @@ export default {
       link: [
         {
           rel: 'canonical',
-          href: config.hostname + '/de/jobs'
+          href: config.hostname + '/de/jobs',
+          hid: 'i18n-can'
         },
         {
           hid: 'i18n-alt-en',

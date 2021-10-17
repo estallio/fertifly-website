@@ -127,7 +127,7 @@
           // Chrome for Android
           { rel: 'icon', sizes: '192x192', href: '/favicon-192.png' },
 
-          ...(i18nHead.link || []).filter(element => element.hid !== 'i18n-xd' && element.hid !== 'i18n-can')
+          ...(i18nHead.link || []).filter(element => element.hid !== 'i18n-xd')
         ],
       }
     }

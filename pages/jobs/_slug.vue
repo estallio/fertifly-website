@@ -78,13 +78,13 @@
 
               <ul class="job-details-bar">
                 <li>
-                  <span><font-awesome-icon icon="map-marker-alt" />{{ sanityContent.location }}</span>
+                  <span><font-awesome-icon icon="map-marker-alt" /><span>{{ sanityContent.location }}</span></span>
                 </li>
                 <li>
-                  <span><font-awesome-icon icon="clock" />{{ sanityContent.employmentLevel }}</span>
+                  <span><font-awesome-icon icon="clock" /><span>{{ sanityContent.type }}</span></span>
                 </li>
                 <li>
-                  <span><font-awesome-icon icon="calendar" />{{ sanityContent.neededFrom }}</span>
+                  <span><font-awesome-icon icon="calendar" /><span>{{ sanityContent.date }}</span></span>
                 </li>
               </ul>
 
@@ -207,6 +207,7 @@
           {
             rel: 'canonical',
             href: config.hostname + '/de/jobs/' + this.sanityContent.slug.current,
+            hid: 'i18n-can'
           },
           {
             hid: 'i18n-alt-en',

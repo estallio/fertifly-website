@@ -155,7 +155,7 @@ export default {
   // https://github.com/nuxt-community/robots-module
   robots: {
     UserAgent: '*',
-    Disallow: '/', // TODO: hier ändern
+    Disallow: '',
     Sitemap: config.hostname + '/sitemap.xml',
   },
 

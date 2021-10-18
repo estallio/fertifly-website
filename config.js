@@ -4,7 +4,7 @@ export default {
     // domain as pure domain like 'domain.com'
     domain: 'ecofly.at',
     // URL with full path where plausible scripts like '/api/script.js' can be fetched
-    apiHost: 'https://www.estallio.at/plausible', // TODO: hier ändern
+    apiHost: 'https://www.ecofly.at/plausible',
   },
   sanity: {
     // project ID of sanity project
@@ -13,7 +13,7 @@ export default {
     withCredentials: 'true'
   },
   // baseURL of site like 'https://www.domain.com'
-  hostname: 'https://www.estallio.at', // TODO: hier ändern
+  hostname: 'https://www.ecofly.at',
   // just a global property as it is used on two different places in the config
   routesNameSeparator: '___',
 }

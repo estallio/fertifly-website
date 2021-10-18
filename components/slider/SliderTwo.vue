@@ -53,7 +53,6 @@
         autoplaySpeed: 5000,
         slidesToShow: 1,
         slidesToScroll: 1,
-        rows: 0
       },
     }),
     methods: {
@@ -82,5 +81,9 @@
 
   .slick-track {
     left: 0 !important;
+  }
+
+  .slide {
+    display: block !important;
   }
 </style>

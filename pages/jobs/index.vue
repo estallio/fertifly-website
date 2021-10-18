@@ -207,7 +207,7 @@ export default {
           hreflang: 'de'
         }
       ],
-      title: get(this.sanityContent, `seo.title`, ''),
+      title: get(this.sanityContent, `seo.title`, '') + config.ecoflyTitleAppendix,
       meta: [
         // hid is used as unique identifier. Do not use `vmid` for it as it will not work
         {

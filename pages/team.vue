@@ -95,7 +95,7 @@
     },
     head() {
       return {
-        title: get(this.sanityContent, `seo[${this.$i18n.locale}].title`, ''),
+        title: get(this.sanityContent, `seo[${this.$i18n.locale}].title`, '') + config.ecoflyTitleAppendix,
         meta: [
           // hid is used as unique identifier. Do not use `vmid` for it as it will not work
           {

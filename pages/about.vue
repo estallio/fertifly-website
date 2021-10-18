@@ -74,6 +74,7 @@ import Code from '../components/content/Code'
 
 import ListItem from '../components/content/ListItem'
 import List from '../components/content/List'
+import config from '../config'
 
 export default {
   data() {
@@ -94,7 +95,7 @@ export default {
   },
   head() {
     return {
-      title: get(this.sanityContent, `seo[${this.$i18n.locale}].title`, ''),
+      title: get(this.sanityContent, `seo[${this.$i18n.locale}].title`, '') + config.ecoflyTitleAppendix,
       meta: [
         // hid is used as unique identifier. Do not use `vmid` for it as it will not work
         {

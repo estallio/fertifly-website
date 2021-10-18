@@ -16,4 +16,5 @@ export default {
   hostname: 'https://www.ecofly.at',
   // just a global property as it is used on two different places in the config
   routesNameSeparator: '___',
+  ecoflyTitleAppendix: ' | Ecofly'
 }

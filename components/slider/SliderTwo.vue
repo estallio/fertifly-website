@@ -53,6 +53,7 @@
         autoplaySpeed: 5000,
         slidesToShow: 1,
         slidesToScroll: 1,
+        rows: 0
       },
     }),
     methods: {

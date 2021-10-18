@@ -12,4 +12,5 @@ export default {
     imprint: 'Impressum',
     privacy: 'Datenschutz',
   },
+  patternAttribution: 'Overlay-Pattern im Header/Slider und im Call-To-Action Bereich ist von Dimitrie Hoekstra und heißt <a style="text-decoration: underline" target="_blank" href="https://www.toptal.com/designers/subtlepatterns/gplay/">GPlay</a>. Veröffentlicht wurde es auf toptal unter der <a style="text-decoration: underline" target="_blank" href="https://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA 3.0</a> Lizenz.'
 }

@@ -53,6 +53,7 @@
         autoplaySpeed: 5000,
         slidesToShow: 1,
         slidesToScroll: 1,
+        // rows: 0 // causes heap out of memory when prerendered with nuxt and node
       },
     }),
     methods: {

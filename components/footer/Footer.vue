@@ -63,6 +63,7 @@
                     Copyright © {{ new Date().getFullYear() }} Ecofly GmbH.
                     {{ $t('footer.allRightsReserved') }}
                   </p>
+                  <p style="font-size: 12px !important; line-height: 15px !important;" v-html="$t('footer.patternAttribution')"></p>
                 </div>
               </v-col>
             </v-row>

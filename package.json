@@ -36,6 +36,9 @@
   },
   "devDependencies": {
     "@babel/eslint-parser": "^7.14.7",
+    "@babel/plugin-proposal-class-properties": "^7.16.0",
+    "@babel/plugin-proposal-private-methods": "^7.16.0",
+    "@babel/plugin-proposal-private-property-in-object": "^7.16.0",
     "@fullhuman/postcss-purgecss": "^4.0.3",
     "@nuxtjs/eslint-config": "^6.0.1",
     "@nuxtjs/eslint-module": "^3.0.2",

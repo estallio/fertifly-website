@@ -38,6 +38,7 @@
 
 <script>
   import get from 'lodash/get';
+  import config from '../../config';
 
   export default {
     props: ['sliderContent'],
@@ -62,9 +63,9 @@
       },
       getSanityBackgroundImageUrl: function(sanityUrl) {
         try {
-          return sanityUrl && this.$urlFor(sanityUrl).size(1000).url();
+          return this.$urlFor(sanityUrl).size(1000).url();
         } catch (ex) {
-          return '';
+          return config.fallbackImageSrc;
         }
       }
     }

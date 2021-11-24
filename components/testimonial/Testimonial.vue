@@ -64,6 +64,7 @@
 
 <script>
   import get from 'lodash/get';
+  import config from '~/config'
 
   export default {
     props: ['testimonialContent'],
@@ -83,9 +84,9 @@
       },
       getThumbnailImage: function(sanityImageUrl) {
         try {
-          return sanityImageUrl && this.$urlFor(sanityImageUrl).size(100).url();
+          return this.$urlFor(sanityImageUrl).size(100).url();
         } catch (ex) {
-          return '';
+          return config.fallbackImageSrc;
         }
       },
       getThumbnailHeight: function(imageDoc) {

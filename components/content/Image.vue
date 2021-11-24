@@ -13,6 +13,7 @@
 
 <script>
    import get from 'lodash/get'
+   import config from '~/config'
 
    export default {
      props: ['imageDoc', 'asset', 'altText'],
@@ -22,9 +23,9 @@
        },
        getImage: function(sanityImageUrl) {
          try {
-           return sanityImageUrl && this.$urlFor(sanityImageUrl).size(1000).fit('max').url();
+           return this.$urlFor(sanityImageUrl).size(1000).fit('max').url();
          } catch (ex) {
-           return '';
+           return config.fallbackImageSrc;
          }
        },
        getImageHeight: function(imageDoc) {

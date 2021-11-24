@@ -63,6 +63,7 @@
   import Gallery from '../content/Gallery'
   import DownloadButton from '../content/DownloadButton'
   import LinkButton from '../content/LinkButton'
+  import config from '~/config'
 
   export default {
     computed: {
@@ -100,9 +101,9 @@
       },
       getImage: function(sanityImageUrl) {
         try {
-          return sanityImageUrl && this.$urlFor(sanityImageUrl).size(500).fit('max').url();
+          return this.$urlFor(sanityImageUrl).size(500).fit('max').url();
         } catch (ex) {
-          return '';
+          return config.fallbackImageSrc;
         }
       },
       getImageHeight: function(imageDoc) {

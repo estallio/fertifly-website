@@ -215,6 +215,7 @@
   import LinkButton from '../content/LinkButton'
 
   import Botpoison from "@botpoison/browser"
+  import config from '~/config'
 
   const FORMSPARK_ACTION_URL = "https://submit-form.com/EdFRMhJb";
 
@@ -307,9 +308,9 @@
       },
       getImage: function(sanityImageUrl) {
         try {
-          return sanityImageUrl && this.$urlFor(sanityImageUrl).size(500).fit('max').url();
+          return this.$urlFor(sanityImageUrl).size(500).fit('max').url();
         } catch (ex) {
-          return '';
+          return config.fallbackImageSrc;
         }
       },
       getImageHeight: function(imageDoc) {

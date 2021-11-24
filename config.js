@@ -16,5 +16,7 @@ export default {
   hostname: 'https://www.ecofly.at',
   // just a global property as it is used on two different places in the config
   routesNameSeparator: '___',
-  ecoflyTitleAppendix: ' | Ecofly'
+  ecoflyTitleAppendix: ' | Ecofly',
+  // next line to don't generate 404s if editors forget and image and ignore the warning https://stackoverflow.com/questions/5775469/whats-the-valid-way-to-include-an-image-with-no-src
+  fallbackImageSrc: 'data:,'
 }

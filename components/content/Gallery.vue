@@ -28,6 +28,7 @@
 
 <script>
   import get from 'lodash/get'
+  import config from '~/config'
 
   export default {
     props: ['images'],
@@ -37,16 +38,16 @@
       },
       getSanityBackgroundImageUrlThumb: function(sanityUrl) {
         try {
-          return sanityUrl && this.$urlFor(sanityUrl).size(500).fit('max').url();
+          return this.$urlFor(sanityUrl).size(500).fit('max').url();
         } catch (ex) {
-          return '';
+          return config.fallbackImageSrc;
         }
       },
       getSanityBackgroundImageUrl: function(sanityUrl) {
         try {
-          return sanityUrl && this.$urlFor(sanityUrl).size(1500).fit('max').url();
+          return this.$urlFor(sanityUrl).size(1500).fit('max').url();
         } catch (ex) {
-          return '';
+          return config.fallbackImageSrc;
         }
       },
       getAltText: function(image) {

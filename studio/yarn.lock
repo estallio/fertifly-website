@@ -9161,10 +9161,10 @@ sanity-diff-patch@^1.0.9:
   dependencies:
     diff-match-patch "^1.0.5"
 
-sanity-plugin-cloudflare-pages-deploy@^1.0.4:
-  version "1.0.4"
-  resolved "https://registry.npmjs.org/sanity-plugin-cloudflare-pages-deploy/-/sanity-plugin-cloudflare-pages-deploy-1.0.4.tgz#14980df14fc46bd0d3f3102a5ce63e2523f47e20"
-  integrity sha512-qRyPoyEY1mYQqbLR4MrY/IYSfCntgxTublpcntyg15ne8kFqSp4Azx5WquOyUFWuEoFG9nBSObY3I+Gx7zjRMg==
+sanity-plugin-cloudflare-pages-deploy@^1.0.5:
+  version "1.0.5"
+  resolved "https://registry.npmjs.org/sanity-plugin-cloudflare-pages-deploy/-/sanity-plugin-cloudflare-pages-deploy-1.0.5.tgz#4d3abdf20e869e47133f49660882285fec7752e4"
+  integrity sha512-6OP+K0uUOKIrfLWfKqdCs8OnmIZbgxbBtktWQP6IWyA7MgwNecZV3EAQHg8iX5Mf1GwooNaohXsU8OB7c9IO2A==
   dependencies:
     "@babel/runtime" "^7.12.5"
     axios "^0.21.1"

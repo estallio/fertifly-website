@@ -54,6 +54,13 @@ export default {
       description: 'This image is displayed on the contact page.',
       name: 'image',
       type: 'image',
+      validation: Rule => Rule.custom(blocks => {
+        if (blocks?.asset) {
+          return true;
+        }
+
+        return 'Add image asset';
+      }),
       fields: [
         {
           title: 'Alt Text',

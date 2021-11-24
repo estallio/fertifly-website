@@ -25,6 +25,13 @@ export default {
           name: 'image',
           title: 'Image',
           type: 'image',
+          validation: Rule => Rule.custom(blocks => {
+            if (blocks?.asset) {
+              return true;
+            }
+
+            return 'Add image asset';
+          }),
           fields: [
             {
               title: 'Alt Text',

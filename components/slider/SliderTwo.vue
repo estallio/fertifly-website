@@ -9,7 +9,7 @@
         class="slide slide-style-2 bg_image"
         v-for="(slider, i) in sliderContent"
         :key="i"
-        :style="{ background: `url(${getSanityBackgroundImageUrl(slider.backgroundImage)}) center center / cover no-repeat, url(${slider.backgroundImageDoc.metadata.lqip}) center center / cover no-repeat` }"
+        :style="{ background: `url(${getSanityBackgroundImageUrl(slider.backgroundImage)}) center center / cover no-repeat, url(${ get(slider, 'backgroundImageDoc.metadata.lqip') }) center center / cover no-repeat` }"
       >
         <v-container class="slider-content-height">
           <v-row align="center">
@@ -61,7 +61,11 @@
         return get(...args);
       },
       getSanityBackgroundImageUrl: function(sanityUrl) {
-        return sanityUrl && this.$urlFor(sanityUrl).size(1000).url();
+        try {
+          return sanityUrl && this.$urlFor(sanityUrl).size(1000).url();
+        } catch (ex) {
+          return '';
+        }
       }
     }
   };

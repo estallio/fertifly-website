@@ -127,7 +127,11 @@
         return get(...args);
       },
       getImage: function(sanityImageUrl) {
-        return sanityImageUrl && this.$urlFor(sanityImageUrl).size(500).fit('max').url();
+        try {
+          return sanityImageUrl && this.$urlFor(sanityImageUrl).size(500).fit('max').url();
+        } catch (ex) {
+          return '';
+        }
       },
       getImageHeight: function(imageDoc) {
         return imageDoc && imageDoc.metadata.dimensions.aspectRatio

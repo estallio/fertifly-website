@@ -27,7 +27,14 @@ export default {
     {
       title: 'Logo',
       name: 'image',
-      type: 'image'
+      type: 'image',
+      validation: Rule => Rule.custom(blocks => {
+        if (blocks?.asset) {
+          return true;
+        }
+
+        return 'Add image asset';
+      }),
     }
   ],
   preview: {

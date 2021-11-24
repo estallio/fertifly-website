@@ -16,7 +16,7 @@
         <div
           class="image"
           @click="index = imageIndex"
-          :style="{ background: `url(${getSanityBackgroundImageUrlThumb(image)}) center center / cover no-repeat, url(${image.imageDoc.metadata.lqip}) center center / cover no-repeat` }"
+          :style="{ background: `url(${getSanityBackgroundImageUrlThumb(image)}) center center / cover no-repeat, url(${ get(image, 'imageDoc.metadata.lqip') }) center center / cover no-repeat` }"
         >
         </div>
       </div>
@@ -36,10 +36,18 @@
         return get(...args);
       },
       getSanityBackgroundImageUrlThumb: function(sanityUrl) {
-        return sanityUrl && this.$urlFor(sanityUrl).size(500).fit('max').url();
+        try {
+          return sanityUrl && this.$urlFor(sanityUrl).size(500).fit('max').url();
+        } catch (ex) {
+          return '';
+        }
       },
       getSanityBackgroundImageUrl: function(sanityUrl) {
-        return sanityUrl && this.$urlFor(sanityUrl).size(1500).fit('max').url();
+        try {
+          return sanityUrl && this.$urlFor(sanityUrl).size(1500).fit('max').url();
+        } catch (ex) {
+          return '';
+        }
       },
       getAltText: function(image) {
         return image && get(image, `altText[${this.$i18n.locale}].text`, '');

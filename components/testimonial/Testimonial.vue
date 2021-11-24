@@ -82,10 +82,14 @@
         return get(...args);
       },
       getThumbnailImage: function(sanityImageUrl) {
-        return sanityImageUrl && this.$urlFor(sanityImageUrl).size(100).url();
+        try {
+          return sanityImageUrl && this.$urlFor(sanityImageUrl).size(100).url();
+        } catch (ex) {
+          return '';
+        }
       },
       getThumbnailHeight: function(imageDoc) {
-        return imageDoc && imageDoc.metadata.dimensions.aspectRatio
+        return imageDoc && this.get(imageDoc, 'metadata.dimensions.aspectRatio')
       }
     }
   };

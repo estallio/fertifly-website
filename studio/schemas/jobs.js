@@ -8,7 +8,7 @@ export default {
       title: 'Jobs',
       name: 'jobs',
       type: 'array',
-      of: [ { type: 'job' } ],
+      of: [ { type: 'job' } ],
     },
     {
       title: 'Search Engine Parameters',

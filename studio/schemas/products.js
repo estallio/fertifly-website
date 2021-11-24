@@ -32,7 +32,7 @@ export default {
       title: 'Products',
       name: 'products',
       type: 'array',
-      of: [ { type: 'product' } ],
+      of: [ { type: 'product' } ],
     },
     {
       title: 'Search Engine Parameters',

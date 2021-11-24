@@ -8,7 +8,7 @@ export default {
       title: 'Content Sections',
       name: 'contentSections',
       type: 'array',
-      of: [ { type: 'contentSection' } ],
+      of: [ { type: 'contentSection' } ],
     },
     {
       title: 'Search Engine Parameters',

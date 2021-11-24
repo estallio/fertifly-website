@@ -93,7 +93,7 @@ export default {
       name: 'factsAndFigures',
       description: 'Append a facts and figures section to this Content Section.',
       type: 'array',
-      of: [ { type: 'fact' } ],
+      of: [ { type: 'fact' } ],
       hidden: ({ parent }) => !parent?.hasFactsAndFigures
     }
   ],

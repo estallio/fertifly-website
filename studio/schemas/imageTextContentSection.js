@@ -37,7 +37,7 @@ export default {
       name: 'content',
       description: 'List of Content Sections, each consisting of an image and a text block.',
       type: 'array',
-      of: [ { type: 'textImageContent' } ],
+      of: [ { type: 'textImageContent' } ],
     }
   ],
   preview: {

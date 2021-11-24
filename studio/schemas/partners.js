@@ -32,7 +32,7 @@ export default {
       title: 'Partners',
       name: 'partners',
       type: 'array',
-      of: [ { type: 'partner' } ],
+      of: [ { type: 'partner' } ],
     },
     {
       title: 'Search Engine Parameters',

@@ -11,14 +11,14 @@ export default {
       description: 'Content Slides - the first thing visitors see on the home page.',
       name: 'banner',
       type: 'array',
-      of: [ { type: 'slide' } ],
+      of: [ { type: 'slide' } ],
     },
     {
       title: 'Content Sections',
       description: 'A Content Section has one big heading and several content sections consisting of an image and a text block.',
       name: 'contentSections',
       type: 'array',
-      of: [ { type: 'imageTextContentSection' } ],
+      of: [ { type: 'imageTextContentSection' } ],
     },
     {
       title: '"To Products" Section',
@@ -99,7 +99,7 @@ export default {
       description: 'What other people say about Ecofly.',
       name: 'testimonials',
       type: 'array',
-      of: [ { type: 'testimonial' } ],
+      of: [ { type: 'testimonial' } ],
     },
     {
       title: 'Search Engine Parameters',

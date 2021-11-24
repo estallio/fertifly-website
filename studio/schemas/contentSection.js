@@ -21,8 +21,8 @@ export default {
     },
   ],
   initialValue: {
-    de: { heading: '', subheading: '', content: [] },
-    en: { heading: '', subheading: '', content: [] }
+    de: { heading: '', subheading: '', content: null },
+    en: { heading: '', subheading: '', content: null }
   },
   options: {
     i18n: true,

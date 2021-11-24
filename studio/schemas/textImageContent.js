@@ -20,8 +20,8 @@ export default {
         }
       ],
       initialValue: {
-        de: { text: [] },
-        en: { text: [] }
+        de: { text: null },
+        en: { text: null }
       },
       options: {
         i18n: true,

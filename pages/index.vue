@@ -223,7 +223,7 @@
   margin: 0 auto;
 }
 .rn-finding-us-area img {
-  padding-top: 110px;
+  /* padding-top: 110px; */
 }
 @media only screen and (max-width: 1264px) {
   .products-box {

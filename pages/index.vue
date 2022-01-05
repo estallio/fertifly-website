@@ -24,11 +24,12 @@
             <!-- Start First Content  -->
             <v-row class="mt_sm--10 mt_md--20 mt--40 justify-center">
 
-              <!-- Start Column -->
+              <!-- Start Column TODO: fix 10:12;6:7;6:7 -->
               <v-col
-                :cols="subContentItem.showImageHalf ? 10 : 12"
+                :cols="subContentItem.showImageHalf ? 12 : 12"
                 :lg="subContentItem.showImageHalf ? 6 : 7"
                 :md="subContentItem.showImageHalf ? 6 : 7"
+                :sm="subContentItem.showImageHalf ? 12 : 12"
                 :order="subContentItem.smImageAboveText ? 2 : 1" :order-md="subContentItem.imageLocatedLeft ? 2 : 1">
                 <div class="flex-column justify-center d-flex fill-height">
                   <SanityContent class="text-justified" :blocks="get(subContentItem, `textBlock[${$i18n.locale}].text`, [])" />
@@ -75,11 +76,11 @@
     </div>
 
     <!-- Start Finding us Area  -->
-    <div class="rn-finding-us-area rn-finding-us">
+    <div class="rn-finding-us-area rn-finding-us ptb--80">
       <div class="inner">
         <div class="content-wrapper" style="flex-direction: column">
           <div class="content products-box">
-            <div :class="{'container': $vuetify.breakpoint.smAndUp}">
+            <div class="container">
               <h4 style="color: #444">{{ get(sanityContent, `toProductsSection.toProductsHeading[${$i18n.locale}].heading`, '') }}</h4>
               <p style="color: #444">{{ get(sanityContent, `toProductsSection.toProductsHeading[${$i18n.locale}].text`, '') }}</p>
               <nuxt-link :alt="get(this.sanityContent, `toProductsSection.toProductsHeading[${$i18n.locale}].buttonText`, '')" :to="localePath('products')" class="rn-button-style--2 btn_solid btn-size-sm">{{ get(sanityContent, `toProductsSection.toProductsHeading[${$i18n.locale}].buttonText`, '') }}</nuxt-link>
@@ -104,11 +105,13 @@
     <!-- End Finding us Area  -->
 
     <!-- Start Testimonial Area  -->
+    <!-- TODO: revert back if needed - don't forget to remove ptb--80 on the upper section
     <div class="rn-testimonial-area ptb--80">
       <v-container>
         <Testimonial :testimonialContent="this.sanityContent.testimonials" />
       </v-container>
     </div>
+    -->
     <!-- Start Testimonial Area  -->
 
   </div>
@@ -219,6 +222,9 @@
   max-width: 2000px;
   margin: 0 auto;
 }
+.rn-finding-us-area img {
+  padding-top: 110px;
+}
 @media only screen and (max-width: 1264px) {
   .products-box {
     box-shadow: none;
@@ -235,9 +241,6 @@
 
     padding-top: 0;
   }
-}
-.rn-finding-us-area img {
-  padding-top: 110px;
 }
 .rn-testimonial-content::after {
   right: 20%;

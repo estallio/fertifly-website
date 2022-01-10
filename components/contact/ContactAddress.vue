@@ -1,19 +1,19 @@
 <template>
   <v-row class="mt_dec--40">
     <!-- Start Single Address  -->
-    <v-col lg="4" md="6" sm="6" cols="12" class="mt--40">
-      <div class="rn-address">
-        <div class="icon">
-          <font-awesome-icon icon="phone" />
-        </div>
-        <div class="inner">
-          <h4 class="title">{{ $t('contact.phoneDescription') }}</h4>
-          <p>
-            <a :href="'tel:' + contactInfo.phone">{{ contactInfo.phone }}</a>
-          </p>
-        </div>
-      </div>
-    </v-col>
+<!--    <v-col lg="4" md="6" sm="6" cols="12" class="mt&#45;&#45;40">-->
+<!--      <div class="rn-address">-->
+<!--        <div class="icon">-->
+<!--          <font-awesome-icon icon="phone" />-->
+<!--        </div>-->
+<!--        <div class="inner">-->
+<!--          <h4 class="title">{{ $t('contact.phoneDescription') }}</h4>-->
+<!--          <p>-->
+<!--            <a :href="'tel:' + contactInfo.phone">{{ contactInfo.phone }}</a>-->
+<!--          </p>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </v-col>-->
     <!-- End Single Address  -->
 
     <!-- Start Single Address  -->

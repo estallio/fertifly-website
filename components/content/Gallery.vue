@@ -109,3 +109,9 @@
     }
   }
 </style>
+
+<style>
+  .cool-lightbox-caption h6 {
+    color: inherit;
+  }
+</style>

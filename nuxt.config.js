@@ -273,7 +273,12 @@ export default {
       description: 'Wir machen aus Larven nachhaltige Nahrungsmittel für Haus- und Nutztiere.',
       theme_color: '#006C33',
       lang: 'de',
-    }
+    },
+
+    workbox: {
+      /* workbox options */
+      workboxURL: '/libs/workbox-v5.1.4/workbox-sw.js',
+    },
 
     // TODO: lang manifest different languages?
   },

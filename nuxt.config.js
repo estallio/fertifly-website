@@ -277,7 +277,10 @@ export default {
 
     workbox: {
       /* workbox options */
-      workboxURL: '/libs/workbox-v5.1.4/workbox-sw.js',
+      workboxURL: `/libs/workbox/workbox-sw.js?${Date.now()}`,
+      config: {
+        modulePathPrefix: '/libs/workbox'
+      },
     },
 
     // TODO: lang manifest different languages?

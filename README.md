@@ -76,7 +76,8 @@ The Cloudflare API was a little harder to implement because their API endpoint c
 ## Other known Sanity bugs
 
 - [ ] Sanity backend is not translated: [issue](https://github.com/sanity-io/sanity/issues/1603)
-- [ ] Sanity is beeing blocked by Safari ([issue](https://github.com/sanity-io/sanity/issues/1231)) and Brave([issue](https://github.com/sanity-io/sanity/issues/1768)).
+- [ ] Sanity is beeing blocked by Safari ([issue](https://github.com/sanity-io/sanity/issues/1231)) and Brave([issue](https://github.com/sanity-io/sanity/issues/1768))
+- [] SW-hosting is only a workaround: [issue](https://github.com/nuxt-community/pwa-module/issues/509)
 
 ## Deployment
 

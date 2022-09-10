@@ -17,7 +17,7 @@
     <!-- End Single Address  -->
 
     <!-- Start Single Address  -->
-    <v-col lg="4" md="6" sm="6" cols="12" class="mt--40">
+    <v-col lg="6" md="6" sm="6" cols="12" class="mt--40">
       <div class="rn-address">
         <div class="icon">
           <font-awesome-icon icon="envelope" />
@@ -33,7 +33,7 @@
     <!-- End Single Address  -->
 
     <!-- Start Single Address  -->
-    <v-col lg="4" md="6" sm="6" cols="12" class="mt--40">
+    <v-col lg="6" md="6" sm="6" cols="12" class="mt--40">
       <div class="rn-address">
         <div class="icon">
           <font-awesome-icon icon="map-marker-alt" />

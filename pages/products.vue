@@ -40,7 +40,7 @@
             <v-row class="sercice-details-content align-items-center justify-center">
 
               <!-- Start Column -->
-              <v-col lg="3" md="4" cols="4" class="flex-lg">
+              <v-col lg="3" md="4" cols="10" class="flex-lg">
                 <div class="pb_sm--20 pt_sm--15 pb_md--25 pt_md--25 thumbnail flex-lg flex-lg-column justify-lg-center">
                   <img class="w-100"
                        style="box-shadow: none"

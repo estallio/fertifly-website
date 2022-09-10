@@ -144,7 +144,7 @@
                   name="consent"
                   id="consent"
                   v-model="formData.consent"
-                  style="display: unset; width: auto; height: auto;"
+                  style="display: unset; width: auto; height: auto; margin-right: 4px;"
                 />
                 <label style="display: unset; width: auto; height: auto;" for="consent">
                   {{ $t('contact.form.consentFirstPart') }}

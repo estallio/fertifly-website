@@ -112,124 +112,124 @@
 </template>
 
 <script>
-import Cookies from 'js-cookie'
-import config from '../../config'
-import { generateGROQ } from '../../queries/jobs'
-import get from 'lodash/get'
+  import Cookies from 'js-cookie'
+  import config from '../../config'
+  import { generateGROQ } from '../../queries/jobs'
+  import get from 'lodash/get'
 
-export default {
-  data() {
-    return {
-      dialog: false,
-      onlyGermanAlert: this.$i18n.locale !== 'de' && Cookies.get('languageDialogDismissed') !== 'true',
-      breadcrumbs: [
-        {
-          text: this.$t('index.title'),
-          to: '/',
-          disabled: false
-        },
-        {
-          text: this.$t('jobs.title'),
-          to: '',
-          disabled: true
-        }
-      ],
-      /*
-      listItemContent: [
-        {
-          title: "Lagerarbeiter/in",
-          task: 'Begleitung von Projekten in Bezug auf Hardware- und Systemanbindungen im Bereich der MES-Systemlandschaft inkl. Support der ERP-Systeme',
-          location: 'Antiesenhofen',
-          date: 'ab sofort',
-          type: 'Vollzeit',
-        },
-        {
-          title: "Arbeiter für den Bereich Möbelzusammenbau Business Jet (m/w/d)",
-          task: 'Dies und das, vielleicht auch jenes, hauptsache nicht zu viel.',
-          location: 'Antiesenhofen',
-          date: 'ab 17.12.2021',
-          type: 'Teilzeit',
-        },
-        {
-          title: "(Fach-)Arbeiter/in Betonsanierung /Brückenbau",
-          task: 'Schlafen',
-          location: 'Salzburg',
-          date: 'ab August',
-          type: '38,5h',
-        },
-      ],
-      */
-    }
-  },
-  computed: {
-    listItemContent: function() {
-      return this.sanityContent.jobs.map(job => ({
-        type: job.employmentLevel,
-        location: job.location,
-        date: job.neededFrom,
-        task: job.simpleTaskDescription,
-        title: job.title,
-        slug: job.slug.current
-      }));
+  export default {
+    data() {
+      return {
+        dialog: false,
+        onlyGermanAlert: this.$i18n.locale !== 'de' && Cookies.get('languageDialogDismissed') !== 'true',
+        breadcrumbs: [
+          {
+            text: this.$t('index.title'),
+            to: '/',
+            disabled: false
+          },
+          {
+            text: this.$t('jobs.title'),
+            to: '',
+            disabled: true
+          }
+        ],
+        /*
+        listItemContent: [
+          {
+            title: "Lagerarbeiter/in",
+            task: 'Begleitung von Projekten in Bezug auf Hardware- und Systemanbindungen im Bereich der MES-Systemlandschaft inkl. Support der ERP-Systeme',
+            location: 'Antiesenhofen',
+            date: 'ab sofort',
+            type: 'Vollzeit',
+          },
+          {
+            title: "Arbeiter für den Bereich Möbelzusammenbau Business Jet (m/w/d)",
+            task: 'Dies und das, vielleicht auch jenes, hauptsache nicht zu viel.',
+            location: 'Antiesenhofen',
+            date: 'ab 17.12.2021',
+            type: 'Teilzeit',
+          },
+          {
+            title: "(Fach-)Arbeiter/in Betonsanierung /Brückenbau",
+            task: 'Schlafen',
+            location: 'Salzburg',
+            date: 'ab August',
+            type: '38,5h',
+          },
+        ],
+        */
+      }
     },
-    email: function() {
-      return this.$store.state.contactInfo.email;
-    }
-  },
-  async asyncData({ $sanity, $preview, store }) {
-    let includeDrafts = false;
-
-    if ($preview) {
-      includeDrafts = true;
-    }
-
-    const sanityContent = await $sanity.fetch(generateGROQ(includeDrafts))
-
-    store.commit('STORE_CONTACT_INFO', sanityContent.contactInfo)
-
-    return { sanityContent: sanityContent.content }
-  },
-  head() {
-    return {
-      htmlAttrs: {
-        lang: 'de'
+    computed: {
+      listItemContent: function() {
+        return this.sanityContent.jobs.map(job => ({
+          type: job.employmentLevel,
+          location: job.location,
+          date: job.neededFrom,
+          task: job.simpleTaskDescription,
+          title: job.title,
+          slug: job.slug.current
+        }));
       },
-      link: [
-        {
-          rel: 'canonical',
-          href: config.hostname + '/de/jobs',
-          hid: 'i18n-can'
-        },
-        {
-          hid: 'i18n-alt-en',
-          rel: 'alternate',
-          href: config.hostname + '/en/jobs',
-          hreflang: 'de'
-        }
-      ],
-      title: get(this.sanityContent, `seo.title`, '') + config.ecoflyTitleAppendix,
-      meta: [
-        // hid is used as unique identifier. Do not use `vmid` for it as it will not work
-        {
-          hid: 'description',
-          name: 'description',
-          content: get(this.sanityContent, `seo.description`, ''),
-        }
-      ]
-    }
-  },
-  nuxtI18n: {
-    paths: {
-      en: '/jobs',
-      de: '/jobs'
-    }
-  },
-  methods: {
-    setDialogDismissedCookie () {
-      Cookies.set('languageDialogDismissed', 'true', { expires: 2 })
+      email: function() {
+        return this.$store.state.contactInfo.email;
+      }
     },
-  },
-}
+    async asyncData({ $sanity, $preview, store }) {
+      let includeDrafts = false;
+
+      if ($preview) {
+        includeDrafts = true;
+      }
+
+      const sanityContent = await $sanity.fetch(generateGROQ(includeDrafts))
+
+      store.commit('STORE_CONTACT_INFO', sanityContent.contactInfo)
+
+      return { sanityContent: sanityContent.content }
+    },
+    head() {
+      return {
+        htmlAttrs: {
+          lang: 'de'
+        },
+        link: [
+          {
+            rel: 'canonical',
+            href: config.hostname + '/de/jobs',
+            hid: 'i18n-can'
+          },
+          {
+            hid: 'i18n-alt-en',
+            rel: 'alternate',
+            href: config.hostname + '/en/jobs',
+            hreflang: 'de'
+          }
+        ],
+        title: get(this.sanityContent, `seo.title`, '') + config.ecoflyTitleAppendix,
+        meta: [
+          // hid is used as unique identifier. Do not use `vmid` for it as it will not work
+          {
+            hid: 'description',
+            name: 'description',
+            content: get(this.sanityContent, `seo.description`, ''),
+          }
+        ]
+      }
+    },
+    nuxtI18n: {
+      paths: {
+        en: '/jobs',
+        de: '/jobs'
+      }
+    },
+    methods: {
+      setDialogDismissedCookie () {
+        Cookies.set('languageDialogDismissed', 'true', { expires: 2 })
+      },
+    },
+  }
 </script>
 
 <style scoped>

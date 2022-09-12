@@ -72,8 +72,11 @@
   import Emphasis from '../components/content/Emphasis'
   import Code from '../components/content/Code'
 
+  import LineBreakParagraph from "../components/content/LineBreakParagraph";
+
   import ListItem from '../components/content/ListItem'
   import List from '../components/content/List'
+
   import config from '../config'
 
   export default {
@@ -159,6 +162,7 @@
             gallery: Gallery,
             downloadButton: DownloadButton,
             linkButton: LinkButton,
+            block: LineBreakParagraph,
           },
         }
       }

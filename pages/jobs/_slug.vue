@@ -115,23 +115,31 @@
 </template>
 
 <script>
-  import Cookies from 'js-cookie'
-  import config from '../../config'
   import { generateGROQ } from '../../queries/job'
-  import ListItem from '../../components/content/ListItem'
-  import List from '../../components/content/List'
+
+  import get from 'lodash/get'
+  import Cookies from 'js-cookie'
+
+  import Link from '../../components/content/Link'
+  import File from '../../components/content/File'
+
+  import Image from '../../components/content/Image'
+  import Gallery from '../../components/content/Gallery'
+  import DownloadButton from '../../components/content/DownloadButton'
+  import LinkButton from '../../components/content/LinkButton'
+
   import Strong from '../../components/content/Strong'
   import Underline from '../../components/content/Underline'
   import StrikeThrough from '../../components/content/StrikeThrough'
   import Emphasis from '../../components/content/Emphasis'
   import Code from '../../components/content/Code'
-  import Link from '../../components/content/Link'
-  import File from '../../components/content/File'
-  import Image from '../../components/content/Image'
-  import Gallery from '../../components/content/Gallery'
-  import DownloadButton from '../../components/content/DownloadButton'
-  import LinkButton from '../../components/content/LinkButton'
-  import get from 'lodash/get'
+
+  import LineBreakParagraph from '../../components/content/LineBreakParagraph'
+
+  import ListItem from '../../components/content/ListItem'
+  import List from '../../components/content/List'
+
+  import config from '../../config'
 
   export default {
     data() {
@@ -191,6 +199,7 @@
             gallery: Gallery,
             downloadButton: DownloadButton,
             linkButton: LinkButton,
+            block: LineBreakParagraph,
           },
         }
       },

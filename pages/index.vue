@@ -72,37 +72,24 @@
 
         </div>
 
-      </v-container>
-    </div>
-
-    <!-- Start Finding us Area  -->
-    <div class="rn-finding-us-area rn-finding-us ptb--80">
-      <div class="inner">
-        <div class="content-wrapper" style="flex-direction: column">
-          <div class="content products-box">
-            <div class="container">
-              <h4 style="color: #444">{{ get(sanityContent, `toProductsSection.toProductsHeading[${$i18n.locale}].heading`, '') }}</h4>
-              <p style="color: #444">{{ get(sanityContent, `toProductsSection.toProductsHeading[${$i18n.locale}].text`, '') }}</p>
-              <nuxt-link :alt="get(this.sanityContent, `toProductsSection.toProductsHeading[${$i18n.locale}].buttonText`, '')" :to="localePath('products')" class="rn-button-style--2 btn_solid btn-size-sm">{{ get(sanityContent, `toProductsSection.toProductsHeading[${$i18n.locale}].buttonText`, '') }}</nuxt-link>
+        <!-- Start Finding us Area  -->
+        <div class="rn-finding-us-area rn-finding-us">
+          <div class="inner">
+            <div class="content-wrapper" style="margin: 0 auto">
+              <div class="content products-box">
+                <div class="container">
+                  <h4 style="color: #444">{{ get(sanityContent, `toProductsSection.toProductsHeading[${$i18n.locale}].heading`, '') }}</h4>
+                  <p style="color: #444">{{ get(sanityContent, `toProductsSection.toProductsHeading[${$i18n.locale}].text`, '') }}</p>
+                  <nuxt-link :alt="get(this.sanityContent, `toProductsSection.toProductsHeading[${$i18n.locale}].buttonText`, '')" :to="localePath('products')" class="rn-button-style--2 btn_solid btn-size-sm">{{ get(sanityContent, `toProductsSection.toProductsHeading[${$i18n.locale}].buttonText`, '') }}</nuxt-link>
+                </div>
+              </div>
             </div>
           </div>
         </div>
+        <!-- End Finding us Area  -->
 
-        <div class="thumbnail">
-          <div class="image">
-            <img
-              style="box-shadow: none; max-width: 1600px"
-              :src="getProductsImage(this.sanityContent.toProductsSection.backgroundImage)"
-              :alt="this.$t('index.productsBackgroundImageAlt')"
-              :width="1000"
-              :height="1000 / getImageHeight(this.sanityContent.toProductsSection.backgroundImageDoc)"
-            />
-          </div>
-        </div>
-
-      </div>
+      </v-container>
     </div>
-    <!-- End Finding us Area  -->
 
     <!-- Start Testimonial Area  -->
     <!-- TODO: revert back if needed - don't forget to remove ptb--80 on the upper section
@@ -206,20 +193,39 @@
 .products-box {
   background-color: #fff !important;
   box-shadow: 0 0 15px 1px rgba(170, 170, 170, 0.5);
+  margin: 0 auto;
+  padding: 70px 50px !important;
 }
-@media only screen and (max-width: 1050px) {
+@media only screen and (max-width: 800px) {
   .products-box {
     background-color: transparent !important;
+    padding: 50px 40px !important;
+  }
+}
+.rn-finding-us-area .inner {
+  padding-bottom: 60px;
+  padding-top: 60px;
+}
+@media only screen and (max-width: 800px) {
+  .rn-finding-us-area .inner {
+    padding-bottom: 40px;
+    padding-top: 40px;
   }
 }
 .rn-finding-us-area {
-  margin-top: 90px;
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+@media only screen and (max-width: 1050px) {
+  .rn-finding-us-area {
+    padding-top: 0;
+    padding-bottom: 10px;
+  }
 }
 .rn-testimonial-area {
   margin-top: 100px;
 }
 .rn-finding-us .inner {
-  max-width: 2000px;
   margin: 0 auto;
 }
 .rn-finding-us-area img {
@@ -227,10 +233,10 @@
 }
 @media only screen and (max-width: 1264px) {
   .products-box {
-    box-shadow: none;
+
   }
   .rn-finding-us-area {
-    margin-top: 70px;
+    margin-top: 0;
   }
   .rn-testimonial-area {
     margin-top: 0;

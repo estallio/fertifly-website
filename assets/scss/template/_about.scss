@@ -5,9 +5,8 @@
 .rn-finding-us-area {
     .inner {
         position: relative;
-        padding-left: 240px;
-        padding-top: 110px;
-        padding-bottom: 110px;
+        padding-top: 80px;
+        padding-bottom: 80px;
         @media #{$lg-layout} {
             padding-left: 0;
             padding-top: 0;
@@ -40,7 +39,6 @@
                 @media #{$lg-layout} {
                     // padding: 60px 50px;
                     width: 100%;
-                    border-radius: 0;
                     margin: 0 auto;
                 }
                 @media #{$md-layout} {
@@ -48,13 +46,11 @@
                     padding-left: 0;
                     max-width: 720px;
                     width: 100%;
-                    border-radius: 0;
                     margin: 0 auto;
                 }
                 @media #{$sm-layout} {
                   padding: 15px 0;
                   width: 100%;
-                  border-radius: 0;
                   margin: 0 auto;
                 }
                 h4 {
@@ -105,16 +101,13 @@
                 border-radius: 10px;
                 @media #{$lg-layout} {
                     width: 90%;
-                    border-radius: 0;
                 }
                 @media #{$md-layout} {
-                    border-radius: 0;
                     max-width: 720px !important;
                     width: 100%;
                     margin: 0 auto;
                 }
                 @media #{$sm-layout} {
-                    border-radius: 0;
                     max-width: 540px !important;
                     width: 100%;
                     margin: 0 auto;

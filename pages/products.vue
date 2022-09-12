@@ -35,7 +35,7 @@
         <!-- End First Section Heading -->
 
         <!-- Start First Content  -->
-        <v-row class="mt_sm--40 mt_md--20 mt--40" v-for="(product, i) in this.sanityContent.products" :key="product._key">
+        <v-row :class="[i === 0 ? 'mt_sm--30 mt_md--30 mt--50' : 'mt_sm--70 mt_md--80 mt--90']" v-for="(product, i) in this.sanityContent.products" :key="product._key">
           <v-col cols="12">
             <v-row class="sercice-details-content align-items-center justify-center">
 

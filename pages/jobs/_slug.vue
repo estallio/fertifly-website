@@ -81,10 +81,10 @@
                   <span><font-awesome-icon icon="map-marker-alt" /><span>{{ sanityContent.location }}</span></span>
                 </li>
                 <li>
-                  <span><font-awesome-icon icon="clock" /><span>{{ sanityContent.type }}</span></span>
+                  <span><font-awesome-icon icon="clock" /><span>{{ sanityContent.employmentLevel }}</span></span>
                 </li>
                 <li>
-                  <span><font-awesome-icon icon="calendar" /><span>{{ sanityContent.date }}</span></span>
+                  <span><font-awesome-icon icon="calendar" /><span>{{ sanityContent.neededFrom }}</span></span>
                 </li>
               </ul>
 

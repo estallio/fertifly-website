@@ -31,7 +31,6 @@ export default {
     '~/plugins/veevalidate.js',
     '~/plugins/i18nextensions.js',
     '~/plugins/sanity-image-builder.js',
-    '~/plugins/fragment.js',
     // '~/plugins/preview.client.js',
   ],
 

@@ -29,7 +29,6 @@
     "vue": "^2.6.11",
     "vue-cool-lightbox": "^2.7.4",
     "vue-count-to": "^1.0.13",
-    "vue-fragment": "^1.6.0",
     "vue-plausible": "^1.2.1",
     "vue-slick-carousel": "^1.0.6",
     "vue-visibility-sensor": "^0.3.0",

@@ -1,6 +1,6 @@
 <template>
   <br v-if="children.length === 1 && children[0].text === ''" />
-  <Fragment v-else><slot></slot></Fragment>
+  <span v-else><slot></slot></span>
 </template>
 
 <script>

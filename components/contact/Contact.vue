@@ -238,7 +238,7 @@
     },
     created() {
       this.botpoison = new Botpoison({
-        publicKey: "pk_d46d6ff6-08df-414d-9b2d-a982f82cfb5a",
+        publicKey: "pk_1b5dcd22-f29b-42cd-a964-299e69631a25",
       });
     },
     computed: {

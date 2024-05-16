@@ -18,7 +18,7 @@
         </v-col>
         <!-- End .col -->
         <v-col md="6" sm="12" cols="12">
-          <div class="footer-right" data-black-overlay="6">
+          <div class="footer-right">
             <v-row>
               <!-- Start Single Widget -->
               <v-col lg="6" sm="6" cols="12">

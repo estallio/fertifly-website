@@ -3,9 +3,9 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "dev": "nuxt",
-    "build": "recursive-copy --overwrite ./node_modules/workbox-cdn/workbox ./static/libs/workbox && nuxt build",
-    "start": "nuxt start",
+    "dev": "NODE_OPTIONS=--openssl-legacy-provider nuxt",
+    "build": "recursive-copy --overwrite ./node_modules/workbox-cdn/workbox ./static/libs/workbox && NODE_OPTIONS=--openssl-legacy-provider nuxt build",
+    "start": "NODE_OPTIONS=--openssl-legacy-provider nuxt start",
     "generate": "recursive-copy --overwrite ./node_modules/workbox-cdn/workbox ./static/libs/workbox && nuxt generate && rm -f ./dist/.nojekyll",
     "deploy": "yarn generate && (cd ./studio && yarn && yarn deploy)",
     "upgrade-deploy": "yarn generate && (cd ./studio && yarn && yarn upgrade-deploy)",

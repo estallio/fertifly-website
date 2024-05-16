@@ -63,7 +63,7 @@
       },
       getSanityBackgroundImageUrl: function(sanityUrl) {
         try {
-          return this.$urlFor(sanityUrl).size(1000).url();
+          return this.$urlFor(sanityUrl).size(2000).url();
         } catch (ex) {
           return config.fallbackImageSrc;
         }

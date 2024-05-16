@@ -1,5 +1,5 @@
 /*--------------------------
-Call To Action Wrapper 
+Call To Action Wrapper
 -----------------------------*/
 
 .call-to-action {
@@ -23,15 +23,14 @@ Call To Action Wrapper
             color: #fff;
             font-size: 15px;
             text-transform: uppercase;
-            letter-spacing: 4px;
             display: block;
             margin-bottom: 9px;
         }
         h2 {
             color: #ffffff;
             font-size: 75px;
-            font-weight: 900;
-            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+            font-family: $heading-font;
             line-height: 90px;
             @media #{$sm-layout} {
                 font-size: 47px;
@@ -43,7 +42,7 @@ Call To Action Wrapper
                 background: #ffffff;
                 border-color: $gradient-color-light;
                 color: $gradient-color-light;
-                
+
                 margin-top: 30px;
                 background: transparent;
 
@@ -62,15 +61,14 @@ Call To Action Wrapper
             color: #fff;
             font-size: 15px;
             text-transform: uppercase;
-            letter-spacing: 4px;
             display: block;
             margin-bottom: 9px;
         }
         h2 {
             color: #ffffff;
             font-size: 75px;
-            font-weight: 900;
-            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+            font-family: $heading-font;
             line-height: 90px;
             @media #{$sm-layout} {
                 font-size: 47px;

@@ -19,9 +19,6 @@
     height: 66px;
     display: flex;
     align-items: center;
-    @media #{$large-mobile} {
-      height: auto;
-    }
   }
 }
 .transparent {
@@ -55,14 +52,12 @@
     padding: 35px 0;
     border: none;
   }
+  a:hover .v-btn--text {
+    color: #eb460a !important;
+  }
   .v-btn--text {
-    text-transform: capitalize;
-    letter-spacing: 0;
     text-indent: 0;
     transition: 0.3s;
-    &:hover {
-      color: $theme-color;
-    }
   }
   .rn-btn {
     padding: 0 25px;
@@ -70,7 +65,7 @@
     height: 46px;
     line-height: 42px;
     border-color: $border-color;
-    color: #c6c9d8;
+    color: #fffff6;
     &:hover {
       border-color: $theme-color;
       color: #fff;
@@ -78,7 +73,7 @@
   }
   .v-toolbar__items {
     align-items: center;
-    margin-top: 50px;
+    margin-top: 17px;
   }
   .v-btn:not(.v-btn--icon) {
     &::before {
@@ -128,7 +123,6 @@
 }
 .flat-app-bar .logo img {
   max-width: 159px;
-  height: auto;
   @media #{$sm-layout} {
     max-width: 120px;
     height: auto;
@@ -291,7 +285,7 @@
   .logo img {
     @media #{$lg-layout} {
       max-width: 80%;
-      height: auto;
+      // height: auto;
     }
   }
   .logo-dark {
@@ -303,7 +297,7 @@
 .logo img {
   @media #{$large-mobile} {
     max-width: 120px;
-    height: auto;
+    // height: auto;
   }
 }
 .header-one-page-nav-drawer {
@@ -490,5 +484,29 @@
     left: 9px;
     width: 38px !important;
     height: 38px !important;
+  }
+}
+
+.menu_button {
+  @media only screen and (min-width: 1080px) {
+    display: none;
+  }
+}
+
+.menu_items {
+  display: flex;
+
+  @media only screen and (max-width: 1079px) {
+    display: none;
+  }
+}
+
+.mobile_menu {
+  @media only screen and (min-width: 1080px) {
+    display: none;
+  }
+
+  .v-list .v-list-item:hover a {
+    color: #eb460a !important;
   }
 }

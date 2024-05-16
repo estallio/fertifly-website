@@ -84,7 +84,7 @@
       },
       getThumbnailImage: function(sanityImageUrl) {
         try {
-          return this.$urlFor(sanityImageUrl).size(100).url();
+          return this.$urlFor(sanityImageUrl).size(200).url();
         } catch (ex) {
           return config.fallbackImageSrc;
         }

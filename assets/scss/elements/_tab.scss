@@ -36,7 +36,7 @@ ul{
                     outline: none;
                     color: $body-color;
                     @extend %transition;
-                    
+
                     &::before {
                         position: absolute;
                         content: "";
@@ -63,7 +63,7 @@ ul{
 
 
 /*------------------------
-    Tab Content  
+    Tab Content
 -------------------------*/
 .single-tab-content {
     padding-top: 20px;
@@ -124,8 +124,7 @@ ul{
        font-size: 18px;
        min-width: auto;
        text-transform: initial;
-       letter-spacing: 0;
-      
+
         padding: 0;
         &::before{
             display: none;

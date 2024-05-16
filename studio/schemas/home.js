@@ -62,13 +62,6 @@ export default {
           description: 'The image behind the "To Products" block.',
           name: 'backgroundImage',
           type: 'image',
-          validation: Rule => Rule.custom(blocks => {
-            if (blocks?.asset) {
-              return true;
-            }
-
-            return 'Add image asset';
-          }),
           fields: [
             {
               title: 'Alt Text',

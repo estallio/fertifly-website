@@ -93,10 +93,10 @@
         background-color: #f6f6f6;
     }
     @media #{$md-layout} {
-      
+
     }
     @media #{$lg-layout} {
-        
+
     }
     .inner{
         padding: 35px;
@@ -176,7 +176,7 @@
 }
 
 /*---------------------
-    Demo Area  
+    Demo Area
 -----------------------*/
 
 .home-demo-area{
@@ -208,7 +208,7 @@
         }
     }
 }
-// Start Single Demo 
+// Start Single Demo
 .bg_color--7{
     .single-demo {
         position: relative;
@@ -221,11 +221,10 @@
                 font-size: 20px;
                 font-weight: 500;
                 transition: 0.3s ease-in-out;
-                letter-spacing: .20px;
             }
-            
+
         }
-    }  
+    }
 }
 .single-demo {
     padding: 0 30px;
@@ -264,9 +263,8 @@
             font-size: 20px;
             font-weight: 500;
             transition: 0.3s ease-in-out;
-            letter-spacing: .20px;
             margin: 0;
-           
+
         }
         .info {
             display: block;
@@ -288,7 +286,6 @@
                 bottom: -55px;
                 line-height: inherit;
                 font-weight: 300;
-                letter-spacing: 11px;
             }
         }
         &:hover {
@@ -311,7 +308,6 @@
             line-height: 1;
             right: 5px;
             text-transform: uppercase;
-            letter-spacing: 0.5px;
             font-weight: 500;
         }
     }
@@ -320,7 +316,7 @@
 
 
 /*-------------------
-Faq Area  
+Faq Area
 ----------------------*/
 .pv-feaq-area {
     .accodion-style--1 .accordion__item+.accordion__item {
@@ -345,7 +341,7 @@ Faq Area
 
 
 /*-------------------
-    Tab BUtton  
+    Tab BUtton
 ---------------------*/
 
 .tablist-inner {
@@ -427,7 +423,7 @@ Faq Area
 
 
 /*-----------------------
-Footer Style  
+Footer Style
 -------------------------*/
 .prv-footer{
     .inner{
@@ -464,7 +460,7 @@ a {
 }
 
 
-/* Feature Area */ 
+/* Feature Area */
 .prv-feature{
     .content {
         h3 {

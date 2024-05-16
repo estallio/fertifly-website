@@ -308,7 +308,7 @@
       },
       getImage: function(sanityImageUrl) {
         try {
-          return this.$urlFor(sanityImageUrl).size(500).fit('max').url();
+          return this.$urlFor(sanityImageUrl).size(1000).fit('max').url();
         } catch (ex) {
           return config.fallbackImageSrc;
         }

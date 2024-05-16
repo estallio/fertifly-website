@@ -38,14 +38,14 @@
       },
       getSanityBackgroundImageUrlThumb: function(sanityUrl) {
         try {
-          return this.$urlFor(sanityUrl).size(500).fit('max').url();
+          return this.$urlFor(sanityUrl).size(1000).fit('max').url();
         } catch (ex) {
           return config.fallbackImageSrc;
         }
       },
       getSanityBackgroundImageUrl: function(sanityUrl) {
         try {
-          return this.$urlFor(sanityUrl).size(1500).fit('max').url();
+          return this.$urlFor(sanityUrl).size(2000).fit('max').url();
         } catch (ex) {
           return config.fallbackImageSrc;
         }

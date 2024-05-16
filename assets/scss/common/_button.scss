@@ -4,13 +4,13 @@ Button Area
 .v-application {
     a{
         &.btn-transparent{
-            color: #1f1f25;
+            color: $theme-color;
         }
     }
 }
 a {
     &.btn-transparent{
-        color: #1f1f25;
+        color: $theme-color;
         @extend %transition;
         font-size: 16px;
         font-weight: 500;
@@ -54,18 +54,17 @@ button {
         z-index: 2;
         // font-family: Montserrat;
         color: $theme-color;
-        letter-spacing: 0.2px;
         @extend %transition;
         text-transform: uppercase;
         &:hover {
             border: 2px solid $theme-color;
             transform: translateY(-3px);
-            color: #ffffff;
+            color: $white;
             background: $theme-color;
         }
         &.btn-white {
             border: 2px solid #ffffff;
-            color: #ffffff;
+            color: $white;
             &:hover {
                 border-color: $theme-color;
             }
@@ -80,7 +79,6 @@ button {
             color: #000000;
             font-size: 16px;
             text-transform: uppercase;
-            letter-spacing: 2px;
             border: 2px solid #000000;
             padding: 15px 40px;
             border-radius: 6px;
@@ -100,13 +98,11 @@ button {
 
             &.btn-size-md {
                 padding: 9px 15px;
-                letter-spacing: 1px;
                 font-size: 15px;
             }
             &.btn-size-sm {
                 padding: 11px 15px;
                 font-size: 13px;
-                letter-spacing: 0;
                 line-height: 13px;
             }
 

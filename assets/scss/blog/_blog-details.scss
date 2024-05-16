@@ -1,5 +1,5 @@
 /*----------------------
-BLog Details Styles 
+BLog Details Styles
 ------------------------*/
 
 .blog-single-page-title {
@@ -27,7 +27,7 @@ BLog Details Styles
             }
             li {
                 font-size: 16px;
-                color: #c6c9d8;
+                color: #fffff6;
                 margin: 0 15px;
                 margin-bottom: 13px;
                 @media #{$sm-layout} {
@@ -132,7 +132,7 @@ BLog Details Styles
         }
         .blog-single-list-wrapper {
             margin-right: -110px;
-            
+
             @media #{$sm-layout} {
                 margin-right: 0;
             }
@@ -194,7 +194,7 @@ BLog Details Styles
                         @media #{$sm-layout} {
                             margin-bottom: 25px;
                         }
-                   } 
+                   }
                 }
             }
         }
@@ -203,7 +203,7 @@ BLog Details Styles
 
 
 /*------------------------
-    BLog Contact Form  
+    BLog Contact Form
 --------------------------*/
 .blog-comment-form {
     .inner {

@@ -42,7 +42,7 @@
 </template>
 
 <script>
-  import { generateGROQ } from '../queries/products'
+  import { generateGROQ } from '../queries/contact'
   import get from 'lodash/get'
   import config from '../config'
 

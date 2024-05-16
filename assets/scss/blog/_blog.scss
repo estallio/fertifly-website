@@ -1,5 +1,5 @@
 /*===================
-Blog Styles 
+Blog Styles
 =====================*/
 
 .blog {
@@ -12,7 +12,7 @@ Blog Styles
         @media #{$sm-layout} {
             margin-top: 30px;
         }
-        
+
         .thumbnail {
             a {
                 display: block;
@@ -36,7 +36,7 @@ Blog Styles
                         opacity: 0.85;
                         top: 0;
                     }
-    
+
                 }
             }
         }
@@ -76,7 +76,7 @@ Blog Styles
                 &.blogtype{
                     font-size: 14px;
                     margin-bottom: 5px;
-                    color: #c6c9d8;
+                    color: #fffff6;
                 }
             }
             h4{
@@ -97,7 +97,7 @@ Blog Styles
                 transition: 0.7s;
                 opacity: 0;
                 visibility: hidden;
-                
+
                 @media #{$large-mobile} {
                     margin-top: 22px;
                 }

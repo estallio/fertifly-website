@@ -1,7 +1,7 @@
 <template>
   <div>
     <v-navigation-drawer
-      class="hidden-md-and-up menuMaxHeight"
+      class="mobile_menu menuMaxHeight"
       v-model="drawer"
       absolute
       temporary
@@ -11,7 +11,7 @@
         <div class="logo">
           <img
             style="max-width: 80%; height: auto"
-            src="../../assets/images/logo/logo.png"
+            src="../../assets/images/logo/logo.svg"
             alt="Ecofly Logo"
             width="319"
             height="126"
@@ -69,7 +69,7 @@
       <nuxt-link :alt="this.$t('header.toHomepage')" :to="localePath('/')" class="logo">
         <img
           style="max-height: 100%; width: auto"
-          src="../../assets/images/logo/logo.png"
+          src="../../assets/images/logo/logo.svg"
           alt="Ecofly Logo"
           width="319"
           height="126"
@@ -79,7 +79,7 @@
       <v-spacer></v-spacer>
       <v-btn
         icon
-        class="ma-0 pa-0 hidden-md-and-up"
+        class="ma-0 pa-0 menu_button"
         @click="drawer = !drawer"
         name="Menu Button"
         aria-label="Menu Button"
@@ -87,7 +87,7 @@
         <MenuIcon class="ownIcon" style="width:25px"/>
       </v-btn>
 
-      <v-toolbar-items class="hidden-xs-only hidden-sm-only height-auto">
+      <v-toolbar-items class="menu_items height-auto">
         <nuxt-link v-for="(navItem, i) in navList" :key="i" :to="localePath(navItem)" style="color: inherit">
           <v-btn :ripple="false" text link>
             {{ $t(`header.navigation.${navItem}`) }}
@@ -169,15 +169,15 @@
   }
 
   a:hover, a:hover button {
-    color: #006C33 !important;
+    color: #006653 !important;
   }
 
   .ownIcon {
-    fill: #444;
+    fill: #006653;
   }
 
   .v-navigation-drawer--is-mobile .v-list-item .v-list-item__title {
-    color: #444;
+    color: #003832;
   }
 
   .v-toolbar:not(.tab-toolbar) .v-btn--text {
@@ -194,7 +194,7 @@
   }
 
   .lang-switcher a:hover {
-    color: #006C33 !important;
+    color: #eb460a !important;
   }
 
   .lang-switcher::before {
@@ -219,7 +219,6 @@
     min-width: 0;
     margin: 0 0 0 15px;
     padding: 0 5px;
-    border: 1px solid rgba(68,68,68,0.4);
     border-radius: 4px;
     position: relative;
   }
@@ -232,7 +231,7 @@
   }
 
   .language-selector a:hover {
-    color: #006C33 !important;
+    color: #eb460a !important;
   }
 
   .language-selector li {
@@ -249,7 +248,7 @@
     right: -1px;
     margin-top: 0;
     border: 1px solid rgba(68,68,68,0.4);
-    border-radius: 5px 0 4px 5px;
+    border-radius: 5px;
     padding: 5px 20px;
   }
 

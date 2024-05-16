@@ -62,7 +62,6 @@ Slider Styles
         color: #fff;
         font-size: 15px;
         text-transform: uppercase;
-        letter-spacing: 4px;
         display: block;
         margin-bottom: 9px;
       }
@@ -108,7 +107,7 @@ Slider Styles
       p {
         &.description {
           color: $slider-light-color-description;
-          font-size: 35px;
+          font-size: 30px;
           line-height: 47px;
           font-weight: 400;
           margin-top: 10px;

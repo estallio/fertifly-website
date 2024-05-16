@@ -101,7 +101,7 @@
       },
       getImage: function(sanityImageUrl) {
         try {
-          return this.$urlFor(sanityImageUrl).size(500).fit('max').url();
+          return this.$urlFor(sanityImageUrl).size(1000).fit('max').url();
         } catch (ex) {
           return config.fallbackImageSrc;
         }
@@ -126,5 +126,14 @@
     height: 1em;
     overflow: visible;
     vertical-align: -0.125em;
+  }
+
+  .icon {
+    color: #006653;
+  }
+
+  .rn-address:hover .icon {
+    background-color: #006653;
+    color: #fff;
   }
 </style>

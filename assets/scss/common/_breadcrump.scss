@@ -27,11 +27,11 @@
         @extend %liststyle;
         li {
             display: inline-block;
-            color: #0d8d2d;
+            color: $border-color;
             position: relative;
             text-transform: capitalize;
             a {
-                color: #000;
+                color: $border-color;
                 &.router-link-exact-active, &.nuxt-link-exact-active{
                     color: $breadcrumbs-color;
                 }
@@ -42,7 +42,7 @@
             & + li {
                 &::before {
                     content: "/";
-                    color: #000;
+                    color: $border-color;
                     margin: 0 8px;
                     opacity: 0.6;
                 }
@@ -76,7 +76,7 @@ Page Title Area
     p {
         font-size: 22px;
         line-height: 27px;
-        color: #c6c9d8;
+        color: #fffff6;
     }
 }
 /* Start Breadcrump Two  */
@@ -93,7 +93,7 @@ Page Title Area
     }
     span {
         font-size: 22px;
-        color: #c6c9d8;
+        color: #fffff6;
     }
 }
 .backto-top {
@@ -111,7 +111,7 @@ Page Title Area
     }
     svg {
         font-size: 14px !important;
-        color: #222222;
+        color: $border-color;
         width: 27px;
         height: 27px;
     }

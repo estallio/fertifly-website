@@ -1,3 +1,70 @@
+
+/* silka-300 (light) */
+@font-face {
+  font-family: 'Silka';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 300;
+  src: url('./silka-light-webfont.eot'); /* IE9 Compat Modes */
+  src: local(''),
+  url('./silka-light-webfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */ url('./silka-light-webfont.woff2') format('woff2'), /* Super Modern Browsers */ url('./silka-light-webfont.woff') format('woff'), /* Modern Browsers */ url('./silka-light-webfont.ttf') format('truetype'); /* Legacy iOS */
+}
+
+/* silka-400 (regular) */
+@font-face {
+  font-family: 'Silka';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src: url('./silka-regular-webfont.eot'); /* IE9 Compat Modes */
+  src: local(''),
+  url('./silka-regular-webfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */ url('./silka-regular-webfont.woff2') format('woff2'), /* Super Modern Browsers */ url('./silka-regular-webfont.woff') format('woff'), /* Modern Browsers */ url('./silka-regular-webfont.ttf') format('truetype'); /* Legacy iOS */
+}
+
+/* silka-500 (medium) */
+@font-face {
+  font-family: 'Silka';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 500;
+  src: url('./silka-medium-webfont.eot'); /* IE9 Compat Modes */
+  src: local(''),
+  url('./silka-medium-webfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */ url('./silka-medium-webfont.woff2') format('woff2'), /* Super Modern Browsers */ url('./silka-medium-webfont.woff') format('woff'), /* Modern Browsers */ url('./silka-medium-webfont.ttf') format('truetype'); /* Legacy iOS */
+}
+
+/* silka-600 (semibold) */
+@font-face {
+  font-family: 'Silka';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 600;
+  src: url('./silka-semibold-webfont.eot'); /* IE9 Compat Modes */
+  src: local(''),
+  url('./silka-semibold-webfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */ url('./silka-semibold-webfont.woff2') format('woff2'), /* Super Modern Browsers */ url('./silka-semibold-webfont.woff') format('woff'), /* Modern Browsers */ url('./silka-semibold-webfont.ttf') format('truetype'); /* Legacy iOS */
+}
+
+/* silka-700 (bold) */
+@font-face {
+  font-family: 'Silka';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 700;
+  src: url('./silka-bold-webfont.eot'); /* IE9 Compat Modes */
+  src: local(''),
+  url('./silka-bold-webfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */ url('./silka-bold-webfont.woff2') format('woff2'), /* Super Modern Browsers */ url('./silka-bold-webfont.woff') format('woff'), /* Modern Browsers */ url('./silka-bold-webfont.ttf') format('truetype'); /* Legacy iOS */
+}
+
+/* silka-800 (black) */
+@font-face {
+  font-family: 'Silka';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 800;
+  src: url('./silka-black-webfont.eot'); /* IE9 Compat Modes */
+  src: local(''),
+  url('./silka-black-webfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */ url('./silka-black-webfont.woff2') format('woff2'), /* Super Modern Browsers */ url('./silka-black-webfont.woff') format('woff'), /* Modern Browsers */ url('./silka-black-webfont.ttf') format('truetype'); /* Legacy iOS */
+}
+
 /* poppins-300 - latin */
 @font-face {
   font-family: 'Poppins';
@@ -155,7 +222,7 @@
   font-family: 'Montserrat';
   font-style: normal;
   font-display: swap;
-  font-weight: 900;
+  font-weight: 800;
   src: url('./montserrat-v18-latin-900.eot'); /* IE9 Compat Modes */
   src: local(''),
   url('./montserrat-v18-latin-900.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */ url('./montserrat-v18-latin-900.woff2') format('woff2'), /* Super Modern Browsers */ url('./montserrat-v18-latin-900.woff') format('woff'), /* Modern Browsers */ url('./montserrat-v18-latin-900.ttf') format('truetype'), /* Safari, Android, iOS */ url('./montserrat-v18-latin-900.svg#Montserrat') format('svg'); /* Legacy iOS */

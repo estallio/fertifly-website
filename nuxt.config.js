@@ -271,7 +271,7 @@ export default {
       name: 'Ecofly Website',
       short_name: 'Ecofly Website',
       description: 'Wir machen aus Larven nachhaltige Nahrungsmittel für Haus- und Nutztiere.',
-      theme_color: '#006C33',
+      theme_color: '#003832',
       lang: 'de',
     },
 

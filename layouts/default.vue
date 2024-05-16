@@ -14,7 +14,7 @@
         v-scroll="onScroll"
         v-show="fab"
         fab
-        color="white"
+        color="#eb460a"
         fixed
         width="50"
         height="50"
@@ -152,7 +152,7 @@
     line-height: 48px;
     font-size: 22px;
     font-weight: 600;
-    color: #444;
+    color: #fffff6;
   }
   .v-btn--absolute.v-btn--bottom,
   .v-btn--fixed.v-btn--bottom {

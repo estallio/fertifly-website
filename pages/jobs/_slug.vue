@@ -244,7 +244,7 @@
     },
     methods: {
       setDialogDismissedCookie () {
-        Cookies.set('languageDialogDismissed', 'true', { expires: 2 })
+        // Cookies.set('languageDialogDismissed', 'true', { expires: 2 })
       },
     }
   }

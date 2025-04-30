@@ -199,6 +199,9 @@ export default {
   },
 
   i18n: {
+    detectBrowserLanguage: {
+      useCookie: false
+    },
     locales: [
       {
         code: 'de',

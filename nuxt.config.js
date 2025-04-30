@@ -199,9 +199,6 @@ export default {
   },
 
   i18n: {
-    detectBrowserLanguage: {
-      useCookie: false
-    },
     locales: [
       {
         code: 'de',
@@ -214,6 +211,9 @@ export default {
         name: 'English',
       },
     ],
+    detectBrowserLanguage: {
+      useCookie: false,
+    },
     strategy: 'prefix',
     // removing this can be tricky with dynamic i18n slug generation
     defaultLocale: 'de',

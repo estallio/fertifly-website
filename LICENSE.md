@@ -1,4 +1,4 @@
-Most of the code parts fall under the MIT License. However, all assets like images, fonts and other files and names like "ecofly" or texts on the website are licensed and copyright is hold by Ecofly GmbH and Leonhard Esterbauer if not explicitly told otherwise. The use of the name "ecofly", "Ecofly GmbH" and other organizational terms, texts on the website, images, logos, icons and personal information contained in this repository is strictly prohibited.
+Most of the code parts fall under the MIT License. However, all assets like images, fonts and other files and names like "fertifly" or texts on the website are licensed and copyright is hold by Ecofly GmbH and Leonhard Esterbauer if not explicitly told otherwise. The use of the name "ecofly", "fertifly", "Ecofly GmbH" and other organizational terms, texts on the website, images, logos, icons and personal information contained in this repository is strictly prohibited.
 
 For code parts, the MIT License holds:
 

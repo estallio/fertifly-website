@@ -96,7 +96,7 @@ export default {
     },
     {
       title: 'Testimonials',
-      description: 'What other people say about Ecofly.',
+      description: 'What other people say about Fertifly.',
       name: 'testimonials',
       type: 'array',
       of: [ { type: 'testimonial' } ],

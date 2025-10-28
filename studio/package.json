@@ -1,5 +1,5 @@
 {
-  "name": "ecofly-studio",
+  "name": "fertifly-studio",
   "private": true,
   "version": "1.0.0",
   "description": "This project contains PoC implementations, snippets and decision documentations to build a modern, performant and cheap Jamstack website utilizing the following tools and services:",
@@ -39,6 +39,6 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:estallio/ecofly-website.git"
+    "url": "git@github.com:estallio/fertifly-website.git"
   }
 }

@@ -271,8 +271,8 @@ export default {
     ],
 
     manifest: {
-      name: 'Ecofly Website',
-      short_name: 'Ecofly Website',
+      name: 'Fertifly Website',
+      short_name: 'Fertifly Website',
       description: 'Wir machen aus Larven nachhaltige Nahrungsmittel für Haus- und Nutztiere.',
       theme_color: '#003832',
       lang: 'de',

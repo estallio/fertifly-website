@@ -96,7 +96,6 @@
     },
     nuxtI18n: {
       paths: {
-        en: '/contact',
         de: '/kontakt'
       }
     }

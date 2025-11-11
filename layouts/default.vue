@@ -14,7 +14,7 @@
         v-scroll="onScroll"
         v-show="fab"
         fab
-        color="#eb460a"
+        color="#b7d58f"
         fixed
         width="50"
         height="50"

@@ -6,11 +6,6 @@ export default {
   title: 'Download button',
   type: 'object',
   icon: BsDownload,
-  preview: {
-    select: {
-      title: 'title'
-    },
-  },
   fields: [
     {
       name: 'title',
@@ -22,5 +17,10 @@ export default {
       title: 'File',
       type: 'file',
     }
-  ]
+  ],
+  preview: {
+    select: {
+      title: 'title'
+    },
+  }
 };

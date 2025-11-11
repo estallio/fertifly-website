@@ -169,7 +169,6 @@
     },
     nuxtI18n: {
       paths: {
-        en: '/about-us',
         de: '/ueber-uns'
       }
     }

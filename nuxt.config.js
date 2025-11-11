@@ -6,16 +6,9 @@ import minifyTheme from 'minify-css-string'
 
 import config from './config'
 import de from './lang/de'
-import en from './lang/en'
-
 const { NODE_ENV = 'production' } = process.env
 
 const isDev = NODE_ENV === 'development'
-
-import sanityClient from '@sanity/client'
-import { generateGROQ } from './queries/jobs'
-
-const client = sanityClient({ apiVersion: '2021-06-07', projectId: config.sanity.projectId, dataset: config.sanity.dataset, withCredentials: config.sanity.withCredentials });
 
 export default {
   // Target: https://go.nuxtjs.dev/config-target
@@ -205,11 +198,6 @@ export default {
         iso: 'de',
         name: 'Deutsch',
       },
-      {
-        code: 'en',
-        iso: 'en',
-        name: 'English',
-      },
     ],
     detectBrowserLanguage: {
       useCookie: false,
@@ -218,8 +206,8 @@ export default {
     // removing this can be tricky with dynamic i18n slug generation
     defaultLocale: 'de',
     vueI18n: {
-      fallbackLocale: 'en',
-      messages: { de, en },
+      fallbackLocale: 'de',
+      messages: { de },
     },
     seo: true,
     baseUrl: config.hostname,
@@ -387,40 +375,6 @@ export default {
           route.name.includes(config.routesNameSeparator) ||
           route.name.includes('index')
       )
-    },
-    routes: async () => {
-      const { content } = await client.fetch(generateGROQ(false))
-
-      return content.jobs
-        .map(job => (
-        {
-          // english URLs are left out as the content jobs is only available in german
-          url: '/de/jobs/' + job.slug.current,
-          links: [
-            { lang: 'de', url: '/de/jobs/' + job.slug.current },
-          ]
-        }
-        ));
-
-      /*
-      return [
-        // TODO: get jobs dynamic slugs
-        {
-          url: '/de/jobs/techniker',
-          links: [
-            { lang: 'de', url: '/de/jobs/techniker' },
-            { lang: 'en', url: '/en/jobs/techniker' },
-          ],
-        },
-        {
-          url: '/en/jobs/techniker',
-          links: [
-            { lang: 'de', url: '/de/jobs/techniker' },
-            { lang: 'en', url: '/en/jobs/techniker' },
-          ],
-        }
-      ]
-      */
     },
   },
 

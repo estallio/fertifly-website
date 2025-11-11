@@ -169,7 +169,6 @@
     },
     nuxtI18n: {
       paths: {
-        en: '/privacy',
         de: '/datenschutz'
       }
     }

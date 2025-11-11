@@ -11,10 +11,6 @@ export const generateGROQ = (includeDrafts = false) => {
 const projections = `
 {
   ...,
-  banner[]{
-    ...,
-    'backgroundImageDoc': backgroundImage.asset->
-  },
   contentSections[]{
     ...,
     content[] {
@@ -26,7 +22,7 @@ const projections = `
     ...,
     'imageDoc': image.asset->
   },
-  toProductsSection {
+  toApplicationsSection {
     ...,
     'backgroundImageDoc': backgroundImage.asset->
   }

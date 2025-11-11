@@ -1,19 +1,19 @@
 //===== Colors =====//
-$theme-color: #003832;
+$theme-color: #3F3732;
 $body-color: #000000;
-$heading-color: #006653;
-$border-color: #003832;
-$white:#fff;
+$heading-color: #3F3732;
+$border-color: #3F3732;
+$white: #fff;
 
-$gradient-color-light: #006653;
-$gradient-color-dark: #006653;
+$gradient-color-light: #FFFEF3;
+$gradient-color-dark: #3F3732;
 
 $breadcrumbs-color: $gradient-color-dark;
 
 $slick-hover-color: $gradient-color-dark;
 
-$slider-light-color-heading:$gradient-color-dark;
-$slider-light-color-description:$gradient-color-dark;
+$slider-light-color-heading: $gradient-color-light;
+$slider-light-color-description: $gradient-color-light;
 
 /*===============================
     Font Family

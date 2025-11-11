@@ -21,15 +21,15 @@ export default {
       of: [ { type: 'imageTextContentSection' } ],
     },
     {
-      title: '"To Products" Section',
-      description: 'A section to motivate the users to navigate also to the products page.',
-      name: 'toProductsSection',
+      title: '"To Applications Section"',
+      description: 'A section to motivate the users to navigate also to the applications page.',
+      name: 'toApplicationsSection',
       type: 'object',
       fields: [
         {
-          title: 'To Products',
-          description: 'Short text block consisting of heading and text about products.',
-          name: 'toProductsHeading',
+          title: 'To Applications',
+          description: 'Short text block consisting of heading and text about applications.',
+          name: 'toApplicationsHeading',
           type: 'object',
           fields: [
             {
@@ -44,7 +44,7 @@ export default {
             },
             {
               title: 'Button Text',
-              description: 'e.g. "Zu den Produkten"',
+              description: 'e.g. "Zu den Anwendungen"',
               name: 'buttonText',
               type: 'string',
             },
@@ -59,7 +59,7 @@ export default {
         },
         {
           title: 'Background Image',
-          description: 'The image behind the "To Products" block.',
+          description: 'The image behind the "To Application" block.',
           name: 'backgroundImage',
           type: 'image',
           fields: [

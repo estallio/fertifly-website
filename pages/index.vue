@@ -1,13 +1,13 @@
 <template>
   <div>
     <!-- Start Slider Area -->
-    <SliderTwo :sliderContent="this.sanityContent.banner" />
+    <SliderTwo :sliderContent="sanityContent.banner" :top="true" />
     <!-- End Slider Area -->
 
     <!-- Start Area -->
     <div>
       <v-container>
-        <div v-for="(contentItem, i) in this.sanityContent.contentSections" :key="contentItem._key">
+        <div v-for="(contentItem, i) in sanityContent.contentSections" :key="contentItem._key">
 
           <!-- Start First Section Heading -->
           <v-row :class="{'mt_sm--60 mt_md--80 mt--110': i === 0, 'mt_sm--70 mt_md--90 mt--150': i !== 0}">
@@ -76,11 +76,11 @@
         <div class="rn-finding-us-area rn-finding-us">
           <div class="inner">
             <div class="content-wrapper" style="margin: 0 auto">
-              <div class="content products-box">
+              <div class="content applications-box">
                 <div class="container">
-                  <h4 style="color: #444">{{ get(sanityContent, `toProductsSection.toProductsHeading[${$i18n.locale}].heading`, '') }}</h4>
-                  <p style="color: #444">{{ get(sanityContent, `toProductsSection.toProductsHeading[${$i18n.locale}].text`, '') }}</p>
-                  <nuxt-link :alt="get(this.sanityContent, `toProductsSection.toProductsHeading[${$i18n.locale}].buttonText`, '')" :to="localePath('products')" class="rn-button-style--2 btn_solid btn-size-sm">{{ get(sanityContent, `toProductsSection.toProductsHeading[${$i18n.locale}].buttonText`, '') }}</nuxt-link>
+                  <h4 style="color: #fffef3">{{ get(sanityContent, `toApplicationsSection.toApplicationsHeading[${$i18n.locale}].heading`, '') }}</h4>
+                  <p style="color: #fffef3">{{ get(sanityContent, `toApplicationsSection.toApplicationsHeading[${$i18n.locale}].text`, '') }}</p>
+                  <nuxt-link :alt="get(sanityContent, `toApplicationsSection.toApplicationsHeading[${$i18n.locale}].buttonText`, '')" :to="localePath('applications')" class="rn-button-style--2 btn_border btn_border--dark btn-size-sm">{{ get(sanityContent, `toApplicationsSection.toApplicationsHeading[${$i18n.locale}].buttonText`, '') }}</nuxt-link>
                 </div>
               </div>
             </div>
@@ -104,8 +104,8 @@
   </div>
 </template>
 <script>
-  import { generateGROQ } from '../queries/home'
   import get from 'lodash/get'
+  import { generateGROQ } from '../queries/home'
   import config from '../config'
 
   export default {
@@ -162,27 +162,27 @@
     // },
 
     methods: {
-      getAltText: function(image) {
+      getAltText(image) {
         return image && get(image, `altText[${this.$i18n.locale}].text`, '');
       },
       get: (...args) => {
         return get(...args);
       },
-      getContentImage: function(sanityImageUrl) {
+      getContentImage(sanityImageUrl) {
         try {
           return this.$urlFor(sanityImageUrl).size(500).fit('max').url();
         } catch (ex) {
           return config.fallbackImageSrc;
         }
       },
-      getProductsImage: function(sanityImageUrl) {
+      getApplicationsImage(sanityImageUrl) {
         try {
           return this.$urlFor(sanityImageUrl).size(1000).fit('max').url();
         } catch (ex) {
           return config.fallbackImageSrc;
         }
       },
-      getImageHeight: function(imageDoc) {
+      getImageHeight(imageDoc) {
         return imageDoc && imageDoc.metadata.dimensions.aspectRatio
       }
     }
@@ -190,14 +190,14 @@
 </script>
 
 <style>
-.products-box {
-  background-color: #fff !important;
+.applications-box {
+  /* background-color: #fff !important; */
   box-shadow: 0 0 15px 1px rgba(170, 170, 170, 0.5);
   margin: 0 auto;
   padding: 70px 50px !important;
 }
 @media only screen and (max-width: 800px) {
-  .products-box {
+  .applications-box {
     background-color: transparent !important;
     padding: 50px 40px !important;
   }
@@ -232,8 +232,7 @@
   /* padding-top: 110px; */
 }
 @media only screen and (max-width: 1264px) {
-  .products-box {
-
+  .applications-box {
   }
   .rn-finding-us-area {
     margin-top: 0;
@@ -254,6 +253,5 @@
 }
 .rn-testimonial-area {
   margin-top: 0;
-
 }
 </style>

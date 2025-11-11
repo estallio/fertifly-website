@@ -105,10 +105,10 @@
           */
         ],
         navList: [
-          "jobs",
+          "downloads",
           "contact",
-          "privacy",
           "imprint",
+          "privacy",
         ],
         // mailList: ["office@ecofly.at"],
       };

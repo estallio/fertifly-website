@@ -7,12 +7,14 @@
     text-align: center;
     position: relative;
     z-index: 2;
+    h1 {
+      color: $gradient-color-light;
+    }
+
     h2 {
         &.heading-title {
-            background: $gradient-color-dark;
-            background: linear-gradient(145deg, $gradient-color-light 0%, $gradient-color-dark 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            color: $gradient-color-light;
+            -webkit-text-fill-color: $gradient-color-light;
             @media #{$sm-layout} {
                 font-size: 32px;
                 margin-bottom: 2px;
@@ -27,22 +29,22 @@
         @extend %liststyle;
         li {
             display: inline-block;
-            color: $border-color;
+            color: #ffffff;
             position: relative;
             text-transform: capitalize;
             a {
-                color: $border-color;
+                color: #ffffff;
                 &.router-link-exact-active, &.nuxt-link-exact-active{
-                    color: $breadcrumbs-color;
+                    color: #ffffff;
                 }
             }
             &.current-page {
-                color: $breadcrumbs-color;
+                color: #ffffff;
             }
             & + li {
                 &::before {
                     content: "/";
-                    color: $border-color;
+                    color: #ffffff;
                     margin: 0 8px;
                     opacity: 0.6;
                 }

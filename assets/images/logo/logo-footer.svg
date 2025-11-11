@@ -1,1 +1,13 @@
-<?xml version="1.0" encoding="UTF-8"?><svg id="Green1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 82.9 113.39"><defs><style>.cls-1{fill:#b7d58f;}</style></defs><ellipse class="cls-1" cx="29.75" cy="66.36" rx="16.73" ry="6.66" transform="translate(-42.98 67.07) rotate(-66.41)"/><ellipse class="cls-1" cx="55.53" cy="58.59" rx="11.7" ry="22.5" transform="translate(-15.67 20.55) rotate(-18.42)"/><ellipse class="cls-1" cx="17.42" cy="55.12" rx="3.36" ry="6.45" transform="translate(-16.53 8.33) rotate(-18.42)"/></svg>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 83 114" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+    <g transform="matrix(0.400189,-0.916433,0.916433,0.400189,-42.98,67.07)">
+        <ellipse cx="29.75" cy="66.36" rx="16.73" ry="6.66" style="fill:rgb(255,254,243);"/>
+    </g>
+    <g transform="matrix(0.948766,-0.31598,0.31598,0.948766,-15.67,20.55)">
+        <ellipse cx="55.53" cy="58.59" rx="11.7" ry="22.5" style="fill:rgb(255,254,243);"/>
+    </g>
+    <g transform="matrix(0.948766,-0.31598,0.31598,0.948766,-16.53,8.33)">
+        <ellipse cx="17.42" cy="55.12" rx="3.36" ry="6.45" style="fill:rgb(255,254,243);"/>
+    </g>
+</svg>

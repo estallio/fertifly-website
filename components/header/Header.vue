@@ -11,7 +11,7 @@
         <div class="logo">
           <img
             style="max-width: 80%; height: auto"
-            src="../../assets/images/logo/logo.svg"
+            src="../../assets/images/logo/logo-white.svg"
             alt="Ecofly Logo"
             width="319"
             height="126"
@@ -43,20 +43,6 @@
         </v-list-item>
 
       </v-list>
-
-      <div style="text-align: center">
-      <font-awesome-icon icon="language" style="font-size: 25px;"/>
-
-      <ul>
-        <li
-          v-for="locale in availableLocales"
-          :key="locale.code"
-          class="lang-switcher"
-        >
-          <nuxt-link :to="switchLocalePath(locale.code)" :style="locale.code === $i18n.locale ? 'color: #006C33' : 'color: inherit'">{{ locale.name }}</nuxt-link>
-        </li>
-      </ul>
-      </div>
     </v-navigation-drawer>
 
     <v-app-bar
@@ -69,7 +55,7 @@
       <nuxt-link :alt="this.$t('header.toHomepage')" :to="localePath('/')" class="logo">
         <img
           style="max-height: 100%; width: auto"
-          src="../../assets/images/logo/logo.svg"
+          src="../../assets/images/logo/logo-white.svg"
           alt="Ecofly Logo"
           width="319"
           height="126"
@@ -93,34 +79,6 @@
             {{ $t(`header.navigation.${navItem}`) }}
           </v-btn>
         </nuxt-link>
-
-        <div class="language-selector" :class="languageSwitchOpen ? 'open' : ''">
-          <button
-            :aria-label="this.$t('header.langSwitchButton')"
-            type="button"
-            :name="this.$t('header.langSwitchButton')"
-            v-closable="{
-              exclude: ['language-chooser-button', 'language-chooser-menu'],
-              handler: 'onClose'
-            }"
-            ref="language-chooser-button"
-            @click="languageSwitchOpen = !languageSwitchOpen"
-          >
-            <font-awesome-icon icon="language" />
-            <font-awesome-icon style="margin-left:5px" :icon="languageSwitchOpen ? 'chevron-up' : 'chevron-down'" />
-          </button>
-          <ul ref="language-chooser-menu">
-            <li v-for="locale in availableLocales"
-                :key="locale.code">
-              <nuxt-link
-                @click.native="languageSwitchOpen = false"
-              :to="switchLocalePath(locale.code)"
-              :style="locale.code === $i18n.locale ? 'color: #006C33' : 'color: inherit'">
-                {{ locale.name }}
-              </nuxt-link>
-            </li>
-          </ul>
-        </div>
       </v-toolbar-items>
     </v-app-bar>
   </div>
@@ -131,35 +89,23 @@
   import MenuIcon from '../../assets/images/menu-icon.svg?inline'
 
   export default {
-    computed: {
-      availableLocales () {
-        return this.$i18n.locales
-      }
-    },
     components: {
       ClosingIcon,
       MenuIcon
     },
     data () {
       return {
-        languageSwitchOpen: false,
         drawer: false,
         navList: [
           "index",
-          "products",
+          "production",
+          "applications",
           "about",
-          "jobs",
-          "team",
-          "partners",
+          "downloads",
           "contact"
         ]
       }
     },
-    methods: {
-      onClose () {
-        this.languageSwitchOpen = false
-      }
-    }
   }
 </script>
 
@@ -169,91 +115,49 @@
   }
 
   a:hover, a:hover button {
-    color: #006653 !important;
+    color: #FFFEF3 !important;
   }
 
   .ownIcon {
-    fill: #006653;
+    fill: #FFFEF3;
   }
 
   .v-navigation-drawer--is-mobile .v-list-item .v-list-item__title {
-    color: #003832;
+    color: #3F3732;
   }
 
   .v-toolbar:not(.tab-toolbar) .v-btn--text {
     text-transform: none;
   }
 
-  .lang-switcher {
-    display: inline-block;
-    padding-bottom: 80px;
+  .v-toolbar .menu_items .v-btn {
+    color: #FFFEF3 !important;
+    padding-left: 5px !important;
+    padding-right: 5px !important;
   }
 
-  .lang-switcher:last-child {
-    padding-right: 11px;
+  .v-toolbar .menu_items .v-btn::before{
+    display: block;
+    opacity: initial;
+    content:"";
+    position:absolute;
+    z-index: -1;
+
+    overflow: visible;
+    inset: -10px;
+    backdrop-filter: blur(14px) saturate(120%);
+    background: rgba(255,255,255, 0);
+    border-radius: 100px;
+    mask-image: radial-gradient(80% 50% at 50% 50%, #000 50%, transparent 80%);
   }
 
-  .lang-switcher a:hover {
-    color: #eb460a !important;
-  }
-
-  .lang-switcher::before {
-    content: '/';
-    color: #444;
-    margin-left: 8px;
-    margin-right: 8px;
-  }
-
-  .lang-switcher:first-child::before {
-    display: none;
+  .v-toolbar .menu_items .v-btn:hover::before{
+    mask-image: radial-gradient(80% 50% at 50% 50%, #FFF 50%, transparent 80%);
   }
 
   .menuMaxHeight {
     height: 101vh !important;
     overflow: scroll !important;
-  }
-
-  .language-selector {
-    color: #444;
-    font-size: 16px;
-    min-width: 0;
-    margin: 0 0 0 15px;
-    padding: 0 5px;
-    border-radius: 4px;
-    position: relative;
-  }
-
-  .language-selector.open {
-    padding-bottom: 1px;
-    border-bottom: 0;
-    border-bottom-left-radius: 0;
-    border-bottom-right-radius: 0;
-  }
-
-  .language-selector a:hover {
-    color: #eb460a !important;
-  }
-
-  .language-selector li {
-    list-style-type: none;
-    color: inherit;
-    font-size: inherit;
-    padding-top: 3px;
-    padding-bottom: 3px;
-  }
-
-  .language-selector ul {
-    display: none;
-    position: absolute;
-    right: -1px;
-    margin-top: 0;
-    border: 1px solid rgba(68,68,68,0.4);
-    border-radius: 5px;
-    padding: 5px 20px;
-  }
-
-  .language-selector.open ul {
-    display: block;
   }
 
   .svg-inline--fa.fa-w-20 {

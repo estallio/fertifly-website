@@ -4,12 +4,11 @@ import footer from './components/footer'
 import header from './components/header'
 
 import index from './pages/index'
-import products from './pages/products'
-import contact from './pages/contact'
-import partners from './pages/partners'
-import team from './pages/team'
+import production from './pages/production'
+import applications from './pages/applications'
 import about from './pages/about'
-import jobs from './pages/jobs'
+import downloads from './pages/downloads'
+import contact from './pages/contact'
 import privacy from './pages/privacy';
 import imprint from './pages/imprint'
 
@@ -17,14 +16,13 @@ export default {
   footer,
   header,
   index,
-  products,
+  production,
   contact,
-  partners,
-  team,
+  applications,
   about,
   privacy,
-  jobs,
   imprint,
+  downloads,
   validation: de.messages,
   errors: {
     404: {

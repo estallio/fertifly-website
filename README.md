@@ -2,7 +2,6 @@
 
 This project contains PoC implementations, snippets and decision documentations to build a modern, performant and cheap Jamstack website utilizing the following tools and services:
 
-
 :white_check_mark: NuxtJS\
 :white_check_mark: Sanity.io\
 :white_check_mark: Cloudflare Pages\

@@ -1,13 +1,11 @@
 export default {
   navigation: {
     index: 'Start',
-    products: 'Produkte',
+    production: 'Herstellung',
+    applications: 'Anwendung',
     about: 'Über uns',
-    jobs: 'Jobs',
-    team: 'Team',
-    partners: 'Partner',
+    downloads: 'Downloads',
     contact: 'Kontakt',
   },
-  toHomepage: 'Link zur Startseite',
-  langSwitchButton: 'Sprache Auswählen Button'
+  toHomepage: 'Link zur Startseite'
 }

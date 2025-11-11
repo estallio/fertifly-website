@@ -169,7 +169,6 @@
     },
     nuxtI18n: {
       paths: {
-        en: '/imprint',
         de: '/impressum'
       }
     }

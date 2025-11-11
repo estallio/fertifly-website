@@ -62,11 +62,11 @@ export default {
     content:
       'Für das gezielte ?Upcycling? von Proteinen zu einem hochwertigen Futtermittel nutzen wir die Larve der schwarzen Soldatenfliege (lat. Hermetia Illucens, engl. Black Soldier Fly, kurz BSF). Unsere Fliegenlarven werden ausschließlich mit Nebenprodukten aus der Lebensmittelindustrie, die als Futtermittel zugelassen sind, gefüttert. Damit können wir einen stabilen Prozess garantieren und den Eintrag von Schadstoffen ausschließen. Zudem benötigen wir keine zusätzliche Wärmequelle für die Produktion unserer Fliegenlarven. Die Flächennutzung bei der Zucht der schwarzen Soldatenfliege ist ausgesprochen effizient. Auf einem m² kann bis zu einer Tonne Insektenprotein pro Jahr erzeugt werden.',
   },
-  productSection: {
-    heading: 'Unsere Produkte',
+  applicationsSection: {
+    heading: 'Anwendungen',
     subheading:
-      'Wie wir aus diesem Prozess welche Produkte erstellen können erfahren Sie auf unserer Produktseite.',
-    linkText: 'Zu den Produkten',
+      'Wie Sie fertifly anwenden können, erfahren Sie auf unserer Seite "Anwendungen".',
+    linkText: 'Zu den Anwendungen',
   },
-  productsBackgroundImageAlt: 'Symbolbild unserer Produkte'
+  productsBackgroundImageAlt: 'Symbolbild unserer Herstellung'
 }

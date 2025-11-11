@@ -1,11 +1,13 @@
-import S from '@sanity/desk-tool/structure-builder';
-import { BsNewspaper, BsSearch } from 'react-icons/bs';
-import { AiOutlineTeam, AiOutlineHome, AiOutlineContacts, AiOutlineFileProtect } from 'react-icons/ai';
-import { BiPackage, BiInfoCircle, BiMoney, BiHome } from 'react-icons/bi';
-import { RiFilePaper2Line, RiLayoutBottom2Line } from 'react-icons/ri';
-import { FaRegHandshake } from 'react-icons/fa';
-import { CgLoadbarDoc } from 'react-icons/cg';
-import * as Structure from 'sanity-plugin-intl-input/lib/structure';
+import S from '@sanity/desk-tool/structure-builder'
+import {
+  AiOutlineContacts,
+  AiOutlineFileProtect,
+  AiOutlineHome,
+} from 'react-icons/ai'
+import { BiInfoCircle } from 'react-icons/bi'
+import { MdOutlineTouchApp, MdOutlineFactory } from 'react-icons/md'
+import { FaDownload } from 'react-icons/fa'
+import { CgLoadbarDoc } from 'react-icons/cg'
 
 const homeListItem = S.listItem()
 .title('Home')
@@ -18,15 +20,37 @@ const homeListItem = S.listItem()
   .documentId('home')
 );
 
-const productsListItem = S.listItem()
-.title('Products')
-.icon(BiPackage)
+const productionListItem = S.listItem()
+  .title('Production')
+  .icon(MdOutlineFactory)
+  .child(
+    S.editor()
+      .title('Production')
+      .id('production')
+      .schemaType('production')
+      .documentId('production')
+  );
+
+const applicationsListItem = S.listItem()
+.title('Applications')
+.icon(MdOutlineTouchApp)
 .child(
   S.editor()
-  .title('Products')
-  .id('products')
-  .schemaType('products')
-  .documentId('products')
+    .title('Applications')
+    .id('applications')
+    .schemaType('applications')
+    .documentId('applications')
+);
+
+const downloadsListItem = S.listItem()
+.title('Downloads')
+.icon(FaDownload)
+.child(
+  S.editor()
+  .title('Downloads')
+  .id('downloads')
+  .schemaType('downloads')
+  .documentId('downloads')
 );
 
 const aboutListItem = S.listItem()
@@ -38,39 +62,6 @@ const aboutListItem = S.listItem()
   .id('about')
   .schemaType('about')
   .documentId('about')
-);
-
-const jobsListItem = S.listItem()
-.title('Jobs')
-.icon(BiMoney)
-.child(
-  S.editor()
-  .title('Jobs')
-  .id('jobs')
-  .schemaType('jobs')
-  .documentId('jobs')
-);
-
-const teamListItem = S.listItem()
-.title('Team')
-.icon(AiOutlineTeam)
-.child(
-  S.editor()
-  .title('Team')
-  .id('team')
-  .schemaType('team')
-  .documentId('team')
-);
-
-const partnersListItem = S.listItem()
-.title('Partners')
-.icon(FaRegHandshake)
-.child(
-  S.editor()
-  .title('Partners')
-  .id('partners')
-  .schemaType('partners')
-  .documentId('partners')
 );
 
 const contactListItem = S.listItem()
@@ -111,11 +102,10 @@ export default () =>
   .title('Content')
   .items([
     homeListItem,
-    productsListItem,
+    productionListItem,
+    applicationsListItem,
     aboutListItem,
-    jobsListItem,
-    teamListItem,
-    partnersListItem,
+    downloadsListItem,
     contactListItem,
     privacyListItem,
     imprintListItem

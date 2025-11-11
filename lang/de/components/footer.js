@@ -6,8 +6,7 @@ export default {
   quickNav: 'Schnellnavigation',
   allRightsReserved: 'Alle Rechte vorbehalten.',
   navigation: {
-    products: 'Produkte',
-    jobs: 'Jobs',
+    downloads: 'Downloads',
     contact: 'Kontakt',
     imprint: 'Impressum',
     privacy: 'Datenschutz',

@@ -18,16 +18,15 @@
 
 <style scoped>
   .link-button {
-    text-decoration: none !important;
-    color: #3F3732 !important;
+    text-decoration: none;
+
+    color: #3F3732;
+    background-color: #edddad;
 
     display: block;
 
-    border: 1px solid #3F3732;
     border-radius: 3px;
     padding: 6px 15px 5px 15px;
-
-    background-color: #fff;
 
     font-size: 18px;
     line-height: 30px;
@@ -42,11 +41,8 @@
     transition: none;
   }
   .link-button:hover {
-    /* box-shadow: 0 0 2px 1px rgba(210, 210, 210, 0.7); */
-  }
-  .link-button:hover span {
-    color: #3F3732 !important;
-    text-decoration: underline !important;
+    background-color: #3F3732;
+    color: #FFFEF3;
   }
   .link-button span {
     padding-left: 10px;

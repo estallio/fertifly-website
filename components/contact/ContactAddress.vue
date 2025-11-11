@@ -129,11 +129,11 @@
   }
 
   .icon {
-    color: #006653;
+    color: #3F3732;
   }
 
   .rn-address:hover .icon {
-    background-color: #006653;
+    background-color: #3F3732;
     color: #fff;
   }
 </style>

@@ -198,7 +198,7 @@
 }
 @media only screen and (max-width: 800px) {
   .applications-box {
-    background-color: transparent !important;
+    /* background-color: transparent !important; */
     padding: 50px 40px !important;
   }
 }

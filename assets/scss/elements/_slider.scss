@@ -81,21 +81,21 @@ Slider Styles
           }
 
           @media #{$md-layout} {
-            font-size: 50px;
-            line-height: 60px;
+            font-size: 70px;
+            line-height: 80px;
             max-width: inherit;
           }
 
           @media #{$lg-layout} {
-            font-size: 45px;
-            line-height: 55px;
+            font-size: 80px;
+            line-height: 90px;
             margin: 0;
             max-width: inherit;
           }
 
           @media #{$laptop-device} {
-            font-size: 50px;
-            line-height: 60px;
+            font-size: 100px;
+            line-height: 110px;
           }
         }
       }
@@ -107,32 +107,32 @@ Slider Styles
           font-weight: 400;
           margin-top: 10px;
 
-          @media #{$laptop-device} {
-            font-size: 26px;
-            line-height: 33px;
-          }
-
-          @media #{$lg-layout} {
-            font-size: 24px;
-            line-height: 30px;
-          }
-
-          @media #{$md-layout} {
+          @media #{$large-mobile} {
             font-size: 20px;
             line-height: 25px;
             margin-top: 5px;
           }
 
           @media #{$sm-layout} {
-            font-size: 20px;
-            line-height: 25px;
+            font-size: 25px;
+            line-height: 32px;
             margin-top: 5px;
           }
 
-          @media #{$large-mobile} {
-            font-size: 20px;
-            line-height: 25px;
-            margin-top: 5px;
+          @media #{$md-layout} {
+            font-size: 25px;
+            line-height: 32px;
+            margin-top: 0;
+          }
+
+          @media #{$lg-layout} {
+            font-size: 27px;
+            line-height: 35px;
+          }
+
+          @media #{$laptop-device} {
+            font-size: 30px;
+            line-height: 39px;
           }
         }
       }

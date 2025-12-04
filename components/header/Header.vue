@@ -52,16 +52,6 @@
       absolute
       class="default-header"
     >
-      <nuxt-link :alt="this.$t('header.toHomepage')" :to="localePath('/')" class="logo">
-        <img
-          style="max-height: 100%; width: auto"
-          src="../../assets/images/logo/logo-white.svg"
-          alt="Ecofly Logo"
-          width="319"
-          height="126"
-        />
-      </nuxt-link>
-
       <v-spacer></v-spacer>
       <v-btn
         icon

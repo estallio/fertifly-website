@@ -71,36 +71,31 @@ Slider Styles
           font-size: 60px;
           line-height: 70px;
           font-weight: 800;
-          margin: 0;
           max-width: 75%;
 
-          @media #{$laptop-device} {
+          @media #{$sm-layout} {
             font-size: 50px;
             line-height: 60px;
+            max-width: inherit;
+            margin: 0 auto;
+          }
+
+          @media #{$md-layout} {
+            font-size: 50px;
+            line-height: 60px;
+            max-width: inherit;
           }
 
           @media #{$lg-layout} {
             font-size: 45px;
             line-height: 55px;
+            margin: 0;
             max-width: inherit;
           }
 
-          @media #{$md-layout} {
-            font-size: 40px;
-            line-height: 50px;
-            max-width: inherit;
-          }
-
-          @media #{$sm-layout} {
-            font-size: 30px;
-            line-height: 40px;
-            max-width: inherit;
-          }
-
-          @media #{$large-mobile} {
-            font-size: 23px;
-            line-height: 33px;
-            max-width: inherit;
+          @media #{$laptop-device} {
+            font-size: 50px;
+            line-height: 60px;
           }
         }
       }
